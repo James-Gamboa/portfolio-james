@@ -166,12 +166,17 @@
       "id": "3",
       "title": "UI/UX Design",
       "description": "Creating user-friendly interfaces that provide an enjoyable user experience."
+    },
+    {
+      "id": "4",
+      "title": "CMS Development",
+      "description": "Expertise in building and customizing websites using CMS platforms like Shopify, Drupal, and WordPress with custom themes and plugins."
     }
-  ],
+    ],
   "aboutpara": "I’m a Frontend Developer with experience in frontend development, web design, and WordPress. I’ve helped businesses build modern web experiences with technologies like React, Next.js, and Shopify.",
   "resume": {
     "tagline": "👋 I'm a Frontend Developer.",
-    "description": "I am James Guevara Gamboa, a passionate web developer with experience in frontend development and web design. I graduated as a Technician in Web Design and Development from CETAV and have worked on projects such as Audiophile, an e-commerce platform, and Travel Haven, an Airbnb clone. I have collaborated on innovative initiatives like 'Human Brush.' My skills include technologies such as JavaScript, React, and Next.js, as well as SEO optimization and WordPress customization. I am committed to creating effective and engaging digital solutions.",
+    "description": "I'm James Guevara Gamboa, a web developer specializing in frontend development and web design. I hold a Technician degree in Web Design and Development from CETAV and have worked on projects like Audiophile (e-commerce) and Travel Haven (Airbnb clone). My expertise includes JavaScript, React, Next.js, SEO optimization, and WordPress customization. I'm passionate about crafting effective and engaging digital solutions.",
     "experiences": [
       {
         "id": "1",
@@ -221,6 +226,8 @@
       "WordPress",
       "Shopify",
       "Drupal",
+      "MongoDb",
+      "SQL",
       "Git",
       "Responsive Design",
       "UI/UX",

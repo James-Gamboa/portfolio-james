@@ -1,10 +1,11 @@
 {
-  "name": "James Guevara Gamboa",
+  "name": "James Portfolio",
   "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm James Guevara - curious",
-  "headerTaglineThree": "designer and web developer",
-  "headerTaglineFour": "based in Heredia, Costa Rica.",
+  "headerTaglineTwo": "I'm James Guevara",
+  "headerTaglineThree": "Web Designer and Developer",
+  "showCursor": true,
   "darkMode": true,
+  "showResume": true,
   "socials": [
     {
       "id": "1",
@@ -23,22 +24,134 @@
     }
   ],
   "projects": [
-    {
-      "id": "1",
-      "title": "Audiophile",
-      "description": "E-commerce website for selling audio items, featuring a responsive design and user-friendly interface.",
-      "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "https://github.com/james-gamboa/audiophile"
-    },
-    {
-      "id": "2",
-      "title": "Travel Haven",
-      "description": "An Airbnb-like clone that allows users to book accommodations easily with a seamless UI.",
-      "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "https://github.com/james-gamboa/travel-haven"
-    }
-  ],
-  "services": [
+        {
+            "id": "1",
+            "title": "Audiophile Ecommerce",
+            "description": "An ecommerce for audio lovers using tailwind css and next js technologies",
+            "imageSrc": "https://i.postimg.cc/dtV8CY08/audiophile-ecommerce-page.png",
+            "url": "https://audiophile-ecommerce-website-sigma.vercel.app/"
+        },
+        {
+            "id": "2",
+            "title": "Designo Multi Page",
+            "description": "Designo multi-page website is a responsive site built with Next.js, JavaScript, and CSS Modules, featuring optimal layouts and interactive elements",
+            "imageSrc": "https://i.postimg.cc/xT34fY4M/designo-multi-page-website.png",
+            "url": "https://designo-multi-page-website-xi.vercel.app/"
+        },
+        {
+            "id": "3",
+            "title": "Travel Haven",
+            "description": "A fully functional Airbnb-like clone built with the latest technology in the field of web development",
+            "imageSrc": "https://i.postimg.cc/kgFqPkxp/travel-haven-page.png",
+            "url": "https://james-gamboa.github.io/Travel-Haven/"
+        },
+        {
+            "id": "4",
+            "title": "Contraluz",
+            "description": "I collaborated with a real client to develop and launch an ecommerce for selling paints using the Shopify platform",
+            "imageSrc": "https://i.postimg.cc/kMFCkrqR/contraluz-page.png",
+            "url": "https://www.contraluzcr.com/"
+        },
+        {
+            "id": "5",
+            "title": "Pokedex",
+            "description": "Project created as a practice for knowledge in Javascript",
+            "imageSrc": "https://i.postimg.cc/qMMPSz1W/pokedex-page.png",
+            "url": "https://james-gamboa.github.io/Pokedex/"
+        },
+        {
+            "id": "6",
+            "title": "Frontend-Mentor-Loopstudios",
+            "description": "Page created as a practice for knowledge in Sass",
+            "imageSrc": "https://i.postimg.cc/Znj10S5f/loopstudios-page.png",
+            "url": "https://james-gamboa.github.io/Frontend-Mentor-Loopstudios-landing-page/"
+        },
+        {
+            "id": "7",
+            "title": "News Homepage",
+            "description": "Page created as a practice for knowledge in Html, Css, Javascript, and Sass",
+            "imageSrc": "https://i.postimg.cc/HnTqpxdc/news-homepage-page.jpg",
+            "url": "https://flourishing-taffy-990027.netlify.app/"
+        },
+        {
+            "id": "8",
+            "title": "Events Site",
+            "description": "Page created as a practice for knowledge in Javascript",
+            "imageSrc": "https://i.postimg.cc/kgDd6B8W/events-site-page.png",
+            "url": "https://monumental-kringle-6493f0.netlify.app/"
+        },
+        {
+            "id": "9",
+            "title": "Manage Landing Page",
+            "description": "Page created as practice in my knowledge in next js and tailwind",
+            "imageSrc": "https://i.postimg.cc/4Npmn26z/manage-page.png",
+            "url": "https://landing-page-with-tailwind-iota.vercel.app/"
+        },
+        {
+            "id": "10",
+            "title": "James Bank",
+            "description": "A landing page crafted to demonstrate proficiency in Next.js and Tailwind CSS, featuring dynamic animations powered by Frame Motion",
+            "imageSrc": "https://i.postimg.cc/dQk7cVDN/james-banks.png",
+            "url": "https://landing-page-bank-kappa.vercel.app/"
+        },
+        {
+            "id": "11",
+            "title": "Fylo Page",
+            "description": "A responsive landing page designed to showcase expertise in Next.js and Tailwind CSS",
+            "imageSrc": "https://i.postimg.cc/vTH3Dxjn/fylo-page.png",
+            "url": "https://fylo-landing-page-ten-peach.vercel.app/"
+        },
+        {
+            "id": "12",
+            "title": "Web Studio",
+            "description": "A modern web studio landing page built to highlight proficiency in Next.js and Tailwind CSS",
+            "imageSrc": "https://i.postimg.cc/cC9T34yb/web-studio.png",
+            "url": "https://tailwind-landing-page-ecru-three.vercel.app/"
+        },
+        {
+            "id": "13",
+            "title": "Coca Cola Landing Page",
+            "description": "Project created as a practice using bootstrap, html and php",
+            "imageSrc": "https://i.postimg.cc/Y0kHhRfS/cocacola-page.png",
+            "url": "https://james-gamboa.github.io/Practical-coca-cola-page/"
+        },
+        {
+            "id": "14",
+            "title": "Trivia Game",
+            "description": "Trivia game web page created using Vite and React for a hands-on practice project",
+            "imageSrc": "https://i.postimg.cc/zGjZcTNm/trivia-game.png",
+            "url": "https://triviagameinreact.netlify.app/"
+        },
+        {
+            "id": "15",
+            "title": "Connect Four",
+            "description": "Project created as a practice for knowledge in Javascript",
+            "imageSrc": "https://i.postimg.cc/4y5TtcBQ/conecta-Cuatro-page.png",
+            "url": "https://james-gamboa.github.io/conecta-cuatro/conecta4.html"
+        },
+        {
+            "id": "16",
+            "title": "Tetris Game",
+            "description": "Web page creating a simple basic tetris using vanilla javascript",
+            "imageSrc": "https://i.postimg.cc/15CkQsTX/tetris-game-page.png",
+            "url": "https://james-gamboa.github.io/tetris/"
+        },
+        {
+            "id": "17",
+            "title": "Biccas",
+            "description": "A Biccas website to showcase the experience using Html flexbox and is responsive for mobile",
+            "imageSrc": "https://i.postimg.cc/hjK037KY/biccas-page.png",
+            "url": "https://james-gamboa.github.io/Biccas/"
+        },
+        {
+            "id": "18",
+            "title": "Dalio | Digital Agency",
+            "description": "A website from Dalio, a digital agency to showcase the experience using Next.js and Tailwind CSS",
+            "imageSrc": "https://i.postimg.cc/XqJknSGc/dalio-page.png",
+            "url": "https://daliotailwind.vercel.app"
+          }
+        ],
+        "services": [
     {
       "id": "1",
       "title": "Web Design",
@@ -53,12 +166,17 @@
       "id": "3",
       "title": "UI/UX Design",
       "description": "Creating user-friendly interfaces that provide an enjoyable user experience."
+    },
+    {
+      "id": "4",
+      "title": "CMS Development",
+      "description": "Expertise in building and customizing websites using CMS platforms like Shopify, Drupal, and WordPress with custom themes and plugins."
     }
-  ],
-  "aboutpara": "I'm a web designer and developer from Heredia, Costa Rica. I have experience working with React, Next.js, and WordPress, helping businesses build modern and responsive websites.",
+    ],
+  "aboutpara": "I’m a Frontend Developer with experience in frontend development, web design, and WordPress. I’ve helped businesses build modern web experiences with technologies like React, Next.js, and Shopify.",
   "resume": {
-    "tagline": "👋 I'm a software engineer and web designer.",
-    "description": "Experienced in building user-focused web solutions with modern tools and frameworks.",
+    "tagline": "👋 I'm a Frontend Developer.",
+    "description": "I'm James Guevara Gamboa, a web developer specializing in frontend development and web design. I hold a Technician degree in Web Design and Development from CETAV and have worked on projects like Audiophile (e-commerce) and Travel Haven (Airbnb clone). My expertise includes JavaScript, React, Next.js, SEO optimization, and WordPress customization. I'm passionate about crafting effective and engaging digital solutions.",
     "experiences": [
       {
         "id": "1",
@@ -66,9 +184,9 @@
         "type": "Full Time",
         "position": "Frontend Developer at ContraLuz",
         "bullets": [
-          "Developed websites using Next.js with ISR",
-          "Migrated the platform to Shopify",
-          "Implemented SEO optimizations"
+          "Website Development",
+          "Shopify Implementation",
+          "Admin Panel Development"
         ]
       },
       {
@@ -77,20 +195,22 @@
         "type": "Full Time",
         "position": "Frontend Developer at TechPro Solutions",
         "bullets": [
-          "Designed and developed custom WordPress themes and plugins",
-          "Collaborated with clients to ensure project goals"
+          "Website Development",
+          "UI/UX Design",
+          "Client Collaboration"
         ]
       }
     ],
     "education": {
       "universityName": "Centro de Tecnología y Artes Visuales (CETAV), Costa Rica",
-      "universityDate": "February 2022 - January 2024",
-      "universityPara": "Completed a web design and development technician program, focusing on frontend and backend technologies."
+      "universityDate": "02/2022 - 01/2024",
+      "universityPara": "Web Design and Development Technician."
     },
     "languages": [
       "JavaScript",
-      "Html",
-      "Css"
+      "HTML5",
+      "CSS",
+      "TypeScript"
     ],
     "frameworks": [
       "React",
@@ -103,14 +223,16 @@
     ],
     "others": [
       "Figma",
-      "AdobeXD",
       "WordPress",
-      "Drupal",
       "Shopify",
+      "Drupal",
+      "MongoDb",
+      "SQL",
       "Git",
       "Responsive Design",
       "UI/UX",
-      "REST APIs"
+      "REST APIs",
+      "Problem-Solving"
     ]
   }
 }

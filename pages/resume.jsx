@@ -38,6 +38,7 @@ const Resume = () => {
           data.showCursor && "cursor-none"
         }`}
       >
+        <Header isBlog />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div
