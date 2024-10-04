@@ -62,9 +62,9 @@
         {
             "id": "6",
             "title": "Frontend-Mentor-Loopstudios",
-            "description": "Page created as a practice for knowledge in Sass",
-            "imageSrc": "https://i.postimg.cc/Znj10S5f/loopstudios-page.png",
-            "url": "https://james-gamboa.github.io/Frontend-Mentor-Loopstudios-landing-page/"
+            "description": "Page created as a practice for knowledge in Next.Js,Javascript",
+            "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
+            "url": "https://frontend-mentor-loopstudios-page.vercel.app/"
         },
         {
             "id": "7",
