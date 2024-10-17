@@ -4,12 +4,10 @@ import Button from "../components/Button";
 import Header from "../components/Header";
 import { v4 as uuidv4 } from "uuid";
 
-// Data
 import yourData from "../data/portfolio.json";
 import Cursor from "../components/Cursor";
 
 const Edit = () => {
-  // states
   const [data, setData] = useState(yourData);
   const [currentTabs, setCurrentTabs] = useState("HEADER");
 
@@ -27,7 +25,6 @@ const Edit = () => {
     }
   };
 
-  // Project Handler
   const editProjects = (projectIndex, editProject) => {
     let copyProjects = data.projects;
     copyProjects[projectIndex] = { ...editProject };
@@ -56,7 +53,6 @@ const Edit = () => {
     setData({ ...data, projects: copyProjects });
   };
 
-  // Services Handler
   const editServices = (serviceIndex, editService) => {
     let copyServices = data.services;
     copyServices[serviceIndex] = { ...editService };
@@ -83,7 +79,6 @@ const Edit = () => {
     setData({ ...data, services: copyServices });
   };
 
-  // Socials Handler
   const editSocials = (socialIndex, editSocial) => {
     let copySocials = data.socials;
     copySocials[socialIndex] = { ...editSocial };
@@ -109,7 +104,6 @@ const Edit = () => {
     setData({ ...data, socials: copySocials });
   };
 
-  // Resume
   const handleAddExperiences = () => {
     setData({
       ...data,

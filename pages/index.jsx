@@ -11,12 +11,9 @@ import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
-
-// Local Data
 import data from "../data/portfolio.json";
 
 export default function Home() {
-  // Ref
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
@@ -24,7 +21,6 @@ export default function Home() {
   const textThree = useRef();
   const textFour = useRef();
 
-  // Handling Scroll
   const handleWorkScroll = () => {
     window.scrollTo({
       top: workRef.current.offsetTop,
