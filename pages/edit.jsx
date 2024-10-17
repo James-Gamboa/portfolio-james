@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Button from "../components/Button";
 import Header from "../components/Header";
 import { v4 as uuidv4 } from "uuid";
-import { useTheme } from "next-themes";
 
 // Data
 import yourData from "../data/portfolio.json";
@@ -13,7 +12,6 @@ const Edit = () => {
   // states
   const [data, setData] = useState(yourData);
   const [currentTabs, setCurrentTabs] = useState("HEADER");
-  const { theme } = useTheme();
 
   const saveData = () => {
     if (process.env.NODE_ENV === "development") {
@@ -59,7 +57,6 @@ const Edit = () => {
   };
 
   // Services Handler
-
   const editServices = (serviceIndex, editService) => {
     let copyServices = data.services;
     copyServices[serviceIndex] = { ...editService };
@@ -75,7 +72,7 @@ const Edit = () => {
           id: uuidv4(),
           title: "New Service",
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         },
       ],
     });
@@ -87,7 +84,6 @@ const Edit = () => {
   };
 
   // Socials Handler
-
   const editSocials = (socialIndex, editSocial) => {
     let copySocials = data.socials;
     copySocials[socialIndex] = { ...editSocial };
@@ -114,7 +110,6 @@ const Edit = () => {
   };
 
   // Resume
-
   const handleAddExperiences = () => {
     setData({
       ...data,
@@ -148,7 +143,7 @@ const Edit = () => {
       <Header isBlog></Header>
       {data.showCursor && <Cursor />}
       <div className="mt-10">
-        <div className={`${theme === "dark" ? "bg-transparent" : "bg-white"}`}>
+        <div className="bg-transparent">
           <div className="flex items-center justify-between">
             <h1 className="text-4xl">Dashboard</h1>
             <div className="flex items-center">

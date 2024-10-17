@@ -6,15 +6,11 @@ import Header from "../components/Header";
 import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
 import Button from "../components/Button";
-import { useTheme } from "next-themes";
-// Data
-import { name, showResume } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
+import { name, showResume, resume } from "../data/portfolio.json";
 import data from "../data/portfolio.json";
 
 const Resume = () => {
   const router = useRouter();
-  const theme = useTheme();
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
@@ -23,29 +19,22 @@ const Resume = () => {
       router.push("/");
     }
   }, []);
+
   return (
     <>
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
-          <Button onClick={() => router.push("/edit")} type={"primary"}>
+          <Button onClick={() => router.push("/edit")} type="primary">
             Edit Resume
           </Button>
         </div>
       )}
       {data.showCursor && <Cursor />}
-      <div
-        className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
-        }`}
-      >
+      <div className={`container mx-auto mb-10 ${data.showCursor && "cursor-none"}`}>
         <Header isBlog />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
-            <div
-              className={`w-full ${
-                mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
-              } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
-            >
+            <div className="w-full bg-slate-800 max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm">
               <h1 className="text-3xl font-bold">{name}</h1>
               <h2 className="text-xl mt-5">{resume.tagline}</h2>
               <h2 className="w-4/5 text-xl mt-5 opacity-50">
@@ -56,18 +45,15 @@ const Resume = () => {
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Experience</h1>
-
-                {resume.experiences.map(
-                  ({ id, dates, type, position, bullets }) => (
-                    <ProjectResume
-                      key={id}
-                      dates={dates}
-                      type={type}
-                      position={position}
-                      bullets={bullets}
-                    ></ProjectResume>
-                  )
-                )}
+                {resume.experiences.map(({ id, dates, type, position, bullets }) => (
+                  <ProjectResume
+                    key={id}
+                    dates={dates}
+                    type={type}
+                    position={position}
+                    bullets={bullets}
+                  />
+                ))}
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Education</h1>
@@ -96,7 +82,6 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
-
                   {resume.frameworks && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Frameworks</h2>
@@ -109,7 +94,6 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
-
                   {resume.others && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Others</h2>
