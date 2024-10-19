@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./markdown.css";
+@import "@/styles/markdown.css";
 
 * {
   font-family: "Hind";

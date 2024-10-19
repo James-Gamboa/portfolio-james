@@ -1,12 +1,12 @@
 "use client"
 import { useRef } from "react";
-import Header from "@components/Header";
-import ServiceCard from "@components/ServiceCard";
-import Socials from "@components/Socials";
-import WorkCard from "@components/WorkCard";
-import Footer from "@components/Footer";
-import Cursor from "@components/Cursor";
-import data from "@data/portfolio.json";
+import Header from "@/components/Header/page";
+import ServiceCard from "@/components/ServiceCard/page";
+import Socials from "@/components/Socials/page";
+import WorkCard from "@/components/WorkCard/page";
+import Footer from "@/components/Footer/page";
+import Cursor from "@/components/Cursor/page";
+import data from "@/utils/data/portfolio.json";
 
 export default function Home() {
   const workRef = useRef();

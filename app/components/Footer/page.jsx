@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from "react";
-import Socials from "@Socials/page";
+import Socials from "@/components/Socials/page";
 import Link from "next/link";
 
 const Footer = ({}) => {

@@ -1,10 +1,10 @@
 // @ts-nocheck
-import { Popover } from "@/headlessui/react";
+import { Popover } from "@headlessui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Button from "@//Button/page";
-import data from "@/data/portfolio.json";
+import Button from "@/components/Button/page";
+import data from "@/utils/data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll }) => {
   const router = useRouter();
@@ -47,11 +47,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 <Button onClick={handleWorkScroll}>Work</Button>
                 <Button onClick={handleAboutScroll}>About</Button>
                 {showResume && (
-                  <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
+                  <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
                     Resume
                   </Button>
                 )}
-                <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
+                <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
                   Contact
                 </Button>
               </div>
@@ -75,7 +75,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
               Resume
             </Button>
           )}
-          <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
+          <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
             Contact
           </Button>
         </div>
