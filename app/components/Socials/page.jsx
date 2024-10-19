@@ -1,8 +1,8 @@
 // @ts-nocheck
 import React from "react";
-import Button from "../Button";
+import Button from "@Button/page";
 
-import yourData from "../../data/portfolio.json";
+import yourData from "@data/portfolio.json";
 
 const Socials = ({ className }) => {
   return (

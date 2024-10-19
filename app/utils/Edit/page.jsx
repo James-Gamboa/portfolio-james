@@ -1,11 +1,11 @@
 // @ts-nocheck
 import React, { useState } from "react";
-import Button from "../components/Button";
-import Header from "../components/Header";
+import Button from "@components/Button/page";
+import Header from "@components/Header/page";
 import { v4 as uuidv4 } from "uuid";
 
-import yourData from "../data/portfolio.json";
-import Cursor from "../components/Cursor";
+import yourData from "@data/portfolio.json";
+import Cursor from "@components/Cursor/page";
 
 const Edit = () => {
   const [data, setData] = useState(yourData);
@@ -186,7 +186,6 @@ const Edit = () => {
             </Button>
           </div>
         </div>
-        {/* HEADER */}
         {currentTabs === "HEADER" && (
           <div className="mt-10">
             <div className="flex items-center">
@@ -328,7 +327,6 @@ const Edit = () => {
             </div>
           </div>
         )}
-        {/* PROJECTS */}
         {currentTabs === "PROJECTS" && (
           <>
             <div className="mt-10">
@@ -416,7 +414,6 @@ const Edit = () => {
             </div>
           </>
         )}
-        {/* SERVICES */}
         {currentTabs === "SERVICES" && (
           <>
             <div className="mt-10">

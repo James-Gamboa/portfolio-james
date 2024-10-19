@@ -1,17 +1,12 @@
-// @ts-nocheck
+"use client"
 import { useRef } from "react";
-import Header from "../components/Header";
-import ServiceCard from "../components/ServiceCard";
-import Socials from "../components/Socials";
-import WorkCard from "../components/WorkCard";
-import { useIsomorphicLayoutEffect } from "../utils";
-import { stagger } from "../animations";
-import Footer from "../components/Footer";
-import Head from "next/head";
-import Button from "../components/Button";
-import Link from "next/link";
-import Cursor from "../components/Cursor";
-import data from "../data/portfolio.json";
+import Header from "@components/Header";
+import ServiceCard from "@components/ServiceCard";
+import Socials from "@components/Socials";
+import WorkCard from "@components/WorkCard";
+import Footer from "@components/Footer";
+import Cursor from "@components/Cursor";
+import data from "@data/portfolio.json";
 
 export default function Home() {
   const workRef = useRef();
@@ -37,20 +32,9 @@ export default function Home() {
     });
   };
 
-  useIsomorphicLayoutEffect(() => {
-    stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
-      { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
-      { y: 0, x: 0, transform: "scale(1)" }
-    );
-  }, []);
-
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
       {data.showCursor && <Cursor />}
-      <Head>
-        <title>{data.name}</title>
-      </Head>
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">
@@ -85,12 +69,10 @@ export default function Home() {
               {data.headerTaglineFour}
             </h1>
           </div>
-
           <Socials className="mt-2 laptop:mt-5" />
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Work.</h1>
-
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -103,7 +85,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
           <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">

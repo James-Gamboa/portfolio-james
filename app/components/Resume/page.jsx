@@ -1,12 +1,12 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Cursor from "../components/Cursor";
-import Header from "../components/Header";
-import ProjectResume from "../components/ProjectResume";
-import Socials from "../components/Socials";
-import Button from "../components/Button";
-import data from "../data/portfolio.json";
+import Cursor from "@Cursor/page";
+import Header from "@Header/page";
+import ProjectResume from "@ProjectResume/page";
+import Socials from "@Socials/page";
+import Button from "@Button/page";
+import data from "@data/portfolio.json";
 
 const Resume = () => {
   const router = useRouter();
