@@ -5,7 +5,6 @@ import ServiceCard from "@/components/ServiceCard/page";
 import Socials from "@/components/Socials/page";
 import WorkCard from "@/components/WorkCard/page";
 import Footer from "@/components/Footer/page";
-import Cursor from "@/components/Cursor/page";
 import data from "@/utils/data/portfolio.json";
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+      {data.showCursor }
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">

@@ -1,10 +1,10 @@
 // @ts-nocheck
+"use client"
 import React, { useState } from "react";
 import Button from "@/components/Button/page";
 import Header from "@/components/Header/page";
 import { v4 as uuidv4 } from "uuid";
 import yourData from "@/utils/data/portfolio.json";
-import Cursor from "@/components/Cursor/page";
 
 const Edit = () => {
   const [data, setData] = useState(yourData);
@@ -134,7 +134,7 @@ const Edit = () => {
   return (
     <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
       <Header isBlog></Header>
-      {data.showCursor && <Cursor />}
+      {data.showCursor }
       <div className="mt-10">
         <div className="bg-transparent">
           <div className="flex items-center justify-between">

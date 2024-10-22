@@ -1,18 +1,16 @@
-// @ts-nocheck
-import { Popover } from "@headlessui/react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/Button/page";
 import data from "@/utils/data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll }) => {
-  const router = useRouter();
-  const [mounted, setMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { name, showResume } = data;
 
   useEffect(() => {
-    setMounted(true);
+    setIsMounted(true);
   }, []);
 
   return (
@@ -21,12 +19,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
         {({ open }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
-              <h1
-                onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
-              >
-                {name}.
-              </h1>
+              {isMounted && (
+                <h1
+                  onClick={() => useRouter().push("/")} 
+                  className="font-medium p-2 laptop:p-0 link"
+                >
+                  {name}.
+                </h1>
+              )}
 
               <div className="flex items-center">
                 <Popover.Button>
@@ -40,18 +40,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 </Popover.Button>
               </div>
             </div>
-            <Popover.Panel
-              className="absolute right-0 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md"
-            >
+            <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md">
               <div className="grid grid-cols-1">
                 <Button onClick={handleWorkScroll}>Work</Button>
                 <Button onClick={handleAboutScroll}>About</Button>
                 {showResume && (
-                  <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
+                  <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
                     Resume
                   </Button>
                 )}
-                <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
+                <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
                   Contact
                 </Button>
               </div>
@@ -61,21 +59,23 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
       </Popover>
 
       <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 tablet:flex">
-        <h1
-          onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-        >
-          {name}.
-        </h1>
+        {isMounted && (
+          <h1
+            onClick={() => useRouter().push("/")}
+            className="font-medium cursor-pointer mob:p-2 laptop:p-0"
+          >
+            {name}.
+          </h1>
+        )}
         <div className="flex">
           <Button onClick={handleWorkScroll}>Work</Button>
           <Button onClick={handleAboutScroll}>About</Button>
-          {showResume && (
-            <Button onClick={() => router.push("/resume")} classes="first:ml-1">
+          {showResume && isMounted && (
+            <Button onClick={() => useRouter().push("/resume")} classes="first:ml-1">
               Resume
             </Button>
           )}
-          <Button onClick={() => window.open("mailto:jjguevarag@/gmail.com")}>
+          <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
             Contact
           </Button>
         </div>

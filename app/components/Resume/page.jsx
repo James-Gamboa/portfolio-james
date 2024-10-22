@@ -1,7 +1,7 @@
 // @ts-nocheck
+"use client"
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Cursor from "@/components/Cursor/page";
 import Header from "@/components/Header/page";
 import ProjectResume from "@/components/ProjectResume/page";
 import Socials from "@/components/Socials/page";
@@ -28,7 +28,7 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor && <Cursor />}
+      {data.showCursor }
       <div className={`container mx-auto mb-10 ${data.showCursor && "cursor-none"}`}>
         <Header isBlog />
         {mount && (

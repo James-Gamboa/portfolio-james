@@ -25,9 +25,11 @@ const CodeBlock = {
 
 const ContentSection = ({ content }) => {
   return (
-    <ReactMarkdown components={CodeBlock} className="markdown-class">
-      {content}
-    </ReactMarkdown>
+    <div className="markdown-class">
+      <ReactMarkdown components={CodeBlock}>
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 };
 
