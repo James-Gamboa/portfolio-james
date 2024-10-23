@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-
 const ProjectResume = ({ dates, type, position, bullets }) => {
   const bulletsLocal = Array.isArray(bullets) ? bullets : bullets.split(",");
 

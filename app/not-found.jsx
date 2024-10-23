@@ -1,5 +1,6 @@
-import Link from "next/link";
+"use client"
 
+import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-center">

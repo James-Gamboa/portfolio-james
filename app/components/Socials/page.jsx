@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client"
 import React from "react";
 import Button from "@/components/Button/page";
 import yourData from "@/utils/data/portfolio.json";
