@@ -1,21 +1,37 @@
-// @ts-nocheck
 import fs from "fs";
 import { join } from "path";
 
-export default function handler(req, res) {
-  const portfolioData = join(process.cwd(), "/data/portfolio.json");
+const portfolioData = join(process.cwd(), "utils/data/portfolio.json");
+
+export async function POST(req) {
   if (process.env.NODE_ENV === "development") {
-    if (req.method === "POST") {
-      fs.writeFileSync(
-        portfolioData,
-        JSON.stringify(req.body),
-        "utf-8",
-        (err) => console.log(err)
+    try {
+      const body = await req.json();
+      fs.writeFileSync(portfolioData, JSON.stringify(body), "utf-8");
+      return new Response(
+        JSON.stringify({ message: "Data saved successfully" }),
+        {
+          status: 200,
+        }
       );
-    } else {
-      res
-        .status(200)
-        .json({ name: "This route works in development mode only" });
+    } catch (err) {
+      console.error(err);
+      return new Response(JSON.stringify({ error: "Failed to save data" }), {
+        status: 500,
+      });
     }
+  } else {
+    return new Response(
+      JSON.stringify({ error: "This route works in development mode only" }),
+      {
+        status: 403,
+      }
+    );
   }
+}
+
+export async function GET() {
+  return new Response(JSON.stringify({ message: "This is the GET response" }), {
+    status: 200,
+  });
 }
