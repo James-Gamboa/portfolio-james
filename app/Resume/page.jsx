@@ -1,7 +1,7 @@
 // @ts-nocheck
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Header from "@/components/Header/page";
 import ProjectResume from "@/components/ProjectResume/page";
 import Socials from "@/components/Socials/page";
@@ -28,8 +28,12 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor }
-      <div className={`container mx-auto mb-10 ${data.showCursor && "cursor-none"}`}>
+      {data.showCursor}
+      <div
+        className={`container mx-auto mb-10 ${
+          data.showCursor && "cursor-none"
+        }`}
+      >
         <Header isBlog />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
@@ -44,20 +48,24 @@ const Resume = () => {
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Experience</h1>
-                {data.resume.experiences.map(({ id, dates, type, position, bullets }) => (
-                  <ProjectResume
-                    key={id}
-                    dates={dates}
-                    type={type}
-                    position={position}
-                    bullets={bullets}
-                  />
-                ))}
+                {data.resume.experiences.map(
+                  ({ id, dates, type, position, bullets }) => (
+                    <ProjectResume
+                      key={id}
+                      dates={dates}
+                      type={type}
+                      position={position}
+                      bullets={bullets}
+                    />
+                  )
+                )}
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Education</h1>
                 <div className="mt-2">
-                  <h2 className="text-lg">{data.resume.education.universityName}</h2>
+                  <h2 className="text-lg">
+                    {data.resume.education.universityName}
+                  </h2>
                   <h3 className="text-sm opacity-75">
                     {data.resume.education.universityDate}
                   </h3>

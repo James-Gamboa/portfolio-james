@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import Header from "@/components/Header/page";
 import ServiceCard from "@/components/ServiceCard/page";
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor }
+      {data.showCursor}
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">
@@ -70,7 +70,11 @@ export default function Home() {
           </div>
           <Socials className="mt-2 laptop:mt-5" />
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+        <div
+          className="mt-10 laptop:mt-30 p-2 laptop:p-0"
+          ref={workRef}
+          id="work"
+        >
           <h1 className="text-2xl text-bold">Work.</h1>
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -96,7 +100,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+        <div
+          className="mt-10 laptop:mt-40 p-2 laptop:p-0"
+          ref={aboutRef}
+          id="about"
+        >
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}

@@ -1,12 +1,14 @@
-"use client"
+"use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/Button/page";
 import data from "@/utils/data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll }) => {
+  const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const { name, showResume } = data;
 
@@ -22,7 +24,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
             <div className="flex items-center justify-between p-2 laptop:p-0">
               {isMounted && (
                 <h1
-                  onClick={() => useRouter().push("/")} 
+                  onClick={() => router.push("/")}
                   className="font-medium p-2 laptop:p-0 link"
                 >
                   {name}.
@@ -33,7 +35,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 <Popover.Button>
                   <Image
                     className="h-5"
-                    src={`/images/${!open ? "menu-white.svg" : "cancel-white.svg"}`}
+                    src={`/images/${
+                      !open ? "menu-white.svg" : "cancel-white.svg"
+                    }`}
                     alt="Menu or cancel icon"
                     width={20}
                     height={20}
@@ -46,11 +50,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
                 <Button onClick={handleWorkScroll}>Work</Button>
                 <Button onClick={handleAboutScroll}>About</Button>
                 {showResume && (
-                  <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
+                  <Button
+                    onClick={() => window.open("mailto:jjguevarag@gmail.com")}
+                  >
                     Resume
                   </Button>
                 )}
-                <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
+                <Button
+                  onClick={() => window.open("mailto:jjguevarag@gmail.com")}
+                >
                   Contact
                 </Button>
               </div>
@@ -62,17 +70,21 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
       <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 tablet:flex">
         {isMounted && (
           <h1
-            onClick={() => useRouter().push("/")}
+            onClick={() => router.push("/")}
             className="font-medium cursor-pointer mob:p-2 laptop:p-0"
           >
             {name}.
           </h1>
         )}
         <div className="flex">
-          <Button onClick={handleWorkScroll}>Work</Button>
-          <Button onClick={handleAboutScroll}>About</Button>
+          <Link href="/#work">
+            <Button>Work</Button>
+          </Link>
+          <Link href="/#about">
+            <Button>About</Button>
+          </Link>
           {showResume && isMounted && (
-            <Button onClick={() => useRouter().push("/resume")} classes="first:ml-1">
+            <Button onClick={() => router.push("/Resume")} classes="first:ml-1">
               Resume
             </Button>
           )}
