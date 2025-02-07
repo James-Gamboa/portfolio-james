@@ -53,10 +53,10 @@
     },
     {
       "id": "6",
-      "title": "Frontend-Mentor-Loopstudios",
-      "description": "Page created as a practice for knowledge in Next.Js,Javascript",
-      "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
-      "url": "https://frontend-mentor-loopstudios-page.vercel.app/"
+      "title": "Rapibox",
+      "description": "Rapibox is a practice project to hone my JavaScript skills. Built with Next.js and Tailwind CSS, it simulates a modern, responsive virtual locker for online package shopping",
+      "imageSrc": "https://i.postimg.cc/jSnwhSVJ/Captura-de-pantalla-2025-02-07-135044.png",
+      "url": "https://rapibox.vercel.app/"
     },
     {
       "id": "7",
@@ -141,6 +141,13 @@
       "description": "A website from Dalio, a digital agency to showcase the experience using Next.js and Tailwind CSS",
       "imageSrc": "https://i.postimg.cc/XqJknSGc/dalio-page.png",
       "url": "https://daliotailwind.vercel.app"
+    },
+    {
+      "id": "19",
+      "title": "Frontend-Mentor-Loopstudios",
+      "description": "Page created as a practice for knowledge in Next.Js,Javascript",
+      "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
+      "url": "https://frontend-mentor-loopstudios-page.vercel.app/"
     }
   ],
   "services": [
