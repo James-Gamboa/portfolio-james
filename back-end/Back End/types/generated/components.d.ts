@@ -1,75 +1,121 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
+export interface EducationSectionEducation extends Struct.ComponentSchema {
+  collectionName: 'components_education_section_educations';
   info: {
-    displayName: 'Media';
-    icon: 'file-video';
+    displayName: 'Section-Education';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    universityDate: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    universityName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    universityPara: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
   };
 }
 
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+export interface ExperienceResume extends Struct.ComponentSchema {
+  collectionName: 'components_experience_resumes';
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    description: '';
+    displayName: 'experience';
   };
   attributes: {
-    body: Schema.Attribute.Text;
+    bullets: Schema.Attribute.JSON & Schema.Attribute.Required;
+    dates: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    position: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    type: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
+export interface ProjectProjects extends Struct.ComponentSchema {
+  collectionName: 'components_project_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    imageSrc: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
+export interface ResumeResume extends Struct.ComponentSchema {
+  collectionName: 'components_resume_resumes';
+  info: {
+    description: '';
+    displayName: 'resume';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    education: Schema.Attribute.Component<'education.section-education', false>;
+    experiences: Schema.Attribute.Component<'experience.resume', true>;
+    frameworks: Schema.Attribute.JSON & Schema.Attribute.Required;
+    languages: Schema.Attribute.JSON & Schema.Attribute.Required;
+    others: Schema.Attribute.JSON & Schema.Attribute.Required;
+    tagline: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
+export interface ServiceServices extends Struct.ComponentSchema {
+  collectionName: 'components_service_services';
+  info: {
+    displayName: 'services';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
 
-export interface SharedRichText extends Struct.ComponentSchema {
-  collectionName: 'components_shared_rich_texts';
+export interface SocialSocial extends Struct.ComponentSchema {
+  collectionName: 'components_social_socials';
   info: {
     description: '';
-    displayName: 'Rich text';
-    icon: 'align-justify';
+    displayName: 'social';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
-  };
-}
-
-export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
-  info: {
-    description: '';
-    displayName: 'Seo';
-    icon: 'allergies';
-    name: 'Seo';
-  };
-  attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sliders';
-  info: {
-    description: '';
-    displayName: 'Slider';
-    icon: 'address-book';
-  };
-  attributes: {
-    files: Schema.Attribute.Media<'images', true>;
+    Email: Schema.Attribute.Email;
+    link: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'title'>;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.media': SharedMedia;
-      'shared.quote': SharedQuote;
-      'shared.rich-text': SharedRichText;
-      'shared.seo': SharedSeo;
-      'shared.slider': SharedSlider;
+      'education.section-education': EducationSectionEducation;
+      'experience.resume': ExperienceResume;
+      'project.projects': ProjectProjects;
+      'resume.resume': ResumeResume;
+      'service.services': ServiceServices;
+      'social.social': SocialSocial;
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_resume_resumes",
+  "info": {
+    "displayName": "resume",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tagline": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    },
+    "experiences": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experience.resume"
+    },
+    "education": {
+      "type": "component",
+      "repeatable": false,
+      "component": "education.section-education"
+    },
+    "languages": {
+      "type": "json",
+      "required": true
+    },
+    "frameworks": {
+      "type": "json",
+      "required": true
+    },
+    "others": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

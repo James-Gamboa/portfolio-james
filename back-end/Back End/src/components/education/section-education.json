@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_education_section_educations",
+  "info": {
+    "displayName": "Section-Education"
+  },
+  "options": {},
+  "attributes": {
+    "universityName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "universityDate": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "universityPara": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    }
+  }
+}

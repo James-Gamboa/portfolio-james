@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_social_socials",
+  "info": {
+    "displayName": "social",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "title",
+      "unique": true
+    },
+    "Email": {
+      "type": "email"
+    },
+    "link": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

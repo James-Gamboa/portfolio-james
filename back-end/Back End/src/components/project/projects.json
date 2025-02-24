@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_project_projects",
+  "info": {
+    "displayName": "projects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    },
+    "imageSrc": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_experience_resumes",
+  "info": {
+    "displayName": "experience",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "dates": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "position": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "bullets": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

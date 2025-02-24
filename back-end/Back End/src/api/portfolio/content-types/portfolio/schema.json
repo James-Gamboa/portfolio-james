@@ -1,0 +1,82 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "default": "James Portfolio",
+      "unique": true,
+      "required": true
+    },
+    "headerTaglineOne": {
+      "type": "string",
+      "default": "Hello 👋",
+      "required": true,
+      "unique": true
+    },
+    "headerTaglineTwo": {
+      "type": "string",
+      "default": "I'm James Guevara",
+      "required": true,
+      "unique": true
+    },
+    "headerTaglineThree": {
+      "type": "string",
+      "default": "Web Designer and Developer",
+      "required": true,
+      "unique": true
+    },
+    "showCursor": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "darkMode": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "showResume": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "aboutpara": {
+      "type": "text",
+      "default": "I’m a Frontend Developer with experience in frontend development, web design, and WordPress. I’ve helped businesses build modern web experiences with technologies like React, Next.js, and Shopify.",
+      "required": true,
+      "unique": true
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social.social"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project.projects"
+    },
+    "Services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.services",
+      "required": true
+    },
+    "resume": {
+      "type": "component",
+      "repeatable": false,
+      "component": "resume.resume",
+      "required": true
+    }
+  }
+}
