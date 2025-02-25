@@ -17,7 +17,7 @@
     "link": {
       "type": "string",
       "unique": true,
-      "required": true
+      "required": false
     }
   }
 }

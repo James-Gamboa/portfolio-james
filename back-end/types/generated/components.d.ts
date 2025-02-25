@@ -98,9 +98,7 @@ export interface SocialSocial extends Struct.ComponentSchema {
   };
   attributes: {
     Email: Schema.Attribute.Email;
-    link: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    link: Schema.Attribute.String & Schema.Attribute.Unique;
     title: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'title'>;
