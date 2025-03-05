@@ -22,8 +22,3 @@ export async function getData(url: string) {
     console.error("Error al obtener los datos:", error);
   }
 })();
-
-
-let a  = 4;
-let b = 5;
-console.log(  a + b);
