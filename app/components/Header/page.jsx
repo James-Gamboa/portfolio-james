@@ -5,12 +5,10 @@ import { useRouter } from "next/navigation";
 import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/Button/page";
-import data from "@/utils/data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, name, showResume }) => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
-  const { name, showResume } = data;
 
   useEffect(() => {
     setIsMounted(true);

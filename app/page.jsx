@@ -1,19 +1,104 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header/page";
 import ServiceCard from "@/components/ServiceCard/page";
 import Socials from "@/components/Socials/page";
 import WorkCard from "@/components/WorkCard/page";
 import Footer from "@/components/Footer/page";
-import data from "@/utils/data/portfolio.json";
+import { getData } from "@/api/portfolio/strapi";
 
 export default function Home() {
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const result = await getData();
+        
+        if (result && result.attributes) {
+          setPortfolioData(result.attributes);
+        } else {
+          throw new Error('Invalid data structure received from API');
+        }
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const renderServices = () => {
+    if (!portfolioData?.services?.length) {
+      return <div>No services available</div>;
+    }
+    
+    return portfolioData.services.map((service) => (
+      <ServiceCard
+        key={service.id}
+        name={service.attributes.title}
+        description={service.attributes.description}
+      />
+    ));
+  };
+
+  const renderProjects = () => {
+    if (!portfolioData?.projects?.length) {
+      return <div>No projects available</div>;
+    }
+    
+    return portfolioData.projects.map((project) => (
+      <WorkCard
+        key={project.id}
+        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.attributes.imageSrc?.data?.attributes?.url || ''}`}
+        name={project.attributes.title}
+        description={project.attributes.description}
+        onClick={() => window.open(project.attributes.url)}
+      />
+    ));
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">Cargando datos...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl text-red-500">
+          Error: {error}
+        </div>
+      </div>
+    );
+  }
+
+  if (!portfolioData) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">
+          No se pudieron cargar los datos. Por favor, revisa la consola para más detalles.
+        </div>
+      </div>
+    );
+  }
 
   const handleWorkScroll = () => {
     window.scrollTo({
@@ -32,14 +117,16 @@ export default function Home() {
   };
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor}
+    <div className={`relative ${portfolioData.showCursor && "cursor-none"}`}>
+      {portfolioData.showCursor}
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
+          name={portfolioData.name}
+          showResume={portfolioData.showResume}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
@@ -47,28 +134,28 @@ export default function Home() {
               ref={textOne}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
             >
-              {data.headerTaglineOne}
+              {portfolioData.headerTaglineOne}
             </h1>
             <h1
               ref={textTwo}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
-              {data.headerTaglineTwo}
+              {portfolioData.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
-              {data.headerTaglineThree}
+              {portfolioData.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
-              {data.headerTaglineFour}
+              {portfolioData.headerTaglineFour}
             </h1>
           </div>
-          <Socials className="mt-2 laptop:mt-5" />
+          <Socials className="mt-2 laptop:mt-5" socials={portfolioData.socials} />
         </div>
         <div
           className="mt-10 laptop:mt-30 p-2 laptop:p-0"
@@ -77,27 +164,13 @@ export default function Home() {
         >
           <h1 className="text-2xl text-bold">Work.</h1>
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                onClick={() => window.open(project.url)}
-              />
-            ))}
+            {renderProjects()}
           </div>
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
           <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
-            {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
-            ))}
+            {renderServices()}
           </div>
         </div>
         <div
@@ -107,7 +180,7 @@ export default function Home() {
         >
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
+            {portfolioData.aboutpara}
           </p>
         </div>
         <Footer />
