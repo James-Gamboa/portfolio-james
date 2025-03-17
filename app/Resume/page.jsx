@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -6,18 +5,69 @@ import Header from "@/components/Header/page";
 import ProjectResume from "@/components/ProjectResume/page";
 import Socials from "@/components/Socials/page";
 import Button from "@/components/Button/page";
-import data from "@/utils/data/portfolio.json";
+import { getData } from "@/api/portfolio/strapi";
 
 const Resume = () => {
   const router = useRouter();
   const [mount, setMount] = useState(false);
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setMount(true);
-    if (!data.showResume) {
-      router.push("/");
-    }
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const result = await getData();
+        
+        if (result && result.attributes) {
+          setPortfolioData(result.attributes);
+          if (!result.attributes.showResume) {
+            router.push("/");
+          }
+        } else {
+          throw new Error('Invalid data structure received from API');
+        }
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+        setMount(true);
+      }
+    };
+
+    fetchData();
   }, [router]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">Cargando datos...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl text-red-500">
+          Error: {error}
+        </div>
+      </div>
+    );
+  }
+
+  if (!portfolioData) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-xl">
+          No se pudieron cargar los datos. Por favor, revisa la consola para más detalles.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -28,27 +78,27 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor}
+      {portfolioData.showCursor}
       <div
         className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
+          portfolioData.showCursor && "cursor-none"
         }`}
       >
         <Header isBlog />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
             <div className="w-full bg-slate-800 max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm">
-              <h1 className="text-3xl font-bold">{data.name}</h1>
-              <h2 className="text-xl mt-5">{data.resume.tagline}</h2>
+              <h1 className="text-3xl font-bold">{portfolioData.name}</h1>
+              <h2 className="text-xl mt-5">{portfolioData.resume?.tagline || ""}</h2>
               <h2 className="w-4/5 text-xl mt-5 opacity-50">
-                {data.resume.description}
+                {portfolioData.resume?.description || ""}
               </h2>
               <div className="mt-2">
-                <Socials />
+                <Socials socials={portfolioData.socials || []} />
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Experience</h1>
-                {data.resume.experiences.map(
+                {portfolioData.resume?.experiences?.map(
                   ({ id, dates, type, position, bullets }) => (
                     <ProjectResume
                       key={id}
@@ -58,30 +108,30 @@ const Resume = () => {
                       bullets={bullets}
                     />
                   )
-                )}
+                ) || <p className="text-gray-400">No experience data available</p>}
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Education</h1>
                 <div className="mt-2">
                   <h2 className="text-lg">
-                    {data.resume.education.universityName}
+                    {portfolioData.resume?.education?.universityName || ""}
                   </h2>
                   <h3 className="text-sm opacity-75">
-                    {data.resume.education.universityDate}
+                    {portfolioData.resume?.education?.universityDate || ""}
                   </h3>
                   <p className="text-sm mt-2 opacity-50">
-                    {data.resume.education.universityPara}
+                    {portfolioData.resume?.education?.universityPara || ""}
                   </p>
                 </div>
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Skills</h1>
                 <div className="flex mob:flex-col desktop:flex-row justify-between">
-                  {data.resume.languages && (
+                  {portfolioData.resume?.languages?.length > 0 && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Languages</h2>
                       <ul className="list-disc">
-                        {data.resume.languages.map((language, index) => (
+                        {portfolioData.resume.languages.map((language, index) => (
                           <li key={index} className="ml-5 py-2">
                             {language}
                           </li>
@@ -89,11 +139,11 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
-                  {data.resume.frameworks && (
+                  {portfolioData.resume?.frameworks?.length > 0 && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Frameworks</h2>
                       <ul className="list-disc">
-                        {data.resume.frameworks.map((framework, index) => (
+                        {portfolioData.resume.frameworks.map((framework, index) => (
                           <li key={index} className="ml-5 py-2">
                             {framework}
                           </li>
@@ -101,11 +151,11 @@ const Resume = () => {
                       </ul>
                     </div>
                   )}
-                  {data.resume.others && (
+                  {portfolioData.resume?.others?.length > 0 && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Others</h2>
                       <ul className="list-disc">
-                        {data.resume.others.map((other, index) => (
+                        {portfolioData.resume.others.map((other, index) => (
                           <li key={index} className="ml-5 py-2">
                             {other}
                           </li>

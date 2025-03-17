@@ -21,7 +21,7 @@ export async function query(url) {
 
 export async function getData() {
   try {
-    const res = await query("/portfolio?populate[projects][populate]=*");
+    const res = await query("/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate]=*");
     
     if (!res.data) {
       throw new Error('No data received from API');
@@ -33,7 +33,20 @@ export async function getData() {
         ...res.data,
         projects: res.data.projects?.data || [],
         services: res.data.services?.data || [],
-        socials: res.data.socials?.data || []
+        socials: res.data.socials?.data || [],
+        resume: res.data.resume || {
+          tagline: "",
+          description: "",
+          experiences: [],
+          education: {
+            universityName: "",
+            universityDate: "",
+            universityPara: ""
+          },
+          languages: [],
+          frameworks: [],
+          others: []
+        }
       }
     };
 
