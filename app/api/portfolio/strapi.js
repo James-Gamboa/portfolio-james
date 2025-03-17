@@ -1,5 +1,8 @@
 export async function query(url) {
   try {
+    console.log('Fetching from:', `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${url}`);
+    console.log('Using API Key:', process.env.NEXT_PUBLIC_STRAPI_API_KEY);
+    
     const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${url}`, {
       headers: {
         'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
@@ -8,6 +11,8 @@ export async function query(url) {
     });
 
     if (!response.ok) {
+      console.error('Response status:', response.status);
+      console.error('Response headers:', response.headers);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
@@ -57,11 +62,14 @@ export async function getData() {
   }
 }
 
-(async () => {
-  try {
-    const data = await getData();
-    console.log("Datos obtenidos:", data);
-  } catch (error) {
-    console.error("Error al obtener los datos:", error);
-  }
-})();
+// Solo ejecutar en desarrollo
+if (process.env.NODE_ENV === 'development') {
+  (async () => {
+    try {
+      const data = await getData();
+      console.log("Datos obtenidos:", data);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  })();
+}
