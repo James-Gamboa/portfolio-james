@@ -1,8 +1,5 @@
 export async function query(url) {
   try {
-    console.log('Fetching from:', `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${url}`);
-    console.log('Using API Key:', process.env.NEXT_PUBLIC_STRAPI_API_KEY);
-    
     const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${url}`, {
       headers: {
         'Authorization': `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
@@ -26,8 +23,7 @@ export async function query(url) {
 
 export async function getData() {
   try {
-    const res = await query("/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate]=*");
-    
+    const res = await query("/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate]&populate[socials][populate]&populate[Services][populate]=*");    
     if (!res.data) {
       throw new Error('No data received from API');
     }
