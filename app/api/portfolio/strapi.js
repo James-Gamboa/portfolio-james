@@ -62,7 +62,6 @@ export async function getData() {
   }
 }
 
-// Solo ejecutar en desarrollo
 if (process.env.NODE_ENV === 'development') {
   (async () => {
     try {
