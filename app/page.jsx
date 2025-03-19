@@ -64,14 +64,14 @@ export default function Home() {
     return portfolioData.projects.map((project) => (
       <WorkCard
         key={project.id}
-        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.attributes.imageSrc?.data?.attributes?.url || ''}`}
-        name={project.attributes.title}
-        description={project.attributes.description}
-        onClick={() => window.open(project.attributes.url)}
+        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.imageSrc?.url || ''}`}
+        name={project.title}
+        description={project.description}
+        onClick={() => window.open(project.url)}
       />
     ));
   };
-
+    
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">

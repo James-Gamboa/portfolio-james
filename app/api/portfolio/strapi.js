@@ -32,7 +32,7 @@ export async function getData() {
       ...res.data,
       attributes: {
         ...res.data,
-        projects: res.data.projects?.data || [],
+        projects: res.data.projects || [],
         services: res.data.Services || [],
         Socials: res.data.Socials?.data || [],
         resume: res.data.resume || {
