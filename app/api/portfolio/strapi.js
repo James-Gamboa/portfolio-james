@@ -33,8 +33,8 @@ export async function getData() {
       attributes: {
         ...res.data,
         projects: res.data.projects?.data || [],
-        services: res.data.services?.data || [],
-        socials: res.data.socials?.data || [],
+        Services: res.data.Services?.data || [],
+        Socials: res.data.Socials?.data || [],
         resume: res.data.resume || {
           tagline: "",
           description: "",
