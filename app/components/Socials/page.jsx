@@ -1,9 +1,25 @@
 // @ts-nocheck
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/components/Button/page";
+import { getData } from "@/api/portfolio/strapi";
 
-const Socials = ({ className, socials = [] }) => {
+const Socials = ({ className }) => {
+  const [socials, setSocials] = useState([]);
+
+  useEffect(() => {
+    const fetchSocials = async () => {
+      try {
+        const data = await getData();
+        setSocials(data.attributes.socials);
+      } catch (error) {
+        console.error("Error fetching socials:", error);
+      }
+    };
+
+    fetchSocials();
+  }, []);
+
   return (
     <div className={`${className} flex flex-wrap mob:flex-nowrap link`}>
       {socials.map((social, index) => (
