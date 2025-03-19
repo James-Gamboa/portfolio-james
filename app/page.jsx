@@ -50,12 +50,12 @@ export default function Home() {
     return portfolioData.services.map((service) => (
       <ServiceCard
         key={service.id}
-        name={service.attributes.title}
-        description={service.attributes.description}
+        name={service.title}
+        description={service.description}
       />
     ));
   };
-
+  
   const renderProjects = () => {
     if (!portfolioData?.projects?.length) {
       return <div>No projects available</div>;
