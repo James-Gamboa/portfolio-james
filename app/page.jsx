@@ -29,7 +29,7 @@ export default function Home() {
         if (result && result.attributes) {
           setPortfolioData(result.attributes);
         } else {
-          throw new Error('Invalid data structure received from API');
+          throw new Error("Invalid data structure received from API");
         }
       } catch (error) {
         console.error("Error al obtener datos:", error);
@@ -64,7 +64,7 @@ export default function Home() {
     return portfolioData.projects.map((project) => (
       <WorkCard
         key={project.id}
-        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.imageSrc?.url || ''}`}
+        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.imageSrc?.url || ""}`}
         name={project.title}
         description={project.description}
         onClick={() => window.open(project.url)}

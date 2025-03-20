@@ -27,7 +27,7 @@ const Resume = () => {
             router.push("/");
           }
         } else {
-          throw new Error('Invalid data structure received from API');
+          throw new Error("Invalid data structure received from API");
         }
       } catch (error) {
         console.error("Error al obtener datos:", error);
