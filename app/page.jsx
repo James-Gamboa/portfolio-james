@@ -71,34 +71,6 @@ export default function Home() {
       />
     ));
   };
-    
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">Cargando datos...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl text-red-500">
-          Error: {error}
-        </div>
-      </div>
-    );
-  }
-
-  if (!portfolioData) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-xl">
-          No se pudieron cargar los datos. Por favor, revisa la consola para más detalles.
-        </div>
-      </div>
-    );
-  }
 
   const handleWorkScroll = () => {
     window.scrollTo({
@@ -116,9 +88,57 @@ export default function Home() {
     });
   };
 
+  if (loading) {
+    return (
+      <div className="relative">
+        <div className="gradient-circle"></div>
+        <div className="gradient-circle-bottom"></div>
+        <div className="container mx-auto mb-10">
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white mx-auto mb-4"></div>
+              <div className="text-xl text-white animate-pulse">Loading amazing content...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="relative">
+        <div className="gradient-circle"></div>
+        <div className="gradient-circle-bottom"></div>
+        <div className="container mx-auto mb-10">
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="text-xl text-red-500">
+              <p>Oops! Something went wrong.</p>
+              <p className="text-sm mt-2">{error}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!portfolioData) {
+    return (
+      <div className="relative">
+        <div className="gradient-circle"></div>
+        <div className="gradient-circle-bottom"></div>
+        <div className="container mx-auto mb-10">
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="text-xl">No portfolio data available</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className={`relative ${portfolioData.showCursor && "cursor-none"}`}>
-      {portfolioData.showCursor}
+    <div className={`relative ${portfolioData?.showCursor ? "cursor-none" : ""}`}>
+      {portfolioData?.showCursor}
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">
