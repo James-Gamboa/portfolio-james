@@ -23,7 +23,10 @@ export async function query(url) {
 
 export async function getData() {
   try {
-    const res = await query("/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate]&populate[socials][populate]&populate[Services][populate]=*");    
+    const res = await query(
+      "/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate][]=experiences&populate[resume][populate][]=education&populate[socials][populate]=*&populate[Services][populate]=*"
+    );
+    
     if (!res.data) {
       throw new Error('No data received from API');
     }
@@ -57,6 +60,7 @@ export async function getData() {
     throw error;
   }
 }
+
 
 if (process.env.NODE_ENV === 'development') {
   (async () => {
