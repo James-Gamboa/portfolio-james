@@ -125,7 +125,6 @@ export default function Home() {
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
-          name={portfolioData.name}
           showResume={portfolioData.showResume}
         />
         <div className="laptop:mt-20 mt-10">

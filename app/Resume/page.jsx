@@ -97,33 +97,35 @@ const Resume = () => {
                 <Socials socials={portfolioData.socials || []} />
               </div>
               <div className="mt-5">
-                <h1 className="text-2xl font-bold">Experience</h1>
-                {portfolioData.resume?.experiences?.map(
-                  ({ id, dates, type, position, bullets }) => (
-                    <ProjectResume
-                      key={id}
-                      dates={dates}
-                      type={type}
-                      position={position}
-                      bullets={bullets}
-                    />
-                  )
-                ) || <p className="text-gray-400">No experience data available</p>}
-              </div>
-              <div className="mt-5">
-                <h1 className="text-2xl font-bold">Education</h1>
-                <div className="mt-2">
-                  <h2 className="text-lg">
-                    {portfolioData.resume?.education?.universityName || ""}
-                  </h2>
-                  <h3 className="text-sm opacity-75">
-                    {portfolioData.resume?.education?.universityDate || ""}
-                  </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {portfolioData.resume?.education?.universityPara || ""}
-                  </p>
-                </div>
-              </div>
+              <h1 className="text-2xl font-bold">Experience</h1>
+              {portfolioData.resume?.experiences?.length > 0 ? (
+                portfolioData.resume.experiences.map(({ id, dates, type, position, bullets }) => (
+                  <ProjectResume
+                    key={id}
+                    dates={dates}
+                    type={type}
+                    position={position}
+                    bullets={bullets}
+                  />
+                ))
+              ) : (
+                <p className="text-gray-400">No experience data available</p>
+              )}
+            </div>
+          <div className="mt-5">
+            <h1 className="text-2xl font-bold">Education</h1>
+            <div className="mt-2">
+              <h2 className="text-lg">
+                {portfolioData.resume?.education?.universityName || ""}
+              </h2>
+              <h3 className="text-sm opacity-75">
+                {portfolioData.resume?.education?.universityDate || ""}
+              </h3>
+              <p className="text-sm mt-2 opacity-50">
+                {portfolioData.resume?.education?.universityPara || ""}
+              </p>
+            </div>
+          </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">Skills</h1>
                 <div className="flex mob:flex-col desktop:flex-row justify-between">

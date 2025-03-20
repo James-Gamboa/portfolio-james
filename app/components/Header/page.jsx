@@ -5,12 +5,26 @@ import { useRouter } from "next/navigation";
 import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/Button/page";
+import { getData } from "@/api/portfolio/strapi";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, name, showResume }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, showResume }) => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
+  const [portfolioName, setPortfolioName] = useState("");
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getData();
+        if (result && result.attributes) {
+          setPortfolioName(result.attributes.name || "");
+        }
+      } catch (error) {
+        console.error("Error fetching name:", error);
+      }
+    };
+
+    fetchData();
     setIsMounted(true);
   }, []);
 
@@ -25,7 +39,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, name, showResume }) => {
                   onClick={() => router.push("/")}
                   className="font-medium p-2 laptop:p-0 link"
                 >
-                  {name}.
+                  {portfolioName}.
                 </h1>
               )}
 
@@ -71,7 +85,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, name, showResume }) => {
             onClick={() => router.push("/")}
             className="font-medium cursor-pointer mob:p-2 laptop:p-0"
           >
-            {name}.
+            {portfolioName}
           </h1>
         )}
         <div className="flex">
