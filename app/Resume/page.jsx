@@ -27,7 +27,7 @@ const Resume = () => {
             router.push("/");
           }
         } else {
-          throw new Error("Invalid data structure received from API");
+          throw new Error('Invalid data structure received from API');
         }
       } catch (error) {
         console.error("Error al obtener datos:", error);
@@ -91,13 +91,6 @@ const Resume = () => {
 
   return (
     <>
-      {process.env.NODE_ENV === "development" && (
-        <div className="fixed bottom-6 right-6">
-          <Button onClick={() => router.push("/Edit")} type="primary">
-            Edit Resume
-          </Button>
-        </div>
-      )}
       <div
         className={`container mx-auto mb-10 ${
           portfolioData?.showCursor ? "cursor-none" : ""

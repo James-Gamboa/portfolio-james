@@ -5,12 +5,13 @@ import ServiceCard from "@/components/ServiceCard/page";
 import Socials from "@/components/Socials/page";
 import WorkCard from "@/components/WorkCard/page";
 import Footer from "@/components/Footer/page";
-import { getData } from "@/api/portfolio/strapi";
+import { getData, updateDataInBackground } from "@/api/portfolio/strapi";
 
 export default function Home() {
   const [portfolioData, setPortfolioData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   
   const workRef = useRef();
   const aboutRef = useRef();
@@ -29,17 +30,30 @@ export default function Home() {
         if (result && result.attributes) {
           setPortfolioData(result.attributes);
         } else {
-          throw new Error("Invalid data structure received from API");
+          throw new Error('Invalid data structure received from API');
         }
       } catch (error) {
         console.error("Error al obtener datos:", error);
         setError(error.message);
       } finally {
         setLoading(false);
+        setIsFirstLoad(false);
       }
     };
 
     fetchData();
+
+    const intervalId = setInterval(() => {
+      if (!loading) {
+        updateDataInBackground().then(updated => {
+          if (updated) {
+            fetchData();
+          }
+        });
+      }
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const renderServices = () => {
@@ -88,7 +102,7 @@ export default function Home() {
     });
   };
 
-  if (loading) {
+  if (loading && isFirstLoad) {
     return (
       <div className="relative">
         <div className="gradient-circle"></div>
@@ -105,7 +119,7 @@ export default function Home() {
     );
   }
 
-  if (error) {
+  if (error && !portfolioData) {
     return (
       <div className="relative">
         <div className="gradient-circle"></div>
