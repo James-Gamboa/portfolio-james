@@ -6,7 +6,7 @@ export async function query(url) {
     const baseUrl = getBaseUrl();
     const response = await fetch(`${baseUrl}/api${url}`, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
+        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API}`,
         "Content-Type": "application/json"
       },
     });
