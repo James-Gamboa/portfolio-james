@@ -1,11 +1,5 @@
-const getBaseUrl = () => {
-  if (typeof window !== "undefined") {
-    if (window.location.hostname === "localhost") {
-      return "http://localhost:1337";
-    }
-  }
-  return process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
-};
+const getBaseUrl = () => process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
+
 
 export async function query(url) {
   try {
