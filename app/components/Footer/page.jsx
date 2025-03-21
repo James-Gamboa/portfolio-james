@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 "use client"
 import React from "react";
 import Socials from "@/components/Socials/page";
