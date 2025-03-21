@@ -1,6 +1,16 @@
+const getBaseUrl = () => {
+  if (typeof window !== "undefined") {
+    if (window.location.hostname === "localhost") {
+      return "http://localhost:1337";
+    }
+  }
+  return process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
+};
+
 export async function query(url) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${url}`, {
+    const baseUrl = getBaseUrl();
+    const response = await fetch(`${baseUrl}/api${url}`, {
       headers: {
         "Authorization": `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
         "Content-Type": "application/json"
@@ -21,7 +31,7 @@ export async function query(url) {
   }
 }
 
-const CACHE_KEY = 'portfolio_data';
+const CACHE_KEY = "portfolio_data";
 const CACHE_DURATION = 5 * 60 * 1000; 
 export async function getData() {
   try {
