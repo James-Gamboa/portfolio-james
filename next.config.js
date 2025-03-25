@@ -10,16 +10,14 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "**",
-        port: "",
+        hostname: "test-strapi-2025-db88eb53771f.herokuapp.com",
         pathname: "/uploads/**",
-      }
+      },
     ],
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: false,
-  swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

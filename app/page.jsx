@@ -5,14 +5,16 @@ import ServiceCard from "@/components/ServiceCard/page";
 import Socials from "@/components/Socials/page";
 import WorkCard from "@/components/WorkCard/page";
 import Footer from "@/components/Footer/page";
+import CustomCursor from "@/components/CustomCursor/page";
 import { getData, updateDataInBackground } from "@/api/portfolio/strapi";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const [portfolioData, setPortfolioData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
-  
+
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
@@ -21,20 +23,22 @@ export default function Home() {
   const textFour = useRef();
 
   useEffect(() => {
+    setMounted(true);
+
     const fetchData = async () => {
       try {
         setLoading(true);
         setError(null);
         const result = await getData();
-        
+
         if (result && result.attributes) {
           setPortfolioData(result.attributes);
         } else {
-          throw new Error('Invalid data structure received from API');
+          throw new Error("Invalid data structure received from API");
         }
-      } catch (error) {
-        console.error("Error al obtener datos:", error);
-        setError(error.message);
+      } catch (err) {
+        console.error("Error al obtener datos:", err);
+        setError(err.message);
       } finally {
         setLoading(false);
         setIsFirstLoad(false);
@@ -45,7 +49,7 @@ export default function Home() {
 
     const intervalId = setInterval(() => {
       if (!loading) {
-        updateDataInBackground().then(updated => {
+        updateDataInBackground().then((updated) => {
           if (updated) {
             fetchData();
           }
@@ -60,7 +64,7 @@ export default function Home() {
     if (!portfolioData?.services?.length) {
       return <div>No services available</div>;
     }
-    
+
     return portfolioData.services.map((service) => (
       <ServiceCard
         key={service.id}
@@ -69,16 +73,18 @@ export default function Home() {
       />
     ));
   };
-  
+
   const renderProjects = () => {
     if (!portfolioData?.projects?.length) {
       return <div>No projects available</div>;
     }
-    
+
     return portfolioData.projects.map((project) => (
       <WorkCard
         key={project.id}
-        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${project.imageSrc?.url || ""}`}
+        img={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${
+          project.imageSrc?.url || ""
+        }`}
         name={project.title}
         description={project.description}
         onClick={() => window.open(project.url)}
@@ -87,22 +93,26 @@ export default function Home() {
   };
 
   const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    if (workRef.current) {
+      window.scrollTo({
+        top: workRef.current.offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    if (aboutRef.current) {
+      window.scrollTo({
+        top: aboutRef.current.offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
-  if (loading && isFirstLoad) {
+  if (!mounted || (loading && isFirstLoad)) {
     return (
       <div className="relative">
         <div className="gradient-circle"></div>
@@ -111,7 +121,9 @@ export default function Home() {
           <div className="flex items-center justify-center min-h-screen">
             <div className="text-center">
               <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white mx-auto mb-4"></div>
-              <div className="text-xl text-white animate-pulse">Loading amazing content...</div>
+              <div className="text-xl text-white animate-pulse">
+                Loading amazing content...
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +164,7 @@ export default function Home() {
 
   return (
     <div className={`relative ${portfolioData?.showCursor ? "cursor-none" : ""}`}>
-      {portfolioData?.showCursor}
+      {portfolioData?.showCursor && <CustomCursor />}
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">

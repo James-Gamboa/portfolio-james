@@ -1,13 +1,13 @@
-const getBaseUrl = () => process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
-
+const getBaseUrl = () =>
+  process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337";
 
 export async function query(url) {
   try {
     const baseUrl = getBaseUrl();
     const response = await fetch(`${baseUrl}/api${url}`, {
       headers: {
-        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API}`,
-        "Content-Type": "application/json"
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API}`,
+        "Content-Type": "application/json",
       },
     });
 
@@ -27,21 +27,24 @@ export async function query(url) {
 
 const CACHE_KEY = "portfolio_data";
 const CACHE_DURATION = 5 * 60 * 1000; 
+
 export async function getData() {
   try {
-    const cachedData = localStorage.getItem(CACHE_KEY);
-    if (cachedData) {
-      const { data, timestamp } = JSON.parse(cachedData);
-      const now = Date.now();
-      if (now - timestamp < CACHE_DURATION) {
-        return data;
+    if (typeof window !== "undefined") {
+      const cachedData = localStorage.getItem(CACHE_KEY);
+      if (cachedData) {
+        const { data, timestamp } = JSON.parse(cachedData);
+        const now = Date.now();
+        if (now - timestamp < CACHE_DURATION) {
+          return data;
+        }
       }
     }
 
     const res = await query(
       "/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate][]=experiences&populate[resume][populate][]=education&populate[socials][populate]=*&populate[Services][populate]=*"
     );
-    
+
     if (!res.data) {
       throw new Error("No data received from API");
     }
@@ -60,28 +63,34 @@ export async function getData() {
           education: {
             universityName: "",
             universityDate: "",
-            universityPara: ""
+            universityPara: "",
           },
           languages: [],
           frameworks: [],
-          others: []
-        }
-      }
+          others: [],
+        },
+      },
     };
 
-    localStorage.setItem(CACHE_KEY, JSON.stringify({
-      data: transformedData,
-      timestamp: Date.now()
-    }));
+    if (typeof window !== "undefined") {
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          data: transformedData,
+          timestamp: Date.now(),
+        })
+      );
+    }
 
     return transformedData;
   } catch (error) {
-    const cachedData = localStorage.getItem(CACHE_KEY);
-    if (cachedData) {
-      const { data } = JSON.parse(cachedData);
-      return data;
+    if (typeof window !== "undefined") {
+      const cachedData = localStorage.getItem(CACHE_KEY);
+      if (cachedData) {
+        const { data } = JSON.parse(cachedData);
+        return data;
+      }
     }
-    
     console.error("Error in getData:", error);
     throw error;
   }
@@ -92,7 +101,7 @@ export async function updateDataInBackground() {
     const res = await query(
       "/portfolio?populate[projects][populate]=imageSrc&populate[resume][populate][]=experiences&populate[resume][populate][]=education&populate[socials][populate]=*&populate[Services][populate]=*"
     );
-    
+
     if (res.data) {
       const transformedData = {
         ...res.data,
@@ -108,20 +117,24 @@ export async function updateDataInBackground() {
             education: {
               universityName: "",
               universityDate: "",
-              universityPara: ""
+              universityPara: "",
             },
             languages: [],
             frameworks: [],
-            others: []
-          }
-        }
+            others: [],
+          },
+        },
       };
 
-      localStorage.setItem(CACHE_KEY, JSON.stringify({
-        data: transformedData,
-        timestamp: Date.now()
-      }));
-
+      if (typeof window !== "undefined") {
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({
+            data: transformedData,
+            timestamp: Date.now(),
+          })
+        );
+      }
       return true;
     }
     return false;
@@ -131,7 +144,10 @@ export async function updateDataInBackground() {
   }
 }
 
-if (process.env.NODE_ENV === "development") {
+if (
+  process.env.NODE_ENV === "development" &&
+  typeof window !== "undefined"
+) {
   (async () => {
     try {
       const data = await getData();

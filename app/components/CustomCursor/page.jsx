@@ -1,12 +1,15 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 
 const CustomCursor = () => {
+  const [mounted, setMounted] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(true);
   const [clicking, setClicking] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     const moveCursor = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -30,6 +33,8 @@ const CustomCursor = () => {
       document.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
+
+  if (!mounted) return null;
 
   const cursorClasses = `w-8 h-8 rounded-full bg-white fixed pointer-events-none transition-transform duration-200 ease-out z-50 transform-gpu ${
     clicking ? "scale-75" : "scale-100"
