@@ -2,7 +2,6 @@
 
 My name is James Guevara Gamboa, I am a developer who takes advantage of every day to expand my knowledge and face challenges that test my skills.
 
-
 ## Scripts:
 
 Compile the web site locally:
