@@ -3,6 +3,7 @@ import * as React from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -117,6 +118,9 @@ const HamburgerMenu = () => {
               );
             })}
           </nav>
+          {/* <div className="mt-10 flex justify-center">
+            <LanguageSelector />
+          </div> */}
         </div>
       )}
       <style jsx global>{`

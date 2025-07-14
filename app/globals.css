@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "../Styles/markdown.css";
+@import "../styles/markdown.css";
 
 * {
   font-family: "Hind";
@@ -147,4 +147,18 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.focus-visible\:ring-ring:focus-visible,
+.focus-visible\:ring-1:focus-visible {
+  --tw-ring-color: transparent !important;
+  box-shadow: none !important;
+}
+
+button:focus,
+button:focus-visible,
+[tabindex]:focus,
+[tabindex]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
