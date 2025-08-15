@@ -10,6 +10,25 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/en",
+        permanent: false,
+      },
+      {
+        source: "/resume",
+        destination: "/en/resume",
+        permanent: false,
+      },
+      {
+        source: "/edit",
+        destination: "/en/edit",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

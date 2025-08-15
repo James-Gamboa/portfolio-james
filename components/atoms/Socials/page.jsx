@@ -1,16 +1,24 @@
-// @ts-nocheck
-"use client";
-import React from "react";
+import Link from "next/link";
 import Button from "@/components/atoms/Button/page.jsx";
-import yourData from "@/utils/data/portfolio.json";
 
-const Socials = ({ className }) => {
+const Socials = ({ className, lang = "en", data }) => {
+  if (!data || !data.socials) {
+    return <div className={className}>No socials available</div>;
+  }
+
   return (
-    <div className={`${className} flex flex-wrap mob:flex-nowrap link`}>
-      {yourData.socials.map((social, index) => (
-        <Button key={index} onClick={() => window.open(social.link)}>
-          {social.title}
-        </Button>
+    <div
+      className={`${className} flex flex-wrap mob:flex-nowrap link cursor-pointer`}
+    >
+      {data.socials.map((social, index) => (
+        <Link
+          key={index}
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button>{social.title}</Button>
+        </Link>
       ))}
     </div>
   );

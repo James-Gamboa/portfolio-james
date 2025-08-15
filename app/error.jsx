@@ -14,7 +14,7 @@ const SimpleHeader = ({ lang }) => (
   </div>
 );
 
-export default function NotFound() {
+export default function Error({ error, reset }) {
   const [dict, setDict] = useState(null);
   const [lang, setLang] = useState("en");
 
@@ -44,27 +44,27 @@ export default function NotFound() {
         <div className="flex items-center justify-center min-h-[calc(100vh-80px)]">
           <div className="text-center">
             <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-bold text-white mb-6">
-              404
+              Error
             </h1>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-100 mb-6">
-              Page not found
+              Something went wrong
             </h2>
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-10">
-              The page you are looking for does not exist or has been moved.
+              An unexpected error occurred. Please try again.
             </p>
             <div className="flex gap-4 justify-center">
+              <button
+                onClick={reset}
+                className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
+              >
+                Retry
+              </button>
               <Link
                 href="/en"
                 className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
               >
                 Go Home
               </Link>
-              <button
-                onClick={() => window.location.reload()}
-                className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
-              >
-                Retry
-              </button>
             </div>
           </div>
         </div>
@@ -78,27 +78,27 @@ export default function NotFound() {
       <div className="flex items-center justify-center min-h-[calc(100vh-80px)]">
         <div className="text-center">
           <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-bold text-white mb-6">
-            {dict.notFound.title}
+            {dict.error.title}
           </h1>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-100 mb-6">
-            {dict.notFound.subtitle}
+            {dict.error.subtitle}
           </h2>
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-10">
-            {dict.notFound.message}
+            {error.message || dict.error.message}
           </p>
           <div className="flex gap-4 justify-center">
+            <button
+              onClick={reset}
+              className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
+            >
+              {dict.error.retry}
+            </button>
             <Link
               href={`/${lang}`}
               className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
             >
-              {dict.notFound.goHome}
+              {dict.error.goHome}
             </Link>
-            <button
-              onClick={() => window.location.reload()}
-              className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
-            >
-              {dict.notFound.retry}
-            </button>
           </div>
         </div>
       </div>

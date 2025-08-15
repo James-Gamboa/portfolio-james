@@ -3,11 +3,20 @@ import React, { useState } from "react";
 import Button from "@/components/atoms/Button/page.jsx";
 import Header from "@/components/organisms/Header/page.jsx";
 import { v4 as uuidv4 } from "uuid";
-import yourData from "@/utils/data/portfolio.json";
+import { getPortfolioData } from "@/utils/data.js";
 
 const EditTemplate = () => {
-  const [data, setData] = useState(yourData);
+  const [data, setData] = useState(null);
   const [currentTabs, setCurrentTabs] = useState("HEADER");
+  const [currentLang, setCurrentLang] = useState("en");
+
+  React.useEffect(() => {
+    const pathLang = window.location.pathname.split("/")[1];
+    const lang = ["en", "es"].includes(pathLang) ? pathLang : "en";
+    setCurrentLang(lang);
+
+    getPortfolioData(lang).then(setData);
+  }, []);
 
   const saveData = () => {
     if (process.env.NODE_ENV === "development") {
@@ -131,9 +140,8 @@ const EditTemplate = () => {
   };
 
   return (
-    <div className={`container mx-auto ${data.showCursor && "cursor-none"}`}>
+    <div className="container mx-auto">
       <Header isBlog></Header>
-      {data.showCursor}
       <div className="mt-10">
         <div className="bg-transparent">
           <div className="flex items-center justify-between">
@@ -184,9 +192,6 @@ const EditTemplate = () => {
             </Button>
           </div>
         </div>
-        {/* Aquí iría el resto del contenido del Edit page */}
-        {/* Por simplicidad, no incluyo todo el contenido del Edit page */}
-        {/* pero mantendría toda la funcionalidad existente */}
       </div>
     </div>
   );

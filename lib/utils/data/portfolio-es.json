@@ -1,0 +1,232 @@
+{
+  "name": "James Portfolio",
+  "headerTaglineOne": "Hola 👋",
+  "headerTaglineTwo": "Soy James Guevara",
+  "headerTaglineThree": "Diseñador y Desarrollador Web",
+
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    { "id": "1", "title": "Github", "link": "https://github.com/james-gamboa" },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/in/james-gamboa"
+    },
+    { "id": "3", "title": "Email", "link": "mailto:jjguevarag@gmail.com" }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Audiophile Comercio Electrónico",
+      "description": "Un comercio electrónico para amantes del audio usando tecnologías de Tailwind CSS y Next.js",
+      "imageSrc": "https://i.postimg.cc/dtV8CY08/audiophile-ecommerce-page.png",
+      "url": "https://audiophile-ecommerce-website-sigma.vercel.app/"
+    },
+    {
+      "id": "2",
+      "title": "Designo Sitio Multi Página",
+      "description": "Sitio web multi-página de Designo es un sitio responsivo construido con Next.js, JavaScript y CSS Modules, con layouts óptimos y elementos interactivos",
+      "imageSrc": "https://i.postimg.cc/xT34fY4M/designo-multi-page-website.png",
+      "url": "https://designo-multi-page-website-xi.vercel.app/"
+    },
+    {
+      "id": "3",
+      "title": "Travel Haven",
+      "description": "Un clon completamente funcional de Airbnb construido con la última tecnología en el campo del desarrollo web",
+      "imageSrc": "https://i.postimg.cc/kgFqPkxp/travel-haven-page.png",
+      "url": "https://james-gamboa.github.io/Travel-Haven/"
+    },
+    {
+      "id": "4",
+      "title": "Contraluz",
+      "description": "Colaboré con un cliente real para desarrollar y lanzar un comercio electrónico para vender pinturas usando la plataforma Shopify",
+      "imageSrc": "https://i.postimg.cc/kMFCkrqR/contraluz-page.png",
+      "url": "https://www.contraluzcr.com/"
+    },
+    {
+      "id": "5",
+      "title": "Pokedex",
+      "description": "Proyecto creado como práctica para conocimientos en JavaScript",
+      "imageSrc": "https://i.postimg.cc/qMMPSz1W/pokedex-page.png",
+      "url": "https://james-gamboa.github.io/Pokedex/"
+    },
+    {
+      "id": "6",
+      "title": "Rapibox",
+      "description": "Rapibox es un proyecto de práctica para perfeccionar mis habilidades en JavaScript. Construido con Next.js y Tailwind CSS, simula un casillero virtual moderno y responsivo para compras de paquetes en línea",
+      "imageSrc": "https://i.postimg.cc/jSnwhSVJ/Captura-de-pantalla-2025-02-07-135044.png",
+      "url": "https://rapibox.vercel.app/"
+    },
+    {
+      "id": "7",
+      "title": "Página de Noticias",
+      "description": "Página creada como práctica para conocimientos en HTML, CSS, JavaScript y Sass",
+      "imageSrc": "https://i.postimg.cc/HnTqpxdc/news-homepage-page.jpg",
+      "url": "https://flourishing-taffy-990027.netlify.app/"
+    },
+    {
+      "id": "8",
+      "title": "Sitio de Eventos",
+      "description": "Página creada como práctica para conocimientos en JavaScript",
+      "imageSrc": "https://i.postimg.cc/kgDd6B8W/events-site-page.png",
+      "url": "https://monumental-kringle-6493f0.netlify.app/"
+    },
+    {
+      "id": "9",
+      "title": "Página de Aterrizaje Manage",
+      "description": "Página creada como práctica en mis conocimientos de Next.js y Tailwind",
+      "imageSrc": "https://i.postimg.cc/4Npmn26z/manage-page.png",
+      "url": "https://landing-page-with-tailwind-iota.vercel.app/"
+    },
+    {
+      "id": "10",
+      "title": "James Bank",
+      "description": "Una página de aterrizaje diseñada para demostrar competencia en Next.js y Tailwind CSS, con animaciones dinámicas impulsadas por Frame Motion",
+      "imageSrc": "https://i.postimg.cc/dQk7cVDN/james-banks.png",
+      "url": "https://landing-page-bank-kappa.vercel.app/"
+    },
+    {
+      "id": "11",
+      "title": "Página Fylo",
+      "description": "Una página de aterrizaje responsiva diseñada para mostrar experiencia en Next.js y Tailwind CSS",
+      "imageSrc": "https://i.postimg.cc/vTH3Dxjn/fylo-page.png",
+      "url": "https://fylo-landing-page-ten-peach.vercel.app/"
+    },
+    {
+      "id": "12",
+      "title": "Web Studio",
+      "description": "Una página de aterrizaje moderna de estudio web construida para resaltar competencia en Next.js y Tailwind CSS",
+      "imageSrc": "https://i.postimg.cc/cC9T34yb/web-studio.png",
+      "url": "https://tailwind-landing-page-ecru-three.vercel.app/"
+    },
+    {
+      "id": "13",
+      "title": "Página de Aterrizaje Coca Cola",
+      "description": "Proyecto creado como práctica usando Bootstrap, HTML y PHP",
+      "imageSrc": "https://i.postimg.cc/Y0kHhRfS/cocacola-page.png",
+      "url": "https://james-gamboa.github.io/Practical-coca-cola-page/"
+    },
+    {
+      "id": "14",
+      "title": "Juego de Trivia",
+      "description": "Página web del juego de trivia creada usando Vite y React para un proyecto de práctica práctico",
+      "imageSrc": "https://i.postimg.cc/zGjZcTNm/trivia-game.png",
+      "url": "https://triviagameinreact.netlify.app/"
+    },
+    {
+      "id": "15",
+      "title": "Conecta Cuatro",
+      "description": "Proyecto creado como práctica para conocimientos en JavaScript",
+      "imageSrc": "https://i.postimg.cc/4y5TtcBQ/conecta-Cuatro-page.png",
+      "url": "https://james-gamboa.github.io/conecta-cuatro/conecta4.html"
+    },
+    {
+      "id": "16",
+      "title": "Juego Tetris",
+      "description": "Página web creando un tetris básico simple usando JavaScript vanilla",
+      "imageSrc": "https://i.postimg.cc/15CkQsTX/tetris-game-page.png",
+      "url": "https://james-gamboa.github.io/tetris/"
+    },
+    {
+      "id": "17",
+      "title": "Biccas",
+      "description": "Un sitio web de Biccas para mostrar la experiencia usando HTML flexbox y es responsivo para móvil",
+      "imageSrc": "https://i.postimg.cc/hjK037KY/biccas-page.png",
+      "url": "https://james-gamboa.github.io/Biccas/"
+    },
+    {
+      "id": "18",
+      "title": "Dalio | Agencia Digital",
+      "description": "Un sitio web de Dalio, una agencia digital para mostrar la experiencia usando Next.js y Tailwind CSS",
+      "imageSrc": "https://i.postimg.cc/XqJknSGc/dalio-page.png",
+      "url": "https://daliotailwind.vercel.app"
+    },
+    {
+      "id": "19",
+      "title": "Frontend-Mentor-Loopstudios",
+      "description": "Página creada como práctica para conocimientos en Next.js y JavaScript",
+      "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
+      "url": "https://frontend-mentor-loopstudios-page.vercel.app/"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Diseño Web",
+      "description": "Construyo y optimizo tu presencia en línea. Un sitio web es el punto de entrada digital a tu negocio y un poderoso canal de ingresos."
+    },
+    {
+      "id": "2",
+      "title": "Desarrollo Frontend",
+      "description": "Desarrollo de sitios web responsivos usando frameworks modernos como React y Next.js."
+    },
+    {
+      "id": "3",
+      "title": "Diseño UI/UX",
+      "description": "Creando interfaces fáciles de usar que proporcionan una experiencia de usuario agradable."
+    },
+    {
+      "id": "4",
+      "title": "Desarrollo CMS",
+      "description": "Experiencia en construir y personalizar sitios web usando plataformas CMS como Shopify, Drupal y WordPress con temas y plugins personalizados."
+    }
+  ],
+  "aboutpara": "Soy un Desarrollador Frontend con experiencia en desarrollo frontend, diseño web y WordPress. He ayudado a empresas a construir experiencias web modernas con tecnologías como React, Next.js y Shopify.",
+  "resume": {
+    "tagline": "👋 Soy un Desarrollador Frontend.",
+    "description": "Soy James Guevara Gamboa, un desarrollador web especializado en desarrollo frontend y diseño web. Tengo un título de Técnico en Diseño y Desarrollo Web del CETAV y he trabajado en proyectos como Audiophile (comercio electrónico) y Travel Haven (clon de Airbnb). Mi experiencia incluye JavaScript, React, Next.js, optimización SEO y personalización de WordPress. Me apasiona crear soluciones digitales efectivas y atractivas.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "Marzo 2023 - Diciembre 2023",
+        "type": "Tiempo Completo",
+        "position": "Desarrollador Frontend en ContraLuz",
+        "bullets": [
+          "Desarrollo de Sitios Web",
+          "Implementación de Shopify",
+          "Desarrollo de Panel de Administración"
+        ]
+      },
+      {
+        "id": "2",
+        "dates": "Enero 2024 - Julio 2024",
+        "type": "Tiempo Completo",
+        "position": "Desarrollador Frontend en TechPro Solutions",
+        "bullets": [
+          "Desarrollo de Sitios Web",
+          "Diseño UI/UX",
+          "Colaboración con Clientes"
+        ]
+      }
+    ],
+    "education": {
+      "universityName": "Centro de Tecnología y Artes Visuales (CETAV), Costa Rica",
+      "universityDate": "02/2022 - 01/2024",
+      "universityPara": "Técnico en Diseño y Desarrollo Web."
+    },
+    "languages": ["JavaScript", "HTML5", "CSS", "TypeScript"],
+    "frameworks": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Astro",
+      "Express",
+      "GraphQL",
+      "Apollo"
+    ],
+    "others": [
+      "Figma",
+      "WordPress",
+      "Shopify",
+      "Drupal",
+      "MongoDb",
+      "SQL",
+      "Git",
+      "Diseño Responsivo",
+      "UI/UX",
+      "APIs REST",
+      "Sass"
+    ]
+  }
+}

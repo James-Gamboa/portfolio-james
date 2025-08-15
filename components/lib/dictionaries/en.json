@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "sections": {
+    "work": "work",
+    "about": "about"
+  },
+  "sectionIds": {
+    "work": "work",
+    "about": "about"
+  },
+  "hero": {
+    "title": "Hi, I'm James Guevara",
+    "subtitle": "Full Stack Developer",
+    "description": "Passionate about creating innovative digital solutions and bringing ideas to life through code.",
+    "cta": "Get in Touch",
+    "scroll": "Scroll Down"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a passionate developer with experience in modern web technologies. I love creating user-friendly applications that solve real problems.",
+    "skills": "Skills",
+    "experience": "Experience"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "services": {
+    "title": "Services",
+    "webDevelopment": "Web Development",
+    "mobileDevelopment": "Mobile Development",
+    "uiUxDesign": "UI/UX Design",
+    "consulting": "Consulting"
+  },
+  "resume": {
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "languages": "Languages",
+    "frameworks": "Frameworks",
+    "others": "Others"
+  },
+  "footer": {
+    "contact": "Let's talk about projects"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found"
+  },
+  "error": {
+    "title": "Error",
+    "subtitle": "Something went wrong",
+    "message": "An unexpected error occurred. Please try again.",
+    "retry": "Retry",
+    "goHome": "Go Home"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "message": "The page you are looking for does not exist or has been moved.",
+    "goHome": "Go Home",
+    "retry": "Retry"
+  }
+}

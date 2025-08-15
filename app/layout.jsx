@@ -1,7 +1,4 @@
-"use client";
-
 import "./globals.css";
-import BaseTemplate from "@/components/templates/BaseTemplate/page.jsx";
 
 export default function RootLayout({ children }) {
   return (
@@ -14,9 +11,7 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body>
-        <BaseTemplate>{children}</BaseTemplate>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

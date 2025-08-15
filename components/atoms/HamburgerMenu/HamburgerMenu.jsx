@@ -5,17 +5,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "mailto:jjguevarag@gmail.com", label: "Contact", isMail: true },
-];
-
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [dict, setDict] = React.useState(null);
   const pathname = usePathname();
   const [hash, setHash] = React.useState("");
+
+  const currentLang = pathname.split("/")[1] || "en";
+
+  React.useEffect(() => {
+    import(`@/components/lib/dictionaries/${currentLang}.json`)
+      .then((module) => setDict(module.default))
+      .catch(() => {
+        import("@/components/lib/dictionaries/en.json").then((module) =>
+          setDict(module.default),
+        );
+      });
+  }, [currentLang]);
+
+  const navLinks = [
+    { href: `/${currentLang}`, label: dict?.nav?.home || "Home" },
+    { href: `/${currentLang}#about`, label: dict?.nav?.about || "About" },
+    {
+      href: `/${currentLang}#projects`,
+      label: dict?.nav?.projects || "Projects",
+    },
+    {
+      href: "mailto:jjguevarag@gmail.com",
+      label: dict?.nav?.contact || "Contact",
+      isMail: true,
+    },
+  ];
 
   React.useEffect(() => {
     const handleHashChange = () => setHash(window.location.hash);
@@ -50,10 +70,25 @@ const HamburgerMenu = () => {
   }, [isOpen]);
 
   const isActive = (href) => {
-    if (href === "/") return pathname === "/" && !hash;
-    if (href.startsWith("#")) return hash === href;
+    if (href === `/${currentLang}`)
+      return pathname === `/${currentLang}` && !hash;
+    if (href.includes("#"))
+      return hash === href.split("#")[1] ? `#${href.split("#")[1]}` : "";
     return pathname === href;
   };
+
+  if (!dict) {
+    return (
+      <button
+        aria-label="Open navigation menu"
+        tabIndex={0}
+        className="md:hidden focus:outline-none rounded-full p-2 bg-black/80 text-white"
+        disabled
+      >
+        <Menu className="w-7 h-7" aria-hidden="true" />
+      </button>
+    );
+  }
 
   return (
     <>
@@ -118,9 +153,9 @@ const HamburgerMenu = () => {
               );
             })}
           </nav>
-          {/* <div className="mt-10 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <LanguageSelector />
-          </div> */}
+          </div>
         </div>
       )}
       <style jsx global>{`

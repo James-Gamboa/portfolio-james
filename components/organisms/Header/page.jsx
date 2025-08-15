@@ -1,34 +1,59 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/atoms/Button/page.jsx";
-import data from "@/utils/data/portfolio.json";
 import HamburgerMenu from "@/components/atoms/HamburgerMenu/HamburgerMenu";
 import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
 
-const Header = ({ handleWorkScroll, handleAboutScroll }) => {
+const Header = ({
+  handleWorkScroll,
+  handleAboutScroll,
+  isBlog = false,
+  dict,
+  data,
+}) => {
   const router = useRouter();
+  const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
-  const { name, showResume } = data;
+
+  const currentLang = pathname.split("/")[1] || "en";
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (isMounted && pathname) {
+      const segments = pathname.split("/");
+      const currentLangFromPath = segments[1];
+      const pageRoute = segments[2];
+
+      if (currentLangFromPath === "en" && pageRoute === "curriculum-vitae") {
+        router.replace("/en/resume");
+      } else if (currentLangFromPath === "es" && pageRoute === "resume") {
+        router.replace("/es/curriculum-vitae");
+      }
+    }
+  }, [pathname, isMounted, router]);
+
+  if (!dict || !data) {
+    return null;
+  }
+
+  const { name, showResume } = data;
+
   return (
     <>
-      {/* Mobile Header */}
       <div className="flex items-center justify-between p-2 laptop:p-0 tablet:hidden mt-5 gap-2">
         {isMounted && (
-          <h1
-            onClick={() => router.push("/")}
-            className="font-medium p-2 laptop:p-0 link"
-          >
-            {name}.
-          </h1>
+          <Link href={`/${currentLang}`}>
+            <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
+              {name}.
+            </h1>
+          </Link>
         )}
         <div className="flex items-center gap-2">
           <LanguageSelector />
@@ -36,35 +61,34 @@ const Header = ({ handleWorkScroll, handleAboutScroll }) => {
         </div>
       </div>
 
-      {/* Desktop Header */}
       <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 tablet:flex">
         {isMounted && (
-          <h1
-            onClick={() => router.push("/")}
-            className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-          >
-            {name}.
-          </h1>
+          <Link href={`/${currentLang}`}>
+            <h1 className="font-medium cursor-pointer mob:p-2 laptop:p-0">
+              {name}.
+            </h1>
+          </Link>
         )}
         <div className="flex items-center gap-4">
           <div className="flex">
-            <Link href="/#work">
-              <Button>Work</Button>
+            <Link href={`/${currentLang}#${dict?.sections?.work || "work"}`}>
+              <Button>{dict?.nav?.projects || "Projects"}</Button>
             </Link>
-            <Link href="/#about">
-              <Button>About</Button>
+            <Link href={`/${currentLang}#${dict?.sections?.about || "about"}`}>
+              <Button>{dict?.nav?.about || "About"}</Button>
             </Link>
             {showResume && isMounted && (
-              <Button
-                onClick={() => router.push("/Resume")}
-                classes="first:ml-1"
+              <Link
+                href={`/${currentLang}/${currentLang === "es" ? "curriculum-vitae" : "resume"}`}
               >
-                Resume
-              </Button>
+                <Button classes="first:ml-1">
+                  {dict?.nav?.resume || "Resume"}
+                </Button>
+              </Link>
             )}
-            <Button onClick={() => window.open("mailto:jjguevarag@gmail.com")}>
-              Contact
-            </Button>
+            <Link href="mailto:jjguevarag@gmail.com">
+              <Button>{dict?.nav?.contact || "Contact"}</Button>
+            </Link>
           </div>
           <LanguageSelector />
         </div>

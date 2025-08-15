@@ -5,9 +5,8 @@ import ServiceCard from "@/components/molecules/ServiceCard/page.jsx";
 import Socials from "@/components/atoms/Socials/page.jsx";
 import WorkCard from "@/components/molecules/WorkCard/page.jsx";
 import Footer from "@/components/organisms/Footer/page.jsx";
-import data from "@/utils/data/portfolio.json";
 
-const HomeTemplate = () => {
+const HomeTemplate = ({ lang, dict, data }) => {
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
@@ -15,31 +14,28 @@ const HomeTemplate = () => {
   const textThree = useRef();
   const textFour = useRef();
 
-  const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor}
+    <div className="relative">
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
       <div className="container mx-auto mb-10">
         <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
+          handleWorkScroll={() => {
+            window.scrollTo({
+              top: workRef.current.offsetTop,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+          handleAboutScroll={() => {
+            window.scrollTo({
+              top: aboutRef.current.offsetTop,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+          dict={dict}
+          data={data}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
@@ -68,14 +64,11 @@ const HomeTemplate = () => {
               {data.headerTaglineFour}
             </h1>
           </div>
-          <Socials className="mt-2 laptop:mt-5" />
+          <Socials className="mt-2 laptop:mt-5" lang={lang} data={data} />
         </div>
-        <div
-          className="mt-10 laptop:mt-30 p-2 laptop:p-0"
-          ref={workRef}
-          id="work"
-        >
-          <h1 className="text-2xl text-bold">Work.</h1>
+        <div id={dict?.sections?.work || "work"} />
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+          <h1 className="text-2xl text-bold">{dict.projects.title}.</h1>
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -83,13 +76,15 @@ const HomeTemplate = () => {
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
-                onClick={() => window.open(project.url)}
+                url={project.url}
               />
             ))}
           </div>
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">
+            {dict.services.title}.
+          </h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -100,17 +95,14 @@ const HomeTemplate = () => {
             ))}
           </div>
         </div>
-        <div
-          className="mt-10 laptop:mt-40 p-2 laptop:p-0"
-          ref={aboutRef}
-          id="about"
-        >
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+        <div id={dict?.sections?.about || "about"} />
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+          <h1 className="text-2xl text-bold">{dict.about.title}.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}
           </p>
         </div>
-        <Footer />
+        <Footer lang={lang} dict={dict} data={data} />
       </div>
     </div>
   );

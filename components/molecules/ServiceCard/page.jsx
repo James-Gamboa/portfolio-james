@@ -13,7 +13,7 @@ const ServiceCard = ({ name, description }) => {
     <div
       className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 ${
         mounted && "hover:bg-slate-800"
-      } hover:scale-105 link`}
+      } hover:scale-105 link cursor-pointer`}
     >
       <h1 className="text-3xl">{name ? name : "Heading"}</h1>
       <p className="mt-5 opacity-40 text-xl">

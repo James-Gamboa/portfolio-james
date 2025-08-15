@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { Button } from "../../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../../ui/dropdown-menu";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const SpainFlag = () => (
   <svg width="20" height="15" viewBox="0 0 20 15" className="rounded-sm">
     <rect width="20" height="15" fill="#AA151B" />
     <rect width="20" height="9" y="3" fill="#F1BF00" />
-    <rect width="20" height="3" fill="#AA151B" />
+    <rect width="20" height="3" y="12" fill="#AA151B" />
     <rect width="20" height="3" y="12" fill="#AA151B" />
   </svg>
 );
@@ -32,58 +33,116 @@ const USFlag = () => (
   </svg>
 );
 
-const languages = [
-  {
-    code: "es",
-    name: "ES",
-    flag: <SpainFlag />,
-  },
-  {
-    code: "en",
-    name: "EN",
-    flag: <USFlag />,
-  },
-];
+const LanguageSelector = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [dict, setDict] = useState(null);
 
-export default function LanguageSelector() {
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
-  const [open, setOpen] = useState(false);
+  const currentLangCode = pathname.split("/")[1] || "en";
 
-  const handleLanguageChange = (language) => {
-    setSelectedLanguage(language);
-    console.log(`Idioma cambiado a: ${language.name} (${language.code})`);
+  useEffect(() => {
+    const loadDictionary = async () => {
+      try {
+        const dictModule = await import(
+          `../../lib/dictionaries/${currentLangCode}.json`
+        );
+        setDict(dictModule.default);
+      } catch (err) {
+        const fallbackModule = await import("../../lib/dictionaries/en.json");
+        setDict(fallbackModule.default);
+      }
+    };
+
+    loadDictionary();
+  }, [currentLangCode]);
+
+  const languages = [
+    {
+      code: "en",
+      name: "EN",
+      flag: <USFlag />,
+    },
+    {
+      code: "es",
+      name: "ES",
+      flag: <SpainFlag />,
+    },
+  ];
+
+  const currentLanguage = languages.find(
+    (lang) => lang.code === currentLangCode,
+  );
+
+  const handleLanguageChange = (langCode) => {
+    if (!dict) return;
+
+    const segments = pathname.split("/");
+    let newPath;
+
+    const currentHash = window.location.hash;
+
+    if (segments[2] === "curriculum-vitae" && langCode === "en") {
+      newPath = `/en/resume`;
+    } else if (segments[2] === "resume" && langCode === "es") {
+      newPath = `/es/curriculum-vitae`;
+    } else {
+      if (segments[1] === "en" || segments[1] === "es") {
+        segments[1] = langCode;
+      } else {
+        segments.splice(1, 0, langCode);
+      }
+      newPath = segments.join("/");
+    }
+
+    if (currentHash) {
+      const sectionId = currentHash.substring(1);
+      const targetDict =
+        langCode === "en"
+          ? { trabajo: "work", "sobre-mi": "about" }
+          : { work: "trabajo", about: "sobre-mi" };
+
+      const mappedSectionId = targetDict[sectionId] || sectionId;
+      newPath += `#${mappedSectionId}`;
+    }
+
+    router.push(newPath);
+    setIsOpen(false);
   };
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className={`w-20 justify-between border-none focus:outline-none focus:ring-0 focus:border-none shadow-none transition-colors duration-200 ${open ? "bg-slate-700 text-white" : "bg-[color:var(--color-background-surface)] text-[color:var(--color-text-primary)] hover:bg-slate-600 hover:text-white dark:hover:bg-slate-600"}`}
+          className={`w-20 justify-between border-none focus:outline-none focus:ring-0 focus:border-none shadow-none transition-colors duration-200 ${isOpen ? "bg-slate-700 text-white" : "bg-[color:var(--color-background-surface)] text-[color:var(--color-text-primary)] hover:bg-slate-600 hover:text-white dark:hover:bg-slate-600"}`}
         >
           <div className="flex items-center gap-2">
-            {selectedLanguage.flag}
-            <span className="font-medium">{selectedLanguage.name}</span>
+            {currentLanguage.flag}
+            <span className="font-medium">{currentLanguage.name}</span>
           </div>
-          {open ? (
+          {isOpen ? (
             <ChevronUp className="h-4 w-4 opacity-50" />
           ) : (
             <ChevronDown className="h-4 w-4 opacity-50" />
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none">
-        {languages.map((language) => (
+
+      <DropdownMenuContent className="w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none hover:bg-slate-700 hover:text-white">
+        {languages.map((lang) => (
           <DropdownMenuItem
-            key={language.code}
-            onClick={() => handleLanguageChange(language)}
+            key={lang.code}
+            onClick={() => handleLanguageChange(lang.code)}
             className="flex items-center gap-2 cursor-pointer border-none focus:outline-none focus:ring-0 focus:border-none shadow-none hover:bg-slate-700 hover:text-white"
           >
-            {language.flag}
-            <span className="font-medium">{language.name}</span>
+            {lang.flag}
+            <span className="font-medium">{lang.name}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export default LanguageSelector;
