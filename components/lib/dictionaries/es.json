@@ -69,5 +69,22 @@
     "message": "La página que buscas no existe o ha sido movida.",
     "goHome": "Volver al inicio",
     "retry": "Reintentar"
+  },
+  "metadata": {
+    "home": {
+      "title": "Portafolio de James",
+      "description": "¡Bienvenido a mi portafolio! Explora los proyectos y trabajos que he realizado como desarrollador web. Descubre mi experiencia, habilidades y pasión por la programación."
+    },
+    "resume": {
+      "title": "Currículum - Portafolio de James",
+      "description": "Ver mi currículum profesional y experiencia como desarrollador web."
+    },
+    "edit": {
+      "title": "Editar Portafolio - Portafolio de James",
+      "description": "Editar y gestionar el contenido y proyectos de mi portafolio."
+    }
+  },
+  "portfolio": {
+    "title": "James Portafolio"
   }
 }

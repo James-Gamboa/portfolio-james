@@ -69,5 +69,22 @@
     "message": "The page you are looking for does not exist or has been moved.",
     "goHome": "Go Home",
     "retry": "Retry"
+  },
+  "metadata": {
+    "home": {
+      "title": "James Portfolio",
+      "description": "Welcome to my portfolio! Explore the projects and work I've done as a web developer. Discover my experience, skills, and passion for programming."
+    },
+    "resume": {
+      "title": "Resume - James Portfolio",
+      "description": "View my professional resume and experience as a web developer."
+    },
+    "edit": {
+      "title": "Edit Portfolio - James Portfolio",
+      "description": "Edit and manage my portfolio content and projects."
+    }
+  },
+  "portfolio": {
+    "title": "James Portfolio"
   }
 }
