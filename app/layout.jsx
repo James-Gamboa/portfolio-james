@@ -1,8 +1,4 @@
-"use client";
-
-import "@/styles/globals.css";
-import { ThemeProvider } from "next-themes";
-import CustomCursor from "@/components/CustomCursor/page";
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -15,12 +11,7 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body>
-        <ThemeProvider enableSystem={true} attribute="class">
-          <CustomCursor />
-          {children}
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

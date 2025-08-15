@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "resume": "Currículum Vitae",
+    "contact": "Contacto"
+  },
+  "sections": {
+    "work": "trabajo",
+    "about": "sobre-mi"
+  },
+  "sectionIds": {
+    "work": "work",
+    "about": "about"
+  },
+  "hero": {
+    "title": "Hola, soy James Guevara",
+    "subtitle": "Desarrollador Full Stack",
+    "description": "Apasionado por crear soluciones digitales innovadoras y dar vida a las ideas a través del código.",
+    "cta": "Contáctame",
+    "scroll": "Desliza Abajo"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Soy un desarrollador apasionado con experiencia en tecnologías web modernas. Me encanta crear aplicaciones fáciles de usar que resuelvan problemas reales.",
+    "skills": "Habilidades",
+    "experience": "Experiencia"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código"
+  },
+  "services": {
+    "title": "Servicios",
+    "webDevelopment": "Desarrollo Web",
+    "mobileDevelopment": "Desarrollo Móvil",
+    "uiUxDesign": "Diseño UI/UX",
+    "consulting": "Consultoría"
+  },
+  "resume": {
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "languages": "Lenguajes",
+    "frameworks": "Frameworks",
+    "others": "Otros"
+  },
+  "footer": {
+    "contact": "Conversemos sobre proyectos"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "notFound": "Página no encontrada"
+  },
+  "error": {
+    "title": "Error",
+    "subtitle": "Algo salió mal",
+    "message": "Ha ocurrido un error inesperado. Por favor, intenta de nuevo.",
+    "retry": "Reintentar",
+    "goHome": "Volver al inicio"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "message": "La página que buscas no existe o ha sido movida.",
+    "goHome": "Volver al inicio",
+    "retry": "Reintentar"
+  }
+}
