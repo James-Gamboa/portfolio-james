@@ -2,7 +2,6 @@
 import Link from "next/link";
 import "./globals.css";
 import { useEffect, useState } from "react";
-import { getDictionaryClient } from "@/components/lib/dictionaries";
 
 const SimpleHeader = ({ lang }) => (
   <div className="flex items-center justify-between p-2 laptop:p-0 mt-5">
@@ -25,52 +24,21 @@ export default function Error({ error, reset }) {
         const currentLang = ["en", "es"].includes(pathLang) ? pathLang : "en";
         setLang(currentLang);
 
-        const dictionary = await getDictionaryClient(currentLang);
-        setDict(dictionary);
+        const dictionary = await import(
+          `@/components/lib/dictionaries/${currentLang}.json`
+        );
+        setDict(dictionary.default);
       } catch (err) {
-        const dictionary = await getDictionaryClient("en");
-        setDict(dictionary);
+        const dictionary = await import(
+          "@/components/lib/dictionaries/en.json"
+        );
+        setDict(dictionary.default);
         setLang("en");
       }
     };
 
     loadDictionary();
   }, []);
-
-  if (!dict) {
-    return (
-      <div className="min-h-screen bg-gray-900">
-        <SimpleHeader lang="en" />
-        <div className="flex items-center justify-center min-h-[calc(100vh-80px)]">
-          <div className="text-center">
-            <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-bold text-white mb-6">
-              Error
-            </h1>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-100 mb-6">
-              Something went wrong
-            </h2>
-            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-10">
-              An unexpected error occurred. Please try again.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <button
-                onClick={reset}
-                className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
-              >
-                Retry
-              </button>
-              <Link
-                href="/en"
-                className="inline-block bg-gray-600 text-white px-8 py-4 text-lg md:text-xl rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
-              >
-                Go Home
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-900">

@@ -51,7 +51,7 @@ const Header = ({
         {isMounted && (
           <Link href={`/${currentLang}`}>
             <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
-              {name}.
+              {dict.portfolio.title}
             </h1>
           </Link>
         )}
@@ -65,7 +65,7 @@ const Header = ({
         {isMounted && (
           <Link href={`/${currentLang}`}>
             <h1 className="font-medium cursor-pointer mob:p-2 laptop:p-0">
-              {name}.
+              {dict.portfolio.title}
             </h1>
           </Link>
         )}
