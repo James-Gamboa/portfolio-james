@@ -9,6 +9,9 @@ export default async function LangLayout({ children, params }) {
 
   return (
     <html lang={lang}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <BaseTemplate>{children}</BaseTemplate>
       </body>
