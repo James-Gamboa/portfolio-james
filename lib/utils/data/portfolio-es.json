@@ -18,167 +18,195 @@
   "projects": [
     {
       "id": "1",
+      "title": "Escazu Village",
+      "description": "Desarrollé el sitio web para Escazu Village, desarrollo residencial y comercial de lujo ubicado en el corazón de Escazú. Proyecto que combina estilo de vida moderno con espacios verdes y amenidades premium. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/hjjLvtpr/escazu_village_page.jpg",
+      "url": "https://www.escazuvillage.com/es"
+    },
+    {
+      "id": "2",
+      "title": "C3 Cariari Corporate Center",
+      "description": "Desarrollé el sitio web para C3 Cariari Corporate Center, centro corporativo moderno diseñado para empresas que buscan espacios de trabajo de clase mundial. Incluye oficinas, áreas comunes y servicios empresariales de primer nivel. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/0QQYjycG/c3_page.jpg",
+      "url": "https://www.c3.cr/es"
+    },
+    {
+      "id": "3",
+      "title": "Plaza Tempo",
+      "description": "Desarrollé el sitio web para Plaza Tempo, desarrollo comercial y residencial que redefine el concepto de vida urbana. Integra comercio, entretenimiento y espacios residenciales en un ambiente dinámico y contemporáneo. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/k44QGgfF/plaza_tempo_page.jpg",
+      "url": "http://tempo-2025-2c8da873e965.herokuapp.com/es"
+    },
+    {
+      "id": "4",
+      "title": "Aleste",
+      "description": "Desarrollé el sitio web para Aleste, proyecto inmobiliario innovador que ofrece una nueva perspectiva de vida residencial. Combina diseño arquitectónico moderno con sostenibilidad y espacios que mejoran la calidad de vida. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/PxxWJ52Q/aleste_page.jpg",
+      "url": "https://www.aleste.cr/es"
+    },
+    {
+      "id": "5",
       "title": "Novus Erp",
-      "description": "Desarrollé el sitio web para Novus ERP con 30+ años de experiencia. Solución empresarial integral que se adapta a cada empresa. Desarrollado con Next.js, TypeScript, Strapi CMS y Tailwind CSS.",
+      "description": "Desarrollé el sitio web para Novus ERP con 30+ años de experiencia. Solución empresarial integral que se adapta a cada empresa. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "https://i.postimg.cc/2SVCKzPw/novus-erp-page.png",
       "url": "https://novus-2025-011de5fce714.herokuapp.com/es"
     },
     {
-      "id": "2",
+      "id": "6",
       "title": "Portafolio Inmobiliario",
-      "description": "Desarrollé el sitio web para Portafolio Inmobiliario, líder en desarrollo inmobiliario en Costa Rica. Proyectos sostenibles e innovadores que transforman ciudades. Construido con Next.js, TypeScript, Strapi CMS y Tailwind CSS.",
+      "description": "Desarrollé el sitio web para Portafolio Inmobiliario, líder en desarrollo inmobiliario en Costa Rica. Proyectos sostenibles e innovadores que transforman ciudades. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "https://i.postimg.cc/0yF9gTvq/portafolio-page.png",
       "url": "https://www.portafolio.cr/es"
     },
     {
-      "id": "3",
+      "id": "7",
       "title": "Avenida Escazu",
-      "description": "Desarrollé el sitio web para Avenida Escazu, desarrollo de uso mixto premium en el distrito más exclusivo de Costa Rica. Incluye gastronomía, entretenimiento, comercio, oficinas y espacios residenciales. Desarrollado con Next.js, TypeScript, Strapi CMS y Tailwind CSS.",
+      "description": "Desarrollé el sitio web para Avenida Escazu, desarrollo de uso mixto premium en el distrito más exclusivo de Costa Rica. Incluye gastronomía, entretenimiento, comercio, oficinas y espacios residenciales. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "https://i.postimg.cc/QM7hjfNK/avenida-escazu-page.png",
       "url": "https://www.avenidaescazu.com/es"
     },
     {
-      "id": "4",
+      "id": "8",
       "title": "Savia",
-      "description": "Desarrollé el sitio web para Savia, proyecto de desarrollo urbano sostenible que crea una 'Ciudad de Vida' integrando elementos urbanos y naturales. Implementado con Next.js, TypeScript, Strapi CMS y Tailwind CSS.",
+      "description": "Desarrollé el sitio web para Savia, proyecto de desarrollo urbano sostenible que crea una 'Ciudad de Vida' integrando elementos urbanos y naturales. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "https://i.postimg.cc/FRGjnHQp/savia-p-ge.png",
       "url": "https://www.savia.cr/es"
     },
     {
-      "id": "5",
+      "id": "9",
       "title": "Contraluz",
       "description": "Desarrollé un ecommerce para el comercio Contraluz usando Shopify con pasarelas de pago, plugins de seguimiento al carrito, gestión de inventario y optimización de conversión",
       "imageSrc": "https://i.postimg.cc/kMFCkrqR/contraluz-page.png",
       "url": "https://www.contraluzcr.com/"
     },
     {
-      "id": "6",
+      "id": "10",
       "title": "Steam Women",
       "description": "Desarrollé la plataforma Steam Women para apoyar e impulsar mujeres en Costa Rica. Construido con Next.js, TypeScript, Tailwind CSS, animaciones con Lenis y GSAP, backend Django y GraphQL",
       "imageSrc": "https://i.postimg.cc/QdhT9Yn5/steam-women-page.png",
       "url": "https://steam-women-front-end.vercel.app/"
     },
     {
-      "id": "7",
+      "id": "11",
       "title": "Audiophile Comercio Electrónico",
       "description": "Un comercio electrónico para amantes del audio usando tecnologías de Tailwind CSS y Next.js",
       "imageSrc": "https://i.postimg.cc/dtV8CY08/audiophile-ecommerce-page.png",
       "url": "https://audiophile-ecommerce-website-sigma.vercel.app/"
     },
     {
-      "id": "8",
+      "id": "12",
       "title": "Designo Sitio Multi Página",
       "description": "Sitio web multi-página de Designo es un sitio responsivo construido con Next.js, JavaScript y CSS Modules, con layouts óptimos y elementos interactivos",
       "imageSrc": "https://i.postimg.cc/xT34fY4M/designo-multi-page-website.png",
       "url": "https://designo-multi-page-website-xi.vercel.app/"
     },
     {
-      "id": "9",
+      "id": "13",
       "title": "Travel Haven",
       "description": "Un clon completamente funcional de Airbnb construido con React, JavaScript, CSS3, HTML5 y diseño responsivo para demostrar habilidades en desarrollo frontend moderno",
       "imageSrc": "https://i.postimg.cc/kgFqPkxp/travel-haven-page.png",
       "url": "https://james-gamboa.github.io/Travel-Haven/"
     },
     {
-      "id": "10",
+      "id": "14",
       "title": "Pokedex",
       "description": "Proyecto creado como práctica para conocimientos en JavaScript vanilla, HTML5, CSS3 y consumo de APIs REST para crear una Pokédex interactiva",
       "imageSrc": "https://i.postimg.cc/qMMPSz1W/pokedex-page.png",
       "url": "https://james-gamboa.github.io/Pokedex/"
     },
     {
-      "id": "11",
+      "id": "15",
       "title": "Rapibox",
       "description": "Rapibox es un proyecto de práctica para perfeccionar mis habilidades en JavaScript. Construido con Next.js y Tailwind CSS, simula un casillero virtual moderno y responsivo para compras de paquetes en línea",
       "imageSrc": "https://i.postimg.cc/jSnwhSVJ/Captura-de-pantalla-2025-02-07-135044.png",
       "url": "https://rapibox.vercel.app/"
     },
     {
-      "id": "11",
+      "id": "16",
       "title": "Página de Noticias",
       "description": "Página creada como práctica para conocimientos en HTML, CSS, JavaScript y Sass",
       "imageSrc": "https://i.postimg.cc/HnTqpxdc/news-homepage-page.jpg",
       "url": "https://flourishing-taffy-990027.netlify.app/"
     },
     {
-      "id": "12",
+      "id": "17",
       "title": "Sitio de Eventos",
       "description": "Página creada como práctica para conocimientos en JavaScript vanilla, HTML5, CSS3 y manipulación del DOM para crear un sitio de eventos interactivo",
       "imageSrc": "https://i.postimg.cc/kgDd6B8W/events-site-page.png",
       "url": "https://monumental-kringle-6493f0.netlify.app/"
     },
     {
-      "id": "13",
+      "id": "18",
       "title": "Página de Aterrizaje Manage",
       "description": "Página creada como práctica en mis conocimientos de Next.js, Tailwind CSS, JavaScript y diseño responsivo para crear una landing page moderna",
       "imageSrc": "https://i.postimg.cc/4Npmn26z/manage-page.png",
       "url": "https://landing-page-with-tailwind-iota.vercel.app/"
     },
     {
-      "id": "14",
+      "id": "19",
       "title": "James Bank",
       "description": "Una página de aterrizaje diseñada para demostrar competencia en Next.js y Tailwind CSS, con animaciones dinámicas impulsadas por Frame Motion",
       "imageSrc": "https://i.postimg.cc/dQk7cVDN/james-banks.png",
       "url": "https://landing-page-bank-kappa.vercel.app/"
     },
     {
-      "id": "15",
+      "id": "20",
       "title": "Página Fylo",
       "description": "Una página de aterrizaje responsiva diseñada para mostrar experiencia en Next.js y Tailwind CSS",
       "imageSrc": "https://i.postimg.cc/vTH3Dxjn/fylo-page.png",
       "url": "https://fylo-landing-page-ten-peach.vercel.app/"
     },
     {
-      "id": "16",
+      "id": "21",
       "title": "Web Studio",
       "description": "Una página de aterrizaje moderna de estudio web construida para resaltar competencia en Next.js y Tailwind CSS",
       "imageSrc": "https://i.postimg.cc/cC9T34yb/web-studio.png",
       "url": "https://tailwind-landing-page-ecru-three.vercel.app/"
     },
     {
-      "id": "17",
+      "id": "22",
       "title": "Página de Aterrizaje Coca Cola",
       "description": "Proyecto creado como práctica usando Bootstrap, HTML y PHP",
       "imageSrc": "https://i.postimg.cc/Y0kHhRfS/cocacola-page.png",
       "url": "https://james-gamboa.github.io/Practical-coca-cola-page/"
     },
     {
-      "id": "18",
+      "id": "23",
       "title": "Juego de Trivia",
       "description": "Página web del juego de trivia creada usando Vite y React para un proyecto de práctica práctico",
       "imageSrc": "https://i.postimg.cc/zGjZcTNm/trivia-game.png",
       "url": "https://triviagameinreact.netlify.app/"
     },
     {
-      "id": "19",
+      "id": "24",
       "title": "Conecta Cuatro",
       "description": "Proyecto creado como práctica para conocimientos en JavaScript vanilla, HTML5, CSS3 y lógica de programación para desarrollar un juego de estrategia interactivo",
       "imageSrc": "https://i.postimg.cc/4y5TtcBQ/conecta-Cuatro-page.png",
       "url": "https://james-gamboa.github.io/conecta-cuatro/conecta4.html"
     },
     {
-      "id": "20",
+      "id": "25",
       "title": "Juego Tetris",
       "description": "Página web creando un tetris básico simple usando JavaScript vanilla, HTML5 Canvas, CSS3 y algoritmos de programación para desarrollar un juego clásico",
       "imageSrc": "https://i.postimg.cc/15CkQsTX/tetris-game-page.png",
       "url": "https://james-gamboa.github.io/tetris/"
     },
     {
-      "id": "21",
+      "id": "26",
       "title": "Biccas",
       "description": "Un sitio web de Biccas para mostrar la experiencia usando HTML5, CSS3 Flexbox, JavaScript y diseño responsivo para crear una interfaz moderna y adaptable",
       "imageSrc": "https://i.postimg.cc/hjK037KY/biccas-page.png",
       "url": "https://james-gamboa.github.io/Biccas/"
     },
     {
-      "id": "22",
+      "id": "27",
       "title": "Dalio | Agencia Digital",
       "description": "Un sitio web de Dalio, una agencia digital para mostrar la experiencia usando Next.js y Tailwind CSS",
       "imageSrc": "https://i.postimg.cc/XqJknSGc/dalio-page.png",
       "url": "https://daliotailwind.vercel.app"
     },
     {
-      "id": "23",
+      "id": "28",
       "title": "Frontend-Mentor-Loopstudios",
       "description": "Página creada como práctica para conocimientos en Next.js, JavaScript, Tailwind CSS y diseño responsivo para completar un desafío de Frontend Mentor",
       "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
@@ -204,7 +232,12 @@
     {
       "id": "4",
       "title": "Desarrollo CMS",
-      "description": "Experiencia en construir y personalizar sitios web usando plataformas CMS como Shopify, Drupal y WordPress con temas y plugins personalizados."
+      "description": "Experiencia en construir y personalizar sitios web usando plataformas CMS como Strapi, Shopify, Drupal y WordPress con temas y plugins personalizados."
+    },
+    {
+      "id": "5",
+      "title": "Desarrollo Backend",
+      "description": "Desarrollo de sistemas backend robustos y APIs usando tecnologías modernas como Node.js, Python, Express, GraphQL y bases de datos como MySQL y MongoDB."
     }
   ],
   "aboutpara": "Soy un Desarrollador Frontend con experiencia en desarrollo frontend, diseño web y WordPress. He ayudado a empresas a construir experiencias web modernas con tecnologías como React, Next.js y Shopify.",
@@ -233,14 +266,42 @@
           "Diseño UI/UX",
           "Colaboración con Clientes"
         ]
+      },
+      {
+        "id": "3",
+        "dates": "Agosto 2024 - Actualmente",
+        "type": "Freelancer",
+        "position": "Desarrollador Frontend Freelance",
+        "bullets": [
+          "Escazu Village - Desarrollo de sitio web residencial y comercial con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "C3 Cariari Corporate Center - Desarrollo de sitio web corporativo con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Plaza Tempo - Desarrollo de sitio web comercial y residencial con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Aleste - Desarrollo de sitio web inmobiliario con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Novus ERP - Desarrollo de solución empresarial con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Portafolio Inmobiliario - Desarrollo de sitio web inmobiliario con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Avenida Escazu - Desarrollo de sitio web de uso mixto con Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Savia - Desarrollo de sitio web de desarrollo urbano con Next.js, TypeScript, Strapi y Tailwind CSS"
+        ]
       }
     ],
-    "education": {
-      "universityName": "Centro de Tecnología y Artes Visuales (CETAV), Costa Rica",
-      "universityDate": "02/2022 - 01/2024",
-      "universityPara": "Técnico en Diseño y Desarrollo Web."
-    },
-    "languages": ["JavaScript", "HTML5", "CSS", "TypeScript"],
+    "education": [
+      {
+        "universityName": "Centro de Tecnología y Artes Visuales (CETAV), Costa Rica",
+        "universityDate": "02/2022 - 01/2024",
+        "universityPara": "Técnico en Diseño y Desarrollo Web."
+      },
+      {
+        "universityName": "FWD Costa Rica Tech & Freedom",
+        "universityDate": "04/2025 - 07/2025",
+        "universityPara": "Desarrollador de Software Back End."
+      },
+      {
+        "universityName": "FWD Costa Rica Tech & Freedom",
+        "universityDate": "01/2025 - 07/2025",
+        "universityPara": "Desarrollador Full Stack Web Developer."
+      }
+    ],
+    "languages": ["JavaScript", "HTML5", "CSS", "TypeScript", "Python"],
     "frameworks": [
       "React",
       "Next.js",
@@ -255,8 +316,10 @@
       "WordPress",
       "Shopify",
       "Drupal",
+      "Strapi",
       "MongoDb",
       "SQL",
+      "MySQL",
       "Git",
       "Diseño Responsivo",
       "UI/UX",
