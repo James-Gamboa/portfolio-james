@@ -29,9 +29,8 @@ export default function NotFound() {
         );
         setDict(dictionary.default);
       } catch (err) {
-        const dictionary = await import(
-          "@/components/lib/dictionaries/en.json"
-        );
+        const dictionary =
+          await import("@/components/lib/dictionaries/en.json");
         setDict(dictionary.default);
         setLang("en");
       }

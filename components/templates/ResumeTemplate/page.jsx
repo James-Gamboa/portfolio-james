@@ -68,17 +68,31 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                 <h1 className="text-2xl font-bold">
                   {dict?.resume?.education || "Education"}
                 </h1>
-                <div className="mt-2">
-                  <h2 className="text-lg">
-                    {data.resume.education.universityName}
-                  </h2>
-                  <h3 className="text-sm opacity-75">
-                    {data.resume.education.universityDate}
-                  </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {data.resume.education.universityPara}
-                  </p>
-                </div>
+                {Array.isArray(data.resume.education) ? (
+                  data.resume.education.map((edu, index) => (
+                    <div key={index} className="mt-2">
+                      <h2 className="text-lg">{edu.universityName}</h2>
+                      <h3 className="text-sm opacity-75">
+                        {edu.universityDate}
+                      </h3>
+                      <p className="text-sm mt-2 opacity-50">
+                        {edu.universityPara}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <div className="mt-2">
+                    <h2 className="text-lg">
+                      {data.resume.education.universityName}
+                    </h2>
+                    <h3 className="text-sm opacity-75">
+                      {data.resume.education.universityDate}
+                    </h3>
+                    <p className="text-sm mt-2 opacity-50">
+                      {data.resume.education.universityPara}
+                    </p>
+                  </div>
+                )}
               </div>
               <div className="mt-5">
                 <h1 className="text-2xl font-bold">
