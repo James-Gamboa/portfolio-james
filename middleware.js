@@ -23,7 +23,9 @@ export function middleware(request) {
     pathname === "/favicon.ico" ||
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
-    pathname.match(/\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|json)$/i)
+    pathname.match(
+      /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|json)$/i,
+    )
   ) {
     return NextResponse.next();
   }
