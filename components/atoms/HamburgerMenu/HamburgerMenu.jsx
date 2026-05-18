@@ -45,12 +45,44 @@ const HamburgerMenu = () => {
   }, []);
 
   React.useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-    return () => document.body.classList.remove("overflow-hidden");
+    if (!isOpen) return undefined;
+
+    const html = document.documentElement;
+    const body = document.body;
+    const scrollY = window.scrollY;
+
+    html.dataset.menuOpen = "true";
+    html.classList.add("overflow-hidden");
+    body.classList.add("overflow-hidden");
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
+    const handleScrollLock = (event) => {
+      if (event.target.closest("[data-menu-panel]")) return;
+      event.preventDefault();
+    };
+
+    document.addEventListener("touchmove", handleScrollLock, {
+      passive: false,
+    });
+    document.addEventListener("wheel", handleScrollLock, { passive: false });
+
+    return () => {
+      document.removeEventListener("touchmove", handleScrollLock);
+      document.removeEventListener("wheel", handleScrollLock);
+      delete html.dataset.menuOpen;
+      html.classList.remove("overflow-hidden");
+      body.classList.remove("overflow-hidden");
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
+    };
   }, [isOpen]);
 
   React.useEffect(() => {
@@ -103,58 +135,77 @@ const HamburgerMenu = () => {
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 dark:bg-black/90 backdrop-blur-sm transition-opacity duration-200 animate-fade-in"
+          className="fixed inset-0 z-50 overscroll-none animate-fade-in"
           role="dialog"
           aria-modal="true"
+          onClick={() => setIsOpen(false)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setIsOpen(false);
+          }}
         >
-          <button
-            aria-label="Close navigation menu"
-            className="absolute top-4 right-4 p-2 rounded-full bg-transparent text-white focus:outline-none"
-            onClick={() => setIsOpen(false)}
-            tabIndex={0}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-black/50 backdrop-blur-2xl"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-black/35 backdrop-blur-3xl"
+          />
+          <div
+            data-menu-panel=""
+            className="relative z-10 flex h-full w-full flex-col items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+            onKeyDown={(event) => event.stopPropagation()}
           >
-            <X className="w-8 h-8" aria-hidden="true" />
-          </button>
-          <nav
-            role="menu"
-            aria-label="Mobile navigation"
-            className="flex flex-col gap-8 items-center"
-          >
-            {navLinks.map((link, idx) => {
-              const active = isActive(link.href);
-              if (link.isMail) {
+            <button
+              aria-label="Close navigation menu"
+              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white backdrop-blur-md focus:outline-none"
+              onClick={() => setIsOpen(false)}
+              tabIndex={0}
+            >
+              <X className="w-8 h-8" aria-hidden="true" />
+            </button>
+            <nav
+              role="menu"
+              aria-label="Mobile navigation"
+              className="flex flex-col gap-8 items-center"
+            >
+              {navLinks.map((link, idx) => {
+                const active = isActive(link.href);
+                if (link.isMail) {
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className={`text-3xl font-extrabold transition-colors outline-none px-4 py-1 text-white`}
+                      tabIndex={0}
+                      role="menuitem"
+                      ref={idx === 0 ? firstLinkRef : undefined}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
                 return (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
-                    className={`text-3xl font-extrabold transition-colors outline-none px-4 py-1 text-white`}
+                    className={`text-3xl font-extrabold transition-colors outline-none px-4 py-1 ${active ? "bg-white text-black dark:bg-white dark:text-black rounded shadow-lg" : "text-white"}`}
                     tabIndex={0}
                     role="menuitem"
+                    aria-current={active ? "page" : undefined}
                     ref={idx === 0 ? firstLinkRef : undefined}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 );
-              }
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-3xl font-extrabold transition-colors outline-none px-4 py-1 ${active ? "bg-white text-black dark:bg-white dark:text-black rounded shadow-lg" : "text-white"}`}
-                  tabIndex={0}
-                  role="menuitem"
-                  aria-current={active ? "page" : undefined}
-                  ref={idx === 0 ? firstLinkRef : undefined}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-          <div className="mt-10 flex justify-center">
-            <LanguageSelector />
+              })}
+            </nav>
+            <div className="mt-10 flex justify-center">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       )}

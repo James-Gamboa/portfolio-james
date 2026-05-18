@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Avoid broken webpack vendor-chunks for GSAP on the server bundle
+  serverExternalPackages: ["gsap", "lenis"],
   images: {
     remotePatterns: [
       {

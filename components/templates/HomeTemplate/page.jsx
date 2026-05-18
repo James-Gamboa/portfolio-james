@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Header from "@/components/organisms/Header/page.jsx";
 import ServiceCard from "@/components/molecules/ServiceCard/page.jsx";
 import Socials from "@/components/atoms/Socials/page.jsx";
-import WorkCard from "@/components/molecules/WorkCard/page.jsx";
+import ProjectsSection from "@/components/organisms/ProjectsSection/page.jsx";
 import Footer from "@/components/organisms/Footer/page.jsx";
 import Reveal from "@/components/motion/Reveal";
 import { useHeroEntrance } from "@/hooks/useHeroEntrance";
@@ -17,10 +17,10 @@ const HomeTemplate = ({ lang, dict, data }) => {
   const aboutRef = useRef(null);
 
   return (
-    <div className="relative">
+    <div className="relative w-full min-w-0 overflow-x-clip">
       <div className="gradient-circle" />
       <div className="gradient-circle-bottom" />
-      <div className="container mx-auto mb-10">
+      <div className="container mx-auto mb-10 w-full min-w-0 max-w-full px-4 mob:px-5 tablet:px-6 laptop:px-8">
         <Header
           handleWorkScroll={() => scrollTo(workRef, { offset: -80 })}
           handleAboutScroll={() => scrollTo(aboutRef, { offset: -80 })}
@@ -56,23 +56,8 @@ const HomeTemplate = ({ lang, dict, data }) => {
           </div>
           <Socials className="mt-2 laptop:mt-5" lang={lang} data={data} />
         </div>
-        <div id={dict?.sections?.work || "work"} />
-        <section ref={workRef} className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 data-reveal="" className="text-2xl text-bold">
-            {dict.projects.title}.
-          </h1>
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                url={project.url}
-              />
-            ))}
-          </div>
-        </section>
+        <div id={dict?.sections?.work || "work"} ref={workRef} />
+        <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
         <section className="mt-10 laptop:mt-30 p-2 laptop:p-0">
           <h1 data-reveal="" className="tablet:m-10 text-2xl text-bold">
             {dict.services.title}.

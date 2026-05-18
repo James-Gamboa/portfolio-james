@@ -98,7 +98,17 @@
       "title": "Steam Women",
       "description": "Desarrollé la plataforma Steam Women para apoyar e impulsar mujeres en Costa Rica. Construido con Next.js, TypeScript, Tailwind CSS, animaciones con Lenis y GSAP, backend Django y GraphQL",
       "imageSrc": "https://i.postimg.cc/QdhT9Yn5/steam-women-page.png",
-      "url": "https://steam-women-front-end.vercel.app/"
+      "url": "https://steam-women-front-end.vercel.app/",
+      "category": "communityPlatform",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "GSAP",
+        "Lenis",
+        "GraphQL",
+        "Django"
+      ]
     },
     {
       "id": "11",
