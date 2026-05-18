@@ -29,9 +29,15 @@
     "experience": "Experience"
   },
   "projects": {
-    "title": "My Projects",
-    "viewProject": "View Project",
-    "viewCode": "View Code"
+    "title": "Selected Work",
+    "eyebrow": "Portfolio",
+    "subtitle": "Production projects with visible stack and live links — built for a quick recruiter scan.",
+    "viewProject": "View project",
+    "explore": "Explore",
+    "viewCode": "View Code",
+    "stackLabel": "Tech stack",
+    "statProjects": "Projects",
+    "statStack": "Core stack"
   },
   "services": {
     "title": "Services",

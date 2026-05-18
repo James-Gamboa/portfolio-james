@@ -1,20 +1,17 @@
 import "./globals.css";
-
-export const metadata = {
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.ico", type: "image/x-icon" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-};
+import AppProviders from "@/components/providers/AppProviders";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      lang="en"
+      className="dark"
+      style={{ colorScheme: "dark" }}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>
+        <AppProviders>{children}</AppProviders>
+      </body>
     </html>
   );
 }

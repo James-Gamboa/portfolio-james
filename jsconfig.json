@@ -7,7 +7,9 @@
       "@/data/*": ["lib/utils/data/*"],
       "@/utils/*": ["lib/utils/*"],
       "@/animations/*": ["animations/*"],
-      "@/api/*": ["lib/api/*"]
+      "@/api/*": ["lib/api/*"],
+      "@/lib/*": ["lib/*"],
+      "@/hooks/*": ["hooks/*"]
     }
   }
 }

@@ -29,9 +29,15 @@
     "experience": "Experiencia"
   },
   "projects": {
-    "title": "Mis Proyectos",
-    "viewProject": "Ver Proyecto",
-    "viewCode": "Ver Código"
+    "title": "Trabajo Seleccionado",
+    "eyebrow": "Portafolio",
+    "subtitle": "Proyectos en producción con stack visible y enlace en vivo — listos para evaluar en segundos.",
+    "viewProject": "Ver proyecto",
+    "explore": "Explorar",
+    "viewCode": "Ver Código",
+    "stackLabel": "Stack tecnológico",
+    "statProjects": "Proyectos",
+    "statStack": "Stack principal"
   },
   "services": {
     "title": "Servicios",

@@ -80,6 +80,20 @@
       "url": "https://www.savia.cr/en"
     },
     {
+      "id": "29",
+      "title": "JamesXP",
+      "description": "Developed JamesXP, an independent gaming news platform with an esports and editorial layout — Steam headlines, RAWG discovery rails, and live catalog data. Built with Next.js, TypeScript, Tailwind CSS, Lenis, and GSAP animations.",
+      "imageSrc": "https://i.postimg.cc/7L2LrWQ7/screencapture-gaming-platform-two-vercel-app-en-2026-05-18-14-20-31.jpg",
+      "url": "https://gaming-platform-two.vercel.app/en"
+    },
+    {
+      "id": "30",
+      "title": "PolkaCR",
+      "description": "Built the PolkaCR ecommerce for a Costa Rican art and apparel brand using Shopify — product catalog, collections, cart, checkout, and a conversion-focused storefront.",
+      "imageSrc": "https://www.polkacr.com/cdn/shop/files/logo_polka1_d79e4ff0-6ab9-4da6-b4ff-d1fba1fe8b6a.jpg?v=1775959849",
+      "url": "https://www.polkacr.com/"
+    },
+    {
       "id": "9",
       "title": "Contraluz",
       "description": "Developed an ecommerce for Contraluz business using Shopify with payment gateways, cart tracking plugins, inventory management and conversion optimization",
@@ -91,7 +105,17 @@
       "title": "Steam Women",
       "description": "Developed the Steam Women platform to support and empower women in Costa Rica. Built with Next.js, TypeScript, Tailwind CSS, animations with Lenis and GSAP, Django backend and GraphQL",
       "imageSrc": "https://i.postimg.cc/QdhT9Yn5/steam-women-page.png",
-      "url": "https://steam-women-front-end.vercel.app/"
+      "url": "https://steam-women-front-end.vercel.app/",
+      "category": "communityPlatform",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "GSAP",
+        "Lenis",
+        "GraphQL",
+        "Django"
+      ]
     },
     {
       "id": "11",
