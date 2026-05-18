@@ -12,6 +12,31 @@ body {
   @apply dark:bg-black dark:text-white;
 }
 
+/* Motion: content visible for SSR/SEO; GSAP enhances after client init */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion="full"] [data-reveal],
+  html[data-motion="lite"] [data-reveal] {
+    will-change: transform, opacity;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion="reduced"] [data-reveal],
+  html[data-motion="reduced"] [data-hero-line] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
 .gradient-circle {
   position: absolute;
   pointer-events: none;

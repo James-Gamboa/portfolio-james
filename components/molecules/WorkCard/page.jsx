@@ -6,7 +6,10 @@ import Link from "next/link";
 const WorkCard = ({ img, name, description, url }) => {
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer">
-      <div className="overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0 link cursor-pointer">
+      <div
+        data-reveal=""
+        className="overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0 link cursor-pointer"
+      >
         <div
           className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
           style={{ height: "600px" }}

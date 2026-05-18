@@ -11,6 +11,7 @@ const ServiceCard = ({ name, description }) => {
 
   return (
     <div
+      data-reveal=""
       className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 ${
         mounted && "hover:bg-slate-800"
       } hover:scale-105 link cursor-pointer`}
