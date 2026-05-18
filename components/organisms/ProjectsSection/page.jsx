@@ -4,7 +4,6 @@ import WorkCard from "@/components/molecules/WorkCard/page.jsx";
 
 const ProjectsSection = ({ projects = [], dict, lang }) => {
   const projectDict = dict?.projects ?? {};
-  const count = projects.length;
 
   const cardLabels = {
     viewProject: projectDict.viewProject,
@@ -45,21 +44,13 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 laptop:shrink-0">
-          <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm">
-            <p className="text-[10px] font-medium uppercase tracking-widest text-white/40">
-              {projectDict.statProjects}
-            </p>
-            <p className="mt-1 text-2xl font-semibold tabular-nums text-white">
-              {count}
-            </p>
-          </div>
+        <div className="laptop:shrink-0">
           <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm">
             <p className="text-[10px] font-medium uppercase tracking-widest text-white/40">
               {projectDict.statStack}
             </p>
             <p className="mt-1 text-sm font-medium text-white/80">
-              Next.js · React · GSAP
+              {projectDict.statStackItems}
             </p>
           </div>
         </div>

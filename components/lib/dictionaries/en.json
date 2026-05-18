@@ -36,8 +36,8 @@
     "explore": "Explore",
     "viewCode": "View Code",
     "stackLabel": "Tech stack",
-    "statProjects": "Projects",
-    "statStack": "Core stack"
+    "statStack": "Core stack",
+    "statStackItems": "Next.js · TypeScript · Tailwind · CMS"
   },
   "services": {
     "title": "Services",
