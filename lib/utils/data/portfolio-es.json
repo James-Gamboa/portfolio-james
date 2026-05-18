@@ -73,6 +73,20 @@
       "url": "https://www.savia.cr/es"
     },
     {
+      "id": "29",
+      "title": "JamesXP",
+      "description": "Desarrollé JamesXP, plataforma independiente de noticias gaming con layout editorial tipo esports — titulares Steam, carriles RAWG y datos de catálogo en tiempo real. Construido con Next.js, TypeScript, Tailwind CSS, Lenis y animaciones GSAP.",
+      "imageSrc": "https://i.postimg.cc/7L2LrWQ7/screencapture-gaming-platform-two-vercel-app-en-2026-05-18-14-20-31.jpg",
+      "url": "https://gaming-platform-two.vercel.app/es"
+    },
+    {
+      "id": "30",
+      "title": "PolkaCR",
+      "description": "Desarrollé el ecommerce PolkaCR para una marca costarricense de arte y ropa con Shopify — catálogo, colecciones, carrito, checkout y tienda optimizada para conversión.",
+      "imageSrc": "https://www.polkacr.com/cdn/shop/files/logo_polka1_d79e4ff0-6ab9-4da6-b4ff-d1fba1fe8b6a.jpg?v=1775959849",
+      "url": "https://www.polkacr.com/"
+    },
+    {
       "id": "9",
       "title": "Contraluz",
       "description": "Desarrollé un ecommerce para el comercio Contraluz usando Shopify con pasarelas de pago, plugins de seguimiento al carrito, gestión de inventario y optimización de conversión",
