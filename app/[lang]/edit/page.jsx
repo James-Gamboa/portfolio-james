@@ -12,9 +12,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function EditPage({ params }) {
-  const dict = await import(
-    `@/components/lib/dictionaries/${params.lang}.json`
-  ).catch(() => import("@/components/lib/dictionaries/en.json"));
+  const { lang } = await params;
 
-  return <EditTemplate lang={params.lang} dict={dict.default} />;
+  const dict = await import(`@/components/lib/dictionaries/${lang}.json`).catch(
+    () => import("@/components/lib/dictionaries/en.json"),
+  );
+
+  return <EditTemplate lang={lang} dict={dict.default} />;
 }

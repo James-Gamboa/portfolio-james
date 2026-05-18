@@ -14,13 +14,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function HomePage({ params }) {
-  const data = await getPortfolioDataSync(params.lang).catch(() =>
+  const { lang } = await params;
+
+  const data = await getPortfolioDataSync(lang).catch(() =>
     getPortfolioDataSync("en"),
   );
 
-  const dict = await import(
-    `@/components/lib/dictionaries/${params.lang}.json`
-  ).catch(() => import("@/components/lib/dictionaries/en.json"));
+  const dict = await import(`@/components/lib/dictionaries/${lang}.json`).catch(
+    () => import("@/components/lib/dictionaries/en.json"),
+  );
 
-  return <HomeTemplate lang={params.lang} dict={dict.default} data={data} />;
+  return <HomeTemplate lang={lang} dict={dict.default} data={data} />;
 }
