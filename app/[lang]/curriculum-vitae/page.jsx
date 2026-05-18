@@ -13,13 +13,13 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CurriculumVitaePage({ params }) {
-  const data = await getPortfolioData(params.lang).catch(() =>
-    getPortfolioData("en"),
+  const { lang } = await params;
+
+  const data = await getPortfolioData(lang).catch(() => getPortfolioData("en"));
+
+  const dict = await import(`@/components/lib/dictionaries/${lang}.json`).catch(
+    () => import("@/components/lib/dictionaries/en.json"),
   );
 
-  const dict = await import(
-    `@/components/lib/dictionaries/${params.lang}.json`
-  ).catch(() => import("@/components/lib/dictionaries/en.json"));
-
-  return <ResumeTemplate lang={params.lang} dict={dict.default} data={data} />;
+  return <ResumeTemplate lang={lang} dict={dict.default} data={data} />;
 }

@@ -13,10 +13,10 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ResumePage({ params }) {
-  const data = await getPortfolioData(params.lang);
-  const dict = await import(
-    `@/components/lib/dictionaries/${params.lang}.json`
-  );
+  const { lang } = await params;
 
-  return <ResumeTemplate lang={params.lang} dict={dict.default} data={data} />;
+  const data = await getPortfolioData(lang);
+  const dict = await import(`@/components/lib/dictionaries/${lang}.json`);
+
+  return <ResumeTemplate lang={lang} dict={dict.default} data={data} />;
 }
