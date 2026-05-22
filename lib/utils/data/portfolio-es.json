@@ -19,57 +19,57 @@
     {
       "id": "1",
       "title": "Escazu Village",
-      "description": "Desarrollé el sitio web para Escazu Village, desarrollo residencial y comercial de lujo ubicado en el corazón de Escazú. Proyecto que combina estilo de vida moderno con espacios verdes y amenidades premium. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/hjjLvtpr/escazu_village_page.jpg",
+      "description": "Desarrollé el sitio web bilingüe de Escazú Village, destino de uso mixto en Escazú donde comercio, gastronomía y vida social se integran. Incluye hero principal, directorio de negocios, secciones residencial y talento, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/bvp5J3kg/screencapture-escazuvillage-en-2026-05-22-15-01-05.jpg",
       "url": "https://www.escazuvillage.com/es"
     },
     {
       "id": "2",
       "title": "C3 Cariari Corporate Center",
-      "description": "Desarrollé el sitio web para C3 Cariari Corporate Center, centro corporativo moderno diseñado para empresas que buscan espacios de trabajo de clase mundial. Incluye oficinas, áreas comunes y servicios empresariales de primer nivel. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/0QQYjycG/c3_page.jpg",
+      "description": "Desarrollé el sitio web bilingüe de C3 Cariari Corporate Center, hub corporativo que conecta empresas con servicios premium. Incluye hero principal, directorio de negocios, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/7LhW0btH/screencapture-c3-cr-en-2026-05-22-15-02-49.jpg",
       "url": "https://www.c3.cr/es"
     },
     {
       "id": "3",
       "title": "Plaza Tempo",
-      "description": "Desarrollé el sitio web para Plaza Tempo, desarrollo comercial y residencial que redefine el concepto de vida urbana. Integra comercio, entretenimiento y espacios residenciales en un ambiente dinámico y contemporáneo. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/k44QGgfF/plaza_tempo_page.jpg",
-      "url": "http://tempo-2025-2c8da873e965.herokuapp.com/es"
+      "description": "Desarrollé el sitio web bilingüe de Plaza Tempo, destino de uso mixto que conecta trabajo, gastronomía, comercio y vida social. Incluye carrusel hero, directorio de negocios, eventos, ubicación con Google Maps y formularios de contacto. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/dtQD2YFH/screencapture-tempo-2025-2c8da873e965-herokuapp-en-2026-05-22-14-56-09.jpg",
+      "url": "https://tempo-2025-2c8da873e965.herokuapp.com/es"
     },
     {
       "id": "4",
       "title": "Aleste",
-      "description": "Desarrollé el sitio web para Aleste, proyecto inmobiliario innovador que ofrece una nueva perspectiva de vida residencial. Combina diseño arquitectónico moderno con sostenibilidad y espacios que mejoran la calidad de vida. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/PxxWJ52Q/aleste_page.jpg",
+      "description": "Desarrollé el sitio web bilingüe de Aleste, desarrollo de uso mixto caminable enfocado en vivir, trabajar y disfrutar. Incluye hero principal, directorio de negocios, secciones de usos e impacto, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/W1NNR6zD/screencapture-aleste-cr-en-2026-05-22-15-04-25.jpg",
       "url": "https://www.aleste.cr/es"
     },
     {
       "id": "5",
-      "title": "Novus Erp",
-      "description": "Desarrollé el sitio web para Novus ERP con 30+ años de experiencia. Solución empresarial integral que se adapta a cada empresa. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/2SVCKzPw/novus-erp-page.png",
+      "title": "Novus ERP",
+      "description": "Desarrollé el sitio web bilingüe de Novus ERP de Codisa, que presenta soluciones ERP para optimizar procesos y apoyar el crecimiento empresarial. Incluye carrusel hero, secciones de soluciones y nosotros, blog, formularios de contacto y video de marca integrado. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/52YP2DXt/screencapture-novus-2025-011de5fce714-herokuapp-en-2026-05-22-15-06-59.jpg",
       "url": "https://novus-2025-011de5fce714.herokuapp.com/es"
     },
     {
       "id": "6",
       "title": "Portafolio Inmobiliario",
-      "description": "Desarrollé el sitio web para Portafolio Inmobiliario, líder en desarrollo inmobiliario en Costa Rica. Proyectos sostenibles e innovadores que transforman ciudades. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/0yF9gTvq/portafolio-page.png",
+      "description": "Desarrollé el sitio web bilingüe de Portafolio Inmobiliario, líder en desarrollo inmobiliario en Costa Rica. Incluye carrusel hero con reportes estratégicos, secciones de proyectos y talento, KPIs destacados, redes sociales y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/HxcZVKZX/screencapture-portafolio-cr-en-2026-05-22-15-12-04-(1).jpg",
       "url": "https://www.portafolio.cr/es"
     },
     {
       "id": "7",
       "title": "Avenida Escazu",
-      "description": "Desarrollé el sitio web para Avenida Escazu, desarrollo de uso mixto premium en el distrito más exclusivo de Costa Rica. Incluye gastronomía, entretenimiento, comercio, oficinas y espacios residenciales. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/QM7hjfNK/avenida-escazu-page.png",
+      "description": "Desarrollé el sitio web bilingüe de Avenida Escazú, la primera avenida urbana de uso mixto de Costa Rica enfocada en bienestar y movilidad sostenible. Incluye hero principal, directorio de negocios, secciones de impacto y talento, facturación de parqueo y formularios de contacto. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/t4TyTRby/screencapture-avenidaescazu-en-2026-05-22-15-42-38.jpg",
       "url": "https://www.avenidaescazu.com/es"
     },
     {
       "id": "8",
       "title": "Savia",
-      "description": "Desarrollé el sitio web para Savia, proyecto de desarrollo urbano sostenible que crea una 'Ciudad de Vida' integrando elementos urbanos y naturales. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/FRGjnHQp/savia-p-ge.png",
+      "description": "Desarrollé el sitio web bilingüe de Savia City of Life, desarrollo urbano sostenible donde la ciudad y la naturaleza se integran. Incluye carrusel hero, secciones de impacto y talento, blog y formularios de contacto. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "https://i.postimg.cc/JnLDkHKN/screencapture-savia-cr-en-2026-05-22-15-18-34.jpg",
       "url": "https://www.savia.cr/es"
     },
     {
@@ -297,14 +297,14 @@
         "type": "Freelancer",
         "position": "Desarrollador Frontend Freelance",
         "bullets": [
-          "Escazu Village - Desarrollo de sitio web residencial y comercial con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "C3 Cariari Corporate Center - Desarrollo de sitio web corporativo con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Plaza Tempo - Desarrollo de sitio web comercial y residencial con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Aleste - Desarrollo de sitio web inmobiliario con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Novus ERP - Desarrollo de solución empresarial con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Portafolio Inmobiliario - Desarrollo de sitio web inmobiliario con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Avenida Escazu - Desarrollo de sitio web de uso mixto con Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Savia - Desarrollo de sitio web de desarrollo urbano con Next.js, TypeScript, Strapi y Tailwind CSS"
+          "Escazu Village - Desarrollo de sitio web bilingüe de uso mixto con directorio, secciones residenciales y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "C3 Cariari Corporate Center - Desarrollo de sitio web bilingüe corporativo con directorio, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Plaza Tempo - Desarrollo de sitio web bilingüe de uso mixto con directorio, eventos y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Aleste - Desarrollo de sitio web bilingüe inmobiliario de uso mixto con directorio, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Novus ERP - Desarrollo de sitio web bilingüe de ERP con carrusel hero, blog y video de marca usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Portafolio Inmobiliario - Desarrollo de sitio web bilingüe inmobiliario con reportes estratégicos, KPIs y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Avenida Escazu - Desarrollo de sitio web bilingüe de avenida de uso mixto con directorio, facturación de parqueo y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
+          "Savia - Desarrollo de sitio web bilingüe Ciudad de Vida con carrusel hero, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS"
         ]
       }
     ],

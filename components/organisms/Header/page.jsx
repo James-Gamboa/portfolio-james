@@ -47,7 +47,7 @@ const Header = ({
 
   return (
     <>
-      <div className="flex items-center justify-between p-2 laptop:p-0 tablet:hidden mt-5 gap-2">
+      <div className="flex items-center justify-between p-2 laptop:p-0 laptop:hidden mt-5 gap-2">
         {isMounted && (
           <Link href={`/${currentLang}`}>
             <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
@@ -61,7 +61,7 @@ const Header = ({
         </div>
       </div>
 
-      <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 tablet:flex">
+      <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 laptop:flex">
         {isMounted && (
           <Link href={`/${currentLang}`}>
             <h1 className="font-medium cursor-pointer mob:p-2 laptop:p-0">
