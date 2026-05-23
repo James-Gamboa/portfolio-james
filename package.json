@@ -48,7 +48,8 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "baseline-browser-mapping": "^2.9.12"
+    "baseline-browser-mapping": "^2.9.12",
+    "sharp": "^0.34.5"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
