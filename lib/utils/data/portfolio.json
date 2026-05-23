@@ -134,16 +134,18 @@
     {
       "id": "13",
       "title": "Travel Haven",
-      "description": "A fully functional Airbnb-like clone built with React, JavaScript, CSS3, HTML5 and responsive design to demonstrate modern frontend development skills",
+      "description": "Airbnb-style rental platform with property browsing, search filters, and booking flows. Built with Next.js, TypeScript, and Tailwind CSS for a polished, fully responsive experience.",
       "imageSrc": "https://i.postimg.cc/kgFqPkxp/travel-haven-page.png",
-      "url": "https://james-gamboa.github.io/Travel-Haven/"
+      "url": "https://travel-haven-alpha.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
     {
       "id": "14",
       "title": "Pokedex",
-      "description": "Project created as a practice for knowledge in vanilla JavaScript, HTML5, CSS3 and REST API consumption to create an interactive Pokédex",
-      "imageSrc": "https://i.postimg.cc/qMMPSz1W/pokedex-page.png",
-      "url": "https://james-gamboa.github.io/Pokedex/"
+      "description": "Interactive Pokédex with Pokémon search, detail views, and API-driven browsing. Built with Next.js, TypeScript, and Tailwind CSS, enhanced with Lenis smooth scroll and GSAP animations.",
+      "imageSrc": "https://i.postimg.cc/0yvQbZP7/Captura-de-pantalla-2026-05-22-164206.png",
+      "url": "https://pokedex-eta-seven-26.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
     {
       "id": "15",
@@ -197,9 +199,10 @@
     {
       "id": "22",
       "title": "Coca Cola Landing Page",
-      "description": "Project created as a practice using bootstrap, html and php",
+      "description": "Brand landing page with bold visuals, responsive layout, and product-focused storytelling. Rebuilt with Next.js, TypeScript, and Tailwind CSS for a modern, performance-driven presentation.",
       "imageSrc": "https://i.postimg.cc/Y0kHhRfS/cocacola-page.png",
-      "url": "https://james-gamboa.github.io/Practical-coca-cola-page/"
+      "url": "https://practical-coca-cola-page.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
     {
       "id": "23",
@@ -211,29 +214,32 @@
     {
       "id": "24",
       "title": "Connect Four",
-      "description": "Project created as a practice for knowledge in vanilla JavaScript, HTML5, CSS3 and programming logic to develop an interactive strategy game",
-      "imageSrc": "https://i.postimg.cc/4y5TtcBQ/conecta-Cuatro-page.png",
-      "url": "https://james-gamboa.github.io/conecta-cuatro/conecta4.html"
+      "description": "Two-player strategy game with turn-based gameplay and an interactive board. Built with Next.js, TypeScript, and Tailwind CSS, with Lenis smooth scroll and GSAP-powered transitions.",
+      "imageSrc": "/img/conecta-cuatro-preview.jpg",
+      "url": "https://conecta-cuatro-gilt.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
     {
       "id": "25",
       "title": "Tetris Game",
-      "description": "Web page creating a simple basic tetris using vanilla JavaScript, HTML5 Canvas, CSS3 and programming algorithms to develop a classic game",
-      "imageSrc": "https://i.postimg.cc/15CkQsTX/tetris-game-page.png",
-      "url": "https://james-gamboa.github.io/tetris/"
+      "description": "Classic block-puzzle game with keyboard controls, real-time scoring, and responsive gameplay. Built with Next.js, TypeScript, and Tailwind CSS, featuring Lenis scroll and GSAP animations.",
+      "imageSrc": "/img/tetris-preview.jpg",
+      "url": "https://tetris-ecru-nine.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
     {
       "id": "26",
       "title": "Biccas",
-      "description": "A Biccas website to showcase the experience using HTML5, CSS3 Flexbox, JavaScript and responsive design to create a modern and adaptable interface",
+      "description": "Digital agency-style marketing site with responsive sections and a clean visual hierarchy. Rebuilt with Next.js, TypeScript, and Tailwind CSS for a modern, adaptable interface.",
       "imageSrc": "https://i.postimg.cc/hjK037KY/biccas-page.png",
-      "url": "https://james-gamboa.github.io/Biccas/"
+      "url": "https://biccas-ten.vercel.app/",
+      "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
     {
       "id": "27",
       "title": "Dalio | Digital Agency",
       "description": "A website from Dalio, a digital agency to showcase the experience using Next.js and Tailwind CSS",
-      "imageSrc": "https://i.postimg.cc/XqJknSGc/dalio-page.png",
+      "imageSrc": "/img/screencapture-daliotailwind-vercel-app-2026-05-23-15_42_00.jpg",
       "url": "https://daliotailwind.vercel.app"
     },
     {

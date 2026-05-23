@@ -131,6 +131,7 @@ const WorkCard = ({
               src={img}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={90}
               priority={priority}
               className={cn(
                 "h-full w-full object-cover transition-transform duration-500 ease-out",
@@ -159,8 +160,8 @@ const WorkCard = ({
             <h3 className="text-lg font-semibold leading-snug tracking-tight text-white laptop:text-xl">
               {name}
             </h3>
-            <p className="line-clamp-2 text-sm leading-relaxed text-white/50 laptop:text-base">
-              {meta.excerpt || description}
+            <p className="text-sm leading-relaxed text-white/50 laptop:text-base">
+              {description}
             </p>
           </div>
 
