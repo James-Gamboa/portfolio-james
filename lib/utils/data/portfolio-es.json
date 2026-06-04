@@ -1,7 +1,7 @@
 {
   "name": "CV James Guevara Gamboa",
   "headerTaglineOne": "Hola 👋",
-  "headerTaglineTwo": "Soy James Guevara",
+  "headerTaglineTwo": "Soy James Guevara Gamboa",
   "headerTaglineThree": "Diseñador y Desarrollador Web",
 
   "darkMode": true,
@@ -83,7 +83,7 @@
       "id": "30",
       "title": "PolkaCR",
       "description": "Desarrollé el ecommerce PolkaCR para una marca costarricense de arte y ropa con Shopify — catálogo, colecciones, carrito, checkout y tienda optimizada para conversión.",
-      "imageSrc": "https://www.polkacr.com/cdn/shop/files/logo_polka1_d79e4ff0-6ab9-4da6-b4ff-d1fba1fe8b6a.jpg?v=1775959849",
+      "imageSrc": "https://i.postimg.cc/wTNzXvxV/screencapture-polkacr-2026-05-28-15-11-41.jpg",
       "url": "https://www.polkacr.com/"
     },
     {
@@ -272,89 +272,187 @@
   ],
   "aboutpara": "Soy un Desarrollador Frontend con experiencia en desarrollo frontend, diseño web y WordPress. He ayudado a empresas a construir experiencias web modernas con tecnologías como React, Next.js y Shopify.",
   "resume": {
-    "tagline": "👋 Soy un Desarrollador Frontend.",
-    "description": "Soy James Guevara Gamboa, un desarrollador web especializado en desarrollo frontend y diseño web. Tengo un título de Técnico en Diseño y Desarrollo Web del CETAV y he trabajado en proyectos como Audiophile (comercio electrónico) y Travel Haven (clon de Airbnb). Mi experiencia incluye JavaScript, React, Next.js, optimización SEO y personalización de WordPress. Me apasiona crear soluciones digitales efectivas y atractivas.",
+    "name": "James Guevara Gamboa",
+    "tagline": "Desarrollador Full Stack",
+    "description": "Desarrollador Full Stack especializado en aplicaciones web modernas, plataformas de e-commerce y soluciones CMS headless con React, Next.js, TypeScript, Shopify y Strapi.",
+    "descriptionSecondary": "Construyo productos digitales escalables, responsivos y optimizados para SEO, con enfoque en rendimiento, accesibilidad, mantenibilidad y experiencia de usuario.",
+    "aboutParagraphs": [
+      "Desarrollador Full Stack con experiencia en aplicaciones web, plataformas de e-commerce, sitios corporativos y soluciones CMS headless.",
+      "Especializado en React, Next.js, TypeScript, Shopify, Strapi y arquitecturas web modernas. Experiencia colaborando con clientes, diseñadores y equipos multidisciplinarios para entregar productos digitales escalables, responsivos y optimizados para SEO.",
+      "Enfoque sólido en optimización de rendimiento, accesibilidad, mantenibilidad y experiencia de usuario.",
+      "Experiencia trabajando con APIs REST, GraphQL, Node.js, ecosistemas frontend modernos y flujos de desarrollo asistidos por IA."
+    ],
     "experiences": [
       {
         "id": "1",
-        "dates": "Marzo 2023 - Diciembre 2023",
-        "type": "Tiempo Completo",
-        "position": "Desarrollador Frontend en ContraLuz",
+        "dates": "Agosto 2024 – Actualidad",
+        "type": "Freelancer",
+        "position": "Desarrollador Full Stack Freelance",
+        "summary": "Desarrollo de aplicaciones web modernas, plataformas de e-commerce, sitios corporativos y soluciones CMS headless para clientes en sectores inmobiliario, comercial y corporativo.",
         "bullets": [
-          "Desarrollo de Sitios Web",
-          "Implementación de Shopify",
-          "Desarrollo de Panel de Administración"
+          "Entrega de más de 10 proyectos para clientes en industrias inmobiliaria, corporativa y de e-commerce.",
+          "Diseño y desarrollo de aplicaciones full stack con Next.js, React, TypeScript, Node.js y Strapi.",
+          "Construcción de interfaces responsivas y accesibles con Tailwind CSS.",
+          "Desarrollo e integración de APIs REST y servicios GraphQL.",
+          "Personalización de tiendas Shopify y experiencias de e-commerce.",
+          "Mejora de SEO, Core Web Vitals, accesibilidad y rendimiento general de las aplicaciones.",
+          "Colaboración directa con clientes y stakeholders durante todo el ciclo de vida del proyecto."
+        ],
+        "featuredProjects": [
+          {
+            "title": "Escazú Village",
+            "description": "Desarrollo de sitio web bilingüe de uso mixto con directorio, secciones residenciales y formularios de generación de leads.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "C3 Cariari Corporate Center",
+            "description": "Desarrollo de hub corporativo bilingüe con directorio, blog y captura de leads.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Plaza Tempo",
+            "description": "Desarrollo de plataforma comercial bilingüe con eventos, gestión de directorio y contenido de marketing.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Aleste",
+            "description": "Desarrollo de plataforma inmobiliaria de uso mixto bilingüe con directorio, blog y herramientas de generación de leads.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Novus ERP",
+            "description": "Desarrollo de plataforma de marketing ERP bilingüe con contenido dinámico, carrusel hero, integración de video y gestión de blog.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Portafolio Inmobiliario",
+            "description": "Desarrollo de plataforma inmobiliaria bilingüe con reportes estratégicos, KPIs, análisis de mercado y generación de leads.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Avenida Escazú",
+            "description": "Desarrollo de sitio web comercial de uso mixto bilingüe con directorio, información de parqueo y flujos de generación de leads.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "Savia",
+            "description": "Desarrollo de plataforma corporativa bilingüe con gestión de contenido dinámico, integración de blog y formularios de contacto.",
+            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
+          },
+          {
+            "title": "La Laguna",
+            "description": "Desarrollo de sitio web comercial e inmobiliario con gestión de contenido dinámico y optimización SEO.",
+            "technologies": "Next.js, TypeScript, Tailwind CSS, Strapi"
+          },
+          {
+            "title": "PolkaCR",
+            "description": "Personalización y optimización de tienda e-commerce Shopify con colecciones, gestión de productos, funcionalidades personalizadas y mejoras de UX.",
+            "technologies": "Shopify, Liquid, JavaScript, CSS"
+          }
         ]
       },
       {
         "id": "2",
-        "dates": "Enero 2024 - Julio 2024",
+        "dates": "Enero 2024 – Julio 2024",
         "type": "Tiempo Completo",
-        "position": "Desarrollador Frontend en TechPro Solutions",
+        "position": "Desarrollador Frontend y WordPress — TechPro Solutions",
         "bullets": [
-          "Desarrollo de Sitios Web",
-          "Diseño UI/UX",
-          "Colaboración con Clientes"
+          "Desarrollo de sitios web responsivos con WordPress.",
+          "Personalización de temas y plugins según requerimientos del negocio.",
+          "Diseño e implementación de soluciones UI/UX enfocadas en usabilidad y accesibilidad.",
+          "Mejora del rendimiento SEO y optimización de sitios web.",
+          "Colaboración directa con clientes y equipos de proyecto bajo metodologías ágiles."
         ]
       },
       {
         "id": "3",
-        "dates": "Agosto 2024 - Actualmente",
-        "type": "Freelancer",
-        "position": "Desarrollador Frontend Freelance",
+        "dates": "Marzo 2023 – Diciembre 2023",
+        "type": "Remoto",
+        "position": "Desarrollador Frontend — ContraLuz",
         "bullets": [
-          "Escazu Village - Desarrollo de sitio web bilingüe de uso mixto con directorio, secciones residenciales y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "C3 Cariari Corporate Center - Desarrollo de sitio web bilingüe corporativo con directorio, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Plaza Tempo - Desarrollo de sitio web bilingüe de uso mixto con directorio, eventos y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Aleste - Desarrollo de sitio web bilingüe inmobiliario de uso mixto con directorio, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Novus ERP - Desarrollo de sitio web bilingüe de ERP con carrusel hero, blog y video de marca usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Portafolio Inmobiliario - Desarrollo de sitio web bilingüe inmobiliario con reportes estratégicos, KPIs y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Avenida Escazu - Desarrollo de sitio web bilingüe de avenida de uso mixto con directorio, facturación de parqueo y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS",
-          "Savia - Desarrollo de sitio web bilingüe Ciudad de Vida con carrusel hero, blog y formularios usando Next.js, TypeScript, Strapi y Tailwind CSS"
+          "Desarrollo de landing page en Next.js alcanzando 100% de rendimiento en Lighthouse.",
+          "Liderazgo en la migración y lanzamiento de una plataforma e-commerce en Shopify.",
+          "Implementación de funcionalidades personalizadas en Shopify, incluyendo carrito de compras y seguimiento analítico.",
+          "Construcción de panel de administración basado en SSR para gestión de contenido.",
+          "Mejora del rendimiento, mantenibilidad y experiencia de usuario del sitio web."
         ]
       }
     ],
     "education": [
       {
-        "universityName": "Centro de Tecnología y Artes Visuales (CETAV), Costa Rica",
-        "universityDate": "02/2022 - 01/2024",
-        "universityPara": "Técnico en Diseño y Desarrollo Web."
+        "universityName": "FWD Costa Rica – Tech & Freedom",
+        "universityDate": "Enero 2025 – Julio 2025",
+        "universityPara": "Desarrollador Full Stack Web"
       },
       {
-        "universityName": "FWD Costa Rica Tech & Freedom",
-        "universityDate": "04/2025 - 07/2025",
-        "universityPara": "Desarrollador de Software Back End."
+        "universityName": "FWD Costa Rica – Tech & Freedom",
+        "universityDate": "Abril 2025 – Julio 2025",
+        "universityPara": "Desarrollador de Software Backend"
       },
       {
-        "universityName": "FWD Costa Rica Tech & Freedom",
-        "universityDate": "01/2025 - 07/2025",
-        "universityPara": "Desarrollador Full Stack Web Developer."
+        "universityName": "Centro de Tecnología y Artes Visuales (CETAV)",
+        "universityDate": "Febrero 2022 – Enero 2024",
+        "universityPara": "Técnico en Diseño y Desarrollo Web"
       }
     ],
-    "languages": ["JavaScript", "HTML5", "CSS", "TypeScript", "Python"],
-    "frameworks": [
+    "languages": [
       "React",
       "Next.js",
-      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Sass",
       "Astro",
-      "Express",
-      "GraphQL",
-      "Apollo"
+      "GSAP",
+      "Lenis"
     ],
-    "others": [
-      "Figma",
-      "WordPress",
-      "Shopify",
-      "Drupal",
-      "Strapi",
-      "MongoDb",
-      "SQL",
-      "MySQL",
-      "Git",
-      "Diseño Responsivo",
-      "UI/UX",
+    "frameworks": [
+      "Node.js",
+      "Express.js",
       "APIs REST",
-      "Sass"
+      "GraphQL",
+      "Apollo GraphQL"
+    ],
+    "cmsEcommerce": [
+      "Shopify",
+      "Shopify Liquid",
+      "Strapi",
+      "WordPress",
+      "Drupal"
+    ],
+    "databases": ["MongoDB", "MySQL", "SQL"],
+    "toolsPlatforms": [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Figma",
+      "Lighthouse",
+      "Chrome DevTools"
+    ],
+    "aiTools": ["Claude Code", "Claude API", "Model Context Protocol (MCP)"],
+    "spokenLanguages": ["Español — Nativo", "Inglés — B2 (Intermedio Alto)"],
+    "certifications": [
+      "Claude 101",
+      "Claude Code 101",
+      "Introduction to Claude Cowork",
+      "Claude Code in Action",
+      "AI Fluency: Framework & Foundations",
+      "Building with the Claude API",
+      "Introduction to Model Context Protocol (MCP)",
+      "Web Design for Web Developers",
+      "Front-End Web Developer",
+      "Responsive Web Design",
+      "Create a Web App with Angular 12, .NET Core Web API & MySQL",
+      "JavaScript Algorithms and Data Structures",
+      "Introduction to Cybersecurity"
+    ],
+    "achievements": [
+      {
+        "title": "Proyecto Human Brush (Bélgica)",
+        "description": "Colaboré en el desarrollo de un innovador sistema de proyección interactiva enfocado en animar movimientos del cuerpo humano mediante tecnología digital y experiencias basadas en movimiento."
+      }
     ]
   }
 }

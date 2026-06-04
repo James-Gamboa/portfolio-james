@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — fully answered
 
@@ -14,9 +14,9 @@ Audience, use, tone, theme all explicit. No inference.
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Workbench + Terminal. The user explicitly requested Terminal again, so theme is fixed. Picking from {Long Document, Component Playground, Specimen} for the macro this time — Long Document fits a docs-landing brief because the page asks the user to read, not click through a sticky tour."*
+> _"Previous run on this brief picked Workbench + Terminal. The user explicitly requested Terminal again, so theme is fixed. Picking from {Long Document, Component Playground, Specimen} for the macro this time — Long Document fits a docs-landing brief because the page asks the user to read, not click through a sticky tour."_
 >
-> *"Theme: Terminal as requested. No theme rotation when the user names one."*
+> _"Theme: Terminal as requested. No theme rotation when the user names one."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@ Audience, use, tone, theme all explicit. No inference.
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: Tier-A pure-CSS terminal mockup, but inline as a `<pre>` rendered code block — no clipped-edge browser frame. The Long Document macro wants the demo embedded in the prose, not floated next to a sticky tour. Same anti-Lottie call as v1; different placement."*
+> _"Enrichment: Tier-A pure-CSS terminal mockup, but inline as a `<pre>` rendered code block — no clipped-edge browser frame. The Long Document macro wants the demo embedded in the prose, not floated next to a sticky tour. Same anti-Lottie call as v1; different placement."_
 
 ## Step 5 · Preview
 

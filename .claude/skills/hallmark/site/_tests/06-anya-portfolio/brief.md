@@ -6,17 +6,17 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — skipped (explicit)
 
-> *"Going with: audience = engineering leaders considering Anya for hire / consult · use = read about Anya, then contact · tone = austere, technical, prose-led. If any of those is wrong, redirect."*
+> _"Going with: audience = engineering leaders considering Anya for hire / consult · use = read about Anya, then contact · tone = austere, technical, prose-led. If any of those is wrong, redirect."_
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Long Document + Studio + none. Picking from {Index-First, Letter, Specimen} for the macro this time — Index-First wins because a senior IC's one-pager benefits from a tabular structure (years · companies · domains) more than a prose-led essay; the sidebar TOC also makes the page scannable for hiring managers reading on a 30-second window."*
+> _"Previous run on this brief picked Long Document + Studio + none. Picking from {Index-First, Letter, Specimen} for the macro this time — Index-First wins because a senior IC's one-pager benefits from a tabular structure (years · companies · domains) more than a prose-led essay; the sidebar TOC also makes the page scannable for hiring managers reading on a 30-second window."_
 >
-> *"Theme rotation: Studio (light · italic-serif · chromatic-green) → Plain (light · display-heavy · cool-deep-ink-blue). Differs on display style and accent hue. Passes."*
+> _"Theme rotation: Studio (light · italic-serif · chromatic-green) → Plain (light · display-heavy · cool-deep-ink-blue). Differs on display style and accent hue. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: none. The page is a TOC + prose. A personal portfolio that builds a Three.js spinning name reads as overcompensating. Restraint is the credibility signal."*
+> _"Enrichment: none. The page is a TOC + prose. A personal portfolio that builds a Three.js spinning name reads as overcompensating. Restraint is the credibility signal."_
 
 ## Step 5 · Preview
 

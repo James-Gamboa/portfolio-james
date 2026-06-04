@@ -16,7 +16,7 @@
     "about": "about"
   },
   "hero": {
-    "title": "Hi, I'm James Guevara",
+    "title": "Hi, I'm James Guevara Gamboa",
     "subtitle": "Full Stack Developer",
     "description": "Passionate about creating innovative digital solutions and bringing ideas to life through code.",
     "cta": "Get in Touch",
@@ -47,12 +47,21 @@
     "consulting": "Consulting"
   },
   "resume": {
+    "about": "About Me",
     "experience": "Experience",
     "education": "Education",
     "skills": "Skills",
-    "languages": "Languages",
-    "frameworks": "Frameworks",
-    "others": "Others"
+    "languages": "Frontend",
+    "frameworks": "Backend & APIs",
+    "cmsEcommerce": "CMS & E-Commerce",
+    "databases": "Databases",
+    "toolsPlatforms": "Tools & Platforms",
+    "aiTools": "AI & Developer Tools",
+    "others": "Other",
+    "spokenLanguages": "Languages",
+    "certifications": "Certifications",
+    "achievements": "Achievements",
+    "featuredProjects": "Featured Projects"
   },
   "footer": {
     "contact": "Let's talk about projects"

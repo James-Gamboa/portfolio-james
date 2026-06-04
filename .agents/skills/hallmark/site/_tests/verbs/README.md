@@ -2,11 +2,11 @@
 
 Each verb demonstrated on a tiny, realistic input. Folders contain the input, the verb's output, and a one-page note explaining what fired and why.
 
-| Verb | Folder | Input | What the verb does |
-| --- | --- | --- | --- |
-| `audit` | [`audit/`](audit/) | An AI-templated landing fragment | Read it, score against the anti-pattern list, return a ranked punch list. **Does not edit.** |
-| `redesign` | [`redesign/`](redesign/) | A page with the AI structural template (centered hero · 3 cards · CTA · footer) | Throw out the structure, rebuild with a different fingerprint. **Preserves copy + IA.** |
-| `study` | [`study/`](study/) | A described screenshot of a Pentagram-style portfolio | Extract DNA — macrostructure, archetypes, type-pairing role, accent — return a diagnosis report, then rebuild user content with that DNA. **Never copies pixels.** |
+| Verb       | Folder                   | Input                                                                           | What the verb does                                                                                                                                                 |
+| ---------- | ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `audit`    | [`audit/`](audit/)       | An AI-templated landing fragment                                                | Read it, score against the anti-pattern list, return a ranked punch list. **Does not edit.**                                                                       |
+| `redesign` | [`redesign/`](redesign/) | A page with the AI structural template (centered hero · 3 cards · CTA · footer) | Throw out the structure, rebuild with a different fingerprint. **Preserves copy + IA.**                                                                            |
+| `study`    | [`study/`](study/)       | A described screenshot of a Pentagram-style portfolio                           | Extract DNA — macrostructure, archetypes, type-pairing role, accent — return a diagnosis report, then rebuild user content with that DNA. **Never copies pixels.** |
 
 Each folder holds:
 

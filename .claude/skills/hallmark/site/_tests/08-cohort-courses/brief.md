@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — fully answered
 
@@ -14,9 +14,9 @@ Audience, use, tone all explicit.
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Marquee Hero + Salon + Tier-A continuous marquee. Picking from {Stat-Led, Long Document, Workbench} for the macro this time — Stat-Led wins because the brief itself leads with a number range ('30 to 500 students'); a stat hero answers the brief literally."*
+> _"Previous run on this brief picked Marquee Hero + Salon + Tier-A continuous marquee. Picking from {Stat-Led, Long Document, Workbench} for the macro this time — Stat-Led wins because the brief itself leads with a number range ('30 to 500 students'); a stat hero answers the brief literally."_
 >
-> *"Theme rotation: Salon (light · mono-display · warm-amber) → Linen (light · geometric-sans · warm-amber). Differs on display style. Accent stays warm-amber. One axis differs — passes (the rule requires at least one)."*
+> _"Theme rotation: Salon (light · mono-display · warm-amber) → Linen (light · geometric-sans · warm-amber). Differs on display style. Accent stays warm-amber. One axis differs — passes (the rule requires at least one)."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@ Audience, use, tone all explicit.
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: none (typography only). The brief's range '30–500' is itself the visual — set it at 22 rem and the page can carry the rest typographically. No marquee (v1 had it; the rotation rule pushes us off it). No mockup (the page isn't selling a screen)."*
+> _"Enrichment: none (typography only). The brief's range '30–500' is itself the visual — set it at 22 rem and the page can carry the rest typographically. No marquee (v1 had it; the rotation rule pushes us off it). No mockup (the page isn't selling a screen)."_
 
 ## Step 5 · Preview
 

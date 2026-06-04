@@ -22,7 +22,7 @@ The user pasted a screenshot of a design studio's portfolio site they admire. Be
 
 ## What the user said
 
-> *"I want my portfolio to feel like this. I'm a small product-design studio called Coelho — three people, mostly working with early-stage Lisbon companies. I have six projects to show. Use this design's DNA."*
+> _"I want my portfolio to feel like this. I'm a small product-design studio called Coelho — three people, mostly working with early-stage Lisbon companies. I have six projects to show. Use this design's DNA."_
 
 ## Refusal heuristics check
 

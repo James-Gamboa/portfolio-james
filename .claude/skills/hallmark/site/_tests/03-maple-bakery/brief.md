@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — fully answered
 
@@ -14,9 +14,9 @@ Audience, use, tone all explicit.
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Long Document + Linen + Tier-B SVG loaf. Picking from {Catalogue, Photographic, Letter} this time — Catalogue wins because the brief says 'see what's available' (the user is shopping a board, not reading a story)."*
+> _"Previous run on this brief picked Long Document + Linen + Tier-B SVG loaf. Picking from {Catalogue, Photographic, Letter} this time — Catalogue wins because the brief says 'see what's available' (the user is shopping a board, not reading a story)."_
 >
-> *"Theme rotation: Linen (light · geometric-sans · warm-amber) → Almanac (light · roman-serif · warm-amber). Differs on display style. Passes."*
+> _"Theme rotation: Linen (light · geometric-sans · warm-amber) → Almanac (light · roman-serif · warm-amber). Differs on display style. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@ Audience, use, tone all explicit.
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: Tier-A pure-CSS bread silhouettes per item. Each row has a small (96 px) hand-drawn loaf shape rendered as inline SVG with a single accent stroke. No photography (raw bread photos read as Midjourney). No Lottie. Eight breads × eight tiny SVGs = ~140 lines of inline SVG total."*
+> _"Enrichment: Tier-A pure-CSS bread silhouettes per item. Each row has a small (96 px) hand-drawn loaf shape rendered as inline SVG with a single accent stroke. No photography (raw bread photos read as Midjourney). No Lottie. Eight breads × eight tiny SVGs = ~140 lines of inline SVG total."_
 
 ## Step 5 · Preview
 

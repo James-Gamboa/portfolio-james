@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 (Vanilla scratch directory; no `package.json`, no `tailwind.config.*`, no existing CSS — silent pre-flight.)
 
@@ -14,17 +14,17 @@
 
 The user opted out. Skill states inferences in one sentence:
 
-> *"Going with: audience = listeners who care about voice and atmosphere · use = listen + subscribe · tone = intimate, hand-set, voice-led. If any of those is wrong, redirect."*
+> _"Going with: audience = listeners who care about voice and atmosphere · use = listen + subscribe · tone = intimate, hand-set, voice-led. If any of those is wrong, redirect."_
 
 ## Step 2.5 · Project memory rotation
 
-> *"This is the first Hallmark v0.6.0 run for this project. No `.hallmark/log.json` rotation needed."*
+> _"This is the first Hallmark v0.6.0 run for this project. No `.hallmark/log.json` rotation needed."_
 
 (But the v1 stamp at `_tests/01-tide-podcast/style.css` says **Quote-Led + Atelier**. The v2 brief is to re-run the same prompt with the new skill — picking a different macro/theme to demonstrate the diversification rule firing in a "second visit" frame.)
 
-> *"Previous run on this brief picked Quote-Led + Atelier. Picking from {Letter, Index-First, Long Document} this time — Letter wins for an audio-domain brief because the medium is voice and a letter to the listener carries weight a pull-quote doesn't repeat."*
+> _"Previous run on this brief picked Quote-Led + Atelier. Picking from {Letter, Index-First, Long Document} this time — Letter wins for an audio-domain brief because the medium is voice and a letter to the listener carries weight a pull-quote doesn't repeat."_
 >
-> *"Theme rotation: Atelier (light · italic-serif · warm) → Salon (light · mono-display · warm). Differs on display style. Passes."*
+> _"Theme rotation: Atelier (light · italic-serif · warm) → Salon (light · mono-display · warm). Differs on display style. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -32,7 +32,7 @@ The user opted out. Skill states inferences in one sentence:
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: none (typography only). Letter macro on Salon theme; the prose is the design. Adding a Lottie or a Midjourney microphone shot would dilute the voice — same anti-slop call as v1."*
+> _"Enrichment: none (typography only). Letter macro on Salon theme; the prose is the design. Adding a Lottie or a Midjourney microphone shot would dilute the voice — same anti-slop call as v1."_
 
 ## Step 5 · Preview
 

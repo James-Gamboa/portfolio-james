@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — fully answered
 
@@ -14,9 +14,9 @@ Audience, use, tone all explicit.
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Bento Grid + Pastel + Tier-A flame chart. Picking from {Workbench, Stat-Led, Long Document} for the macro this time — Workbench wins because the brief says 'try it' and Workbench is structured to walk an SRE through a single workflow rather than show six surfaces in a tile grid."*
+> _"Previous run on this brief picked Bento Grid + Pastel + Tier-A flame chart. Picking from {Workbench, Stat-Led, Long Document} for the macro this time — Workbench wins because the brief says 'try it' and Workbench is structured to walk an SRE through a single workflow rather than show six surfaces in a tile grid."_
 >
-> *"Theme rotation: Pastel (light · geometric-sans · cool-indigo) → Midnight (dark · geometric-sans · phosphor-cyan). Differs on paper band (light → dark) and accent hue (indigo → phosphor-cyan). Two of three axes differ. Passes."*
+> _"Theme rotation: Pastel (light · geometric-sans · cool-indigo) → Midnight (dark · geometric-sans · phosphor-cyan). Differs on paper band (light → dark) and accent hue (indigo → phosphor-cyan). Two of three axes differ. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@ Audience, use, tone all explicit.
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: Tier-A pure-CSS pinned dashboard panel — a hand-built waterfall trace rendered as flex bars. Different from v1's clipped-edge browser frame: this one sits in the right column, pinned during scroll, swapping its content as the user scrolls past each step. Same Tier-A custom-craft, different layout role."*
+> _"Enrichment: Tier-A pure-CSS pinned dashboard panel — a hand-built waterfall trace rendered as flex bars. Different from v1's clipped-edge browser frame: this one sits in the right column, pinned during scroll, swapping its content as the user scrolls past each step. Same Tier-A custom-craft, different layout role."_
 
 ## Step 5 · Preview
 

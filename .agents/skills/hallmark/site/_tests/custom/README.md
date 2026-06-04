@@ -4,11 +4,11 @@ Three landing pages produced by the **custom** theme route — the new opt-in br
 
 These three pages are the worked examples written into [`references/custom-theme.md`](../../../references/custom-theme.md) § G — rendered as actual HTML so the palette + pairing can be inspected visually.
 
-| # | Brand | Vibe | Anchor | Macrostructure | Axes |
-| --- | --- | --- | --- | --- | --- |
-| 01 | **Coffeebox** — small-batch coffee subscription | "archival warmth, hand-set, no varnish" | terracotta | Long Document | light / italic-serif / chromatic-terracotta |
-| 02 | **Loop** — payment-rail observability for fintechs | "industrial precision, cool, technical" | sea-blue | Workbench | dark / mono / cool |
-| 03 | **Mossroot** — herbal apothecary in Porto | "moss, lichen, soft pink, herbal" | (skipped — derived) | Catalogue | light / roman-serif / chromatic-other (dusty-pink) |
+| #   | Brand                                              | Vibe                                    | Anchor              | Macrostructure | Axes                                               |
+| --- | -------------------------------------------------- | --------------------------------------- | ------------------- | -------------- | -------------------------------------------------- |
+| 01  | **Coffeebox** — small-batch coffee subscription    | "archival warmth, hand-set, no varnish" | terracotta          | Long Document  | light / italic-serif / chromatic-terracotta        |
+| 02  | **Loop** — payment-rail observability for fintechs | "industrial precision, cool, technical" | sea-blue            | Workbench      | dark / mono / cool                                 |
+| 03  | **Mossroot** — herbal apothecary in Porto          | "moss, lichen, soft pink, herbal"       | (skipped — derived) | Catalogue      | light / roman-serif / chromatic-other (dusty-pink) |
 
 Each folder holds:
 

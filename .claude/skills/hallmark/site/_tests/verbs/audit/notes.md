@@ -22,7 +22,7 @@ A 148-line `index.html` with inline CSS — a generic AI-shaped landing page for
 
 `audit` is the verb that **doesn't change anything**. It's the safety verb — the one a user runs before they ask for `refine` or `redesign`. The output gives the user enough information to decide which way to take the page.
 
-In this case the audit returns "do not run `refine` — the structural fingerprint is the problem; run `redesign` instead." That is the ideal output: a verb that helps the user pick *another* verb.
+In this case the audit returns "do not run `refine` — the structural fingerprint is the problem; run `redesign` instead." That is the ideal output: a verb that helps the user pick _another_ verb.
 
 ## Durable artifact
 

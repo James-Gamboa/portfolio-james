@@ -10,19 +10,7 @@ const nextConfig = {
         hostname: "i.postimg.cc",
         port: "",
         pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.polkacr.com",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.shopify.com",
-        port: "",
-        pathname: "/**",
-      },
+      }
     ],
   },
   async redirects() {

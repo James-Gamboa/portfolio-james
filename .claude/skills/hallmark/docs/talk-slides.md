@@ -18,11 +18,11 @@ Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
 # Stop letting your agents ship ugly UIs.
 
-*How to build well-designed UIs with AI agents.*
+_How to build well-designed UIs with AI agents._
 
 — Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
-*Speaker: I'm Hassan, I lead DX at Together AI. Most of you have built an AI app this year and watched it ship a UI you'd never put on your portfolio. This talk is about why that happens, and seven concrete things that fix it — for any agent you use.*
+_Speaker: I'm Hassan, I lead DX at Together AI. Most of you have built an AI app this year and watched it ship a UI you'd never put on your portfolio. This talk is about why that happens, and seven concrete things that fix it — for any agent you use._
 
 ---
 
@@ -30,11 +30,11 @@ Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
 # Here's what your agent ships today.
 
-*(Visual: the real DevForge screenshot — a generated developer-conference landing page. Purple-cyan gradient on the headline, centered hero, four-column stat row, Inter on Inter.)*
+_(Visual: the real DevForge screenshot — a generated developer-conference landing page. Purple-cyan gradient on the headline, centered hero, four-column stat row, Inter on Inter.)_
 
 > Vanilla prompt. Same shape every time.
 
-*Speaker: I gave the same prompt to a dozen agents — "build me a landing page for a developer conference, dark theme, in Brooklyn." This is roughly what every one of them returned. Different models, different stacks, same page.*
+_Speaker: I gave the same prompt to a dozen agents — "build me a landing page for a developer conference, dark theme, in Brooklyn." This is roughly what every one of them returned. Different models, different stacks, same page._
 
 ---
 
@@ -42,11 +42,11 @@ Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
 # It could ship this instead.
 
-*(Visual: the Hyperlane screenshot — same brief, rebuilt. Big sans-serif headline with an italic-serif accent, asymmetric layout, single warm accent, monospace meta.)*
+_(Visual: the Hyperlane screenshot — same brief, rebuilt. Big sans-serif headline with an italic-serif accent, asymmetric layout, single warm accent, monospace meta.)_
 
 > Same brief. One missing layer added.
 
-*Speaker: Same brief. Same agent. The difference is the layer between the prompt and the output. We'll spend the rest of the talk on that layer.*
+_Speaker: Same brief. Same agent. The difference is the layer between the prompt and the output. We'll spend the rest of the talk on that layer._
 
 ---
 
@@ -54,11 +54,11 @@ Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
 # Models ship the mean of their training set.
 
-*Every SaaS site since 2019 trained on the same shape. Without external steering, the agent regresses to it.*
+_Every SaaS site since 2019 trained on the same shape. Without external steering, the agent regresses to it._
 
 > Every part of this is fixable with prompting and a small amount of structure.
 
-*Speaker: This isn't a model failure. Claude can render anything you describe. It's that "make me a landing page" maps to a region of the manifold where every SaaS site since 2019 lives. The good news: every fix from here is something you can do today, with any agent.*
+_Speaker: This isn't a model failure. Claude can render anything you describe. It's that "make me a landing page" maps to a region of the manifold where every SaaS site since 2019 lives. The good news: every fix from here is something you can do today, with any agent._
 
 ---
 
@@ -66,9 +66,9 @@ Hassan El Mghari · Together AI · AI Engineer World's Fair · 2026
 
 # Seven things that fix it.
 
-*Tool-agnostic. Works with v0, Lovable, Bolt, Cursor, Claude Code, or your own agent.*
+_Tool-agnostic. Works with v0, Lovable, Bolt, Cursor, Claude Code, or your own agent._
 
-*Speaker: Each one of these closes a class of slop. Each one works today.*
+_Speaker: Each one of these closes a class of slop. Each one works today._
 
 ---
 
@@ -84,9 +84,9 @@ Adopt it and your agent's output gets 80% better on day one.
 $  npx shadcn@latest add button card dialog input table
 ```
 
-→ *drop the components in. Now every AI generation composes from a real system, not from invented primitives.*
+→ _drop the components in. Now every AI generation composes from a real system, not from invented primitives._
 
-*Speaker: This is the cheapest, highest-leverage move. Most AI engineers know about shadcn/ui. Fewer actually adopt it. v0 ships it natively. Cursor reads it. Claude Code reads it. The model has seen millions of examples of these components — it knows how to compose them.*
+_Speaker: This is the cheapest, highest-leverage move. Most AI engineers know about shadcn/ui. Fewer actually adopt it. v0 ships it natively. Cursor reads it. Claude Code reads it. The model has seen millions of examples of these components — it knows how to compose them._
 
 ---
 
@@ -101,17 +101,17 @@ One palette, one type pairing, one scale. No mid-render improvisation.
 /* DESIGN.md  or  app/globals.css  —  Tailwind v4  @theme block */
 
 @theme {
-   --color-paper:    oklch(0.13 0.01 250);   /* one surface, not five */
-   --color-ink:      oklch(0.93 0.01 250);   /* one ink */
-   --color-accent:   oklch(0.65 0.18 250);   /* one accent, under 5% */
-   --font-display:   "Inter Tight", sans-serif;
-   --font-body:      "Inter", sans-serif;
-   --space-1:        0.25rem;                /* 4-pt scale */
-   --ease-out:       cubic-bezier(.2,0,0,1);
+  --color-paper: oklch(0.13 0.01 250); /* one surface, not five */
+  --color-ink: oklch(0.93 0.01 250); /* one ink */
+  --color-accent: oklch(0.65 0.18 250); /* one accent, under 5% */
+  --font-display: "Inter Tight", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --space-1: 0.25rem; /* 4-pt scale */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
 }
 ```
 
-*Speaker: Tailwind v4 made this easier than it used to be. One `@theme` block, OKLCH for color, semantic names. Drop a `DESIGN.md` next to it that describes the brand in plain English — what the brand sounds like, what it isn't. The agent reads both on every run.*
+_Speaker: Tailwind v4 made this easier than it used to be. One `@theme` block, OKLCH for color, semantic names. Drop a `DESIGN.md` next to it that describes the brand in plain English — what the brand sounds like, what it isn't. The agent reads both on every run._
 
 ---
 
@@ -119,16 +119,16 @@ One palette, one type pairing, one scale. No mid-render improvisation.
 
 # Ask for a shape, not a list of features.
 
-*Stop saying "hero with three features." Say marquee. bento. long-document. stat-led.*
+_Stop saying "hero with three features." Say marquee. bento. long-document. stat-led._
 
-*(Visual: four abstract wireframes drawn in Figma showing each shape.)*
+_(Visual: four abstract wireframes drawn in Figma showing each shape.)_
 
 - **MARQUEE** · one editorial idea, biased left
 - **LONG DOCUMENT** · reads like a letter, no marketing chrome
 - **BENTO** · many entries, irregular grid
 - **STAT-LED** · product is the headline; numbers carry it
 
-*Speaker: This is the move that breaks the "every page looks like a SaaS landing" attractor. Don't enumerate features. Pick a category of page. The same way Linear's home and Stripe's home don't share a shape — they share a category.*
+_Speaker: This is the move that breaks the "every page looks like a SaaS landing" attractor. Don't enumerate features. Pick a category of page. The same way Linear's home and Stripe's home don't share a shape — they share a category._
 
 ---
 
@@ -145,11 +145,11 @@ A reference image carries more taste than a paragraph of adjectives.
 →  name the role of the type ("italic editorial serif"), not the font.
 ```
 
-*(Visual right: a real screenshot of calendly.com — the reference you'd actually paste.)*
+_(Visual right: a real screenshot of calendly.com — the reference you'd actually paste.)_
 
 > example · pasted calendly.com to the agent
 
-*Speaker: Designers have always done this — "make it feel like this." Until recently your agent had no equivalent. Now it does. Don't describe taste. Show it. And ask the model to extract structure, not pixels — what you want is the rhythm, not a knock-off.*
+_Speaker: Designers have always done this — "make it feel like this." Until recently your agent had no equivalent. Now it does. Don't describe taste. Show it. And ask the model to extract structure, not pixels — what you want is the rhythm, not a knock-off._
 
 ---
 
@@ -157,18 +157,18 @@ A reference image carries more taste than a paragraph of adjectives.
 
 # Tell it what you DON'T want.
 
-*Constraints beat instructions. Put these in your system prompt:*
+_Constraints beat instructions. Put these in your system prompt:_
 
-- ✕  Purple → blue gradient hero
-- ✕  Inter / Roboto as display AND body
-- ✕  Three equal columns with icon-above-heading
-- ✕  `min-height: 100vh`, everything centered
-- ✕  Cards inside cards (no semantic reason)
-- ✕  `background-clip` text gradients on headlines
-- ✕  Pure `#000` or pure `#fff` as a surface
-- ✕  Invented metrics, testimonials, or logos
+- ✕ Purple → blue gradient hero
+- ✕ Inter / Roboto as display AND body
+- ✕ Three equal columns with icon-above-heading
+- ✕ `min-height: 100vh`, everything centered
+- ✕ Cards inside cards (no semantic reason)
+- ✕ `background-clip` text gradients on headlines
+- ✕ Pure `#000` or pure `#fff` as a surface
+- ✕ Invented metrics, testimonials, or logos
 
-*Speaker: Counterintuitive but true: telling the model what NOT to do is stronger than describing what you want. These eight tells are the fingerprints of AI-generated UI. Ban them and the model has to reach somewhere else.*
+_Speaker: Counterintuitive but true: telling the model what NOT to do is stronger than describing what you want. These eight tells are the fingerprints of AI-generated UI. Ban them and the model has to reach somewhere else._
 
 ---
 
@@ -176,22 +176,22 @@ A reference image carries more taste than a paragraph of adjectives.
 
 # Every interactive element ships eight states.
 
-*If the agent emits two, your UI ships broken.*
+_If the agent emits two, your UI ships broken._
 
-*(Visual: eight actual buttons in a 4-by-2 grid, each visibly in a different state — default, hover, focus-visible, active, disabled, loading, error, success.)*
+_(Visual: eight actual buttons in a 4-by-2 grid, each visibly in a different state — default, hover, focus-visible, active, disabled, loading, error, success.)_
 
-| state | what makes it different |
-| --- | --- |
-| `default` | the resting style |
-| `hover` | one shade lighter |
+| state            | what makes it different                 |
+| ---------------- | --------------------------------------- |
+| `default`        | the resting style                       |
+| `hover`          | one shade lighter                       |
 | `:focus-visible` | a 2px accent ring, instant (no fade-in) |
-| `:active` | inverted ink, accent fill |
-| `disabled` | 50% opacity, no pointer |
-| `loading` | `· · · working` |
-| `error` | red border, ⚠ retry |
-| `success` | green border, ✓ saved |
+| `:active`        | inverted ink, accent fill               |
+| `disabled`       | 50% opacity, no pointer                 |
+| `loading`        | `· · · working`                         |
+| `error`          | red border, ⚠ retry                     |
+| `success`        | green border, ✓ saved                   |
 
-*Speaker: This is the single fastest "real or vibes" test you can run on AI output. Tab into the page. Disable a field. Make something load. If three of the eight states are unstyled, the agent shipped a screenshot, not a component.*
+_Speaker: This is the single fastest "real or vibes" test you can run on AI output. Tab into the page. Disable a field. Make something load. If three of the eight states are unstyled, the agent shipped a screenshot, not a component._
 
 ---
 
@@ -199,7 +199,7 @@ A reference image carries more taste than a paragraph of adjectives.
 
 # Make the agent grade its own work — first.
 
-*One line in the system prompt forces a critical pass before output. Two passes is normal.*
+_One line in the system prompt forces a critical pass before output. Two passes is normal._
 
 - **DISTINCTIVENESS** · does this look like THIS brief — or any brief
 - **HIERARCHY** · can a reader tell first / second / third in 2 seconds
@@ -208,7 +208,7 @@ A reference image carries more taste than a paragraph of adjectives.
 
 Score each 1–5. Anything below 3 → revision pass.
 
-*Speaker: The trick isn't the rubric — it's forcing the model to look at its own output critically before it returns. Two passes is normal. Three passes means the brief is too vague.*
+_Speaker: The trick isn't the rubric — it's forcing the model to look at its own output critically before it returns. Two passes is normal. Three passes means the brief is too vague._
 
 ---
 
@@ -221,17 +221,17 @@ Score each 1–5. Anything below 3 → revision pass.
 
 You are a designer, not a templater. Before you write code:
 
-  1. use shadcn/ui — never re-invent a primitive that already exists.
-  2. read  DESIGN.md  for tokens. Use only those.
-  3. pick ONE page shape (marquee, long-document, bento, stat-led, manifesto, catalogue).
-  4. ban: purple-cyan gradients, Inter on Inter, 3-col icon grids, 100vh centered hero,
-     card-in-card, background-clip text, pure #000 / #fff, invented metrics.
-  5. ship 8 states for every interactive element.
-  6. score  Distinctiveness · Hierarchy · Execution · Restraint  on 1–5.
-     anything <3 triggers a revision pass.
+1. use shadcn/ui — never re-invent a primitive that already exists.
+2. read DESIGN.md for tokens. Use only those.
+3. pick ONE page shape (marquee, long-document, bento, stat-led, manifesto, catalogue).
+4. ban: purple-cyan gradients, Inter on Inter, 3-col icon grids, 100vh centered hero,
+   card-in-card, background-clip text, pure #000 / #fff, invented metrics.
+5. ship 8 states for every interactive element.
+6. score Distinctiveness · Hierarchy · Execution · Restraint on 1–5.
+   anything <3 triggers a revision pass.
 ```
 
-*Speaker: That's it. Seven lines. Drop this in any agent's system prompt — Cursor `.mdc`, Claude Code skill, v0 project instructions. Feel the difference on the next render.*
+_Speaker: That's it. Seven lines. Drop this in any agent's system prompt — Cursor `.mdc`, Claude Code skill, v0 project instructions. Feel the difference on the next render._
 
 ---
 
@@ -239,17 +239,17 @@ You are a designer, not a templater. Before you write code:
 
 # Pick your weapon.
 
-*Same seven fixes. Different surfaces.*
+_Same seven fixes. Different surfaces._
 
-| | | |
-| --- | --- | --- |
-| **v0** | shadcn / Tailwind playground | best UI quality out of the box |
-| **Lovable** | full-stack chat-and-build | edit visually, ship live |
-| **Bolt** | fast prototyping in StackBlitz | speed |
-| **Cursor** | in-IDE assistant | lives in your editor |
-| **Claude Code** | agent loop · file-aware · skills | longest-context coder |
+|                 |                                  |                                |
+| --------------- | -------------------------------- | ------------------------------ |
+| **v0**          | shadcn / Tailwind playground     | best UI quality out of the box |
+| **Lovable**     | full-stack chat-and-build        | edit visually, ship live       |
+| **Bolt**        | fast prototyping in StackBlitz   | speed                          |
+| **Cursor**      | in-IDE assistant                 | lives in your editor           |
+| **Claude Code** | agent loop · file-aware · skills | longest-context coder          |
 
-*Speaker: All of these can do beautiful work if you put the seven fixes in. Pick the one that matches your stack.*
+_Speaker: All of these can do beautiful work if you put the seven fixes in. Pick the one that matches your stack._
 
 ---
 
@@ -257,15 +257,15 @@ You are a designer, not a templater. Before you write code:
 
 # Hallmark.
 
-*One example our team open-sourced.*
+_One example our team open-sourced._
 
 A Claude Code skill that bakes all seven fixes in.
 
 → `github.com/nutlope/hallmark`
 
-*(Visual: the Hallmark OG image — "The best landing pages built with AI" with three real example pages baked in.)*
+_(Visual: the Hallmark OG image — "The best landing pages built with AI" with three real example pages baked in.)_
 
-*Speaker: We packaged the seven fixes into a Claude Code skill for ourselves at Together AI, then open-sourced it. It's one approach — there are others (Anthropic's frontend-design skill, Taste, Impeccable, others). The principle is the same: stop letting the agent invent the rules. Hand it a system.*
+_Speaker: We packaged the seven fixes into a Claude Code skill for ourselves at Together AI, then open-sourced it. It's one approach — there are others (Anthropic's frontend-design skill, Taste, Impeccable, others). The principle is the same: stop letting the agent invent the rules. Hand it a system._
 
 ---
 
@@ -283,9 +283,9 @@ TASTE   ← here
 ORCHESTRATION
 ```
 
-*If you don't put it in the stack, the model picks the mean.*
+_If you don't put it in the stack, the model picks the mean._
 
-*Speaker: We treat eval as a first-class layer because we know models will optimize for the wrong thing without it. Taste is the same — not a polish step you add at the end. A layer. Same stack you already build with. New row.*
+_Speaker: We treat eval as a first-class layer because we know models will optimize for the wrong thing without it. Taste is the same — not a polish step you add at the end. A layer. Same stack you already build with. New row._
 
 ---
 
@@ -298,13 +298,13 @@ github.com/nutlope/hallmark
 together.ai
 ```
 
-`@nutlope`   `@YoussefXLM`
+`@nutlope` `@YoussefXLM`
 
-*(Visual right: a real QR code linking to the Hallmark repo.)*
+_(Visual right: a real QR code linking to the Hallmark repo.)_
 
 > scan to install
 
-*Speaker: Thanks. The skill is open today. I'd love to see what you build with it — and what fixes you'd add to your own agent's stack.*
+_Speaker: Thanks. The skill is open today. I'd love to see what you build with it — and what fixes you'd add to your own agent's stack._
 
 ---
 

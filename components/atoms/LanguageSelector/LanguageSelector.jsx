@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "../../ui/dropdown-menu";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { saveScrollPositionForLocaleSwitch } from "@/lib/utils/localeScroll";
 
 const SpainFlag = () => (
   <svg width="20" height="15" viewBox="0 0 20 15" className="rounded-sm">
@@ -75,17 +76,20 @@ const LanguageSelector = () => {
   );
 
   const handleLanguageChange = (langCode) => {
-    if (!dict) return;
+    if (langCode === currentLangCode) {
+      setIsOpen(false);
+      return;
+    }
+
+    saveScrollPositionForLocaleSwitch();
 
     const segments = pathname.split("/");
     let newPath;
 
-    const currentHash = window.location.hash;
-
     if (segments[2] === "curriculum-vitae" && langCode === "en") {
-      newPath = `/en/resume`;
+      newPath = "/en/resume";
     } else if (segments[2] === "resume" && langCode === "es") {
-      newPath = `/es/curriculum-vitae`;
+      newPath = "/es/curriculum-vitae";
     } else {
       if (segments[1] === "en" || segments[1] === "es") {
         segments[1] = langCode;
@@ -95,18 +99,7 @@ const LanguageSelector = () => {
       newPath = segments.join("/");
     }
 
-    if (currentHash) {
-      const sectionId = currentHash.substring(1);
-      const targetDict =
-        langCode === "en"
-          ? { trabajo: "work", "sobre-mi": "about" }
-          : { work: "trabajo", about: "sobre-mi" };
-
-      const mappedSectionId = targetDict[sectionId] || sectionId;
-      newPath += `#${mappedSectionId}`;
-    }
-
-    router.push(newPath);
+    router.push(newPath, { scroll: false });
     setIsOpen(false);
   };
 

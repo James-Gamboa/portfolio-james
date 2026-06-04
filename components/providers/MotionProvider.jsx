@@ -5,10 +5,12 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import {
@@ -19,6 +21,13 @@ import {
 import { setupScrollReveals } from "@/lib/motion/setup-scroll-reveals";
 import { MOBILE_MAX_WIDTH } from "@/lib/motion/constants";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import {
+  consumeSavedScrollPosition,
+  getCurrentScrollY,
+  hasPendingScrollRestore,
+  peekSavedScrollPosition,
+  registerScrollPositionGetter,
+} from "@/lib/utils/localeScroll";
 
 const MotionContext = createContext({
   scrollTo: () => {},
@@ -37,10 +46,32 @@ const resolveScrollTarget = (target) => {
 };
 
 const MotionProvider = ({ children }) => {
+  const pathname = usePathname();
   const reducedMotion = usePrefersReducedMotion();
   const lenisRef = useRef(null);
   const isReadyRef = useRef(false);
   const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previous;
+    };
+  }, []);
+
+  useEffect(() => {
+    registerScrollPositionGetter(() => {
+      const lenis = lenisRef.current;
+      if (lenis) return lenis.scroll;
+      return window.scrollY ?? document.documentElement.scrollTop ?? 0;
+    });
+
+    return () => registerScrollPositionGetter(null);
+  }, []);
 
   const scrollTo = useCallback(
     (target, options = {}) => {
@@ -165,8 +196,48 @@ const MotionProvider = ({ children }) => {
     };
   }, [reducedMotion]);
 
+  useLayoutEffect(() => {
+    if (!isReady) return undefined;
+
+    const savedScrollY = peekSavedScrollPosition();
+    if (savedScrollY === null) return undefined;
+
+    let cancelled = false;
+    let attempts = 0;
+    const maxAttempts = 16;
+
+    const restoreScroll = () => {
+      if (cancelled) return;
+
+      scrollTo(savedScrollY, { immediate: true });
+
+      const lenis = lenisRef.current;
+      lenis?.resize();
+
+      const currentScrollY = getCurrentScrollY();
+      const isRestored = Math.abs(currentScrollY - savedScrollY) < 4;
+
+      if (isRestored || attempts >= maxAttempts) {
+        consumeSavedScrollPosition();
+        ScrollTrigger.refresh();
+        return;
+      }
+
+      attempts += 1;
+      requestAnimationFrame(restoreScroll);
+    };
+
+    restoreScroll();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname, isReady, scrollTo]);
+
   useEffect(() => {
     if (!isReady || reducedMotion) return;
+
+    if (hasPendingScrollRestore()) return;
 
     const hash = window.location.hash;
     if (!hash) return;
