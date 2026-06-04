@@ -6,7 +6,7 @@ A described screenshot (`input-description.md`) of a Pentagram-style design stud
 
 ## What `study` does
 
-> *"Extract the DNA — macrostructure, archetypes, type-pairing role, colour anchor, rhythm — and produce a diagnosis report, then optionally rebuild the user's content using the extracted DNA. Never copies pixels. Never claims to identify exact fonts. Refuses obvious template-marketplace screenshots."*
+> _"Extract the DNA — macrostructure, archetypes, type-pairing role, colour anchor, rhythm — and produce a diagnosis report, then optionally rebuild the user's content using the extracted DNA. Never copies pixels. Never claims to identify exact fonts. Refuses obvious template-marketplace screenshots."_
 
 Five-step pipeline (per [`SKILL.md`](../../../SKILL.md) § `hallmark study`):
 
@@ -26,9 +26,9 @@ Five-step pipeline (per [`SKILL.md`](../../../SKILL.md) § `hallmark study`):
 - [`references/color.md`](../../../references/color.md) — for the warm-orange-at-low-chroma colour-anchor.
 - [`references/microinteractions.md`](../../../references/microinteractions.md) — for the hover-duration anti-pattern callout (the screenshot's 800 ms is too slow; should be 150–200 ms).
 
-## What `study` did *not* do
+## What `study` did _not_ do
 
-- **Did not name the exact font.** Visual font ID is unreliable; the skill named the *role* (italic editorial serif at high optical size) and proposed two real candidates (Fraunces free / Tiempos Headline paid).
+- **Did not name the exact font.** Visual font ID is unreliable; the skill named the _role_ (italic editorial serif at high optical size) and proposed two real candidates (Fraunces free / Tiempos Headline paid).
 - **Did not pixel-clone.** The output uses Coelho Studio's six actual projects, not "Aperture's" five-or-whatever projects. The bones come from the screenshot; the words and projects come from the user.
 - **Did not copy the screenshot's hover duration.** The screenshot used 800 ms; the rebuild uses 180 ms. The skill flagged this in the diagnosis as anti-pattern-to-not-carry-over.
 - **Did not copy the screenshot's footer text size.** The screenshot used 11 px; the rebuild uses 13 px. Below 14 px is below the body floor (per `typography.md`); the skill flagged this and bumped it.

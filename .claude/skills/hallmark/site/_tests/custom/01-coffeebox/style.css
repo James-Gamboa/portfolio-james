@@ -6,7 +6,7 @@
 
 :root {
   /* Custom palette — derived per brand vibe + anchor (terracotta) */
-  --color-paper: oklch(94% 0.020 65);
+  --color-paper: oklch(94% 0.02 65);
   --color-paper-2: oklch(91% 0.022 65);
   --color-paper-3: oklch(88% 0.024 65);
   --color-rule: oklch(78% 0.018 65);
@@ -17,7 +17,7 @@
   --color-ink-2: oklch(40% 0.014 60);
   --color-accent: oklch(58% 0.16 35);
   --color-accent-ink: oklch(96% 0.014 65);
-  --color-focus: oklch(56% 0.20 35);
+  --color-focus: oklch(56% 0.2 35);
 
   /* Pair: Editorial display + Editorial body — custom retains the catalog's free pairing */
   --font-display: "Fraunces", "EB Garamond", Georgia, serif;
@@ -41,8 +41,13 @@
   --dur-micro: 140ms;
 }
 
-* { box-sizing: border-box; }
-html, body { overflow-x: clip; }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -81,7 +86,9 @@ body {
   color: var(--color-ink);
 }
 
-.masthead__brand .dot { color: var(--color-accent); }
+.masthead__brand .dot {
+  color: var(--color-accent);
+}
 
 .masthead__meta {
   font-family: var(--font-mono);
@@ -141,7 +148,10 @@ body {
   font-variation-settings: "opsz" 144;
 }
 
-.letter em { font-style: italic; color: var(--color-ink); }
+.letter em {
+  font-style: italic;
+  color: var(--color-ink);
+}
 
 /* Three notes */
 .notes {
@@ -171,7 +181,9 @@ body {
   align-items: baseline;
 }
 
-.note:last-child { border-block-end: none; }
+.note:last-child {
+  border-block-end: none;
+}
 
 .note__num {
   font-family: var(--font-mono);
@@ -180,8 +192,14 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.note__body { color: var(--color-ink); max-width: var(--measure-prose); }
-.note__body strong { color: var(--color-accent); font-weight: 500; }
+.note__body {
+  color: var(--color-ink);
+  max-width: var(--measure-prose);
+}
+.note__body strong {
+  color: var(--color-accent);
+  font-weight: 500;
+}
 
 /* Sign-off + colophon */
 .signoff {
@@ -192,7 +210,10 @@ body {
   color: var(--color-ink-2);
 }
 
-.signoff__name { color: var(--color-ink); font-weight: 500; }
+.signoff__name {
+  color: var(--color-ink);
+  font-weight: 500;
+}
 
 .colophon {
   margin-block-start: var(--space-3xl);
@@ -213,11 +234,13 @@ body {
   text-decoration: none;
   border-block-end: 1px solid transparent;
   padding-block-end: 1px;
-  transition: color var(--dur-micro) var(--ease-out),
-              border-color var(--dur-micro) var(--ease-out);
+  transition:
+    color var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out);
 }
 
-.colophon a:hover, .colophon a:focus-visible {
+.colophon a:hover,
+.colophon a:focus-visible {
   color: var(--color-accent);
   border-block-end-color: var(--color-accent);
 }
@@ -228,11 +251,19 @@ body {
 }
 
 @media (max-width: 40rem) {
-  .page { padding: var(--space-xl) var(--space-md) var(--space-2xl); }
-  .salutation { font-size: 1.875rem; }
-  .letter { font-size: 1.0625rem; }
+  .page {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+  .salutation {
+    font-size: 1.875rem;
+  }
+  .letter {
+    font-size: 1.0625rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .colophon a { transition: none; }
+  .colophon a {
+    transition: none;
+  }
 }

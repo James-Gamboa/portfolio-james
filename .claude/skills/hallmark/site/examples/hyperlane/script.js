@@ -39,9 +39,12 @@
           cd.textContent = "live";
           return false;
         }
-        const d = Math.floor(diff / 86_400_000); diff -= d * 86_400_000;
-        const h = Math.floor(diff / 3_600_000);  diff -= h * 3_600_000;
-        const m = Math.floor(diff / 60_000);     diff -= m * 60_000;
+        const d = Math.floor(diff / 86_400_000);
+        diff -= d * 86_400_000;
+        const h = Math.floor(diff / 3_600_000);
+        diff -= h * 3_600_000;
+        const m = Math.floor(diff / 60_000);
+        diff -= m * 60_000;
         const s = Math.floor(diff / 1000);
         cd.textContent =
           `${d}d ${String(h).padStart(2, "0")}h ` +
@@ -49,7 +52,9 @@
         return true;
       };
       tick();
-      setInterval(() => { tick(); }, 1000);
+      setInterval(() => {
+        tick();
+      }, 1000);
     }
   }
 

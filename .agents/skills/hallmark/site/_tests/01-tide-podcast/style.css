@@ -4,7 +4,7 @@
  */
 
 :root {
-  --color-paper: oklch(96% 0.010 75);
+  --color-paper: oklch(96% 0.01 75);
   --color-paper-2: oklch(94% 0.012 75);
   --color-ink: oklch(22% 0.012 60);
   --color-ink-soft: oklch(38% 0.014 60);
@@ -12,7 +12,8 @@
   --color-accent: oklch(62% 0.13 55);
 
   --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-body: "Cormorant Garamond", "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-body:
+    "Cormorant Garamond", "Source Serif 4", "Iowan Old Style", Georgia, serif;
 
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
@@ -31,9 +32,14 @@
   --dur-micro: 120ms;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { overflow-x: clip; }
+html,
+body {
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -67,8 +73,13 @@ body {
   margin-block-end: var(--space-2xl);
 }
 
-.masthead__brand { color: var(--color-ink); font-weight: 500; }
-.masthead__meta { font-variant-numeric: tabular-nums; }
+.masthead__brand {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+.masthead__meta {
+  font-variant-numeric: tabular-nums;
+}
 
 /* Salutation — the letter opens here */
 .salutation {
@@ -91,12 +102,21 @@ body {
 }
 
 @keyframes caret {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .salutation__caret { animation: none; opacity: 0.7; }
+  .salutation__caret {
+    animation: none;
+    opacity: 0.7;
+  }
 }
 
 /* Letter body — generous prose */
@@ -139,7 +159,9 @@ body {
   margin-block-start: var(--space-xl);
 }
 
-.signoff__name { color: var(--color-ink); }
+.signoff__name {
+  color: var(--color-ink);
+}
 
 /* Listen-where row */
 .listen {
@@ -176,8 +198,9 @@ body {
   font-size: 1.125rem;
   border-block-end: 1px solid transparent;
   padding-block-end: 2px;
-  transition: color var(--dur-micro) var(--ease-out),
-              border-color var(--dur-micro) var(--ease-out);
+  transition:
+    color var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out);
 }
 
 .listen__item a:hover,
@@ -216,8 +239,9 @@ body {
   color: var(--color-ink-soft);
   text-decoration: none;
   border-block-end: 1px solid transparent;
-  transition: color var(--dur-micro) var(--ease-out),
-              border-color var(--dur-micro) var(--ease-out);
+  transition:
+    color var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out);
 }
 
 .colophon a:hover,
@@ -233,8 +257,17 @@ body {
 
 /* Mobile */
 @media (max-width: 40rem) {
-  .page { padding: var(--space-xl) var(--space-md) var(--space-2xl); }
-  .letter { font-size: 1.2rem; }
-  .salutation { font-size: 1.4rem; }
-  .colophon { flex-direction: column; gap: var(--space-2xs); }
+  .page {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+  .letter {
+    font-size: 1.2rem;
+  }
+  .salutation {
+    font-size: 1.4rem;
+  }
+  .colophon {
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
 }

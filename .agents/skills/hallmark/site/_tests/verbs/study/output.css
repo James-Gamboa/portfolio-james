@@ -5,15 +5,18 @@
 
 :root {
   --color-paper: oklch(96% 0.018 80);
-  --color-paper-2: oklch(93% 0.020 80);
-  --color-rule: oklch(82% 0.020 75);
+  --color-paper-2: oklch(93% 0.02 80);
+  --color-rule: oklch(82% 0.02 75);
   --color-ink: oklch(20% 0.014 60);
   --color-ink-soft: oklch(45% 0.016 60);
   --color-ink-muted: oklch(64% 0.016 60);
   --color-accent: oklch(64% 0.13 45);
 
-  --font-display: "Fraunces", "EB Garamond", "Cormorant Garamond", Georgia, serif;
-  --font-body: "Geist", "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display:
+    "Fraunces", "EB Garamond", "Cormorant Garamond", Georgia, serif;
+  --font-body:
+    "Geist", "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 
   --space-2xs: 0.5rem;
   --space-xs: 0.75rem;
@@ -30,8 +33,13 @@
   --dur-micro: 180ms;
 }
 
-* { box-sizing: border-box; }
-html, body { overflow-x: clip; }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -66,7 +74,10 @@ body {
   color: var(--color-ink);
 }
 
-.masthead__brand-em { color: var(--color-accent); font-style: italic; }
+.masthead__brand-em {
+  color: var(--color-accent);
+  font-style: italic;
+}
 
 .masthead__sub {
   font-family: var(--font-body);
@@ -98,7 +109,9 @@ body {
   transition: background var(--dur-micro) var(--ease-out);
 }
 
-.work:hover { background: var(--color-paper-2); }
+.work:hover {
+  background: var(--color-paper-2);
+}
 
 .work__num {
   font-family: var(--font-body);
@@ -113,10 +126,14 @@ body {
   transition: color var(--dur-micro) var(--ease-out);
 }
 
-.work:hover .work__num { color: var(--color-ink); }
+.work:hover .work__num {
+  color: var(--color-ink);
+}
 
 /* Active state — the warm-orange accent on one row only */
-.work--active .work__num { color: var(--color-accent); }
+.work--active .work__num {
+  color: var(--color-accent);
+}
 
 .work__name {
   font-family: var(--font-display);
@@ -169,11 +186,13 @@ body {
   text-decoration: none;
   border-block-end: 1px solid transparent;
   padding-block-end: 1px;
-  transition: color var(--dur-micro) var(--ease-out),
-              border-color var(--dur-micro) var(--ease-out);
+  transition:
+    color var(--dur-micro) var(--ease-out),
+    border-color var(--dur-micro) var(--ease-out);
 }
 
-.colophon a:hover, .colophon a:focus-visible {
+.colophon a:hover,
+.colophon a:focus-visible {
   color: var(--color-accent);
   border-block-end-color: var(--color-accent);
 }
@@ -184,10 +203,20 @@ body {
 }
 
 @media (max-width: 48rem) {
-  .page { padding: var(--space-2xl) var(--space-md) var(--space-xl); }
-  .work { grid-template-columns: 4rem 1fr; gap: var(--space-md); padding: var(--space-xl) 0; }
+  .page {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+  .work {
+    grid-template-columns: 4rem 1fr;
+    gap: var(--space-md);
+    padding: var(--space-xl) 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .work, .work__num, .colophon a { transition: none; }
+  .work,
+  .work__num,
+  .colophon a {
+    transition: none;
+  }
 }

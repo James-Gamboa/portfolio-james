@@ -1,6 +1,6 @@
 # `hallmark study` — diagnosis report
 
-> User invocation: *"hallmark study aperture-portfolio.png"*
+> User invocation: _"hallmark study aperture-portfolio.png"_
 
 ## References loaded
 
@@ -15,13 +15,13 @@
 >
 > **2. Hero archetype** · **H4 Margin-Number Display** — the page's only anchor is a vertical column of two-digit indices.
 >
-> **3. Pitch archetype** · none. The work *is* the pitch.
+> **3. Pitch archetype** · none. The work _is_ the pitch.
 >
 > **4. Footer archetype** · **Ft1 Single-Line Colophon** — studio name, year, contact, three links, no nav.
 >
-> **5. Display family role** · italic editorial serif (high optical size, soft axis, ink-black). One free candidate: *Fraunces* italic display. One paid candidate the user might confirm: *Tiempos Headline*. **The skill names roles, not exact font IDs — visual font ID is unreliable.**
+> **5. Display family role** · italic editorial serif (high optical size, soft axis, ink-black). One free candidate: _Fraunces_ italic display. One paid candidate the user might confirm: _Tiempos Headline_. **The skill names roles, not exact font IDs — visual font ID is unreliable.**
 >
-> **6. Body family role** · geometric sans (humanist Inter-Tight-or-similar at 350–400 weight). One free candidate: *Geist*. One paid candidate: *Söhne*.
+> **6. Body family role** · geometric sans (humanist Inter-Tight-or-similar at 350–400 weight). One free candidate: _Geist_. One paid candidate: _Söhne_.
 >
 > **7. Surface lightness band** · light (paper L ≈ 96 %). Slight warm tint at hue 80 — Pentagram-warm cream, not stark white.
 >
@@ -33,19 +33,18 @@
 
 ## Anti-patterns the screenshot has — do NOT carry over
 
-> 1. The hover-state on the number-label uses a slow ease-in-out 800 ms colour fade. Per [`microinteractions.md`](../../../references/microinteractions.md) § The timing canon, hover state should be 150–200 ms. **Carry the *idea* (colour-shift on hover); shorten the *duration*.**
->
+> 1. The hover-state on the number-label uses a slow ease-in-out 800 ms colour fade. Per [`microinteractions.md`](../../../references/microinteractions.md) § The timing canon, hover state should be 150–200 ms. **Carry the _idea_ (colour-shift on hover); shorten the _duration_.**
 > 2. The footer text is set at 11 px with 0.06 em tracking — under the 14 px floor for body copy. **Bump to 12–13 px on rebuild, keep the tracking.**
 
 ## Confirmation question (the skill always asks before building)
 
-> *"Adopt this DNA wholesale, or change one axis? For example, I could keep the macrostructure (Specimen) but pick a theme that better matches your work. If your tone is more ink-blue and B2B, I'd suggest **Plain** (pure-white paper) instead of the warm-cream **Specimen** theme. If your work is craft-led and warm, **Specimen** is the closer match."*
+> _"Adopt this DNA wholesale, or change one axis? For example, I could keep the macrostructure (Specimen) but pick a theme that better matches your work. If your tone is more ink-blue and B2B, I'd suggest **Plain** (pure-white paper) instead of the warm-cream **Specimen** theme. If your work is craft-led and warm, **Specimen** is the closer match."_
 >
-> *"Also: visual font ID is unreliable. The closest free pairing is **Fraunces italic + Geist** — that's what I'll ship by default. If you have a licence for the paid pair (Tiempos / Söhne), say so before I build."*
+> _"Also: visual font ID is unreliable. The closest free pairing is **Fraunces italic + Geist** — that's what I'll ship by default. If you have a licence for the paid pair (Tiempos / Söhne), say so before I build."_
 
 ## What the user answered
 
-> *"Adopt the DNA wholesale. We're craft-led; Specimen is the right match. Use the free pairing — we don't have paid licences."*
+> _"Adopt the DNA wholesale. We're craft-led; Specimen is the right match. Use the free pairing — we don't have paid licences."_
 
 ## What the skill builds
 

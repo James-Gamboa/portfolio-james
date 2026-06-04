@@ -422,11 +422,7 @@
       "WordPress",
       "Drupal"
     ],
-    "databases": [
-      "MongoDB",
-      "MySQL",
-      "SQL"
-    ],
+    "databases": ["MongoDB", "MySQL", "SQL"],
     "toolsPlatforms": [
       "Git",
       "GitHub",
@@ -435,15 +431,8 @@
       "Lighthouse",
       "Chrome DevTools"
     ],
-    "aiTools": [
-      "Claude Code",
-      "Claude API",
-      "Model Context Protocol (MCP)"
-    ],
-    "spokenLanguages": [
-      "Español — Nativo",
-      "Inglés — B2 (Intermedio Alto)"
-    ],
+    "aiTools": ["Claude Code", "Claude API", "Model Context Protocol (MCP)"],
+    "spokenLanguages": ["Español — Nativo", "Inglés — B2 (Intermedio Alto)"],
     "certifications": [
       "Claude 101",
       "Claude Code 101",

@@ -14,25 +14,38 @@ document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-in"));
    card. On touch devices (no hover), they autoplay continuously so the
    page reads as a moving showcase on mobile. */
 {
-  const supportsHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const supportsHover = matchMedia(
+    "(hover: hover) and (pointer: fine)",
+  ).matches;
   const videos = document.querySelectorAll("video[data-hover-play]");
 
   if (supportsHover) {
     videos.forEach((video) => {
       // Pause + reset to first frame on load (desktop static preview).
       video.removeAttribute("autoplay");
-      try { video.pause(); video.currentTime = 0; } catch (_) {}
+      try {
+        video.pause();
+        video.currentTime = 0;
+      } catch (_) {}
 
-      const card = video.closest(".ex-card, .diptych__half") || video.parentElement;
+      const card =
+        video.closest(".ex-card, .diptych__half") || video.parentElement;
       if (!card) return;
 
-      const onEnter = () => { video.play().catch(() => {}); };
-      const onLeave = () => { video.pause(); try { video.currentTime = 0; } catch (_) {} };
+      const onEnter = () => {
+        video.play().catch(() => {});
+      };
+      const onLeave = () => {
+        video.pause();
+        try {
+          video.currentTime = 0;
+        } catch (_) {}
+      };
 
       card.addEventListener("mouseenter", onEnter);
       card.addEventListener("mouseleave", onLeave);
-      card.addEventListener("focusin",   onEnter);
-      card.addEventListener("focusout",  onLeave);
+      card.addEventListener("focusin", onEnter);
+      card.addEventListener("focusout", onLeave);
     });
   }
   // On touch devices, the autoplay attribute already runs the loop.
@@ -100,30 +113,30 @@ const ARCHETYPES = {
    skill picks from. See references/genres/. */
 const THEME_GENRES = {
   // editorial — the canonical Hallmark voice (12 themes)
-  specimen:  "editorial",
+  specimen: "editorial",
   newsprint: "editorial",
-  atelier:   "editorial",
-  garden:    "editorial",
-  salon:     "editorial",
-  linen:     "editorial",
-  almanac:   "editorial",
-  studio:    "editorial",
-  riso:      "editorial",
-  sport:     "editorial",
-  brutal:    "editorial",
+  atelier: "editorial",
+  garden: "editorial",
+  salon: "editorial",
+  linen: "editorial",
+  almanac: "editorial",
+  studio: "editorial",
+  riso: "editorial",
+  sport: "editorial",
+  brutal: "editorial",
   manifesto: "editorial",
   // modern-minimal — Stripe / Linear / ElevenLabs school (3 themes)
-  quiet:     "modern-minimal",
-  coral:     "modern-minimal",
-  violet:    "modern-minimal",
+  quiet: "modern-minimal",
+  coral: "modern-minimal",
+  violet: "modern-minimal",
   // atmospheric — Suno / Runway / dark-AI-tool school (5 themes)
-  bloom:     "atmospheric",
-  midnight:  "atmospheric",
-  terminal:  "atmospheric",
-  aurora:    "atmospheric",
-  halo:      "atmospheric",
+  bloom: "atmospheric",
+  midnight: "atmospheric",
+  terminal: "atmospheric",
+  aurora: "atmospheric",
+  halo: "atmospheric",
   // playful — post-Linear soft school (1 theme)
-  plume:     "playful",
+  plume: "playful",
   // editorial — open-design-inspired premium (added v1.0.0)
   editorial: "editorial",
 };
@@ -151,10 +164,12 @@ const COPY = {
     cta: "Read the rules",
     stat: "21",
     qualifier: "macrostructures",
-    quote: "Two pages from two briefs feel like different sites — not colour-swaps of one template.",
+    quote:
+      "Two pages from two briefs feel like different sites — not colour-swaps of one template.",
     attrib: "The rule Hallmark is built around",
     salutation: "Dear designer,",
-    letterBody: "Every LLM has been trained on the same templates. Without a firm hand, they all emit the same page. Hallmark is the firm hand. It refuses the defaults, asks the questions that matter, and stamps the page so the next run produces something genuinely different.",
+    letterBody:
+      "Every LLM has been trained on the same templates. Without a firm hand, they all emit the same page. Hallmark is the firm hand. It refuses the defaults, asks the questions that matter, and stamps the page so the next run produces something genuinely different.",
     signoff: "With care,",
     captionA: "Plate 01",
     captionB: "From the working archive",
@@ -171,10 +186,12 @@ const COPY = {
     cta: "Read in full",
     stat: "29",
     qualifier: "gates",
-    quote: "We compose the page like a broadsheet. Hairlines, columns, restraint.",
+    quote:
+      "We compose the page like a broadsheet. Hairlines, columns, restraint.",
     attrib: "From the Hallmark rule sheet",
     salutation: "Letter from the editor.",
-    letterBody: "There was a time when a printed page implied that a hand had been on it. We have tried, in this skill, to put a hand on every screen.",
+    letterBody:
+      "There was a time when a printed page implied that a hand had been on it. We have tried, in this skill, to put a hand on every screen.",
     signoff: "Yours,",
     captionA: "Issue 02",
     captionB: "Press run",
@@ -194,7 +211,8 @@ const COPY = {
     quote: "A workshop, not a template.",
     attrib: "Studio note",
     salutation: "A note from the studio.",
-    letterBody: "We do not believe in defaults. The default is the average; we are looking for the specific. Every page Hallmark touches is a small refusal of the average, in favour of a page that knows what it is.",
+    letterBody:
+      "We do not believe in defaults. The default is the average; we are looking for the specific. Every page Hallmark touches is a small refusal of the average, in favour of a page that knows what it is.",
     signoff: "— the studio",
     captionA: "Workbench",
     captionB: "12 April",
@@ -211,10 +229,12 @@ const COPY = {
     cta: "Begin",
     stat: "12",
     qualifier: "themes in the garden",
-    quote: "A garden is not the absence of weeds. It is the presence of a plan.",
+    quote:
+      "A garden is not the absence of weeds. It is the presence of a plan.",
     attrib: "Hallmark, on design",
     salutation: "Hello,",
-    letterBody: "This skill is small. It is opinionated about a few things and quiet about the rest. We have tended it like a garden: pulling out the loud, leaving the considered. We hope it produces, for you, pages that feel grown rather than generated.",
+    letterBody:
+      "This skill is small. It is opinionated about a few things and quiet about the rest. We have tended it like a garden: pulling out the loud, leaving the considered. We hope it produces, for you, pages that feel grown rather than generated.",
     signoff: "Yours,",
     captionA: "Plot 04",
     captionB: "Late spring",
@@ -231,10 +251,12 @@ const COPY = {
     cta: "Be received",
     stat: "21",
     qualifier: "page shapes",
-    quote: "A page should arrive like a person — composed, deliberate, in good clothes.",
+    quote:
+      "A page should arrive like a person — composed, deliberate, in good clothes.",
     attrib: "From the salon",
     salutation: "With pleasure,",
-    letterBody: "You are most welcome. We have arranged the room with care. Each theme is a different room, and you are invited to walk through all twelve. Take your time — they are all furnished with the same intention.",
+    letterBody:
+      "You are most welcome. We have arranged the room with care. Each theme is a different room, and you are invited to walk through all twelve. Take your time — they are all furnished with the same intention.",
     signoff: "À bientôt,",
     captionA: "Salon No. 7",
     captionB: "April",
@@ -254,7 +276,8 @@ const COPY = {
     quote: "If you can leave it out and the page still works, leave it out.",
     attrib: "Linen rule",
     salutation: "Dear reader,",
-    letterBody: "This is a longer letter than the other themes. It is a deliberate choice. Hallmark believes that prose-led pages still have a place — that not every product needs a hero, a stat, and a CTA stack. Sometimes, a paragraph is the page.",
+    letterBody:
+      "This is a longer letter than the other themes. It is a deliberate choice. Hallmark believes that prose-led pages still have a place — that not every product needs a hero, a stat, and a CTA stack. Sometimes, a paragraph is the page.",
     signoff: "With patience,",
     captionA: "Folio II",
     captionB: "Quiet hours",
@@ -274,7 +297,8 @@ const COPY = {
     quote: "An almanac is a book that knows where to look.",
     attrib: "Almanac, frontispiece",
     salutation: "Reference note,",
-    letterBody: "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 22 themes, 65 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
+    letterBody:
+      "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 22 themes, 65 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
     signoff: "— editor",
     captionA: "Vol. III",
     captionB: "Plate 12",
@@ -294,7 +318,8 @@ const COPY = {
     quote: "On dark surfaces, elevation is lightness — never glow.",
     attrib: "Midnight rule",
     salutation: "01 — HELLO.",
-    letterBody: "This is a dark page that tries not to be a tinted-light page. The neutrals are mixed at low chroma in OKLCH so the steps feel even at the eye, not just at the value. Elevation is brighter surface, not heavier shadow.",
+    letterBody:
+      "This is a dark page that tries not to be a tinted-light page. The neutrals are mixed at low chroma in OKLCH so the steps feel even at the eye, not just at the value. Elevation is brighter surface, not heavier shadow.",
     signoff: "— Midnight",
     captionA: "Frame 03",
     captionB: "0240h",
@@ -314,7 +339,8 @@ const COPY = {
     quote: "$ tput sgr0",
     attrib: "End of file",
     salutation: "> hello",
-    letterBody: "> a terminal page is not a page that pretends. it does not transition. it does not hover-scale. it is monospace because the work that made it was monospace. the rest of the page can read what it likes.",
+    letterBody:
+      "> a terminal page is not a page that pretends. it does not transition. it does not hover-scale. it is monospace because the work that made it was monospace. the rest of the page can read what it likes.",
     signoff: "> bye",
     captionA: "frame_07",
     captionB: "0241",
@@ -334,7 +360,8 @@ const COPY = {
     quote: "A page that hedges is a page that fails.",
     attrib: "BRUTAL",
     salutation: "DEAR READER.",
-    letterBody: "WE WILL NOT HEDGE. THE GRID DOES NOT FLEX. THE TYPE IS HEAVY. THE ACCENT IS RED. EVERY DECISION ON THIS PAGE IS A DECISION; NONE OF THEM ARE DEFAULTS. TAKE IT OR LEAVE IT.",
+    letterBody:
+      "WE WILL NOT HEDGE. THE GRID DOES NOT FLEX. THE TYPE IS HEAVY. THE ACCENT IS RED. EVERY DECISION ON THIS PAGE IS A DECISION; NONE OF THEM ARE DEFAULTS. TAKE IT OR LEAVE IT.",
     signoff: "— BRUTAL",
     captionA: "BLOCK A",
     captionB: "PRINT 01",
@@ -354,7 +381,8 @@ const COPY = {
     quote: "WE BELIEVE A LANDING PAGE IS NOT A TEMPLATE.",
     attrib: "MANIFESTO",
     salutation: "TO WHOM IT CONCERNS.",
-    letterBody: "WE BELIEVE THE PAGE IS A POSITION. WE BELIEVE THE TEMPLATE IS THE ENEMY. WE BELIEVE THAT EVERY DECISION SHOULD BE VISIBLE FROM ACROSS THE ROOM. WE BELIEVE THE ACCENT COLOUR IS A POLITICS. WE BELIEVE — AND THE PAGE BELIEVES WITH US.",
+    letterBody:
+      "WE BELIEVE THE PAGE IS A POSITION. WE BELIEVE THE TEMPLATE IS THE ENEMY. WE BELIEVE THAT EVERY DECISION SHOULD BE VISIBLE FROM ACROSS THE ROOM. WE BELIEVE THE ACCENT COLOUR IS A POLITICS. WE BELIEVE — AND THE PAGE BELIEVES WITH US.",
     signoff: "— THE UNDERSIGNED",
     captionA: "PLATE I",
     captionB: "POSTER",
@@ -374,7 +402,8 @@ const COPY = {
     quote: "A FAST PAGE IS A FAST DECISION.",
     attrib: "SPORT",
     salutation: "READY?",
-    letterBody: "YOU ARE TWO MINUTES FROM SHIPPING. THE PAGE IS WAITING. EVERY DECISION ON IT IS NUMBERED, TABULATED, INDEXED. THE ACCENT IS A STARTING GUN. RUN IT.",
+    letterBody:
+      "YOU ARE TWO MINUTES FROM SHIPPING. THE PAGE IS WAITING. EVERY DECISION ON IT IS NUMBERED, TABULATED, INDEXED. THE ACCENT IS A STARTING GUN. RUN IT.",
     signoff: "— SPORT",
     captionA: "RACE 03",
     captionB: "LAP 12",
@@ -391,10 +420,12 @@ const COPY = {
     cta: "See the work",
     stat: "21",
     qualifier: "named page shapes.",
-    quote: "We don't believe in defaults. The default is the average; we are looking for the specific.",
+    quote:
+      "We don't believe in defaults. The default is the average; we are looking for the specific.",
     attrib: "Studio note · 2026",
     salutation: "Hello, friend.",
-    letterBody: "We started this studio because we kept being asked to build the same page, twelve different ways. Hallmark is our argument: one brief, one shape — chosen, not defaulted to. Take a look.",
+    letterBody:
+      "We started this studio because we kept being asked to build the same page, twelve different ways. Hallmark is our argument: one brief, one shape — chosen, not defaulted to. Take a look.",
     signoff: "Yours,",
     captionA: "Studio · 2026",
     captionB: "Selected work",
@@ -414,7 +445,8 @@ const COPY = {
     quote: "design like print: warm, off-register, intentional.",
     attrib: "RISO · ed. 12",
     salutation: "from the press,",
-    letterBody: "this is not a page that pretends to be paper. it is a page that remembers paper. the colors mis-register on purpose. the headline sits low. the body is a serif italic that wants to be read in a chair, not on a phone in a queue. take a seat.",
+    letterBody:
+      "this is not a page that pretends to be paper. it is a page that remembers paper. the colors mis-register on purpose. the headline sits low. the body is a serif italic that wants to be read in a chair, not on a phone in a queue. take a seat.",
     signoff: "— the press",
     captionA: "ed. 12",
     captionB: "press · 04",
@@ -432,10 +464,12 @@ const COPY = {
     stat: "1",
     qualifier: "decision, made everywhere.",
     mockStat: "1",
-    quote: "The work that looks effortless is the work where the choices were made.",
+    quote:
+      "The work that looks effortless is the work where the choices were made.",
     attrib: "Quiet",
     salutation: "Hello.",
-    letterBody: "A theme for the modern enterprise page — the Stripe / Linear / ElevenLabs school of restraint. Clean white, confident typography, pill CTAs. Minimalism with conviction, not absence.",
+    letterBody:
+      "A theme for the modern enterprise page — the Stripe / Linear / ElevenLabs school of restraint. Clean white, confident typography, pill CTAs. Minimalism with conviction, not absence.",
     signoff: "Yours,",
     captionA: "Quiet",
     captionB: "v1.0",
@@ -456,7 +490,8 @@ const COPY = {
     quote: "The page should feel like a place you could sit in.",
     attrib: "Bloom note",
     salutation: "Welcome,",
-    letterBody: "A dark theme for the AI-creative tool page — Suno, Runway, the late-night software where atmosphere matters. Two soft colour blooms, plain confident type, a single warm accent. Restraint of a different kind.",
+    letterBody:
+      "A dark theme for the AI-creative tool page — Suno, Runway, the late-night software where atmosphere matters. Two soft colour blooms, plain confident type, a single warm accent. Restraint of a different kind.",
     signoff: "— Bloom",
     captionA: "Bloom",
     captionB: "Late-night",
@@ -477,7 +512,8 @@ const COPY = {
     quote: "Restraint with warmth is harder than restraint without it.",
     attrib: "Coral note",
     salutation: "Hello.",
-    letterBody: "The polished-SaaS school of restraint, but warmer. Warm-grey paper instead of pure white; coral accent on focus rings and small marks. Pill CTAs, two-column heroes, generous space.",
+    letterBody:
+      "The polished-SaaS school of restraint, but warmer. Warm-grey paper instead of pure white; coral accent on focus rings and small marks. Pill CTAs, two-column heroes, generous space.",
     signoff: "Yours,",
     captionA: "Coral",
     captionB: "v1.0",
@@ -495,10 +531,12 @@ const COPY = {
     stat: "1",
     qualifier: "the Linear voice, not the brand.",
     mockStat: "1",
-    quote: "The work that looks effortless is the work where the choices were made.",
+    quote:
+      "The work that looks effortless is the work where the choices were made.",
     attrib: "Violet note",
     salutation: "Hello.",
-    letterBody: "A modern minimal theme tuned for dev tools and platforms. Near-white paper, near-black ink, single quiet violet accent on focus rings. Tight Geist throughout — letterspacing pulled in, type-led hierarchy, no ornament.",
+    letterBody:
+      "A modern minimal theme tuned for dev tools and platforms. Near-white paper, near-black ink, single quiet violet accent on focus rings. Tight Geist throughout — letterspacing pulled in, type-led hierarchy, no ornament.",
     signoff: "Yours,",
     captionA: "Violet",
     captionB: "v1.0",
@@ -519,7 +557,8 @@ const COPY = {
     quote: "The page should feel like the moment after a deploy goes green.",
     attrib: "Aurora note",
     salutation: "Online,",
-    letterBody: "A dark cool atmospheric theme — the dev-tool-after-dark register. Two cool blooms (cyan top-right, teal-green bottom-left). Geist display for confidence; Sentient body to keep the cool ground from feeling clinical.",
+    letterBody:
+      "A dark cool atmospheric theme — the dev-tool-after-dark register. Two cool blooms (cyan top-right, teal-green bottom-left). Geist display for confidence; Sentient body to keep the cool ground from feeling clinical.",
     signoff: "— Aurora",
     captionA: "Aurora",
     captionB: "Late-shift",
@@ -540,7 +579,8 @@ const COPY = {
     quote: "The atmosphere does its job at the top, then steps aside.",
     attrib: "Halo note",
     salutation: "Online,",
-    letterBody: "A dark theme for the working tool — the bloom lives only at the top of the page, around the hero. Below it the canvas is plain charcoal, content-led, no atmospheric distractions. Less Suno, more the IDE you actually open every day.",
+    letterBody:
+      "A dark theme for the working tool — the bloom lives only at the top of the page, around the hero. Below it the canvas is plain charcoal, content-led, no atmospheric distractions. Less Suno, more the IDE you actually open every day.",
     signoff: "— Halo",
     captionA: "Halo",
     captionB: "Workshop",
@@ -561,7 +601,8 @@ const COPY = {
     quote: "Soft is harder than serious; it has nowhere to hide.",
     attrib: "Plume note",
     salutation: "Hello,",
-    letterBody: "A playful theme that earns the word. Warm cream paper, alternating tinted bands so each section has its own register, soft drop shadows, hover-lift on cards. Friendly motion that responds to the user instead of performing for them.",
+    letterBody:
+      "A playful theme that earns the word. Warm cream paper, alternating tinted bands so each section has its own register, soft drop shadows, hover-lift on cards. Friendly motion that responds to the user instead of performing for them.",
     signoff: "Yours,",
     captionA: "Plume",
     captionB: "Late spring",
@@ -582,7 +623,8 @@ const COPY = {
     quote: "A magazine page knows how much to leave out.",
     attrib: "Editorial, frontispiece",
     salutation: "Dear reader,",
-    letterBody: "An editorial premium that takes its cue from the print magazines that still feel right — warm cream paper, hairline rules, Roman-numeral marginalia, an italic display word slipped inside a sans-serif headline. Coral the only colour besides ink. Asymmetric without being clever about it.",
+    letterBody:
+      "An editorial premium that takes its cue from the print magazines that still feel right — warm cream paper, hairline rules, Roman-numeral marginalia, an italic display word slipped inside a sans-serif headline. Coral the only colour besides ink. Asymmetric without being clever about it.",
     signoff: "Yours,",
     captionA: "Issue 23",
     captionB: "Spring 2026",
@@ -603,10 +645,14 @@ function interpolate(node, copy) {
   // Walk text nodes and attribute values, replace {{key}} with copy[key].
   const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null);
   const textNodes = [];
-  let n; while ((n = walker.nextNode())) textNodes.push(n);
+  let n;
+  while ((n = walker.nextNode())) textNodes.push(n);
   for (const t of textNodes) {
     if (t.nodeValue.includes("{{")) {
-      t.nodeValue = t.nodeValue.replace(/\{\{(\w+)\}\}/g, (_, k) => copy[k] ?? "");
+      t.nodeValue = t.nodeValue.replace(
+        /\{\{(\w+)\}\}/g,
+        (_, k) => copy[k] ?? "",
+      );
     }
   }
   // Attributes
@@ -614,7 +660,10 @@ function interpolate(node, copy) {
   for (const el of all) {
     for (const attr of el.attributes) {
       if (attr.value.includes("{{")) {
-        attr.value = attr.value.replace(/\{\{(\w+)\}\}/g, (_, k) => copy[k] ?? "");
+        attr.value = attr.value.replace(
+          /\{\{(\w+)\}\}/g,
+          (_, k) => copy[k] ?? "",
+        );
       }
     }
   }
@@ -671,7 +720,9 @@ async function copyFromSource(source) {
     ta.style.left = "-9999px";
     document.body.appendChild(ta);
     ta.select();
-    try { document.execCommand("copy"); } catch (e) { }
+    try {
+      document.execCommand("copy");
+    } catch (e) {}
     document.body.removeChild(ta);
   }
 
@@ -691,14 +742,18 @@ async function copyFromSource(source) {
 
 function attachCopyButtons(scope = document) {
   // Bind the whole pre — works on mobile where the button is hidden.
-  const sources = scope.querySelectorAll("[data-copy-source]:not([data-copy-bound])");
+  const sources = scope.querySelectorAll(
+    "[data-copy-source]:not([data-copy-bound])",
+  );
   sources.forEach((source) => {
     source.dataset.copyBound = "true";
     source.addEventListener("click", () => copyFromSource(source));
   });
   // Button click is also handled — stop propagation so the source
   // listener doesn't double-fire (single copy per click).
-  const btns = scope.querySelectorAll("[data-copy-btn]:not([data-copy-btn-bound])");
+  const btns = scope.querySelectorAll(
+    "[data-copy-btn]:not([data-copy-btn-bound])",
+  );
   btns.forEach((btn) => {
     btn.dataset.copyBtnBound = "true";
     btn.addEventListener("click", (e) => {
@@ -716,12 +771,14 @@ attachCopyButtons();
    pointer-events nudge forces the browser to release both states.
    No layout side-effects; the pill is back to normal as soon as the
    pointer next moves. */
-document.querySelectorAll('.banner__install').forEach((el) => {
-  el.addEventListener('click', () => {
+document.querySelectorAll(".banner__install").forEach((el) => {
+  el.addEventListener("click", () => {
     requestAnimationFrame(() => {
       el.blur();
-      el.style.pointerEvents = 'none';
-      setTimeout(() => { el.style.pointerEvents = ''; }, 60);
+      el.style.pointerEvents = "none";
+      setTimeout(() => {
+        el.style.pointerEvents = "";
+      }, 60);
     });
   });
 });
@@ -737,7 +794,7 @@ document.querySelectorAll('.banner__install').forEach((el) => {
   if (!starEl) return;
 
   const REPO = "nutlope/hallmark";
-  const CACHE_KEY = "hallmark-star-count:" + REPO;   // key by repo — renames auto-invalidate
+  const CACHE_KEY = "hallmark-star-count:" + REPO; // key by repo — renames auto-invalidate
   const TTL = 60 * 60 * 1000; // 1h
 
   const format = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "k" : String(n));
@@ -753,28 +810,36 @@ document.querySelectorAll('.banner__install').forEach((el) => {
         cachedFresh = Date.now() - cached.t < TTL;
       }
     }
-  } catch (e) { /* localStorage may throw on private mode */ }
+  } catch (e) {
+    /* localStorage may throw on private mode */
+  }
 
   // Fresh cache → skip network. Stale or absent → fetch and update.
   if (cachedFresh) return;
 
-  fetch(`https://api.github.com/repos/${REPO}`, { headers: { Accept: "application/vnd.github+json" } })
+  fetch(`https://api.github.com/repos/${REPO}`, {
+    headers: { Accept: "application/vnd.github+json" },
+  })
     .then((r) => (r.ok ? r.json() : null))
     .then((d) => {
       if (!d || typeof d.stargazers_count !== "number") return;
       const n = d.stargazers_count;
       starEl.textContent = format(n);
-      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ n, t: Date.now() })); } catch (e) { }
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ n, t: Date.now() }));
+      } catch (e) {}
     })
-    .catch(() => { /* leave the cached / placeholder value as-is */ });
+    .catch(() => {
+      /* leave the cached / placeholder value as-is */
+    });
 })();
 
 /* — Theme application ————————————————————————————————— */
 /* Cached banner subnodes — populated once at startup. */
 const themeLabelEl = document.querySelector(".banner__theme");
 const themeGenreEl = document.querySelector("[data-theme-genre]");
-const ordinalEl   = document.querySelector("[data-theme-ordinal]");
-const themeKeys   = Object.keys(THEMES);
+const ordinalEl = document.querySelector("[data-theme-ordinal]");
+const themeKeys = Object.keys(THEMES);
 const totalThemes = themeKeys.length;
 
 function setPressed(theme) {
@@ -789,7 +854,7 @@ function setPressed(theme) {
 
   if (themeLabelEl) themeLabelEl.textContent = themeName;
   if (themeGenreEl) themeGenreEl.textContent = genre;
-  if (ordinalEl)    ordinalEl.textContent = `${ordinal} / ${totalThemes}`;
+  if (ordinalEl) ordinalEl.textContent = `${ordinal} / ${totalThemes}`;
 
   // Colophon footer — update the "Currently rendered in <theme>" line.
   const footThemeEl = document.querySelector("[data-theme-current-foot]");
@@ -805,7 +870,9 @@ function applyTheme(theme) {
     root.dataset.theme = theme;
     swapArchetypes(theme);
     setPressed(theme);
-    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { }
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {}
   };
   if (!reduced && document.startViewTransition) {
     document.startViewTransition(apply);
@@ -815,14 +882,24 @@ function applyTheme(theme) {
 }
 
 const queried = (() => {
-  try { return new URL(window.location.href).searchParams.get("theme"); } catch (e) { return null; }
+  try {
+    return new URL(window.location.href).searchParams.get("theme");
+  } catch (e) {
+    return null;
+  }
 })();
 const stored = (() => {
-  try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch (e) {
+    return null;
+  }
 })();
-const initial = THEMES[queried] ? queried
-  : THEMES[stored] ? stored
-    : (root.dataset.theme || "specimen");
+const initial = THEMES[queried]
+  ? queried
+  : THEMES[stored]
+    ? stored
+    : root.dataset.theme || "specimen";
 
 // First paint — populate slots without a transition (no flash).
 // Run swapArchetypes BEFORE setPressed so the footer template is materialised
@@ -830,7 +907,9 @@ const initial = THEMES[queried] ? queried
 root.dataset.theme = initial;
 swapArchetypes(initial);
 setPressed(initial);
-try { localStorage.setItem(STORAGE_KEY, initial); } catch (e) { }
+try {
+  localStorage.setItem(STORAGE_KEY, initial);
+} catch (e) {}
 
 dots.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -843,9 +922,9 @@ dots.forEach((btn) => {
    The indicator button toggles the panel. Outside clicks, Escape,
    and theme selection all close it. The dropdown is hidden via the
    `hidden` attribute (CSS handles `[hidden] { display: none }`). */
-const themeTrigger  = document.querySelector("[data-theme-trigger]");
+const themeTrigger = document.querySelector("[data-theme-trigger]");
 const themeDropdown = document.getElementById("theme-dropdown");
-const themeWrap     = document.querySelector("[data-theme-wrap]");
+const themeWrap = document.querySelector("[data-theme-wrap]");
 
 function openThemeDropdown() {
   if (!themeDropdown || !themeTrigger) return;
@@ -862,7 +941,8 @@ function closeThemeDropdown() {
 if (themeTrigger && themeDropdown) {
   themeTrigger.addEventListener("click", (e) => {
     e.stopPropagation();
-    if (themeDropdown.hidden) openThemeDropdown(); else closeThemeDropdown();
+    if (themeDropdown.hidden) openThemeDropdown();
+    else closeThemeDropdown();
   });
 
   // Click outside the wrap closes the dropdown.
@@ -907,11 +987,17 @@ let tTooltipTimer = null;
 let tTooltipAutoHideTimer = null;
 
 function tTooltipSeen() {
-  try { return localStorage.getItem(T_TOOLTIP_KEY) === "1"; } catch (e) { return false; }
+  try {
+    return localStorage.getItem(T_TOOLTIP_KEY) === "1";
+  } catch (e) {
+    return false;
+  }
 }
 
 function markTTooltipSeen() {
-  try { localStorage.setItem(T_TOOLTIP_KEY, "1"); } catch (e) { }
+  try {
+    localStorage.setItem(T_TOOLTIP_KEY, "1");
+  } catch (e) {}
 }
 
 function showTTooltip() {
@@ -949,9 +1035,9 @@ if (tTooltipEl && !tTooltipSeen()) {
    cooldown stops it from firing back-to-back. */
 const easterEl = document.querySelector("[data-easter-egg]");
 const EASTER_WINDOW_MS = 3200;
-const EASTER_THRESHOLD = 12;       // ≈ 3.8 presses/sec
-const EASTER_VISIBLE_MS = 3400;    // total time the overlay stays up
-const EASTER_FADE_MS = 360;        // matches the fade-out animation
+const EASTER_THRESHOLD = 12; // ≈ 3.8 presses/sec
+const EASTER_VISIBLE_MS = 3400; // total time the overlay stays up
+const EASTER_FADE_MS = 360; // matches the fade-out animation
 const EASTER_COOLDOWN_MS = 15000;
 const EASTER_PUNCHLINES = [
   "theme connoisseur.",
@@ -981,7 +1067,9 @@ function showEasterEgg() {
     lines.parentNode.replaceChild(fresh, lines);
   }
   const lineEl = easterEl.querySelector("[data-easter-line]");
-  if (lineEl) lineEl.textContent = EASTER_PUNCHLINES[Math.floor(Math.random() * EASTER_PUNCHLINES.length)];
+  if (lineEl)
+    lineEl.textContent =
+      EASTER_PUNCHLINES[Math.floor(Math.random() * EASTER_PUNCHLINES.length)];
 
   delete easterEl.dataset.state;
   easterEl.hidden = false;
@@ -1024,7 +1112,8 @@ document.addEventListener("keydown", (e) => {
   }
 
   const tag = (e.target.tagName || "").toLowerCase();
-  if (tag === "input" || tag === "textarea" || e.target.isContentEditable) return;
+  if (tag === "input" || tag === "textarea" || e.target.isContentEditable)
+    return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
 
   if (e.key === "t" || e.key === "T") {
@@ -1037,9 +1126,13 @@ document.addEventListener("keydown", (e) => {
     // Push BEFORE applying the theme so the trigger fires on this same
     // keystroke if we've crossed the threshold.
     const now = performance.now();
-    while (tStamps.length && now - tStamps[0] > EASTER_WINDOW_MS) tStamps.shift();
+    while (tStamps.length && now - tStamps[0] > EASTER_WINDOW_MS)
+      tStamps.shift();
     tStamps.push(now);
-    if (tStamps.length >= EASTER_THRESHOLD && now - easterLastFired > EASTER_COOLDOWN_MS) {
+    if (
+      tStamps.length >= EASTER_THRESHOLD &&
+      now - easterLastFired > EASTER_COOLDOWN_MS
+    ) {
       easterLastFired = now;
       tStamps.length = 0;
       showEasterEgg();
@@ -1111,7 +1204,10 @@ if (statesBtn && statesReadout) {
     if (statesBtn.dataset.state !== "loading") setState("hover");
   });
   statesBtn.addEventListener("mouseleave", () => {
-    if (statesBtn.dataset.state !== "loading" && document.activeElement !== statesBtn) {
+    if (
+      statesBtn.dataset.state !== "loading" &&
+      document.activeElement !== statesBtn
+    ) {
       setState("default");
     }
   });
@@ -1145,9 +1241,7 @@ if (statesBtn && statesReadout) {
    Fix: intercept label clicks, prevent the default chain, manually
    toggle the radio's checked state, and focus with preventScroll so
    keyboard navigation still works without the unwanted scroll. */
-const tabLabels = document.querySelectorAll(
-  ".vs-toggle__btn, .found-nav__btn"
-);
+const tabLabels = document.querySelectorAll(".vs-toggle__btn, .found-nav__btn");
 tabLabels.forEach((label) => {
   label.addEventListener("click", (e) => {
     const id = label.getAttribute("for");

@@ -8,7 +8,7 @@ The whole point of `study`: extract **structural DNA** (macrostructure + archety
 
 ## Example A · A Pentagram-style editorial portfolio
 
-**What the user pastes:** a screenshot of a New York studio's portfolio site — large italic-serif name in the top-left margin, numbered project list flowing down the page, generous warm-cream paper, a single warm-orange accent on the active project, a hairline rule between rows. (User says: *"I want my portfolio to feel like this.")*
+**What the user pastes:** a screenshot of a New York studio's portfolio site — large italic-serif name in the top-left margin, numbered project list flowing down the page, generous warm-cream paper, a single warm-orange accent on the active project, a hairline rule between rows. (User says: _"I want my portfolio to feel like this.")_
 
 ### Refuse-or-proceed check
 
@@ -24,7 +24,7 @@ Public reference for inspiration → proceed. (Refusal heuristics fire on: paid-
 >
 > **Footer archetype:** Ft1 Single-Line Colophon — studio name, year, contact, three links, no nav.
 >
-> **Display family role:** italic editorial serif (high optical size, soft axis, ink-black). **Body family role:** geometric sans (humanist Inter-Tight-or-similar at 350-400 weight). Two free candidates: *Fraunces* italic display + *Geist* body. One paid candidate the user might confirm: *Tiempos Headline* + *Söhne*. The skill names *roles*, not exact font IDs — visual font ID is unreliable.
+> **Display family role:** italic editorial serif (high optical size, soft axis, ink-black). **Body family role:** geometric sans (humanist Inter-Tight-or-similar at 350-400 weight). Two free candidates: _Fraunces_ italic display + _Geist_ body. One paid candidate the user might confirm: _Tiempos Headline_ + _Söhne_. The skill names _roles_, not exact font IDs — visual font ID is unreliable.
 >
 > **Surface lightness band:** light (paper L ≈ 96%). Slight warm tint at hue 80 — Pentagram-warm cream, not stark white.
 >
@@ -36,16 +36,17 @@ Public reference for inspiration → proceed. (Refusal heuristics fire on: paid-
 >
 > **Two anti-patterns the screenshot has** that you should NOT carry over:
 >
-> 1. The hover-state on the number-label uses a slow ease-in-out 800 ms colour fade. Per `microinteractions.md` § The timing canon, hover state should be 150–200 ms. Carry the *idea* (colour-shift on hover); shorten the *duration*.
+> 1. The hover-state on the number-label uses a slow ease-in-out 800 ms colour fade. Per `microinteractions.md` § The timing canon, hover state should be 150–200 ms. Carry the _idea_ (colour-shift on hover); shorten the _duration_.
 > 2. The footer text is set at 11 px with 0.06em tracking — under the 14 px floor for body copy. Bump to 12-13 px on rebuild, keep the tracking.
 
 ### Confirmation question
 
-> *"Adopt this DNA wholesale, or change one axis? For example, I could keep the macrostructure (Specimen) but pick a theme that better matches your work — if your tone is more ink-blue and B2B, I'd suggest **Plain** (pure-white paper) instead of the warm-cream **Specimen** theme."*
+> _"Adopt this DNA wholesale, or change one axis? For example, I could keep the macrostructure (Specimen) but pick a theme that better matches your work — if your tone is more ink-blue and B2B, I'd suggest **Plain** (pure-white paper) instead of the warm-cream **Specimen** theme."_
 
 ### What `study` builds when the user says "go"
 
 Macrostructure stamp:
+
 ```css
 /* Hallmark · macrostructure: Specimen · H4 hero knobs: number-column=margin, alignment=left-bias
  * theme: Specimen · accent: warm-orange ~3% · enrichment: none
@@ -59,7 +60,7 @@ Output: the user's actual portfolio entries arranged in a numbered-margin column
 
 ## Example B · A Klim-Type-Foundry-leaning specimen
 
-**What the user pastes:** a screenshot of a type-specimen page — full-bleed black paper, single huge geometric-sans display character ("R") tilted -2°, a ruled grid behind it, a footer-band with the typeface name, weight, OpenType features, and a tiny set of glyph callouts. (User says: *"This is the energy I want for our agency rebrand.")*
+**What the user pastes:** a screenshot of a type-specimen page — full-bleed black paper, single huge geometric-sans display character ("R") tilted -2°, a ruled grid behind it, a footer-band with the typeface name, weight, OpenType features, and a tiny set of glyph callouts. (User says: _"This is the energy I want for our agency rebrand.")_
 
 ### Refuse-or-proceed check
 
@@ -71,11 +72,11 @@ Type specimens are typically published references; proceed. (If the screenshot w
 >
 > **Hero archetype:** H9 Single-Glyph — the entire above-the-fold is one letterform.
 >
-> **Pitch archetype:** none on the first viewport. The page is *the work being specified*. Pitch (if any) lives below the fold as supporting paragraphs.
+> **Pitch archetype:** none on the first viewport. The page is _the work being specified_. Pitch (if any) lives below the fold as supporting paragraphs.
 >
 > **Footer archetype:** Ft3 Tabular-Specimen — name · weight · OpenType features · designer credit.
 >
-> **Display family role:** geometric-sans-heavy (display-display, weights 800-900). **Body family role:** the same sans at 400 — single-font specimen pages are allowed when the single font *is* the design (per `typography.md`). Free candidate: *Bricolage Grotesque 800*. Paid candidate: *Druk* or *NaN Jaune*. *Refuse to guess the exact paid font ID.*
+> **Display family role:** geometric-sans-heavy (display-display, weights 800-900). **Body family role:** the same sans at 400 — single-font specimen pages are allowed when the single font _is_ the design (per `typography.md`). Free candidate: _Bricolage Grotesque 800_. Paid candidate: _Druk_ or _NaN Jaune_. _Refuse to guess the exact paid font ID._
 >
 > **Surface lightness band:** dark (paper L ≈ 12%). The dark is uniform across the viewport — no gradient.
 >
@@ -92,11 +93,12 @@ Type specimens are typically published references; proceed. (If the screenshot w
 
 ### Confirmation question
 
-> *"This DNA is for a specimen page, not a marketing page. If you're rebranding an agency, the glyph hero will be impressive on the first visit and pointless after. Suggested adaptation: Type Specimen as the homepage, then a Long Document or Workbench pattern for the about / case-studies / contact pages. Pick: keep all-Specimen, or hybrid?"*
+> _"This DNA is for a specimen page, not a marketing page. If you're rebranding an agency, the glyph hero will be impressive on the first visit and pointless after. Suggested adaptation: Type Specimen as the homepage, then a Long Document or Workbench pattern for the about / case-studies / contact pages. Pick: keep all-Specimen, or hybrid?"_
 
 ### What `study` builds (hybrid path)
 
 Macrostructure stamp:
+
 ```css
 /* Hallmark · macrostructure: Type Specimen · H9 hero knobs: glyph=user-mark, tilt=-2deg, grid=1px-soft
  * theme: Manifesto · accent: hot-orange ~3% · enrichment: none
@@ -110,13 +112,13 @@ The homepage emits the agency's mark in 22-rem Bricolage 800, ruled grid behind,
 
 ## Example C · A small-studio personal site (Rauno-Freiberg-style)
 
-**What the user pastes:** a screenshot of a personal designer-engineer site — dark-mode paper, a small italic-serif name in the top-left, a single demo embed at the centre (CSS-art clock that ticks), a writing list below. (User says: *"I want my own personal site to feel like this.")*
+**What the user pastes:** a screenshot of a personal designer-engineer site — dark-mode paper, a small italic-serif name in the top-left, a single demo embed at the centre (CSS-art clock that ticks), a writing list below. (User says: _"I want my own personal site to feel like this.")_
 
 ### Refuse-or-proceed check
 
 An ambiguous source is the edge case here. Per `study.md` § Refusal heuristics: when you can't tell whether the source is the user's own work or someone else's, ask first.
 
-> *"Is this your own work, a public reference for inspiration, or someone else's live site? If it's someone else's live site, I'll extract the DNA at the structural level only — no copy, no demos, no font IDs — and you'll bring your own content. If it's a paid portfolio template, I won't reproduce it."*
+> _"Is this your own work, a public reference for inspiration, or someone else's live site? If it's someone else's live site, I'll extract the DNA at the structural level only — no copy, no demos, no font IDs — and you'll bring your own content. If it's a paid portfolio template, I won't reproduce it."_
 
 User confirms: public reference for inspiration → proceed with DNA extraction only.
 
@@ -130,7 +132,7 @@ User confirms: public reference for inspiration → proceed with DNA extraction 
 >
 > **Footer archetype:** Ft1 Single-Line Colophon.
 >
-> **Display family role:** italic editorial serif. **Body family role:** geometric sans, body weight 400. Free candidate pairing: *Fraunces* italic + *Geist*.
+> **Display family role:** italic editorial serif. **Body family role:** geometric sans, body weight 400. Free candidate pairing: _Fraunces_ italic + _Geist_.
 >
 > **Surface lightness band:** dark (paper L ≈ 16%). Slight cool tint at hue 240. Inks at ~90-95% L, also slight cool.
 >
@@ -144,17 +146,18 @@ User confirms: public reference for inspiration → proceed with DNA extraction 
 >
 > 1. The CSS-art clock loops at 1 fps with no `prefers-reduced-motion` fallback. **Always pair declarative animation with a reduced-motion alternative** (`microinteractions.md` § Reduced motion is a first-class state, not an afterthought).
 >
-> One thing the screenshot does *better than most* and you SHOULD carry over:
+> One thing the screenshot does _better than most_ and you SHOULD carry over:
 >
 > 1. The italic name in the top-left has a baseline at the same y-position as the centred demo's vertical centre — a subtle horizontal-baseline alignment that makes the page feel composed rather than stacked. Carry this; it's invisible until removed.
 
 ### Confirmation question
 
-> *"The DNA is portable: dark paper · italic-Fraunces name · centred demo · cool-green accent. Two questions before I build: (1) what's your demo? — I can hand-build it as Tier-A CSS art if you describe it, or you can paste an existing animation. (2) do you have ~5 writings to seed the list, or should I leave a placeholder section?"*
+> _"The DNA is portable: dark paper · italic-Fraunces name · centred demo · cool-green accent. Two questions before I build: (1) what's your demo? — I can hand-build it as Tier-A CSS art if you describe it, or you can paste an existing animation. (2) do you have ~5 writings to seed the list, or should I leave a placeholder section?"_
 
 ### What `study` builds when the user provides their own demo + writings
 
 Macrostructure stamp:
+
 ```css
 /* Hallmark · macrostructure: Long Document · H5 hero knobs: demo=centered, size=24rem
  * theme: Midnight · accent: forest-green ~3% · enrichment: Tier-A custom-craft (user-supplied recipe)
@@ -171,6 +174,6 @@ Output: the user's actual name in italic-Fraunces top-left, their demo (e.g. an 
 1. **Names the font role, not the font ID.** Visual font identification is unreliable. The skill proposes one or two real candidates from the canon and asks the user to confirm.
 2. **Never copies pixels.** The DNA is the macrostructure + archetype + colour-anchor + type-pairing — not the dress.
 3. **Refuses the obvious bad sources.** Paid-template-marketplace listings; copy-protected portfolios without permission.
-4. **Always disclosures the substitutions.** When the screenshot's font is paid (Tiempos / Söhne / Druk) and the user hasn't confirmed a licence, the skill names a free understudy (Fraunces / Inter Tight / Bricolage Grotesque) and *says it's substituting*.
+4. **Always disclosures the substitutions.** When the screenshot's font is paid (Tiempos / Söhne / Druk) and the user hasn't confirmed a licence, the skill names a free understudy (Fraunces / Inter Tight / Bricolage Grotesque) and _says it's substituting_.
 
 These three examples cover the most common categories of `study` request: an editorial portfolio, a type-specimen statement page, and a small personal site. The protocol is the same for every screenshot — refuse-or-proceed, diagnose, confirm, build. See [`study.md`](study.md) for the full protocol.

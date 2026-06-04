@@ -5,16 +5,18 @@
  */
 
 :root {
-  --color-paper: oklch(13% 0.020 150);
+  --color-paper: oklch(13% 0.02 150);
   --color-paper-2: oklch(17% 0.022 150);
   --color-rule: oklch(28% 0.025 150);
-  --color-ink: oklch(86% 0.040 150);
-  --color-ink-soft: oklch(62% 0.040 150);
-  --color-accent: oklch(82% 0.20 150);
+  --color-ink: oklch(86% 0.04 150);
+  --color-ink-soft: oklch(62% 0.04 150);
+  --color-accent: oklch(82% 0.2 150);
   --color-accent-dim: oklch(58% 0.16 150);
   --color-amber: oklch(78% 0.18 80);
 
-  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono:
+    "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    monospace;
 
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
@@ -32,9 +34,14 @@
   --dur-micro: 100ms;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { overflow-x: clip; }
+html,
+body {
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -66,8 +73,12 @@ body {
   color: var(--color-ink-soft);
 }
 
-.masthead__brand { color: var(--color-accent); }
-.masthead__meta { font-variant-numeric: tabular-nums; }
+.masthead__brand {
+  color: var(--color-accent);
+}
+.masthead__meta {
+  font-variant-numeric: tabular-nums;
+}
 
 /* Lede — the salutation-as-command */
 .lede {
@@ -94,12 +105,21 @@ body {
 }
 
 @keyframes caret {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lede__caret { animation: none; opacity: 0.7; }
+  .lede__caret {
+    animation: none;
+    opacity: 0.7;
+  }
 }
 
 /* Body prose */
@@ -114,7 +134,10 @@ body {
   color: var(--color-ink);
 }
 
-.prose strong { color: var(--color-accent); font-weight: 500; }
+.prose strong {
+  color: var(--color-accent);
+  font-weight: 500;
+}
 
 .prose a {
   color: var(--color-accent);
@@ -124,7 +147,8 @@ body {
   transition: text-decoration-color var(--dur-micro) var(--ease-out);
 }
 
-.prose a:hover, .prose a:focus-visible {
+.prose a:hover,
+.prose a:focus-visible {
   text-decoration-color: var(--color-accent);
 }
 
@@ -146,11 +170,23 @@ body {
   position: relative;
 }
 
-.term__line { display: block; white-space: pre; color: var(--color-ink); }
-.term__line .term__prompt { color: var(--color-accent); }
-.term__line .term__flag { color: var(--color-amber); }
-.term__line .term__comment { color: var(--color-ink-soft); }
-.term__line.term__line--out { color: var(--color-ink-soft); }
+.term__line {
+  display: block;
+  white-space: pre;
+  color: var(--color-ink);
+}
+.term__line .term__prompt {
+  color: var(--color-accent);
+}
+.term__line .term__flag {
+  color: var(--color-amber);
+}
+.term__line .term__comment {
+  color: var(--color-ink-soft);
+}
+.term__line.term__line--out {
+  color: var(--color-ink-soft);
+}
 
 /* Section headings */
 .section {
@@ -176,7 +212,10 @@ body {
 }
 
 /* Numbered note rows (How it works) */
-.notes { display: grid; gap: var(--space-md); }
+.notes {
+  display: grid;
+  gap: var(--space-md);
+}
 .note {
   display: grid;
   grid-template-columns: 4ch 1fr;
@@ -191,7 +230,10 @@ body {
   color: var(--color-ink);
   max-width: var(--measure-prose);
 }
-.note__body strong { color: var(--color-accent); font-weight: 500; }
+.note__body strong {
+  color: var(--color-accent);
+  font-weight: 500;
+}
 
 /* Flag spec table */
 .flags {
@@ -199,7 +241,8 @@ body {
   border-collapse: collapse;
   font-size: 0.8125rem;
 }
-.flags th, .flags td {
+.flags th,
+.flags td {
   text-align: start;
   padding: var(--space-2xs) var(--space-sm) var(--space-2xs) 0;
   border-block-end: 1px solid var(--color-rule);
@@ -211,7 +254,10 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.flags td:first-child { color: var(--color-accent); width: 18ch; }
+.flags td:first-child {
+  color: var(--color-accent);
+  width: 18ch;
+}
 
 /* Colophon */
 .colophon {
@@ -233,7 +279,8 @@ body {
   transition: color var(--dur-micro) var(--ease-out);
 }
 
-.colophon a:hover, .colophon a:focus-visible {
+.colophon a:hover,
+.colophon a:focus-visible {
   color: var(--color-accent);
 }
 
@@ -244,7 +291,14 @@ body {
 
 /* Mobile */
 @media (max-width: 40rem) {
-  .page { padding: var(--space-xl) var(--space-md) var(--space-2xl); }
-  .lede { font-size: 1.125rem; }
-  .note { grid-template-columns: 3ch 1fr; gap: var(--space-sm); }
+  .page {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+  .lede {
+    font-size: 1.125rem;
+  }
+  .note {
+    grid-template-columns: 3ch 1fr;
+    gap: var(--space-sm);
+  }
 }

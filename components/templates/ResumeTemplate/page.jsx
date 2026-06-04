@@ -86,16 +86,16 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
         <Header dict={dict} data={data} />
         {mount && (
           <div className="mt-10 w-full flex flex-col items-center">
-            <div className="w-full bg-slate-800 max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm">
+            <div className="w-full min-w-0 max-w-4xl rounded-lg bg-slate-800 p-5 shadow-sm mob:px-6 tablet:p-10 laptop:p-16 desktop:p-20">
               <h1 className="text-3xl font-bold">
                 {data.resume.name || data.name}
               </h1>
               <h2 className="text-xl mt-5">{data.resume.tagline}</h2>
-              <p className="w-4/5 text-xl mt-5 opacity-50">
+              <p className="mt-5 w-full text-base opacity-50 tablet:text-lg laptop:text-xl">
                 {data.resume.description}
               </p>
               {data.resume.descriptionSecondary && (
-                <p className="w-4/5 text-xl mt-3 opacity-50">
+                <p className="mt-3 w-full text-base opacity-50 tablet:text-lg laptop:text-xl">
                   {data.resume.descriptionSecondary}
                 </p>
               )}
@@ -215,11 +215,13 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                       {dict?.resume?.certifications || "Certifications"}
                     </h1>
                     <ul className="list-disc mt-2">
-                      {data.resume.certifications.map((certification, index) => (
-                        <li key={index} className="ml-5 py-2">
-                          {certification}
-                        </li>
-                      ))}
+                      {data.resume.certifications.map(
+                        (certification, index) => (
+                          <li key={index} className="ml-5 py-2">
+                            {certification}
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </div>
                 )}

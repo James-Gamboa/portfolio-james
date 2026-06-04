@@ -6,9 +6,14 @@
 
 @import url("./tokens.css");
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   margin: 0;
   overflow-x: clip;
   background: var(--color-paper);
@@ -21,7 +26,11 @@ html, body {
   text-rendering: optimizeLegibility;
 }
 
-img, svg { display: block; max-width: 100%; }
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
 
 a {
   color: inherit;
@@ -30,9 +39,15 @@ a {
   text-decoration-thickness: 1px;
 }
 
-a:hover { text-decoration: underline; text-decoration-color: var(--color-accent); }
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+}
 
-::selection { background: var(--color-accent); color: var(--color-paper); }
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
 
 :focus-visible {
   outline: 2px solid var(--color-focus);
@@ -40,7 +55,14 @@ a:hover { text-decoration: underline; text-decoration-color: var(--color-accent)
   border-radius: var(--radius-xs);
 }
 
-button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
 
 /* ───────── Layout shell ───────── */
 
@@ -95,7 +117,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--color-ink-mute);
 }
 
-.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
 
 .ticker-track > span {
   display: inline-flex;
@@ -113,7 +137,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: inline-block;
 }
 
-.ticker-track > span:last-child::after { display: none; }
+.ticker-track > span:last-child::after {
+  display: none;
+}
 
 .ticker-track strong {
   color: var(--color-ink);
@@ -121,8 +147,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 @keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ───────── Nav · N9 edge-aligned minimal ───────── */
@@ -169,7 +199,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--color-ink-2);
 }
 
-.masthead-links a:hover { color: var(--color-ink); }
+.masthead-links a:hover {
+  color: var(--color-ink);
+}
 
 /* ───────── Hero — Marquee with departure board ───────── */
 
@@ -228,7 +260,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   max-width: 16ch;
   overflow-wrap: anywhere;
   min-width: 0;
-  font-variation-settings: "wdth" 75, "opsz" 96;
+  font-variation-settings:
+    "wdth" 75,
+    "opsz" 96;
 }
 
 .hero-title em {
@@ -289,8 +323,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   right: var(--space-sm);
 }
 
-.hero-stamp::before { top: 6px; }
-.hero-stamp::after { bottom: 6px; }
+.hero-stamp::before {
+  top: 6px;
+}
+.hero-stamp::after {
+  bottom: 6px;
+}
 
 .hero-stamp .lg {
   display: block;
@@ -357,14 +395,28 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   animation: board-tick var(--dur-stagger) var(--ease-out) forwards;
 }
 
-.board-row:nth-child(1) { animation-delay:  60ms; }
-.board-row:nth-child(2) { animation-delay: 140ms; }
-.board-row:nth-child(3) { animation-delay: 220ms; }
-.board-row:nth-child(4) { animation-delay: 300ms; }
-.board-row:nth-child(5) { animation-delay: 380ms; }
-.board-row:nth-child(6) { animation-delay: 460ms; }
+.board-row:nth-child(1) {
+  animation-delay: 60ms;
+}
+.board-row:nth-child(2) {
+  animation-delay: 140ms;
+}
+.board-row:nth-child(3) {
+  animation-delay: 220ms;
+}
+.board-row:nth-child(4) {
+  animation-delay: 300ms;
+}
+.board-row:nth-child(5) {
+  animation-delay: 380ms;
+}
+.board-row:nth-child(6) {
+  animation-delay: 460ms;
+}
 
-.board-row:last-child { border-bottom: 0; }
+.board-row:last-child {
+  border-bottom: 0;
+}
 
 .board-row::before {
   content: "";
@@ -387,7 +439,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Boarding-now row — permanent treatment */
 .board-row[data-status="boarding"] {
-  background: linear-gradient(90deg, var(--color-paper-2) 0%, var(--color-paper) 65%);
+  background: linear-gradient(
+    90deg,
+    var(--color-paper-2) 0%,
+    var(--color-paper) 65%
+  );
 }
 
 .board-row[data-status="boarding"]::before {
@@ -410,7 +466,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--color-ink-mute);
 }
 
-.board-row[data-status="boarding"] .board-glyph { color: var(--color-accent-2); }
+.board-row[data-status="boarding"] .board-glyph {
+  color: var(--color-accent-2);
+}
 
 .board-time {
   font-family: var(--font-mono);
@@ -433,7 +491,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   align-items: baseline;
   gap: var(--space-md);
-  font-variation-settings: "wdth" 80, "opsz" 96;
+  font-variation-settings:
+    "wdth" 80,
+    "opsz" 96;
 }
 
 .board-dest small {
@@ -495,12 +555,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.35; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
 }
 
-.board-row[data-status="ontime"] .board-status::before { background: var(--color-status-go); }
-.board-row[data-status="open"] .board-status::before { background: var(--color-ink-2); }
+.board-row[data-status="ontime"] .board-status::before {
+  background: var(--color-status-go);
+}
+.board-row[data-status="open"] .board-status::before {
+  background: var(--color-ink-2);
+}
 
 .board-fare {
   font-family: var(--font-mono);
@@ -603,8 +672,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: transform var(--dur-base) var(--ease-out);
 }
 
-.btn-ghost:hover::after { transform: translateX(4px); }
-.btn-ghost:hover { color: var(--color-ink); text-decoration: none; }
+.btn-ghost:hover::after {
+  transform: translateX(4px);
+}
+.btn-ghost:hover {
+  color: var(--color-ink);
+  text-decoration: none;
+}
 
 /* ───────── Pitch ───────── */
 
@@ -642,7 +716,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   min-width: 0;
 }
 
-.pitch-body p + p { margin-top: var(--space-md); }
+.pitch-body p + p {
+  margin-top: var(--space-md);
+}
 .pitch-body em {
   font-family: var(--font-italic);
   font-style: italic;
@@ -673,7 +749,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin: 0;
   overflow-wrap: anywhere;
   min-width: 0;
-  font-variation-settings: "wdth" 80, "opsz" 96;
+  font-variation-settings:
+    "wdth" 80,
+    "opsz" 96;
 }
 
 .picks-head h2 em {
@@ -717,7 +795,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   justify-content: space-between;
 }
 
-.pick-num span:last-child { color: var(--color-accent); }
+.pick-num span:last-child {
+  color: var(--color-accent);
+}
 
 .pick-figure {
   position: relative;
@@ -736,7 +816,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 30%, var(--color-accent-mute) 0%, transparent 55%),
+    radial-gradient(
+      circle at 30% 30%,
+      var(--color-accent-mute) 0%,
+      transparent 55%
+    ),
     radial-gradient(circle at 70% 80%, var(--color-paper-3) 0%, transparent 60%);
   z-index: -1;
   opacity: 0.6;
@@ -751,12 +835,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pick-figure-2::before {
   background:
     linear-gradient(135deg, var(--color-paper-3) 0%, var(--color-paper-2) 100%),
-    radial-gradient(circle at 50% 30%, var(--color-accent-mute) 0%, transparent 60%);
+    radial-gradient(
+      circle at 50% 30%,
+      var(--color-accent-mute) 0%,
+      transparent 60%
+    );
 }
 
 .pick-figure-3::before {
   background:
-    radial-gradient(ellipse at 50% 100%, var(--color-accent-mute) 0%, transparent 50%),
+    radial-gradient(
+      ellipse at 50% 100%,
+      var(--color-accent-mute) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, var(--color-paper-2) 0%, var(--color-paper-3) 100%);
 }
 
@@ -769,7 +861,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   line-height: 0.95;
   overflow-wrap: anywhere;
   min-width: 0;
-  font-variation-settings: "wdth" 80, "opsz" 72;
+  font-variation-settings:
+    "wdth" 80,
+    "opsz" 72;
 }
 
 .pick-title small {
@@ -861,7 +955,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  font-variation-settings: "wdth" 80, "opsz" 96;
+  font-variation-settings:
+    "wdth" 80,
+    "opsz" 96;
 }
 
 .stage-num small {
@@ -969,7 +1065,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   overflow-wrap: anywhere;
   line-height: 0.95;
   color: var(--color-ink);
-  font-variation-settings: "wdth" 80, "opsz" 96;
+  font-variation-settings:
+    "wdth" 80,
+    "opsz" 96;
 }
 
 .final-cta h2 em {
@@ -997,7 +1095,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-bottom: var(--rule-hair);
 }
 
-.colophon-head .wordmark { font-size: var(--text-2xl); }
+.colophon-head .wordmark {
+  font-size: var(--text-2xl);
+}
 
 .colophon-head em {
   font-family: var(--font-italic);
@@ -1029,7 +1129,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--color-ink);
 }
 
-.col-block dd a:hover { color: var(--color-accent); }
+.col-block dd a:hover {
+  color: var(--color-accent);
+}
 
 .colophon-foot {
   display: flex;
@@ -1045,7 +1147,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--color-ink-mute);
 }
 
-.colophon-foot .lead { color: var(--color-ink-2); }
+.colophon-foot .lead {
+  color: var(--color-ink-2);
+}
 
 /* ───────── Animations ───────── */
 
@@ -1078,7 +1182,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: var(--space-xl);
   }
 
-  .colophon-grid { gap: var(--space-lg); }
+  .colophon-grid {
+    gap: var(--space-lg);
+  }
 
   .hero-composition {
     grid-template-columns: minmax(0, 1fr);
@@ -1090,7 +1196,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     margin-top: 0;
   }
 
-  .board-head { display: none; }
+  .board-head {
+    display: none;
+  }
 
   .board-row {
     grid-template-columns: 1.25rem 4.25rem minmax(0, 1fr);
@@ -1103,8 +1211,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     padding: var(--space-md);
   }
 
-  .board-glyph { grid-area: glyph; align-self: center; }
-  .board-time { grid-area: time; }
+  .board-glyph {
+    grid-area: glyph;
+    align-self: center;
+  }
+  .board-time {
+    grid-area: time;
+  }
   .board-dest {
     grid-area: dest;
     font-size: clamp(1.5rem, 7vw, 2.25rem);
@@ -1112,8 +1225,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .board-row[data-status="boarding"] .board-dest {
     font-size: clamp(1.85rem, 9vw, 2.85rem);
   }
-  .board-code { grid-area: code; }
-  .board-status { grid-area: status; justify-self: end; }
+  .board-code {
+    grid-area: code;
+  }
+  .board-status {
+    grid-area: status;
+    justify-self: end;
+  }
   .board-fare {
     grid-area: fare;
     text-align: left;
@@ -1123,36 +1241,63 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     gap: var(--space-md);
     align-items: baseline;
   }
-  .board-fare small { display: inline; }
+  .board-fare small {
+    display: inline;
+  }
 
   .masthead {
     grid-template-columns: 1fr auto;
     gap: var(--space-sm);
   }
 
-  .masthead-meta { display: none; }
-  .masthead-links { gap: var(--space-md); }
+  .masthead-meta {
+    display: none;
+  }
+  .masthead-links {
+    gap: var(--space-md);
+  }
 
-  .colophon-head .wordmark { font-size: var(--text-xl); }
+  .colophon-head .wordmark {
+    font-size: var(--text-xl);
+  }
 }
 
 @media (max-width: 480px) {
-  .hero { padding-block: var(--space-xl) var(--space-2xl); }
-  .pitch, .picks, .process, .note, .final-cta { padding-block: var(--space-2xl); }
-  .hero-strip { gap: var(--space-sm) var(--space-md); }
-  .hero-cta { gap: var(--space-md); }
-  .colophon-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .ticker-track { gap: var(--space-lg); }
+  .hero {
+    padding-block: var(--space-xl) var(--space-2xl);
+  }
+  .pitch,
+  .picks,
+  .process,
+  .note,
+  .final-cta {
+    padding-block: var(--space-2xl);
+  }
+  .hero-strip {
+    gap: var(--space-sm) var(--space-md);
+  }
+  .hero-cta {
+    gap: var(--space-md);
+  }
+  .colophon-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .ticker-track {
+    gap: var(--space-lg);
+  }
 }
 
 /* ───────── Reduced motion ───────── */
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-delay: 0ms !important;
     transition-duration: 100ms !important;
-    transition-property: opacity, color, background-color, border-color !important;
+    transition-property:
+      opacity, color, background-color, border-color !important;
   }
 
   .board-row {

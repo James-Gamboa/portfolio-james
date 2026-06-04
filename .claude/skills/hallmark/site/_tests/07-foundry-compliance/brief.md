@@ -6,7 +6,7 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — fully answered
 
@@ -14,9 +14,9 @@ Audience, use, tone all explicit.
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Stat-Led + Plain + none. Picking from {Bento Grid, Workbench, Marquee Hero} for the macro this time — Bento Grid wins because the brief says 'show how many · what it costs · who uses it' (three different signals; Bento is the macro built to carry multiple parallel proofs)."*
+> _"Previous run on this brief picked Stat-Led + Plain + none. Picking from {Bento Grid, Workbench, Marquee Hero} for the macro this time — Bento Grid wins because the brief says 'show how many · what it costs · who uses it' (three different signals; Bento is the macro built to carry multiple parallel proofs)."_
 >
-> *"Theme rotation: Plain (light · display-heavy · cool-deep-ink-blue) → Newsprint (light · roman-serif · warm-deep-red). Differs on display style and accent hue. Passes."*
+> _"Theme rotation: Plain (light · display-heavy · cool-deep-ink-blue) → Newsprint (light · roman-serif · warm-deep-red). Differs on display style and accent hue. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -24,7 +24,7 @@ Audience, use, tone all explicit.
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: Tier-A pure-CSS logo wall (8 monochrome wordmarks set as `<svg>` text marks). No real customer logos (placeholder), no Lottie, no Midjourney. The Bento accommodates a logo grid as one tile rather than a separate section."*
+> _"Enrichment: Tier-A pure-CSS logo wall (8 monochrome wordmarks set as `<svg>` text marks). No real customer logos (placeholder), no Lottie, no Midjourney. The Bento accommodates a logo grid as one tile rather than a separate section."_
 
 ## Step 5 · Preview
 
@@ -52,7 +52,7 @@ Audience, use, tone all explicit.
 ## What changed vs v1
 
 - **Macro:** Stat-Led → Bento Grid. v1 led with "847" sized at 22 rem and structured the rest as a 9-section linear SaaS page; v2 places the 847 inside a bento tile alongside five other parallel proofs (logos, pricing, testimonial, features, FAQ). Same data, different choreography.
-- **Theme:** Plain → Newsprint. v1's pure-white #fff with deep ink-blue becomes warm-cream with warm-deep-red. The page reads less Klim-Type-Foundry and more *NYT Cooking* — still trustworthy, less austere.
+- **Theme:** Plain → Newsprint. v1's pure-white #fff with deep ink-blue becomes warm-cream with warm-deep-red. The page reads less Klim-Type-Foundry and more _NYT Cooking_ — still trustworthy, less austere.
 - **Enrichment:** v1 had no enrichment (typography-only Stat-Led); v2 adds a Tier-A logo grid as one bento tile. Compliance pages need social proof, and a logo wall does that without a separate section.
 - **Section count:** v1 had 9 linear sections (logos · stats · features · testimonials · pricing · FAQ · CTA · footer); v2 collapses into 6 bento tiles + a CTA strip + a colophon.
 

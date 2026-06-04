@@ -6,19 +6,19 @@
 
 ## Step 0 · Pre-flight
 
-> *"No pre-flight signals — proceeding with full Hallmark stack."*
+> _"No pre-flight signals — proceeding with full Hallmark stack."_
 
 ## Step 1 · Design-context gate — partial → inferred
 
 User gave audience-implied + tone (declarative, no flash). Skill infers:
 
-> *"Going with: audience = potential clients and collaborators · use = read our position · tone = declarative, polemical, restrained. If any of those is wrong, redirect."*
+> _"Going with: audience = potential clients and collaborators · use = read our position · tone = declarative, polemical, restrained. If any of those is wrong, redirect."_
 
 ## Step 2.5 · Project memory rotation
 
-> *"Previous run on this brief picked Manifesto + Manifesto + none. Picking from {Quote-Led, Stat-Led, Numbered Theses} for the macro this time — Quote-Led wins because a manifesto can be one sentence as easily as it can be five, and the rotation rule pushes away from the Manifesto-named-twice pattern."*
+> _"Previous run on this brief picked Manifesto + Manifesto + none. Picking from {Quote-Led, Stat-Led, Numbered Theses} for the macro this time — Quote-Led wins because a manifesto can be one sentence as easily as it can be five, and the rotation rule pushes away from the Manifesto-named-twice pattern."_
 >
-> *"Theme rotation: Manifesto (dark · Inter Tight 900 display-heavy · red bleed) → Brutal (dark · Druk-condensed display · single yellow strike). Differs on display style and accent hue. Passes."*
+> _"Theme rotation: Manifesto (dark · Inter Tight 900 display-heavy · red bleed) → Brutal (dark · Druk-condensed display · single yellow strike). Differs on display style and accent hue. Passes."_
 
 ## Step 3 · Visual ruleset loaded
 
@@ -26,7 +26,7 @@ User gave audience-implied + tone (declarative, no flash). Skill infers:
 
 ## Step 4 · Hero enrichment
 
-> *"Enrichment: none. Quote-Led + Brutal is already loud; adding any visual would dilute the polemic. The 'no flashy stuff' constraint maps directly here — voice is the design."*
+> _"Enrichment: none. Quote-Led + Brutal is already loud; adding any visual would dilute the polemic. The 'no flashy stuff' constraint maps directly here — voice is the design."_
 
 ## Step 5 · Preview
 

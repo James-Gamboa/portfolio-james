@@ -17,20 +17,22 @@ const ProjectResume = ({
       : [];
 
   return (
-    <div className="mt-5 w-full flex mob:flex-col desktop:flex-row justify-between">
-      <div className="text-lg w-2/5">
-        <h2>{dates}</h2>
+    <div className="mt-5 flex w-full min-w-0 flex-col gap-3 tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-6">
+      <div className="w-full shrink-0 text-base tablet:w-[38%] tablet:max-w-[220px] laptop:text-lg">
+        <h2 className="break-words">{dates}</h2>
         <h3 className="text-sm opacity-50">{type}</h3>
       </div>
-      <div className="w-3/5">
-        <h2 className="text-lg font-bold">{position}</h2>
+      <div className="min-w-0 w-full flex-1 tablet:w-auto">
+        <h2 className="text-base font-bold break-words laptop:text-lg">
+          {position}
+        </h2>
         {summary && (
-          <p className="text-sm my-2 opacity-70">{summary}</p>
+          <p className="my-2 text-sm opacity-70 break-words">{summary}</p>
         )}
         {bulletsLocal.length > 0 && (
-          <ul className="list-disc">
+          <ul className="list-disc pl-5">
             {bulletsLocal.map((bullet, index) => (
-              <li key={index} className="text-sm my-1 opacity-70">
+              <li key={index} className="my-1 text-sm opacity-70 break-words">
                 {bullet}
               </li>
             ))}
