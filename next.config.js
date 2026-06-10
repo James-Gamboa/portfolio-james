@@ -10,7 +10,7 @@ const nextConfig = {
         hostname: "i.postimg.cc",
         port: "",
         pathname: "/**",
-      }
+      },
     ],
   },
   async redirects() {

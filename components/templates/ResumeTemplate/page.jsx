@@ -6,25 +6,7 @@ import ProjectResume from "@/components/molecules/ProjectResume/page.jsx";
 import Socials from "@/components/atoms/Socials/page.jsx";
 import Button from "@/components/atoms/Button/page.jsx";
 import Footer from "@/components/organisms/Footer/page.jsx";
-
-const SkillCategory = ({ title, items }) => {
-  if (!items || items.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="mt-2 mob:mt-5">
-      <h2 className="text-lg">{title}</h2>
-      <ul className="list-disc">
-        {items.map((item, index) => (
-          <li key={index} className="ml-5 py-2">
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+import SkillsSection from "@/components/molecules/SkillsSection/page.jsx";
 
 const ResumeTemplate = ({ lang = "en", dict, data }) => {
   const [mount, setMount] = useState(false);
@@ -41,37 +23,6 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
     console.error("Resume data is missing:", data);
     return <div>Resume data not available</div>;
   }
-
-  const skillCategories = [
-    {
-      title: dict?.resume?.languages || "Frontend",
-      items: data.resume.languages,
-    },
-    {
-      title: dict?.resume?.frameworks || "Backend & APIs",
-      items: data.resume.frameworks,
-    },
-    {
-      title: dict?.resume?.cmsEcommerce || "CMS & E-Commerce",
-      items: data.resume.cmsEcommerce,
-    },
-    {
-      title: dict?.resume?.databases || "Databases",
-      items: data.resume.databases,
-    },
-    {
-      title: dict?.resume?.toolsPlatforms || "Tools & Platforms",
-      items: data.resume.toolsPlatforms,
-    },
-    {
-      title: dict?.resume?.aiTools || "AI & Developer Tools",
-      items: data.resume.aiTools,
-    },
-    {
-      title: dict?.resume?.others || "Other",
-      items: data.resume.others,
-    },
-  ].filter((category) => category.items && category.items.length > 0);
 
   return (
     <>
@@ -132,6 +83,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                       position,
                       summary,
                       bullets,
+                      technologies,
                       featuredProjects,
                     }) => (
                       <ProjectResume
@@ -141,6 +93,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                         position={position}
                         summary={summary}
                         bullets={bullets}
+                        technologies={technologies}
                         featuredProjects={featuredProjects}
                         featuredProjectsLabel={
                           dict?.resume?.featuredProjects || "Featured Projects"
@@ -183,15 +136,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                 <h1 className="text-2xl font-bold">
                   {dict?.resume?.skills || "Skills"}
                 </h1>
-                <div className="grid mob:grid-cols-1 desktop:grid-cols-2 gap-x-8">
-                  {skillCategories.map((category) => (
-                    <SkillCategory
-                      key={category.title}
-                      title={category.title}
-                      items={category.items}
-                    />
-                  ))}
-                </div>
+                <SkillsSection resume={data.resume} dict={dict} />
               </div>
               {data.resume.spokenLanguages &&
                 data.resume.spokenLanguages.length > 0 && (
