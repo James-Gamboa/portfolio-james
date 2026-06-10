@@ -288,15 +288,21 @@
         "dates": "Agosto 2024 – Actualidad",
         "type": "Freelancer",
         "position": "Desarrollador Full Stack Freelance",
-        "summary": "Desarrollo de aplicaciones web modernas, plataformas de e-commerce, sitios corporativos y soluciones CMS headless para clientes en sectores inmobiliario, comercial y corporativo.",
+        "summary": "Desarrollo de aplicaciones web, plataformas e-commerce y soluciones CMS headless para clientes inmobiliarios, comerciales y corporativos.",
+        "technologies": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Strapi",
+          "Shopify",
+          "Tailwind CSS"
+        ],
         "bullets": [
-          "Entrega de más de 10 proyectos para clientes en industrias inmobiliaria, corporativa y de e-commerce.",
-          "Diseño y desarrollo de aplicaciones full stack con Next.js, React, TypeScript, Node.js y Strapi.",
-          "Construcción de interfaces responsivas y accesibles con Tailwind CSS.",
-          "Desarrollo e integración de APIs REST y servicios GraphQL.",
-          "Personalización de tiendas Shopify y experiencias de e-commerce.",
-          "Mejora de SEO, Core Web Vitals, accesibilidad y rendimiento general de las aplicaciones.",
-          "Colaboración directa con clientes y stakeholders durante todo el ciclo de vida del proyecto."
+          "Entregué más de 10 proyectos en producción en sectores inmobiliario, corporativo y e-commerce.",
+          "Arquitecturé aplicaciones full stack con Next.js, React, TypeScript, Node.js y Strapi.",
+          "Construí interfaces responsivas y accesibles con Tailwind CSS y patrones orientados a WCAG.",
+          "Integré APIs REST y servicios GraphQL para arquitecturas CMS headless.",
+          "Mejoré SEO, Core Web Vitals y métricas de rendimiento en entregables de clientes."
         ],
         "featuredProjects": [
           {
@@ -356,12 +362,13 @@
         "dates": "Enero 2024 – Julio 2024",
         "type": "Tiempo Completo",
         "position": "Desarrollador Frontend y WordPress — TechPro Solutions",
+        "technologies": ["WordPress", "JavaScript", "CSS", "PHP", "SEO"],
         "bullets": [
-          "Desarrollo de sitios web responsivos con WordPress.",
-          "Personalización de temas y plugins según requerimientos del negocio.",
-          "Diseño e implementación de soluciones UI/UX enfocadas en usabilidad y accesibilidad.",
-          "Mejora del rendimiento SEO y optimización de sitios web.",
-          "Colaboración directa con clientes y equipos de proyecto bajo metodologías ágiles."
+          "Desarrollé sitios WordPress responsivos alineados con objetivos de negocio del cliente.",
+          "Personalicé temas y plugins para extender funcionalidad y requisitos de marca.",
+          "Diseñé soluciones UI/UX enfocadas en usabilidad, accesibilidad y conversión.",
+          "Mejoré el rendimiento SEO y la optimización de carga en sitios de clientes.",
+          "Colaboré con clientes y equipos ágiles en planificación, entrega e iteración."
         ]
       },
       {
@@ -369,12 +376,19 @@
         "dates": "Marzo 2023 – Diciembre 2023",
         "type": "Remoto",
         "position": "Desarrollador Frontend — ContraLuz",
+        "technologies": [
+          "Next.js",
+          "Shopify",
+          "JavaScript",
+          "SSR",
+          "Analytics"
+        ],
         "bullets": [
-          "Desarrollo de landing page en Next.js alcanzando 100% de rendimiento en Lighthouse.",
-          "Liderazgo en la migración y lanzamiento de una plataforma e-commerce en Shopify.",
-          "Implementación de funcionalidades personalizadas en Shopify, incluyendo carrito de compras y seguimiento analítico.",
-          "Construcción de panel de administración basado en SSR para gestión de contenido.",
-          "Mejora del rendimiento, mantenibilidad y experiencia de usuario del sitio web."
+          "Construí una landing page en Next.js con 100% de rendimiento en Lighthouse.",
+          "Lideré la migración y lanzamiento de una plataforma e-commerce en Shopify de punta a punta.",
+          "Implementé funcionalidades personalizadas en Shopify, incluyendo carrito y seguimiento analítico.",
+          "Desarrollé un panel de administración SSR para gestión ágil de contenido.",
+          "Incrementé la mantenibilidad y UX del sitio mediante refactorización orientada al rendimiento."
         ]
       }
     ],
@@ -394,6 +408,13 @@
         "universityDate": "Febrero 2022 – Enero 2024",
         "universityPara": "Técnico en Diseño y Desarrollo Web"
       }
+    ],
+    "primaryStack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js"
     ],
     "languages": [
       "React",

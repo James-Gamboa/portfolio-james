@@ -295,42 +295,23 @@
         "dates": "August 2024 – Present",
         "type": "Freelancer",
         "position": "Freelance Full Stack Developer",
-        "summary": "Developing modern web applications, e-commerce platforms, corporate websites, and headless CMS solutions for clients across real estate, commercial, and corporate sectors.",
+        "summary": "Building modern web apps, e-commerce platforms, and headless CMS solutions for real estate, commercial, and corporate clients.",
+        "technologies": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Strapi",
+          "Shopify",
+          "Tailwind CSS"
+        ],
         "bullets": [
-          "Delivered 10+ client projects across real estate, corporate, and e-commerce industries.",
-          "Designed and developed full stack applications using Next.js, React, TypeScript, Node.js, and Strapi.",
-          "Built responsive and accessible user interfaces using Tailwind CSS.",
-          "Developed and integrated REST APIs and GraphQL services.",
-          "Customized Shopify stores and e-commerce experiences.",
-          "Improved SEO, Core Web Vitals, accessibility, and overall application performance.",
-          "Collaborated directly with clients and stakeholders throughout the complete project lifecycle."
+          "Delivered 10+ production projects across real estate, corporate, and e-commerce sectors.",
+          "Architected full stack applications with Next.js, React, TypeScript, Node.js, and Strapi.",
+          "Built responsive, accessible UIs with Tailwind CSS and WCAG-oriented patterns.",
+          "Integrated REST APIs and GraphQL services for headless CMS architectures.",
+          "Improved SEO, Core Web Vitals, and performance metrics across client deliverables."
         ],
         "featuredProjects": [
-          {
-            "title": "Escazú Village",
-            "description": "Developed a bilingual mixed-use website with directory, residential sections, and lead generation forms.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "C3 Cariari Corporate Center",
-            "description": "Developed a bilingual corporate hub with directory, blog, and lead capture functionality.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "Plaza Tempo",
-            "description": "Developed a bilingual commercial platform with events, directory management, and marketing content.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "Aleste",
-            "description": "Developed a bilingual mixed-use real estate platform with directory, blog, and lead generation tools.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "Novus ERP",
-            "description": "Developed a bilingual ERP marketing platform featuring dynamic content, hero carousel, video integration, and blog management.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
           {
             "title": "Real Estate Portfolio",
             "description": "Developed a bilingual real estate platform with strategic reports, KPIs, market insights, and lead generation.",
@@ -340,21 +321,6 @@
             "title": "Avenida Escazú",
             "description": "Developed a bilingual mixed-use commercial website with directory, parking information, and lead generation flows.",
             "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "Savia",
-            "description": "Developed a bilingual corporate platform with dynamic content management, blog integration, and contact forms.",
-            "technologies": "Next.js, TypeScript, Strapi, Tailwind CSS"
-          },
-          {
-            "title": "La Laguna",
-            "description": "Developed a commercial and real estate website with dynamic content management and SEO optimization.",
-            "technologies": "Next.js, TypeScript, Tailwind CSS, Strapi"
-          },
-          {
-            "title": "PolkaCR",
-            "description": "Customized and optimized a Shopify e-commerce store including collections, product management, custom functionality, and UX improvements.",
-            "technologies": "Shopify, Liquid, JavaScript, CSS"
           }
         ]
       },
@@ -363,12 +329,13 @@
         "dates": "January 2024 – July 2024",
         "type": "Full Time",
         "position": "Frontend & WordPress Developer — TechPro Solutions",
+        "technologies": ["WordPress", "JavaScript", "CSS", "PHP", "SEO"],
         "bullets": [
-          "Developed responsive websites using WordPress.",
-          "Customized themes and plugins according to business requirements.",
-          "Designed and implemented UI/UX solutions focused on usability and accessibility.",
-          "Improved SEO performance and website optimization.",
-          "Collaborated directly with clients and project teams under agile methodologies."
+          "Developed responsive WordPress websites aligned with client business goals.",
+          "Customized themes and plugins to extend functionality and brand requirements.",
+          "Designed UI/UX solutions focused on usability, accessibility, and conversion.",
+          "Improved SEO performance and page load optimization across client sites.",
+          "Collaborated with clients and agile teams through planning, delivery, and iteration."
         ]
       },
       {
@@ -376,12 +343,19 @@
         "dates": "March 2023 – December 2023",
         "type": "Remote",
         "position": "Frontend Developer — ContraLuz",
+        "technologies": [
+          "Next.js",
+          "Shopify",
+          "JavaScript",
+          "SSR",
+          "Analytics"
+        ],
         "bullets": [
-          "Developed a Next.js landing page achieving 100% Lighthouse Performance.",
-          "Led the migration and launch of a Shopify e-commerce platform.",
-          "Implemented custom Shopify functionalities including shopping cart and analytics tracking.",
-          "Built an SSR-based administration panel for content management.",
-          "Improved website performance, maintainability, and user experience."
+          "Built a Next.js landing page achieving 100% Lighthouse Performance score.",
+          "Led migration and launch of a Shopify e-commerce platform end to end.",
+          "Implemented custom Shopify features including cart flows and analytics tracking.",
+          "Developed an SSR administration panel for streamlined content management.",
+          "Increased site maintainability and UX through performance-focused refactoring."
         ]
       }
     ],
@@ -401,6 +375,13 @@
         "universityDate": "February 2022 – January 2024",
         "universityPara": "Web Design and Development Technician"
       }
+    ],
+    "primaryStack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js"
     ],
     "languages": [
       "React",
