@@ -24,7 +24,7 @@ const PracticeCard = ({ project, index = 0, lang = "en", labels = {} }) => {
             src={project.imageSrc}
             fill
             sizes="80px"
-            quality={60}
+            quality={75}
             loading="lazy"
             className="object-cover object-top"
           />

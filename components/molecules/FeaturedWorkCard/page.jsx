@@ -55,7 +55,7 @@ const FeaturedWorkCard = ({
                 ? "(min-width: 1024px) 60vw, 100vw"
                 : "(min-width: 1024px) 50vw, 100vw"
             }
-            quality={80}
+            quality={75}
             loading="lazy"
             className={cn(
               "object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]",
