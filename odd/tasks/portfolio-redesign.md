@@ -38,7 +38,7 @@ Owner authorized a redesign (2026-11-25) if the current design is plain or unatt
 - [x] R5 Experience timeline, education/certifications, skills chips. Evidence: buildExperienceTimeline/splitCertification (RED suite failed -> GREEN 96); Anthropic Academy highlighted card; skills section on home.
 - [x] R6 Contact/footer CTA. Evidence: footer panel with email, CV, LinkedIn, GitHub, last-updated kept; services/FAQ restyled.
 - [x] R7 Verification: tests, build, Playwright screenshots (desktop/mobile, en/es), Lighthouse >= 90 x4. Evidence: pnpm test 96 passed; pnpm build ok; Lighthouse en/es mobile 95/99 perf, desktop 100, a11y/BP/SEO 100 everywhere; CLS <= 0.034; one h1; JSON-LD parses; mobile menu OK.
-- [ ] R8 README rewrite with new screenshots.
+- [x] R8 README rewrite with new screenshots. Evidence: live screenshots (WebP 26-85 KB) in docs/readme, badges, live Lighthouse table, architecture diagram, scripts table.
 
 ## Progress
 
