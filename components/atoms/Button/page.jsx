@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 const baseClasses =
   "text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg transition-all duration-300 ease-out first:ml-0 hover:scale-105 active:scale-100 link";
@@ -17,6 +18,7 @@ const Button = ({
   classes = "",
   href,
   external = false,
+  trackEvent: eventName,
 }) => {
   const isPrimary = type === "primary";
   const tone = isPrimary
@@ -32,6 +34,7 @@ const Button = ({
       <Link
         href={href}
         className={`${baseClasses} ${tone} ${classes || "!ml-0"}`}
+        onClick={eventName ? () => trackEvent(eventName) : undefined}
         {...externalProps}
       >
         {children}

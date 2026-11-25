@@ -1,5 +1,6 @@
 import "../globals.css";
 import { Hind } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import AppProviders from "@/components/providers/AppProviders";
 import BaseTemplate from "@/components/templates/BaseTemplate/page.jsx";
 import { LOCALES, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -45,6 +46,8 @@ export default async function LangLayout({ children, params }) {
         <AppProviders>
           <BaseTemplate>{children}</BaseTemplate>
         </AppProviders>
+        {/* Cookie-less; the script only exists on Vercel deployments. */}
+        {process.env.VERCEL ? <Analytics /> : null}
       </body>
     </html>
   );

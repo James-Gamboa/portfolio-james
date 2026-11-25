@@ -6,7 +6,10 @@ const isDev = process.env.NODE_ENV !== "production";
 // third-party image hosts are needed.
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  // Vercel Web Analytics loads /_vercel/insights/script.js (same origin) and
+  // posts events to /_vercel/insights/* (connect-src 'self'). Its debug
+  // script is only used in development.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval' https://va.vercel-scripts.com" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
@@ -30,7 +33,11 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Shown as "Last updated" in the footer (fixed at build time).
+  env: { NEXT_PUBLIC_BUILD_DATE: new Date().toISOString() },
   poweredByHeader: false,
+  // Inline the (small) CSS in the HTML so it is not render-blocking.
+  experimental: { inlineCss: true },
   // Avoid broken webpack vendor-chunks for GSAP on the server bundle
   serverExternalPackages: ["gsap", "lenis"],
   images: {

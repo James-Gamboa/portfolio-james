@@ -56,7 +56,7 @@ const Header = ({ dict, data }) => {
                 {dict?.nav?.resume || "Resume"}
               </Button>
             )}
-            <Button href="mailto:jjguevarag@gmail.com">
+            <Button href="mailto:jjguevarag@gmail.com" trackEvent="contact_click">
               {dict?.nav?.contact || "Contact"}
             </Button>
           </nav>
