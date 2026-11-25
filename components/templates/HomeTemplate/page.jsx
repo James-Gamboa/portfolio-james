@@ -55,7 +55,7 @@ const HomeTemplate = ({ lang, dict, data }) => {
             <h2 data-reveal="" className="section-title">
               {dict.services.title}.
             </h2>
-            <div className="mt-8 grid grid-cols-1 gap-4 laptop:grid-cols-2">
+            <div className="mt-8 grid grid-cols-1 gap-4 laptop:grid-cols-2 laptop:[&>*:last-child:nth-child(odd)]:col-span-2">
               {data.services.map((service, index) => (
                 <ServiceCard
                   key={index}
