@@ -136,6 +136,7 @@
       "summary": "James Guevara Gamboa es un Desarrollador Frontend y Full Stack radicado en Heredia, Costa Rica, abierto a trabajo remoto (también híbrido o presencial). Desde agosto de 2024 trabaja como Desarrollador Full Stack freelance y ha entregado más de 10 proyectos para clientes inmobiliarios, corporativos y de e-commerce con Next.js, React, TypeScript, Node.js y Strapi. Habla español (nativo) e inglés (B2)."
     },
     "projects": {
+      "featuredLabel": "Destacado",
       "clientTitle": "Trabajo para clientes",
       "clientIntro": "Sitios web y plataformas en producción entregados a clientes reales.",
       "otherTitle": "Proyectos de práctica y personales",
