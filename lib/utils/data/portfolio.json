@@ -84,7 +84,7 @@
       "title": "Lincoln Plaza",
       "description": "Developed the bilingual website for Lincoln Plaza, a mixed-use center in San Vicente de Moravia. Features a hero carousel, store directory and map, impact and talent sections, blog, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
       "imageSrc": "/img/lincoln-plaza-preview.jpg",
-      "url": "https://lincoln-2026-e16ca989c43b.herokuapp.com/en"
+      "url": "https://www.lincolnplaza.cr/en"
     },
     {
       "id": "32",
