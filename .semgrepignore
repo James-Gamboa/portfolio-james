@@ -1,0 +1,5 @@
+# Agent tooling, not shipped with the site
+.agents/
+.claude/
+node_modules/
+.next/
