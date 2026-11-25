@@ -7,13 +7,17 @@ const defaultLocale = "en";
 
 function getLocale(request) {
   const acceptLanguage = request.headers.get("accept-language");
-  if (acceptLanguage) {
+  if (!acceptLanguage) return defaultLocale;
+
+  try {
     const languages = new Negotiator({
       headers: { "accept-language": acceptLanguage },
     }).languages();
     return match(languages, locales, defaultLocale);
+  } catch {
+    // Malformed or wildcard-only values (e.g. "*") are not valid BCP 47 tags.
+    return defaultLocale;
   }
-  return defaultLocale;
 }
 
 export function middleware(request) {

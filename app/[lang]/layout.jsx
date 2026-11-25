@@ -2,7 +2,13 @@ import "../globals.css";
 import { Hind } from "next/font/google";
 import AppProviders from "@/components/providers/AppProviders";
 import BaseTemplate from "@/components/templates/BaseTemplate/page.jsx";
-import { LOCALES } from "@/lib/seo";
+import { LOCALES, SITE_NAME, SITE_URL } from "@/lib/seo";
+
+export const metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+};
 
 const hind = Hind({
   subsets: ["latin", "latin-ext"],

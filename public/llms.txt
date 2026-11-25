@@ -1,0 +1,35 @@
+# James Guevara Gamboa
+
+> Frontend & Full Stack Developer based in Heredia, Costa Rica, open to remote work. Builds web applications, e-commerce platforms, corporate websites and headless CMS solutions with Next.js, React, TypeScript, Strapi, Shopify and WordPress.
+
+James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) who delivers production websites and web apps for real estate, commercial and corporate clients, with a focus on performance, accessibility, SEO and maintainability. Previous roles: Frontend & WordPress Developer at TechPro Solutions (2024) and Frontend Developer at ContraLuz (2023, remote). Education: FWD Costa Rica (Full Stack Web Developer, Backend Software Developer), CETAV (Web Design and Development Technician) and INA. Languages: Spanish (native), English (B2).
+
+## Core stack
+- Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, GSAP
+- Backend and APIs: Node.js, Express.js, REST APIs, GraphQL
+- CMS and e-commerce: Strapi (headless), Shopify, WordPress, Drupal
+- Databases: MongoDB, MySQL
+
+## Key pages
+- [Portfolio (English)](https://james-gamboa.vercel.app/en): projects, services and about
+- [Portafolio (Español)](https://james-gamboa.vercel.app/es): proyectos, servicios y sobre mí
+- [Resume (English)](https://james-gamboa.vercel.app/en/resume): experience, education, skills and certifications
+- [Currículum (Español)](https://james-gamboa.vercel.app/es/curriculum-vitae): experiencia, estudios, habilidades y certificaciones
+
+## Contact and profiles
+- [LinkedIn](https://www.linkedin.com/in/james-guevara-gamboa/)
+- [GitHub](https://github.com/james-gamboa)
+- Email: jjguevarag@gmail.com
+
+## Selected client projects
+- [Escazu Village](https://www.escazuvillage.com/en)
+- [C3 Cariari Corporate Center](https://www.c3.cr/en)
+- [Plaza Tempo](https://tempo-2025-2c8da873e965.herokuapp.com/en)
+- [Aleste](https://www.aleste.cr/en)
+- [Novus ERP](https://novus-2025-011de5fce714.herokuapp.com/en)
+- [Portafolio Inmobiliario](https://www.portafolio.cr/en)
+- [Avenida Escazu](https://www.avenidaescazu.com/en)
+- [Savia](https://www.savia.cr/en)
+- [Lincoln Plaza](https://www.lincolnplaza.cr/en)
+- [Torre Universal](https://www.torreuniversal.com/en)
+- [La Laguna](https://lalaguna.cr/)

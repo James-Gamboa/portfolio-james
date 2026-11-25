@@ -1,25 +1,33 @@
+import { notFound } from "next/navigation";
 import { getPortfolioData } from "@/utils/data.js";
 import ResumeTemplate from "@/components/templates/ResumeTemplate/page.jsx";
+import { buildPageMetadata, isLocale } from "@/lib/seo";
+
+async function loadDictionary(lang) {
+  const dict = await import(`@/components/lib/dictionaries/${lang}.json`);
+  return dict.default;
+}
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
+  if (!isLocale(lang)) return {};
 
-  const dict = await import(`@/components/lib/dictionaries/${lang}.json`);
+  const dict = await loadDictionary(lang);
 
-  return {
-    title: dict.default.metadata.resume.title,
-    description: dict.default.metadata.resume.description,
-  };
+  return buildPageMetadata({
+    lang,
+    page: "resume",
+    title: dict.metadata.resume.title,
+    description: dict.metadata.resume.description,
+  });
 }
 
-export default async function CurriculumVitaePage({ params }) {
+export default async function ResumePage({ params }) {
   const { lang } = await params;
+  if (!isLocale(lang)) notFound();
 
-  const data = await getPortfolioData(lang).catch(() => getPortfolioData("en"));
+  const data = await getPortfolioData(lang);
+  const dict = await loadDictionary(lang);
 
-  const dict = await import(`@/components/lib/dictionaries/${lang}.json`).catch(
-    () => import("@/components/lib/dictionaries/en.json"),
-  );
-
-  return <ResumeTemplate lang={lang} dict={dict.default} data={data} />;
+  return <ResumeTemplate lang={lang} dict={dict} data={data} />;
 }
