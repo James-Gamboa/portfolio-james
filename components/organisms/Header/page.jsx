@@ -36,7 +36,7 @@ const Header = ({ dict, data }) => {
     email,
     showResume,
   });
-  const name = data.name || "James Guevara Gamboa";
+  const name = data.resume?.name || "James Guevara Gamboa";
 
   return (
     <header className="sticky top-3 z-40 mt-3 flex items-center justify-between gap-2 rounded-full border border-white/10 bg-ink/75 py-1.5 pl-2 pr-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl tablet:pl-3 laptop:mt-5 laptop:pr-2">

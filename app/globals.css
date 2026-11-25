@@ -59,6 +59,56 @@ body {
     @apply font-display text-title font-normal text-content;
   }
 
+  /* Page backdrop: brand glows top-left/right and a dot grid fading out. */
+  .page-aurora {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: -10;
+    height: 56rem;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        42rem 26rem at 12% -4%,
+        rgb(var(--brand-pink) / 0.17),
+        transparent 70%
+      ),
+      radial-gradient(
+        46rem 30rem at 92% 6%,
+        rgb(var(--brand-blue) / 0.2),
+        transparent 70%
+      );
+  }
+  .page-aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      rgb(255 255 255 / 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent 75%);
+    mask-image: linear-gradient(to bottom, #000, transparent 75%);
+  }
+
+  /* Facts strip dividers: 2x2-ish on mobile, one row on laptop. */
+  .fact {
+    border-color: rgb(255 255 255 / 0.1);
+  }
+  .fact + .fact {
+    border-top-width: 1px;
+  }
+  .fact:nth-child(2) {
+    border-top-width: 0;
+    border-left-width: 1px;
+  }
+  @media (min-width: 1024px) {
+    .fact + .fact {
+      border-top-width: 0;
+      border-left-width: 1px;
+    }
+  }
+
   /* Hairline panel used by cards across the page. */
   .panel {
     @apply rounded-2xl border border-white/10 bg-ink-raised/70;
@@ -122,36 +172,6 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-.gradient-circle {
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-  top: -30px;
-  height: 40px;
-  width: 100%;
-  opacity: 0.5;
-  filter: blur(40px);
-  background: radial-gradient(
-    circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
-  );
-}
-.gradient-circle-bottom {
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-  bottom: -20px;
-  height: 30px;
-  width: 100%;
-  opacity: 0.5;
-  filter: blur(40px);
-  background: radial-gradient(
-    circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
-  );
-}
 
 .gradient-shadow:hover::before {
   content: "";
