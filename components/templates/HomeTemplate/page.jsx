@@ -3,6 +3,7 @@ import Hero from "@/components/organisms/Hero/page.jsx";
 import ServiceCard from "@/components/molecules/ServiceCard/page.jsx";
 import ProjectsSection from "@/components/organisms/ProjectsSection/page.jsx";
 import ExperienceSection from "@/components/organisms/ExperienceSection/page.jsx";
+import SkillsSection from "@/components/molecules/SkillsSection/page.jsx";
 import CredentialsSection from "@/components/organisms/CredentialsSection/page.jsx";
 import FaqSection from "@/components/organisms/FaqSection/page.jsx";
 import Footer from "@/components/organisms/Footer/page.jsx";
@@ -38,7 +39,17 @@ const HomeTemplate = ({ lang, dict, data }) => {
           </Reveal>
           <div id={dict?.sections?.work || "work"} />
           <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
-          <ExperienceSection lang={lang} dict={dict} />
+          <ExperienceSection lang={lang} dict={dict} resume={data.resume} />
+          <Reveal
+            as="section"
+            aria-labelledby="skills-heading"
+            className="mt-24 laptop:mt-36"
+          >
+            <h2 id="skills-heading" className="section-title">
+              {dict.resume.skills}.
+            </h2>
+            <SkillsSection resume={data.resume} dict={dict} />
+          </Reveal>
           <CredentialsSection dict={dict} />
           <section className="mt-24 laptop:mt-36">
             <h2 data-reveal="" className="section-title">

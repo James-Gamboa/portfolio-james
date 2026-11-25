@@ -37,6 +37,9 @@ body {
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    /* Room for italic overhang so background-clip does not cut the last glyph. */
+    padding-right: 0.15em;
+    margin-right: -0.15em;
   }
 
   .bg-brand-gradient {

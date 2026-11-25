@@ -6,8 +6,8 @@ const SkillCategoryGroup = ({ title, items, ariaLabel }) => {
   }
 
   return (
-    <div className="space-y-2">
-      <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">
+    <div className="space-y-3 border-t border-white/10 pt-4">
+      <h3 className="text-sm font-medium uppercase tracking-[0.12em] text-content-subtle">
         {title}
       </h3>
       <div
