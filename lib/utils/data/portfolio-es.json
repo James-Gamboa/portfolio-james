@@ -73,6 +73,28 @@
       "url": "https://www.savia.cr/es"
     },
     {
+      "id": "31",
+      "title": "Lincoln Plaza",
+      "description": "Desarrollé el sitio web bilingüe de Lincoln Plaza, centro de uso mixto en San Vicente de Moravia. Incluye carrusel hero, directorio de locales y mapa, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "/img/lincoln-plaza-preview.jpg",
+      "url": "https://lincoln-2026-e16ca989c43b.herokuapp.com/es"
+    },
+    {
+      "id": "32",
+      "title": "Torre Universal",
+      "description": "Desarrollé el sitio web bilingüe de Torre Universal, torre corporativa en San José con una visión de ciudad caminable, inclusiva y verde. Incluye hero principal, directorio de negocios, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "/img/torre-universal-preview.jpg",
+      "url": "https://www.torreuniversal.com/es",
+      "category": "realEstate"
+    },
+    {
+      "id": "33",
+      "title": "La Laguna",
+      "description": "Desarrollé el sitio web de Urbanizadora La Laguna, desarrolladora inmobiliaria costarricense con proyectos residenciales desde 1967. Incluye hero con búsqueda de proyectos, listado de proyectos, secciones nosotros y desarrolla con nosotros, blog y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
+      "imageSrc": "/img/la-laguna-preview.jpg",
+      "url": "https://lalaguna.cr/"
+    },
+    {
       "id": "29",
       "title": "JamesXP",
       "description": "Desarrollé JamesXP, plataforma independiente de noticias gaming con layout editorial tipo esports — titulares Steam, carriles RAWG y datos de catálogo en tiempo real. Construido con Next.js, TypeScript, Tailwind CSS, Lenis y animaciones GSAP.",
@@ -85,6 +107,15 @@
       "description": "Desarrollé el ecommerce PolkaCR para una marca costarricense de arte y ropa con Shopify — catálogo, colecciones, carrito, checkout y tienda optimizada para conversión.",
       "imageSrc": "https://i.postimg.cc/wTNzXvxV/screencapture-polkacr-2026-05-28-15-11-41.jpg",
       "url": "https://www.polkacr.com/"
+    },
+    {
+      "id": "34",
+      "title": "Fresh Market",
+      "description": "Desarrollé el sitio web de Fresh Market, mercado costarricense enfocado en productos frescos y orgánicos. Incluye slider principal, categorías de productos, comidas preparadas, delivery, recetas, promociones y formulario de contacto. Construido con WordPress y Elementor.",
+      "imageSrc": "/img/fresh-market-preview.jpg",
+      "url": "https://freshmarket.co.cr/",
+      "category": "webPlatform",
+      "tags": ["WordPress", "Elementor"]
     },
     {
       "id": "9",

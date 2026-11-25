@@ -80,6 +80,28 @@
       "url": "https://www.savia.cr/en"
     },
     {
+      "id": "31",
+      "title": "Lincoln Plaza",
+      "description": "Developed the bilingual website for Lincoln Plaza, a mixed-use center in San Vicente de Moravia. Features a hero carousel, store directory and map, impact and talent sections, blog, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
+      "imageSrc": "/img/lincoln-plaza-preview.jpg",
+      "url": "https://lincoln-2026-e16ca989c43b.herokuapp.com/en"
+    },
+    {
+      "id": "32",
+      "title": "Torre Universal",
+      "description": "Developed the bilingual website for Torre Universal, a corporate tower in San José with a walkable, inclusive and green city vision. Features a hero showcase, business directory, impact and talent sections, blog, parking invoicing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
+      "imageSrc": "/img/torre-universal-preview.jpg",
+      "url": "https://www.torreuniversal.com/en",
+      "category": "realEstate"
+    },
+    {
+      "id": "33",
+      "title": "La Laguna",
+      "description": "Developed the website for Urbanizadora La Laguna, a Costa Rican real estate developer with residential projects since 1967. Features a hero with project search, project listings, about and develop-with-us sections, blog and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
+      "imageSrc": "/img/la-laguna-preview.jpg",
+      "url": "https://lalaguna.cr/"
+    },
+    {
       "id": "29",
       "title": "JamesXP",
       "description": "Developed JamesXP, an independent gaming news platform with an esports and editorial layout — Steam headlines, RAWG discovery rails, and live catalog data. Built with Next.js, TypeScript, Tailwind CSS, Lenis, and GSAP animations.",
@@ -92,6 +114,15 @@
       "description": "Built the PolkaCR ecommerce for a Costa Rican art and apparel brand using Shopify — product catalog, collections, cart, checkout, and a conversion-focused storefront.",
       "imageSrc": "https://i.postimg.cc/wTNzXvxV/screencapture-polkacr-2026-05-28-15-11-41.jpg",
       "url": "https://www.polkacr.com/"
+    },
+    {
+      "id": "34",
+      "title": "Fresh Market",
+      "description": "Developed the website for Fresh Market, a Costa Rican market focused on fresh and organic products. Features a hero slider, product categories, prepared meals, delivery, recipes, promotions and a contact form. Built with WordPress and Elementor.",
+      "imageSrc": "/img/fresh-market-preview.jpg",
+      "url": "https://freshmarket.co.cr/",
+      "category": "webPlatform",
+      "tags": ["WordPress", "Elementor"]
     },
     {
       "id": "9",
