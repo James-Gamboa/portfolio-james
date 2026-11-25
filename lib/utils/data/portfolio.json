@@ -27,70 +27,70 @@
       "id": "1",
       "title": "Escazu Village",
       "description": "Developed the bilingual website for Escazú Village, a mixed-use destination in Escazú where retail, dining and community life come together. Features a hero showcase, business directory, residential and talent sections, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/bvp5J3kg/screencapture-escazuvillage-en-2026-05-22-15-01-05.jpg",
+      "imageSrc": "/img/projects/escazu-village.webp",
       "url": "https://www.escazuvillage.com/en"
     },
     {
       "id": "2",
       "title": "C3 Cariari Corporate Center",
       "description": "Developed the bilingual website for C3 Cariari Corporate Center, a corporate hub connecting businesses with premium services. Features a hero showcase, business directory, impact and talent sections, blog, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/7LhW0btH/screencapture-c3-cr-en-2026-05-22-15-02-49.jpg",
+      "imageSrc": "/img/projects/c3-cariari-corporate-center.webp",
       "url": "https://www.c3.cr/en"
     },
     {
       "id": "3",
       "title": "Plaza Tempo",
       "description": "Developed the bilingual website for Plaza Tempo, a mixed-use destination connecting work, dining, retail and community life. Features a hero carousel, business directory, events, location with Google Maps and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/dtQD2YFH/screencapture-tempo-2025-2c8da873e965-herokuapp-en-2026-05-22-14-56-09.jpg",
+      "imageSrc": "/img/projects/plaza-tempo.webp",
       "url": "https://tempo-2025-2c8da873e965.herokuapp.com/en"
     },
     {
       "id": "4",
       "title": "Aleste",
       "description": "Developed the bilingual website for Aleste, a walkable mixed-use development built around live, work and enjoy. Features a hero showcase, business directory, uses and impact sections, blog, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/W1NNR6zD/screencapture-aleste-cr-en-2026-05-22-15-04-25.jpg",
+      "imageSrc": "/img/projects/aleste.webp",
       "url": "https://www.aleste.cr/en"
     },
     {
       "id": "5",
       "title": "Novus ERP",
       "description": "Developed the bilingual website for Novus ERP by Codisa, showcasing ERP solutions that optimize processes and support business growth. Features a hero carousel, solutions and about sections, blog, contact forms and an integrated brand video. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/52YP2DXt/screencapture-novus-2025-011de5fce714-herokuapp-en-2026-05-22-15-06-59.jpg",
+      "imageSrc": "/img/projects/novus-erp.webp",
       "url": "https://novus-2025-011de5fce714.herokuapp.com/en"
     },
     {
       "id": "6",
       "title": "Portafolio Inmobiliario",
       "description": "Developed the bilingual website for Portafolio Inmobiliario, Costa Rica's leading real estate developer. Features a hero carousel with strategic reports, projects and talent sections, KPI highlights, social links and contact forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/HxcZVKZX/screencapture-portafolio-cr-en-2026-05-22-15-12-04-(1).jpg",
+      "imageSrc": "/img/projects/portafolio-inmobiliario.webp",
       "url": "https://www.portafolio.cr/en"
     },
     {
       "id": "7",
       "title": "Avenida Escazu",
       "description": "Developed the bilingual website for Avenida Escazú, Costa Rica's first urban mixed-use avenue focused on well-being and sustainable mobility. Features a hero showcase, business directory, impact and talent sections, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/t4TyTRby/screencapture-avenidaescazu-en-2026-05-22-15-42-38.jpg",
+      "imageSrc": "/img/projects/avenida-escazu.webp",
       "url": "https://www.avenidaescazu.com/en"
     },
     {
       "id": "8",
       "title": "Savia",
       "description": "Developed the bilingual website for Savia City of Life, a sustainable urban development where city and nature intertwine. Features a hero carousel, impact and talent sections, blog and contact forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "https://i.postimg.cc/JnLDkHKN/screencapture-savia-cr-en-2026-05-22-15-18-34.jpg",
+      "imageSrc": "/img/projects/savia.webp",
       "url": "https://www.savia.cr/en"
     },
     {
       "id": "31",
       "title": "Lincoln Plaza",
       "description": "Developed the bilingual website for Lincoln Plaza, a mixed-use center in San Vicente de Moravia. Features a hero carousel, store directory and map, impact and talent sections, blog, parking billing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "/img/lincoln-plaza-preview.jpg",
+      "imageSrc": "/img/projects/lincoln-plaza.webp",
       "url": "https://www.lincolnplaza.cr/en"
     },
     {
       "id": "32",
       "title": "Torre Universal",
       "description": "Developed the bilingual website for Torre Universal, a corporate tower in San José with a walkable, inclusive and green city vision. Features a hero showcase, business directory, impact and talent sections, blog, parking invoicing and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "/img/torre-universal-preview.jpg",
+      "imageSrc": "/img/projects/torre-universal.webp",
       "url": "https://www.torreuniversal.com/en",
       "category": "realEstate"
     },
@@ -98,28 +98,28 @@
       "id": "33",
       "title": "La Laguna",
       "description": "Developed the website for Urbanizadora La Laguna, a Costa Rican real estate developer with residential projects since 1967. Features a hero with project search, project listings, about and develop-with-us sections, blog and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
-      "imageSrc": "/img/la-laguna-preview.jpg",
+      "imageSrc": "/img/projects/la-laguna.webp",
       "url": "https://lalaguna.cr/"
     },
     {
       "id": "29",
       "title": "JamesXP",
       "description": "Developed JamesXP, an independent gaming news platform with an esports and editorial layout — Steam headlines, RAWG discovery rails, and live catalog data. Built with Next.js, TypeScript, Tailwind CSS, Lenis, and GSAP animations.",
-      "imageSrc": "https://i.postimg.cc/7L2LrWQ7/screencapture-gaming-platform-two-vercel-app-en-2026-05-18-14-20-31.jpg",
+      "imageSrc": "/img/projects/jamesxp.webp",
       "url": "https://gaming-platform-two.vercel.app/en"
     },
     {
       "id": "30",
       "title": "PolkaCR",
       "description": "Built the PolkaCR ecommerce for a Costa Rican art and apparel brand using Shopify — product catalog, collections, cart, checkout, and a conversion-focused storefront.",
-      "imageSrc": "https://i.postimg.cc/wTNzXvxV/screencapture-polkacr-2026-05-28-15-11-41.jpg",
+      "imageSrc": "/img/projects/polkacr.webp",
       "url": "https://www.polkacr.com/"
     },
     {
       "id": "34",
       "title": "Fresh Market",
       "description": "Developed the website for Fresh Market, a Costa Rican market focused on fresh and organic products. Features a hero slider, product categories, prepared meals, delivery, recipes, promotions and a contact form. Built with WordPress and Elementor.",
-      "imageSrc": "/img/fresh-market-preview.jpg",
+      "imageSrc": "/img/projects/fresh-market.webp",
       "url": "https://freshmarket.co.cr/",
       "category": "webPlatform",
       "tags": ["WordPress", "Elementor"]
@@ -128,14 +128,14 @@
       "id": "9",
       "title": "Contraluz",
       "description": "Developed an ecommerce for Contraluz business using Shopify with payment gateways, cart tracking plugins, inventory management and conversion optimization",
-      "imageSrc": "https://i.postimg.cc/kMFCkrqR/contraluz-page.png",
+      "imageSrc": "/img/projects/contraluz.webp",
       "url": "https://www.contraluzcr.com/"
     },
     {
       "id": "10",
       "title": "Steam Women",
       "description": "Developed the Steam Women platform to support and empower women in Costa Rica. Built with Next.js, TypeScript, Tailwind CSS, animations with Lenis and GSAP, Django backend and GraphQL",
-      "imageSrc": "https://i.postimg.cc/QdhT9Yn5/steam-women-page.png",
+      "imageSrc": "/img/projects/steam-women.webp",
       "url": "https://steam-women-front-end.vercel.app/",
       "category": "communityPlatform",
       "tags": [
@@ -152,21 +152,21 @@
       "id": "11",
       "title": "Audiophile Ecommerce",
       "description": "An ecommerce for audio lovers using tailwind css and next js technologies",
-      "imageSrc": "https://i.postimg.cc/dtV8CY08/audiophile-ecommerce-page.png",
+      "imageSrc": "/img/projects/audiophile-ecommerce.webp",
       "url": "https://audiophile-ecommerce-website-sigma.vercel.app/"
     },
     {
       "id": "12",
       "title": "Designo Multi Page",
       "description": "Designo multi-page website is a responsive site built with Next.js, JavaScript, and CSS Modules, featuring optimal layouts and interactive elements",
-      "imageSrc": "https://i.postimg.cc/xT34fY4M/designo-multi-page-website.png",
+      "imageSrc": "/img/projects/designo-multi-page.webp",
       "url": "https://designo-multi-page-website-xi.vercel.app/"
     },
     {
       "id": "13",
       "title": "Travel Haven",
       "description": "Airbnb-style rental platform with property browsing, search filters, and booking flows. Built with Next.js, TypeScript, and Tailwind CSS for a polished, fully responsive experience.",
-      "imageSrc": "https://i.postimg.cc/kgFqPkxp/travel-haven-page.png",
+      "imageSrc": "/img/projects/travel-haven.webp",
       "url": "https://travel-haven-alpha.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
@@ -174,7 +174,7 @@
       "id": "14",
       "title": "Pokedex",
       "description": "Interactive Pokédex with Pokémon search, detail views, and API-driven browsing. Built with Next.js, TypeScript, and Tailwind CSS, enhanced with Lenis smooth scroll and GSAP animations.",
-      "imageSrc": "https://i.postimg.cc/0yvQbZP7/Captura-de-pantalla-2026-05-22-164206.png",
+      "imageSrc": "/img/projects/pokedex.webp",
       "url": "https://pokedex-eta-seven-26.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
@@ -182,56 +182,56 @@
       "id": "15",
       "title": "Rapibox",
       "description": "Rapibox is a practice project to hone my JavaScript skills. Built with Next.js and Tailwind CSS, it simulates a modern, responsive virtual locker for online package shopping",
-      "imageSrc": "https://i.postimg.cc/jSnwhSVJ/Captura-de-pantalla-2025-02-07-135044.png",
+      "imageSrc": "/img/projects/rapibox.webp",
       "url": "https://rapibox.vercel.app/"
     },
     {
       "id": "16",
       "title": "News Homepage",
       "description": "Page created as a practice for knowledge in Html, Css, Javascript, and Sass",
-      "imageSrc": "https://i.postimg.cc/HnTqpxdc/news-homepage-page.jpg",
+      "imageSrc": "/img/projects/news-homepage.webp",
       "url": "https://flourishing-taffy-990027.netlify.app/"
     },
     {
       "id": "17",
       "title": "Events Site",
       "description": "Page created as a practice for knowledge in vanilla JavaScript, HTML5, CSS3 and DOM manipulation to create an interactive events site",
-      "imageSrc": "https://i.postimg.cc/kgDd6B8W/events-site-page.png",
+      "imageSrc": "/img/projects/events-site.webp",
       "url": "https://monumental-kringle-6493f0.netlify.app/"
     },
     {
       "id": "18",
       "title": "Manage Landing Page",
       "description": "Page created as practice in my knowledge in Next.js, Tailwind CSS, JavaScript and responsive design to create a modern landing page",
-      "imageSrc": "https://i.postimg.cc/4Npmn26z/manage-page.png",
+      "imageSrc": "/img/projects/manage-landing-page.webp",
       "url": "https://landing-page-with-tailwind-iota.vercel.app/"
     },
     {
       "id": "19",
       "title": "James Bank",
       "description": "A landing page crafted to demonstrate proficiency in Next.js and Tailwind CSS, featuring dynamic animations powered by Frame Motion",
-      "imageSrc": "https://i.postimg.cc/dQk7cVDN/james-banks.png",
+      "imageSrc": "/img/projects/james-bank.webp",
       "url": "https://landing-page-bank-kappa.vercel.app/"
     },
     {
       "id": "20",
       "title": "Fylo Page",
       "description": "A responsive landing page designed to showcase expertise in Next.js and Tailwind CSS",
-      "imageSrc": "https://i.postimg.cc/vTH3Dxjn/fylo-page.png",
+      "imageSrc": "/img/projects/fylo-page.webp",
       "url": "https://fylo-landing-page-ten-peach.vercel.app/"
     },
     {
       "id": "21",
       "title": "Web Studio",
       "description": "A modern web studio landing page built to highlight proficiency in Next.js and Tailwind CSS",
-      "imageSrc": "https://i.postimg.cc/cC9T34yb/web-studio.png",
+      "imageSrc": "/img/projects/web-studio.webp",
       "url": "https://tailwind-landing-page-ecru-three.vercel.app/"
     },
     {
       "id": "22",
       "title": "Coca Cola Landing Page",
       "description": "Brand landing page with bold visuals, responsive layout, and product-focused storytelling. Rebuilt with Next.js, TypeScript, and Tailwind CSS for a modern, performance-driven presentation.",
-      "imageSrc": "https://i.postimg.cc/Y0kHhRfS/cocacola-page.png",
+      "imageSrc": "/img/projects/coca-cola-landing-page.webp",
       "url": "https://practical-coca-cola-page.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
@@ -239,14 +239,14 @@
       "id": "23",
       "title": "Trivia Game",
       "description": "Trivia game web page created using Vite and React for a hands-on practice project",
-      "imageSrc": "https://i.postimg.cc/zGjZcTNm/trivia-game.png",
+      "imageSrc": "/img/projects/trivia-game.webp",
       "url": "https://triviagameinreact.netlify.app/"
     },
     {
       "id": "24",
       "title": "Connect Four",
       "description": "Two-player strategy game with turn-based gameplay and an interactive board. Built with Next.js, TypeScript, and Tailwind CSS, with Lenis smooth scroll and GSAP-powered transitions.",
-      "imageSrc": "/img/conecta-cuatro-preview.jpg",
+      "imageSrc": "/img/projects/connect-four.webp",
       "url": "https://conecta-cuatro-gilt.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
@@ -254,7 +254,7 @@
       "id": "25",
       "title": "Tetris Game",
       "description": "Classic block-puzzle game with keyboard controls, real-time scoring, and responsive gameplay. Built with Next.js, TypeScript, and Tailwind CSS, featuring Lenis scroll and GSAP animations.",
-      "imageSrc": "/img/tetris-preview.jpg",
+      "imageSrc": "/img/projects/tetris-game.webp",
       "url": "https://tetris-ecru-nine.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind", "Lenis", "GSAP"]
     },
@@ -262,7 +262,7 @@
       "id": "26",
       "title": "Biccas",
       "description": "Digital agency-style marketing site with responsive sections and a clean visual hierarchy. Rebuilt with Next.js, TypeScript, and Tailwind CSS for a modern, adaptable interface.",
-      "imageSrc": "https://i.postimg.cc/hjK037KY/biccas-page.png",
+      "imageSrc": "/img/projects/biccas.webp",
       "url": "https://biccas-ten.vercel.app/",
       "tags": ["Next.js", "TypeScript", "Tailwind"]
     },
@@ -270,14 +270,14 @@
       "id": "27",
       "title": "Dalio | Digital Agency",
       "description": "A website from Dalio, a digital agency to showcase the experience using Next.js and Tailwind CSS",
-      "imageSrc": "/img/screencapture-daliotailwind-vercel-app-2026-05-23-15_42_00.jpg",
+      "imageSrc": "/img/projects/dalio-digital-agency.webp",
       "url": "https://daliotailwind.vercel.app"
     },
     {
       "id": "28",
       "title": "Frontend-Mentor-Loopstudios",
       "description": "Page created as a practice for knowledge in Next.js, JavaScript, Tailwind CSS and responsive design to complete a Frontend Mentor challenge",
-      "imageSrc": "https://i.postimg.cc/FKjzLCM5/loopstudios-page.png",
+      "imageSrc": "/img/projects/frontend-mentor-loopstudios.webp",
       "url": "https://frontend-mentor-loopstudios-page.vercel.app/"
     }
   ],

@@ -36,6 +36,7 @@
     "explore": "Explorar",
     "viewCode": "Ver Código",
     "stackLabel": "Stack tecnológico",
+    "imageAlt": "Captura de la página de inicio de {name}",
     "statStack": "Stack principal",
     "statStackItems": "Next.js · TypeScript · Tailwind · CMS"
   },

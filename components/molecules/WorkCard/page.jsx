@@ -21,7 +21,6 @@ const WorkCard = ({
   category: categoryProp,
   tags: tagsProp,
   excerpt: excerptProp,
-  priority = false,
 }) => {
   const cardRef = useRef(null);
   const imageWrapRef = useRef(null);
@@ -43,6 +42,9 @@ const WorkCard = ({
   const viewLabel = labels.viewProject ?? "View project";
   const exploreLabel = labels.explore ?? "Explore";
   const stackLabel = labels.stackLabel ?? "Tech stack";
+  const imageAlt = (
+    labels.imageAlt ?? "{name} website homepage screenshot"
+  ).replace("{name}", name);
 
   useGSAP(
     () => {
@@ -126,12 +128,13 @@ const WorkCard = ({
             )}
           >
             <Image
-              alt={name}
+              alt={imageAlt}
               src={img}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              quality={90}
-              priority={priority}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              quality={75}
+              loading="lazy"
+              decoding="async"
               className={cn(
                 "h-full w-full object-cover transition-transform duration-500 ease-out",
                 meta.imagePosition,

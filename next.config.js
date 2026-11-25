@@ -2,13 +2,13 @@ const isDev = process.env.NODE_ENV !== "production";
 
 // Pragmatic CSP: Next.js injects inline bootstrap scripts, so 'unsafe-inline'
 // is required for scripts (no nonce pipeline). Fonts are self-hosted by
-// next/font and remote images go through the /_next/image optimizer, so no
-// third-party origins are needed besides the image host.
+// next/font and all images are served from this origin (public/img), so no
+// third-party image hosts are needed.
 const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://i.postimg.cc",
+  "img-src 'self' data: blob:",
   "font-src 'self' data:",
   `connect-src 'self'${isDev ? " ws: wss:" : ""}`,
   "object-src 'none'",
@@ -34,15 +34,7 @@ const nextConfig = {
   // Avoid broken webpack vendor-chunks for GSAP on the server bundle
   serverExternalPackages: ["gsap", "lenis"],
   images: {
-    qualities: [75, 90],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.postimg.cc",
-        port: "",
-        pathname: "/**",
-      },
-    ],
+    qualities: [75],
   },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];

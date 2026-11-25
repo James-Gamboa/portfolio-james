@@ -9,6 +9,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
     viewProject: projectDict.viewProject,
     explore: projectDict.explore,
     stackLabel: projectDict.stackLabel,
+    imageAlt: projectDict.imageAlt,
   };
 
   return (
@@ -70,7 +71,6 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
               category={project.category}
               tags={project.tags}
               excerpt={project.excerpt}
-              priority={index < 3}
             />
           </li>
         ))}
