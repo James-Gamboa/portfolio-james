@@ -107,7 +107,7 @@ const LanguageSelector = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none hover:bg-slate-700 hover:text-white">
+      <DropdownMenuContent className="z-[120] w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none hover:bg-slate-700 hover:text-white">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
