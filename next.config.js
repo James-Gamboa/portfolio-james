@@ -33,8 +33,6 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Shown as "Last updated" in the footer (fixed at build time).
-  env: { NEXT_PUBLIC_BUILD_DATE: new Date().toISOString() },
   poweredByHeader: false,
   // Inline the (small) CSS in the HTML so it is not render-blocking.
   experimental: { inlineCss: true },

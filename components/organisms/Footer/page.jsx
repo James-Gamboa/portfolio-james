@@ -3,27 +3,11 @@ import CtaLink from "@/components/atoms/CtaLink/page.jsx";
 import { EVENTS } from "@/lib/analytics";
 import { cvPath } from "@/lib/cv";
 
-// Build-time timestamp (see next.config.js), formatted per locale. Fixed to
-// UTC so server and client render the same text.
-const formatBuildDate = (lang) => {
-  const iso = process.env.NEXT_PUBLIC_BUILD_DATE;
-  if (!iso) return null;
-  const date = new Date(iso);
-  return {
-    iso: iso.slice(0, 10),
-    label: new Intl.DateTimeFormat(lang === "es" ? "es-CR" : "en-US", {
-      dateStyle: "long",
-      timeZone: "UTC",
-    }).format(date),
-  };
-};
-
 const socialLink = (data, title) =>
   data?.socials?.find((social) => social.title.toLowerCase() === title)?.link;
 
-/** Closing contact CTA: email, LinkedIn, GitHub and CV, plus last-updated. */
+/** Closing contact CTA: email, LinkedIn, GitHub and CV. */
 const Footer = ({ lang = "en", dict, data }) => {
-  const updated = formatBuildDate(lang);
   const hero = dict?.home?.hero ?? {};
   const email = socialLink(data, "email");
   const linkedin = socialLink(data, "linkedin");
@@ -84,13 +68,6 @@ const Footer = ({ lang = "en", dict, data }) => {
             </CtaLink>
           )}
         </div>
-
-        {updated && (
-          <p className="mt-10 text-sm text-content-subtle">
-            {dict?.footer?.lastUpdated ?? "Last updated"}:{" "}
-            <time dateTime={updated.iso}>{updated.label}</time>
-          </p>
-        )}
       </div>
     </div>
   );
