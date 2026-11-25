@@ -42,6 +42,7 @@ export default async function HomePage({ params }) {
           data,
           title: dict.metadata.home.title,
           description: dict.metadata.home.description,
+          faq: dict.home.faq.items,
         })}
       />
       <HomeTemplate lang={lang} dict={dict} data={data} />

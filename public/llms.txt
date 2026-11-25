@@ -1,8 +1,20 @@
 # James Guevara Gamboa
 
-> Frontend & Full Stack Developer based in Heredia, Costa Rica, open to remote work. Builds web applications, e-commerce platforms, corporate websites and headless CMS solutions with Next.js, React, TypeScript, Strapi, Shopify and WordPress.
+> Frontend & Full Stack Developer based in Heredia, Costa Rica, open to remote work (also hybrid or on-site). Builds fast, SEO-friendly websites and web apps for real estate, corporate and e-commerce clients with Next.js, React, TypeScript, Node.js, Strapi, Shopify and WordPress.
 
-James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) who delivers production websites and web apps for real estate, commercial and corporate clients, with a focus on performance, accessibility, SEO and maintainability. Previous roles: Frontend & WordPress Developer at TechPro Solutions (2024) and Frontend Developer at ContraLuz (2023, remote). Education: FWD Costa Rica (Full Stack Web Developer, Backend Software Developer), CETAV (Web Design and Development Technician) and INA. Languages: Spanish (native), English (B2).
+James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) with 10+ client projects delivered in real estate, corporate and e-commerce, with a focus on performance, SEO and maintainability. Previous roles: Frontend & WordPress Developer at TechPro Solutions (January to July 2024) and Frontend Developer at ContraLuz (March to December 2023, remote). Languages: Spanish (native), English (B2).
+
+## Download the CV (PDF)
+- [CV (English)](https://james-gamboa.vercel.app/cv/james-guevara-gamboa-cv-en.pdf)
+- [CV (Español)](https://james-gamboa.vercel.app/cv/james-guevara-gamboa-cv-es.pdf)
+
+## Quick facts (recruiter FAQ)
+- Role: Frontend & Full Stack Developer.
+- Main stack: Next.js, React, TypeScript, Node.js; Strapi (headless CMS), Tailwind CSS, REST and GraphQL, Shopify and WordPress customization.
+- Availability: open to remote work; also open to hybrid or on-site roles.
+- Location and time zone: Heredia, Costa Rica, UTC-6 (no daylight saving time).
+- Languages: Spanish (native), English (B2).
+- Contact: jjguevarag@gmail.com, LinkedIn and GitHub (below), or the CV PDFs above.
 
 ## Core stack
 - Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, GSAP
@@ -10,9 +22,31 @@ James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) who
 - CMS and e-commerce: Strapi (headless), Shopify, WordPress, Drupal
 - Databases: MongoDB, MySQL
 
+## Experience
+- Freelance Full Stack Developer, August 2024 to present: websites and web apps for 10+ clients with Next.js, React, TypeScript, Node.js and Strapi; Tailwind, REST/GraphQL, Shopify customization, SEO and Core Web Vitals.
+- Frontend & WordPress Developer, TechPro Solutions, January to July 2024: WordPress sites, custom themes and plugins, UI/UX, SEO, agile team.
+- Frontend Developer, ContraLuz (remote), March to December 2023: Next.js landing page with 100% Lighthouse performance, led the Shopify migration and launch, custom cart with analytics tracking, SSR admin panel.
+
+## Education
+- Full Stack Web Developer, FWD Costa Rica (January to July 2025)
+- Web Design and Development, 2,880-hour technical program, CETAV La Libertad (March 2022 to January 2024)
+- Web Design and Development, technician level, 928 hours, INA (January 2024)
+
+## Certifications
+- Anthropic Academy (May 2026): Claude Code in Action, Claude Code 101, Building with the Claude API, Introduction to Model Context Protocol, AI Fluency: Framework & Foundations, Claude 101, Introduction to Claude Cowork
+- n8n and AI automation, Raiola Networks (February 2026)
+- JavaScript Algorithms and Data Structures (2023)
+- Responsive Web Design (2022)
+- Universidad HTML, Udemy (December 2021)
+- Introduction to Web Development I and II, Google Actívate (August 2021)
+- Cybersecurity Essentials and Get Connected, Cisco Networking Academy (2020)
+
+## Achievement
+- Human Brush project (Belgium): an interactive projection that animates human body movement.
+
 ## Key pages
-- [Portfolio (English)](https://james-gamboa.vercel.app/en): projects, services and about
-- [Portafolio (Español)](https://james-gamboa.vercel.app/es): proyectos, servicios y sobre mí
+- [Portfolio (English)](https://james-gamboa.vercel.app/en): client work, experience, certifications and recruiter FAQ
+- [Portafolio (Español)](https://james-gamboa.vercel.app/es): trabajo para clientes, experiencia, certificaciones y preguntas frecuentes
 - [Resume (English)](https://james-gamboa.vercel.app/en/resume): experience, education, skills and certifications
 - [Currículum (Español)](https://james-gamboa.vercel.app/es/curriculum-vitae): experiencia, estudios, habilidades y certificaciones
 
@@ -22,14 +56,14 @@ James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) who
 - Email: jjguevarag@gmail.com
 
 ## Selected client projects
-- [Escazu Village](https://www.escazuvillage.com/en)
-- [C3 Cariari Corporate Center](https://www.c3.cr/en)
-- [Plaza Tempo](https://tempo-2025-2c8da873e965.herokuapp.com/en)
-- [Aleste](https://www.aleste.cr/en)
-- [Novus ERP](https://novus-2025-011de5fce714.herokuapp.com/en)
-- [Portafolio Inmobiliario](https://www.portafolio.cr/en)
 - [Avenida Escazu](https://www.avenidaescazu.com/en)
+- [Escazu Village](https://www.escazuvillage.com/en)
+- [Plaza Tempo](https://tempo-2025-2c8da873e965.herokuapp.com/en)
+- [C3 Cariari Corporate Center](https://www.c3.cr/en)
 - [Savia](https://www.savia.cr/en)
+- [Aleste](https://www.aleste.cr/en)
 - [Lincoln Plaza](https://www.lincolnplaza.cr/en)
 - [Torre Universal](https://www.torreuniversal.com/en)
 - [La Laguna](https://lalaguna.cr/)
+- [Portafolio Inmobiliario](https://www.portafolio.cr/en)
+- [Novus ERP](https://novus-2025-011de5fce714.herokuapp.com/en)
