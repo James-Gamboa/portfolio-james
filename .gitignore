@@ -37,3 +37,9 @@ yarn-error.log*
 .vercel
 
 .cursor
+# local agent files (never commit or deploy)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+*.key
+id_rsa*

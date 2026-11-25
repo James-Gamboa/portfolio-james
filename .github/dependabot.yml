@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: npm # also covers the pnpm lockfile
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3 # security updates are not delayed by cooldown
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: "chore(deps)"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    groups:
+      actions:
+        update-types: [minor, patch]
+    commit-message:
+      prefix: "chore(ci)"

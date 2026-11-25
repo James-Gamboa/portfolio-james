@@ -1,0 +1,82 @@
+name: Post-deploy smoke
+
+# Runs after Vercel (Git integration) reports a deployment. CI itself never deploys.
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smoke-${{ github.event.deployment.sha || github.sha }}-${{ github.event.deployment.environment }}
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    name: smoke
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Untrusted-ish values only travel through env, never interpolated into scripts.
+      TARGET_URL: ${{ github.event.deployment_status.environment_url || github.event.deployment_status.target_url }}
+      DEPLOY_ENV: ${{ github.event.deployment.environment }}
+    steps:
+      - name: Smoke test deployment
+        shell: bash
+        run: |
+          set -uo pipefail
+          if [ -z "${TARGET_URL:-}" ]; then
+            echo "::error::No deployment URL in the event payload"
+            exit 1
+          fi
+          BASE="${TARGET_URL%/}"
+          echo "Environment: ${DEPLOY_ENV} -> ${BASE}"
+          fail=0
+
+          origin_of() { printf '%s' "$1" | sed -E 's#^(https?://[^/]+).*#\1#'; }
+          ORIGIN=$(origin_of "$BASE")
+
+          # Follow same-origin redirects only (the locale middleware sends / -> /en).
+          # A redirect to another origin (e.g. Vercel SSO login for protected previews)
+          # must never be judged as the deployment's own response.
+          status_of() {
+            local url="$1" out code loc
+            for _ in 1 2 3 4; do
+              out=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 20 \
+                --retry 5 --retry-delay 5 --retry-all-errors "$url") || { echo "000"; return; }
+              code="${out%% *}"
+              loc="${out#* }"
+              case "$code" in
+                301|302|303|307|308) ;;
+                *) echo "$code"; return ;;
+              esac
+              if [ "$(origin_of "$loc")" != "$ORIGIN" ]; then echo "offsite"; return; fi
+              url="$loc"
+            done
+            echo "too-many-redirects"
+          }
+
+          # Preview deployments may sit behind Vercel Deployment Protection
+          # (401, or a redirect to the Vercel SSO login on another origin).
+          home=$(status_of "$BASE/")
+          if { [ "$home" = "401" ] || [ "$home" = "offsite" ]; } && [ "${DEPLOY_ENV}" != "Production" ]; then
+            echo "::notice::Preview is behind Deployment Protection ($home); smoke test skipped."
+            exit 0
+          fi
+          if [ "$home" != "200" ]; then
+            echo "::error::GET / returned $home (expected 200)"
+            fail=1
+          else
+            echo "OK GET / -> 200"
+          fi
+
+          for path in /.env /.env.local /.git/config /CLAUDE.md /package.json /pnpm-lock.yaml; do
+            code=$(status_of "$BASE$path")
+            case "$code" in
+              404|403) echo "OK GET $path -> $code" ;;
+              *) echo "::error::GET $path returned $code (expected 404 or 403)"; fail=1 ;;
+            esac
+          done
+
+          exit "$fail"
