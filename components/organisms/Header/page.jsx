@@ -15,6 +15,9 @@ const Header = ({ dict, data }) => {
   }
 
   const { showResume } = data;
+  const email =
+    data.socials?.find((social) => social.title === "Email")?.link ??
+    "mailto:jjguevarag@gmail.com";
 
   return (
     <>
@@ -27,7 +30,7 @@ const Header = ({ dict, data }) => {
         </Link>
         <div className="flex items-center gap-2">
           <LanguageSelector />
-          <HamburgerMenu />
+          <HamburgerMenu dict={dict} lang={currentLang} email={email} />
         </div>
       </header>
 
@@ -56,7 +59,7 @@ const Header = ({ dict, data }) => {
                 {dict?.nav?.resume || "Resume"}
               </Button>
             )}
-            <Button href="mailto:jjguevarag@gmail.com" trackEvent="contact_click">
+            <Button href={email} trackEvent="contact_click">
               {dict?.nav?.contact || "Contact"}
             </Button>
           </nav>

@@ -5,41 +5,18 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
+import { buildMobileNavLinks } from "@/lib/nav";
 
 const DESKTOP_MIN_WIDTH_PX = 1024;
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ dict, lang, email }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isMounted, setIsMounted] = React.useState(false);
-  const [dict, setDict] = React.useState(null);
   const pathname = usePathname();
   const [hash, setHash] = React.useState("");
 
-  const currentLang = pathname.split("/")[1] || "en";
-
-  React.useEffect(() => {
-    import(`@/components/lib/dictionaries/${currentLang}.json`)
-      .then((module) => setDict(module.default))
-      .catch(() => {
-        import("@/components/lib/dictionaries/en.json").then((module) =>
-          setDict(module.default),
-        );
-      });
-  }, [currentLang]);
-
-  const navLinks = [
-    { href: `/${currentLang}`, label: dict?.nav?.home || "Home" },
-    { href: `/${currentLang}#about`, label: dict?.nav?.about || "About" },
-    {
-      href: `/${currentLang}#projects`,
-      label: dict?.nav?.projects || "Projects",
-    },
-    {
-      href: "mailto:jjguevarag@gmail.com",
-      label: dict?.nav?.contact || "Contact",
-      isMail: true,
-    },
-  ];
+  const currentLang = lang;
+  const navLinks = buildMobileNavLinks({ lang: currentLang, dict, email });
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -131,19 +108,6 @@ const HamburgerMenu = () => {
       return hash === href.split("#")[1] ? `#${href.split("#")[1]}` : "";
     return pathname === href;
   };
-
-  if (!dict) {
-    return (
-      <button
-        aria-label="Open navigation menu"
-        tabIndex={0}
-        className="laptop:hidden focus:outline-none rounded-full p-2 bg-black/80 text-white"
-        disabled
-      >
-        <Menu className="w-7 h-7" aria-hidden="true" />
-      </button>
-    );
-  }
 
   return (
     <>

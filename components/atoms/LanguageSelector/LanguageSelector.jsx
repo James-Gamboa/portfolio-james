@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "../../ui/button";
 import {
@@ -16,7 +16,6 @@ const SpainFlag = () => (
   <svg width="20" height="15" viewBox="0 0 20 15" className="rounded-sm">
     <rect width="20" height="15" fill="#AA151B" />
     <rect width="20" height="9" y="3" fill="#F1BF00" />
-    <rect width="20" height="3" y="12" fill="#AA151B" />
     <rect width="20" height="3" y="12" fill="#AA151B" />
   </svg>
 );
@@ -38,25 +37,8 @@ const LanguageSelector = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [dict, setDict] = useState(null);
 
   const currentLangCode = pathname.split("/")[1] || "en";
-
-  useEffect(() => {
-    const loadDictionary = async () => {
-      try {
-        const dictModule = await import(
-          `../../lib/dictionaries/${currentLangCode}.json`
-        );
-        setDict(dictModule.default);
-      } catch (err) {
-        const fallbackModule = await import("../../lib/dictionaries/en.json");
-        setDict(fallbackModule.default);
-      }
-    };
-
-    loadDictionary();
-  }, [currentLangCode]);
 
   const languages = [
     {
