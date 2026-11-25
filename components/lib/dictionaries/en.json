@@ -68,10 +68,12 @@
     "spokenLanguages": "Languages",
     "certifications": "Certifications",
     "achievements": "Achievements",
-    "featuredProjects": "Featured Projects"
+    "featuredProjects": "Featured Projects",
+    "downloadCv": "Download CV"
   },
   "footer": {
-    "contact": "Let's talk about projects"
+    "contact": "Let's talk about projects",
+    "lastUpdated": "Last updated"
   },
   "common": {
     "loading": "Loading...",
@@ -108,5 +110,140 @@
   },
   "portfolio": {
     "title": "James Portfolio"
+  },
+  "home": {
+    "hero": {
+      "role": "Frontend & Full Stack Developer",
+      "stack": "Next.js · React · TypeScript · Node.js · Strapi · Shopify",
+      "location": "Heredia, Costa Rica · Open to remote",
+      "valueProp": "I build fast, SEO-friendly websites and web apps for real estate, corporate and e-commerce clients, with 10+ client projects delivered since 2024.",
+      "downloadCv": "Download CV",
+      "contact": "Contact me",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "actionsLabel": "Primary actions"
+    },
+    "about": {
+      "title": "About",
+      "summary": "James Guevara Gamboa is a Frontend & Full Stack Developer based in Heredia, Costa Rica, open to remote work (also hybrid or on-site). Since August 2024 he has worked as a freelance Full Stack Developer, delivering 10+ client projects in real estate, corporate and e-commerce with Next.js, React, TypeScript, Node.js and Strapi. He speaks Spanish (native) and English (B2)."
+    },
+    "projects": {
+      "clientTitle": "Client work",
+      "clientIntro": "Production websites and platforms delivered for real clients.",
+      "otherTitle": "Practice and personal projects",
+      "otherIntro": "Experiments, challenges and side projects built to practice and learn."
+    },
+    "experience": {
+      "title": "Experience",
+      "fullResume": "Full resume",
+      "items": [
+        {
+          "role": "Freelance Full Stack Developer",
+          "company": "Freelance",
+          "dates": "Aug 2024 – Present",
+          "summary": "Websites and web apps for 10+ clients in real estate, corporate and e-commerce with Next.js, React, TypeScript, Node.js and Strapi. Tailwind, REST/GraphQL, Shopify customization, SEO and Core Web Vitals."
+        },
+        {
+          "role": "Frontend & WordPress Developer",
+          "company": "TechPro Solutions",
+          "dates": "Jan – Jul 2024",
+          "summary": "WordPress sites, custom themes and plugins, UI/UX, SEO, working in an agile team."
+        },
+        {
+          "role": "Frontend Developer",
+          "company": "ContraLuz (Remote)",
+          "dates": "Mar – Dec 2023",
+          "summary": "Next.js landing page with 100% Lighthouse performance, led the Shopify migration and launch, custom cart with analytics tracking and an SSR admin panel."
+        }
+      ]
+    },
+    "credentials": {
+      "title": "Education and certifications",
+      "educationTitle": "Education",
+      "certificationsTitle": "Certifications",
+      "achievementTitle": "Achievement",
+      "education": [
+        {
+          "name": "Full Stack Web Developer",
+          "org": "FWD Costa Rica",
+          "dates": "Jan – Jul 2025"
+        },
+        {
+          "name": "Web Design and Development, 2,880-hour technical program",
+          "org": "CETAV La Libertad",
+          "dates": "Mar 2022 – Jan 2024"
+        },
+        {
+          "name": "Web Design and Development, technician level, 928 hours",
+          "org": "INA",
+          "dates": "Jan 2024"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Anthropic Academy: Claude Code in Action, Claude Code 101, Building with the Claude API, Introduction to Model Context Protocol, AI Fluency: Framework & Foundations, Claude 101, Introduction to Claude Cowork",
+          "dates": "May 2026"
+        },
+        {
+          "name": "n8n and AI automation",
+          "org": "Raiola Networks",
+          "dates": "Feb 2026"
+        },
+        {
+          "name": "JavaScript Algorithms and Data Structures",
+          "dates": "2023"
+        },
+        {
+          "name": "Responsive Web Design",
+          "dates": "2022"
+        },
+        {
+          "name": "Universidad HTML",
+          "org": "Udemy",
+          "dates": "Dec 2021"
+        },
+        {
+          "name": "Introduction to Web Development I and II",
+          "org": "Google Actívate",
+          "dates": "Aug 2021"
+        },
+        {
+          "name": "Cybersecurity Essentials and Get Connected",
+          "org": "Cisco Networking Academy",
+          "dates": "2020"
+        }
+      ],
+      "achievement": "Human Brush project (Belgium): an interactive projection that animates human body movement."
+    },
+    "faq": {
+      "title": "Recruiter FAQ",
+      "intro": "Quick answers about role, stack, availability and contact.",
+      "items": [
+        {
+          "q": "What is James Guevara Gamboa's role?",
+          "a": "He is a Frontend & Full Stack Developer. Since August 2024 he works as a freelance Full Stack Developer building websites and web apps for real estate, corporate and e-commerce clients."
+        },
+        {
+          "q": "Which technologies does he work with?",
+          "a": "Next.js, React, TypeScript and Node.js on the main stack, with Strapi as headless CMS, Tailwind CSS, REST and GraphQL APIs, plus Shopify and WordPress customization."
+        },
+        {
+          "q": "Is he available for remote work?",
+          "a": "Yes. He is open to remote work and is also open to hybrid or on-site roles."
+        },
+        {
+          "q": "Where is he based and which time zone does he work in?",
+          "a": "He lives in Heredia, Costa Rica, in the Central America time zone (UTC-6, no daylight saving time)."
+        },
+        {
+          "q": "Which languages does he speak?",
+          "a": "Spanish (native) and English (B2, upper intermediate)."
+        },
+        {
+          "q": "How can I contact him or get his CV?",
+          "a": "Email jjguevarag@gmail.com, message him on LinkedIn or GitHub, or download his CV as a PDF from the top of this page."
+        }
+      ]
+    }
   }
 }

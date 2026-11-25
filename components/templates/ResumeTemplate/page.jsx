@@ -4,6 +4,10 @@ import Header from "@/components/organisms/Header/page.jsx";
 import ProjectResume from "@/components/molecules/ProjectResume/page.jsx";
 import Socials from "@/components/atoms/Socials/page.jsx";
 import Button from "@/components/atoms/Button/page.jsx";
+import CtaLink from "@/components/atoms/CtaLink/page.jsx";
+import { Download } from "lucide-react";
+import { EVENTS } from "@/lib/analytics";
+import { cvPath } from "@/lib/cv";
 import Footer from "@/components/organisms/Footer/page.jsx";
 import SkillsSection from "@/components/molecules/SkillsSection/page.jsx";
 
@@ -42,6 +46,18 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                 {data.resume.descriptionSecondary}
               </p>
             )}
+            <div className="mt-4">
+              <CtaLink
+                href={cvPath(lang)}
+                variant="primary"
+                download
+                event={EVENTS.cvDownload}
+                eventProps={{ locale: lang }}
+              >
+                <Download className="h-4 w-4" aria-hidden />
+                {dict?.resume?.downloadCv || "Download CV"}
+              </CtaLink>
+            </div>
             <div className="mt-2">
               <Socials lang={lang} data={data} />
             </div>
