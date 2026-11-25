@@ -21,11 +21,18 @@ jobs:
       # Untrusted-ish values only travel through env, never interpolated into scripts.
       TARGET_URL: ${{ github.event.deployment_status.environment_url || github.event.deployment_status.target_url }}
       DEPLOY_ENV: ${{ github.event.deployment.environment }}
+      # Per-deployment *.vercel.app URLs sit behind Vercel Authentication even in
+      # Production, so Production is checked on the public domain visitors use.
+      # Override with the PRODUCTION_URL repository variable if the domain changes.
+      PRODUCTION_URL: ${{ vars.PRODUCTION_URL || 'https://james-gamboa.vercel.app' }}
     steps:
       - name: Smoke test deployment
         shell: bash
         run: |
           set -uo pipefail
+          if [ "${DEPLOY_ENV}" = "Production" ] && [ -n "${PRODUCTION_URL:-}" ]; then
+            TARGET_URL="${PRODUCTION_URL}"
+          fi
           if [ -z "${TARGET_URL:-}" ]; then
             echo "::error::No deployment URL in the event payload"
             exit 1
