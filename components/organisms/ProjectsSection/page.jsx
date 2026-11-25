@@ -86,9 +86,9 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
           <p className="mt-1 mb-5 text-sm text-content-subtle">
             {groupDict.otherIntro}
           </p>
-          <ul className="grid grid-cols-1 gap-2.5 tablet:grid-cols-2 laptop:grid-cols-3">
+          <ul className="flex flex-wrap justify-center gap-2.5">
             {other.map((project, index) => (
-              <li key={project.id} className="min-w-0">
+              <li key={project.id} className="w-full min-w-0 tablet:w-[calc(50%-0.3125rem)] laptop:w-[calc(33.333%-0.4167rem)]">
                 <PracticeCard
                   project={project}
                   index={index + client.length}
