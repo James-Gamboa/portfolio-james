@@ -156,7 +156,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
           >
             <div
               aria-hidden
-              className="absolute inset-0 bg-ink bg-[radial-gradient(ellipse_at_top,rgb(var(--sky)/0.1),transparent_55%)]"
+              className="absolute inset-0 bg-ink bg-[radial-gradient(ellipse_at_top,rgb(var(--glow-pink)/0.16),transparent_55%)]"
             />
             <div
               data-menu-panel=""

@@ -6,19 +6,23 @@
   font-family: var(--font-jakarta), system-ui, sans-serif;
 }
 
-/* Brand tokens. Navy surfaces with a single sky-blue accent. Contrast on
-   --ink (#0a0f1c): content 15:1, content-muted 7.7:1, content-subtle 6.9:1,
-   sky 9.3:1; dark text on sky-strong buttons 7:1 (all WCAG AA). */
+/* Brand tokens: the original site palette. Pure black surfaces, white text
+   and white primary actions, with the pink-to-blue glow only as ambient light
+   (--glow-pink / --glow-blue). The "sky" tokens keep their names but are the
+   white accent. Contrast on #000: content 21:1, content-muted 8.6:1,
+   content-subtle 6.4:1 (all WCAG AA). */
 :root {
-  --ink: 10 15 28;
-  --ink-raised: 15 23 42;
-  --ink-overlay: 17 26 46;
-  --line: 31 42 68;
-  --content: 229 231 235;
-  --content-muted: 156 163 175;
-  --content-subtle: 147 163 192;
-  --sky: 56 189 248;
-  --sky-strong: 14 165 233;
+  --ink: 0 0 0;
+  --ink-raised: 12 12 12;
+  --ink-overlay: 20 20 20;
+  --line: 40 40 40;
+  --content: 255 255 255;
+  --content-muted: 163 163 163;
+  --content-subtle: 140 140 140;
+  --sky: 255 255 255;
+  --sky-strong: 255 255 255;
+  --glow-pink: 248 107 223;
+  --glow-blue: 107 107 248;
 }
 
 body {
@@ -42,25 +46,32 @@ body {
     @apply text-title font-extrabold text-content;
   }
 
-  /* Page backdrop: one subtle blue glow and a dot grid fading out. */
+  /* Page backdrop: the original pink-to-blue glow along the top edge and a
+     faint dot grid fading out. */
   .page-aurora {
     position: absolute;
     inset: 0 0 auto 0;
     z-index: -10;
     height: 56rem;
     pointer-events: none;
-    background: radial-gradient(
-      46rem 30rem at 85% -6%,
-      rgb(var(--sky) / 0.1),
-      transparent 70%
-    );
+    background:
+      radial-gradient(
+        44rem 11rem at 30% -2rem,
+        rgb(var(--glow-pink) / 0.45),
+        transparent 70%
+      ),
+      radial-gradient(
+        44rem 11rem at 72% -2rem,
+        rgb(var(--glow-blue) / 0.42),
+        transparent 70%
+      );
   }
   .page-aurora::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-      rgb(147 163 192 / 0.1) 1px,
+      rgb(255 255 255 / 0.07) 1px,
       transparent 1px
     );
     background-size: 26px 26px;

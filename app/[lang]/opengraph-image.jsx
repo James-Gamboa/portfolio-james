@@ -30,10 +30,10 @@ export default async function Image({ params }) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "#0a0f1c",
+          background: "#000000",
           backgroundImage:
-            "radial-gradient(circle at 85% 0%, rgba(56,189,248,0.22) 0%, rgba(56,189,248,0.08) 40%, rgba(10,15,28,0) 70%)",
-          color: "#e5e7eb",
+            "radial-gradient(circle at 20% 0%, rgba(248,107,223,0.35) 0%, rgba(0,0,0,0) 45%), radial-gradient(circle at 85% 0%, rgba(107,107,248,0.35) 0%, rgba(0,0,0,0) 45%)",
+          color: "#ffffff",
           fontFamily: "sans-serif",
         }}
       >
@@ -42,7 +42,7 @@ export default async function Image({ params }) {
             display: "flex",
             alignItems: "center",
             fontSize: 30,
-            color: "#93a3c0",
+            color: "#a3a3a3",
           }}
         >
           james-gamboa.vercel.app
@@ -66,7 +66,7 @@ export default async function Image({ params }) {
               marginTop: 24,
               fontSize: 48,
               fontWeight: 700,
-              color: "#38bdf8",
+              color: "#ffffff",
             }}
           >
             {ROLE_HEADLINE[locale]}
@@ -88,7 +88,7 @@ export default async function Image({ params }) {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 30,
-            color: "#93a3c0",
+            color: "#a3a3a3",
           }}
         >
           <div style={{ display: "flex" }}>{LOCATION[locale]}</div>

@@ -18,11 +18,11 @@ const Footer = ({ lang = "en", dict, data }) => {
     <div className="relative mt-24 overflow-hidden rounded-3xl border border-line bg-ink-raised p-6 tablet:p-10 laptop:mt-36 laptop:p-14">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sky/10 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[rgb(var(--glow-pink)/0.12)] blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-sky/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-[rgb(var(--glow-blue)/0.12)] blur-3xl"
       />
 
       <div className="relative">
