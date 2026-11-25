@@ -8,10 +8,31 @@ import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelect
 import { buildMobileNavLinks } from "@/lib/nav";
 
 const DESKTOP_MIN_WIDTH_PX = 1024;
+// Must match the .menu-overlay exit animation duration in globals.css.
+const CLOSE_ANIMATION_MS = 220;
 
 const HamburgerMenu = ({ dict, lang, email }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
   const [isMounted, setIsMounted] = React.useState(false);
+  const closeTimerRef = React.useRef(null);
+
+  // Play the exit animation, then unmount. Reduced motion closes immediately.
+  const closeMenu = React.useCallback(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      setIsOpen(false);
+      return;
+    }
+    setIsClosing(true);
+    clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, CLOSE_ANIMATION_MS);
+  }, []);
+
+  React.useEffect(() => () => clearTimeout(closeTimerRef.current), []);
   const pathname = usePathname();
   const [hash, setHash] = React.useState("");
 
@@ -88,7 +109,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
   React.useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") setIsOpen(false);
+      if (e.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -124,12 +145,13 @@ const HamburgerMenu = ({ dict, lang, email }) => {
         isMounted &&
         createPortal(
           <div
-            className="fixed inset-0 z-[110] overscroll-none"
+            className="menu-overlay fixed inset-0 z-[110] overscroll-none"
+            data-state={isClosing ? "closed" : "open"}
             role="dialog"
             aria-modal="true"
-            onClick={() => setIsOpen(false)}
+            onClick={() => closeMenu()}
             onKeyDown={(event) => {
-              if (event.key === "Escape") setIsOpen(false);
+              if (event.key === "Escape") closeMenu();
             }}
           >
             <div
@@ -144,7 +166,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
               <button
                 aria-label="Close navigation menu"
                 className="absolute top-4 right-4 p-2 rounded-full bg-ink-raised text-white backdrop-blur-md focus:outline-none"
-                onClick={() => setIsOpen(false)}
+                onClick={() => closeMenu()}
                 tabIndex={0}
               >
                 <X className="w-8 h-8" aria-hidden="true" />
@@ -161,9 +183,10 @@ const HamburgerMenu = ({ dict, lang, email }) => {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="font-semibold text-5xl transition-colors outline-none px-4 py-1 text-white"
+                        className="menu-item font-semibold text-3xl tablet:text-4xl transition-colors outline-none px-4 py-1 text-white"
                         tabIndex={0}
                         role="menuitem"
+                        style={{ "--i": idx }}
                         ref={idx === 0 ? firstLinkRef : undefined}
                         onClick={() => setIsOpen(false)}
                       >
@@ -175,9 +198,10 @@ const HamburgerMenu = ({ dict, lang, email }) => {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`font-semibold text-5xl transition-colors outline-none px-4 py-1 ${active ? "text-sky" : "text-white"}`}
+                      className={`menu-item font-semibold text-3xl tablet:text-4xl transition-colors outline-none px-4 py-1 ${active ? "text-sky" : "text-white"}`}
                       tabIndex={0}
                       role="menuitem"
+                      style={{ "--i": idx }}
                       aria-current={active ? "page" : undefined}
                       ref={idx === 0 ? firstLinkRef : undefined}
                       onClick={() => setIsOpen(false)}
@@ -187,7 +211,10 @@ const HamburgerMenu = ({ dict, lang, email }) => {
                   );
                 })}
               </nav>
-              <div className="mt-10 flex justify-center">
+              <div
+                className="menu-item mt-10 flex justify-center"
+                style={{ "--i": navLinks.length }}
+              >
                 <LanguageSelector />
               </div>
             </div>

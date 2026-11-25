@@ -133,6 +133,41 @@ html[data-menu-open="true"] body {
   }
 }
 
+/* Mobile menu: overlay fades, items rise in sequence; exit is quicker.
+   Keep the exit duration in sync with CLOSE_ANIMATION_MS in HamburgerMenu. */
+@keyframes menu-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes menu-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes menu-item-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menu-item-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-overlay[data-state="open"] {
+    animation: menu-fade-in 0.24s ease-out both;
+  }
+  .menu-overlay[data-state="open"] .menu-item {
+    animation: menu-item-in 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+  }
+  .menu-overlay[data-state="closed"] {
+    animation: menu-fade-out 0.22s ease-in both;
+  }
+  .menu-overlay[data-state="closed"] .menu-item {
+    animation: menu-item-out 0.18s ease-in both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html[data-motion="reduced"] [data-reveal] {
     opacity: 1 !important;
