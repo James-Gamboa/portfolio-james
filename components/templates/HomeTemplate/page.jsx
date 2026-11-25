@@ -12,7 +12,7 @@ import Reveal from "@/components/motion/Reveal";
 const HomeTemplate = ({ lang, dict, data }) => {
   return (
     <div className="relative isolate w-full min-w-0 overflow-x-clip">
-      {/* Ambient backdrop: soft brand glows plus a fading dot grid. Pure CSS
+      {/* Ambient backdrop: soft blue glow plus a fading dot grid. Pure CSS
           gradients, so it never competes for LCP. */}
       <div aria-hidden className="page-aurora" />
       <div className="container mx-auto mb-10 w-full min-w-0 max-w-full px-4 mob:px-5 tablet:px-6 laptop:px-8">

@@ -42,8 +42,8 @@ const WorkCard = ({
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "flex h-full w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-ink-raised/80 transition-[border-color,background-color,transform] duration-300 motion-safe:group-hover:-translate-y-1",
-          "hover:border-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70",
+          "flex h-full w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-line bg-ink-raised/80 transition-[border-color,background-color,transform] duration-300 motion-safe:group-hover:-translate-y-1",
+          "hover:border-sky/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky",
         )}
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink-overlay">
@@ -59,7 +59,7 @@ const WorkCard = ({
               meta.imagePosition,
             )}
           />
-          <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink/70 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-content backdrop-blur-md">
+          <span className="absolute left-3 top-3 rounded-full border border-line bg-ink/70 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-content backdrop-blur-md">
             {meta.category}
           </span>
         </div>
@@ -79,14 +79,14 @@ const WorkCard = ({
             {meta.tags.slice(0, 4).map((tag) => (
               <li
                 key={tag}
-                className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[11px] font-medium text-content"
+                className="rounded-md border border-line bg-ink-raised px-2 py-0.5 text-[11px] font-medium text-content"
               >
                 {tag}
               </li>
             ))}
           </ul>
 
-          <div className="mt-auto flex min-w-0 items-center justify-between gap-2 border-t border-white/10 pt-3 text-sm">
+          <div className="mt-auto flex min-w-0 items-center justify-between gap-2 border-t border-line pt-3 text-sm">
             <span className="inline-flex items-center gap-1.5 font-medium text-content">
               {labels.viewProject ?? "View project"}
               <ArrowUpRight

@@ -17,14 +17,13 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-hind)", "Hind", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
       },
       fontSize: {
         // Fluid display scale: hero name, section titles, eyebrow labels.
         display: [
           "clamp(2.75rem, 1.6rem + 5.6vw, 5.75rem)",
-          { lineHeight: "0.96", letterSpacing: "-0.025em" },
+          { lineHeight: "0.96", letterSpacing: "-0.02em" },
         ],
         title: [
           "clamp(2rem, 1.4rem + 2.6vw, 3.25rem)",
@@ -45,10 +44,11 @@ module.exports = {
           raised: "rgb(var(--ink-raised) / <alpha-value>)",
           overlay: "rgb(var(--ink-overlay) / <alpha-value>)",
         },
-        brand: {
-          pink: "rgb(var(--brand-pink) / <alpha-value>)",
-          blue: "rgb(var(--brand-blue) / <alpha-value>)",
+        sky: {
+          DEFAULT: "rgb(var(--sky) / <alpha-value>)",
+          strong: "rgb(var(--sky-strong) / <alpha-value>)",
         },
+        line: "rgb(var(--line) / <alpha-value>)",
         content: {
           DEFAULT: "rgb(var(--content) / <alpha-value>)",
           muted: "rgb(var(--content-muted) / <alpha-value>)",

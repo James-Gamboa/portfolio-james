@@ -1,5 +1,5 @@
 import "../globals.css";
-import { Hind, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import AppProviders from "@/components/providers/AppProviders";
 import BaseTemplate from "@/components/templates/BaseTemplate/page.jsx";
@@ -11,21 +11,13 @@ export const metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
 };
 
-const hind = Hind({
+// Single family for headings and body, self-hosted by next/font (no
+// third-party request at runtime).
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "600", "800"],
   display: "swap",
-  variable: "--font-hind",
-});
-
-// Display serif echoes the serif JG monogram; used for the name and section
-// titles only. Self-hosted by next/font (no third-party request at runtime).
-const display = Instrument_Serif({
-  subsets: ["latin", "latin-ext"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-  variable: "--font-display",
+  variable: "--font-jakarta",
 });
 
 // Only the supported locales exist; anything else is a 404.
@@ -36,7 +28,7 @@ export async function generateStaticParams() {
 }
 
 export const viewport = {
-  themeColor: "#07070b",
+  themeColor: "#0a0f1c",
   colorScheme: "dark",
 };
 
@@ -48,7 +40,7 @@ export default async function LangLayout({ children, params }) {
   return (
     <html
       lang={lang}
-      className={`dark ${hind.variable} ${display.variable}`}
+      className={`dark ${jakarta.variable}`}
       style={{ colorScheme: "dark" }}
       suppressHydrationWarning
     >

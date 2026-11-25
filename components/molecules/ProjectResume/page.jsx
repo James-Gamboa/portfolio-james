@@ -22,22 +22,22 @@ const ProjectResume = ({
   const techItems = parseTechnologies(technologies);
 
   return (
-    <article className="mt-6 border-l-2 border-white/20 pl-4 tablet:pl-5">
+    <article className="mt-6 border-l-2 border-line pl-4 tablet:pl-5">
       <div className="flex w-full min-w-0 flex-col gap-4 tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-6">
         <div className="w-full shrink-0 tablet:w-[34%] tablet:max-w-[220px]">
-          <p className="text-sm font-medium text-white/90">{dates}</p>
-          <p className="mt-0.5 text-xs uppercase tracking-wide text-white/50">
+          <p className="text-sm font-medium text-content">{dates}</p>
+          <p className="mt-0.5 text-xs uppercase tracking-wide text-content-subtle">
             {type}
           </p>
         </div>
 
         <div className="min-w-0 w-full flex-1 space-y-3">
-          <h3 className="text-base font-bold leading-snug text-white laptop:text-lg">
+          <h3 className="text-base font-semibold leading-snug text-white laptop:text-lg">
             {position}
           </h3>
 
           {summary ? (
-            <p className="text-sm leading-relaxed text-white/70">{summary}</p>
+            <p className="text-sm leading-relaxed text-content-muted">{summary}</p>
           ) : null}
 
           {techItems.length > 0 ? (
@@ -59,7 +59,7 @@ const ProjectResume = ({
               {bulletsLocal.map((bullet, index) => (
                 <li
                   key={index}
-                  className="relative pl-4 text-sm leading-relaxed text-white/75 before:absolute before:left-0 before:top-[0.55rem] before:h-1 before:w-1 before:rounded-full before:bg-white/40"
+                  className="relative pl-4 text-sm leading-relaxed text-content-muted before:absolute before:left-0 before:top-[0.55rem] before:h-1 before:w-1 before:rounded-full before:bg-sky"
                 >
                   {bullet}
                 </li>
@@ -69,7 +69,7 @@ const ProjectResume = ({
 
           {featuredProjects && featuredProjects.length > 0 ? (
             <div className="space-y-3 pt-1">
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-white/80">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-content">
                 {featuredProjectsLabel}
               </h4>
               <div className="grid grid-cols-1 gap-2 tablet:grid-cols-2">

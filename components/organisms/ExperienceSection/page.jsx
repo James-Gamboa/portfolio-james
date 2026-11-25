@@ -27,7 +27,7 @@ const ExperienceSection = ({ lang, dict, resume }) => {
         {/* Timeline rail */}
         <span
           aria-hidden
-          className="absolute bottom-2 left-[7px] top-2 w-px bg-gradient-to-b from-brand-pink/70 via-white/15 to-transparent laptop:left-[calc(25%-5px)]"
+          className="absolute bottom-2 left-[7px] top-2 w-px bg-gradient-to-b from-sky/70 via-line to-transparent laptop:left-[calc(25%-5px)]"
         />
         {timeline.map((item, index) => (
           <li
@@ -38,7 +38,7 @@ const ExperienceSection = ({ lang, dict, resume }) => {
               aria-hidden
               className={`absolute left-0 top-1.5 h-[15px] w-[15px] rounded-full border-2 border-ink laptop:left-[calc(25%-8px)] ${
                 index === 0
-                  ? "bg-brand-gradient shadow-[0_0_18px_rgb(var(--brand-pink)/0.7)]"
+                  ? "bg-sky shadow-[0_0_14px_rgb(var(--sky)/0.5)]"
                   : "bg-content-subtle"
               }`}
             />
@@ -46,7 +46,7 @@ const ExperienceSection = ({ lang, dict, resume }) => {
               {item.dates}
             </p>
             <div className="mt-2 laptop:col-span-9 laptop:mt-0 laptop:pl-6">
-              <h3 className="font-display text-2xl text-content tablet:text-3xl">
+              <h3 className="font-semibold text-2xl text-content tablet:text-3xl">
                 {item.role}
               </h3>
               <p className="mt-1 text-base font-medium text-content-muted">
@@ -56,7 +56,7 @@ const ExperienceSection = ({ lang, dict, resume }) => {
                 {item.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="relative pl-5 text-base leading-relaxed text-content-muted before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-3 before:bg-brand-pink"
+                    className="relative pl-5 text-base leading-relaxed text-content-muted before:absolute before:left-0 before:top-[0.7em] before:h-px before:w-3 before:bg-sky"
                   >
                     {bullet}
                   </li>
@@ -82,7 +82,7 @@ const ExperienceSection = ({ lang, dict, resume }) => {
 
       <Link
         href={`/${lang}/${resumePath}`}
-        className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-5 text-base font-medium text-content transition-colors hover:border-white/45 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/70"
+        className="mt-10 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-5 text-base font-medium text-content transition-colors hover:border-sky/50 hover:bg-sky/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky"
       >
         {experience.fullResume}
         <ArrowRight className="h-4 w-4" aria-hidden />

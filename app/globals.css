@@ -3,26 +3,22 @@
 @tailwind utilities;
 
 * {
-  font-family: var(--font-hind), "Hind", system-ui, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
 }
 
-/* Brand tokens. Palette is a refined near-black with the pink-to-blue
-   gradient from the OG image as the only accent. Contrast on --ink:
-   content 17:1, content-muted 9:1, content-subtle 6:1 (all WCAG AA). */
+/* Brand tokens. Navy surfaces with a single sky-blue accent. Contrast on
+   --ink (#0a0f1c): content 15:1, content-muted 7.7:1, content-subtle 6.9:1,
+   sky 9.3:1; dark text on sky-strong buttons 7:1 (all WCAG AA). */
 :root {
-  --ink: 7 7 11;
-  --ink-raised: 14 14 21;
-  --ink-overlay: 22 22 32;
-  --content: 244 244 247;
-  --content-muted: 178 178 193;
-  --content-subtle: 140 140 158;
-  --brand-pink: 248 107 223;
-  --brand-blue: 107 107 248;
-  --brand-gradient: linear-gradient(
-    120deg,
-    rgb(var(--brand-pink)) 0%,
-    rgb(var(--brand-blue)) 100%
-  );
+  --ink: 10 15 28;
+  --ink-raised: 15 23 42;
+  --ink-overlay: 17 26 46;
+  --line: 31 42 68;
+  --content: 229 231 235;
+  --content-muted: 156 163 175;
+  --content-subtle: 147 163 192;
+  --sky: 56 189 248;
+  --sky-strong: 14 165 233;
 }
 
 body {
@@ -30,63 +26,41 @@ body {
 }
 
 @layer components {
-  /* Gradient text: headline accent only. */
-  .text-gradient {
-    background-image: var(--brand-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    /* Room for italic overhang so background-clip does not cut the last glyph. */
-    padding-right: 0.15em;
-    margin-right: -0.15em;
-  }
-
-  .bg-brand-gradient {
-    background-image: var(--brand-gradient);
-  }
-
-  /* Section marker: short gradient rule + uppercase label. */
+  /* Section marker: short sky rule + uppercase label. */
   .eyebrow {
-    @apply inline-flex items-center gap-3 text-eyebrow font-medium uppercase text-content-muted;
+    @apply inline-flex items-center gap-3 text-eyebrow font-semibold uppercase text-sky;
   }
   .eyebrow::before {
     content: "";
     height: 2px;
     width: 1.75rem;
     border-radius: 9999px;
-    background-image: var(--brand-gradient);
+    background-color: rgb(var(--sky));
   }
 
   .section-title {
-    @apply font-display text-title font-normal text-content;
+    @apply text-title font-extrabold text-content;
   }
 
-  /* Page backdrop: brand glows top-left/right and a dot grid fading out. */
+  /* Page backdrop: one subtle blue glow and a dot grid fading out. */
   .page-aurora {
     position: absolute;
     inset: 0 0 auto 0;
     z-index: -10;
     height: 56rem;
     pointer-events: none;
-    background:
-      radial-gradient(
-        42rem 26rem at 12% -4%,
-        rgb(var(--brand-pink) / 0.17),
-        transparent 70%
-      ),
-      radial-gradient(
-        46rem 30rem at 92% 6%,
-        rgb(var(--brand-blue) / 0.2),
-        transparent 70%
-      );
+    background: radial-gradient(
+      46rem 30rem at 85% -6%,
+      rgb(var(--sky) / 0.1),
+      transparent 70%
+    );
   }
   .page-aurora::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-      rgb(255 255 255 / 0.08) 1px,
+      rgb(147 163 192 / 0.1) 1px,
       transparent 1px
     );
     background-size: 26px 26px;
@@ -96,7 +70,7 @@ body {
 
   /* Facts strip dividers: 2x2-ish on mobile, one row on laptop. */
   .fact {
-    border-color: rgb(255 255 255 / 0.1);
+    border-color: rgb(var(--line));
   }
   .fact + .fact {
     border-top-width: 1px;
@@ -114,7 +88,7 @@ body {
 
   /* Hairline panel used by cards across the page. */
   .panel {
-    @apply rounded-2xl border border-white/10 bg-ink-raised/70;
+    @apply rounded-2xl border border-line bg-ink-raised;
   }
 }
 
@@ -176,42 +150,6 @@ html.lenis body {
 }
 
 
-.gradient-shadow:hover::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
-  transform: translate3d(0px, 20px, 0) scale(0.95);
-  filter: blur(20px);
-  opacity: var(0.7);
-  transition: opacity 0.3s;
-  border-radius: inherit;
-}
-
-/* 
-* Prevents issues when the parent creates a 
-* stacking context. (For example, using the transform
-* property )
-*/
-.gradient-shadow:hover::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: inherit;
-  border-radius: inherit;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -ms-border-radius: inherit;
-  -o-border-radius: inherit;
-}
 /* 
 ---break---
 */
@@ -244,11 +182,11 @@ html.lenis body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 22% 3.5%;
-    --foreground: 240 20% 97%;
-    --card: 240 22% 3.5%;
+    --background: 222 47% 7.5%;
+    --foreground: 220 14% 91%;
+    --card: 222 47% 7.5%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 222 47% 11%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;

@@ -16,7 +16,7 @@ const PracticeCard = ({ project, index = 0, lang = "en", labels = {} }) => {
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-full items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/70"
+        className="flex h-full items-center gap-3 rounded-xl border border-line bg-ink-raised p-2.5 transition-colors duration-200 hover:border-sky/50 hover:bg-sky/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky"
       >
         <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-lg bg-ink-overlay">
           <Image

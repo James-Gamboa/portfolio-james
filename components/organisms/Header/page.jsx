@@ -11,7 +11,7 @@ import { cvPath } from "@/lib/cv";
 import { buildDesktopNavLinks } from "@/lib/nav";
 
 const navLinkClass =
-  "rounded-full px-3 py-2 text-sm font-medium text-content-muted transition-colors hover:bg-white/[0.06] hover:text-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60";
+  "rounded-full px-3 py-2 text-sm font-medium text-content-muted transition-colors hover:bg-sky/10 hover:text-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky";
 
 /**
  * Sticky floating header: JG monogram + name, section links (desktop), a
@@ -39,17 +39,17 @@ const Header = ({ dict, data }) => {
   const name = data.resume?.name || "James Guevara Gamboa";
 
   return (
-    <header className="sticky top-3 z-40 mt-3 flex items-center justify-between gap-2 rounded-full border border-white/10 bg-ink/75 py-1.5 pl-2 pr-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl tablet:pl-3 laptop:mt-5 laptop:pr-2">
+    <header className="sticky top-3 z-40 mt-3 flex items-center justify-between gap-2 rounded-full border border-line bg-ink/75 py-1.5 pl-2 pr-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl tablet:pl-3 laptop:mt-5 laptop:pr-2">
       <Link
         href={`/${currentLang}`}
-        className="group flex min-w-0 items-center gap-2.5 rounded-full pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+        className="group flex min-w-0 items-center gap-2.5 rounded-full pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky"
       >
         <span className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center">
           <span
             aria-hidden
-            className="absolute inset-0 rounded-full bg-brand-gradient opacity-40 blur-md transition-opacity duration-300 group-hover:opacity-70"
+            className="absolute inset-0 rounded-full bg-sky opacity-20 blur-md transition-opacity duration-300 group-hover:opacity-40"
           />
-          <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-ink">
+          <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-ink">
             <Image
               src="/jg-logo.png"
               alt=""

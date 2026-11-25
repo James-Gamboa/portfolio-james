@@ -31,14 +31,14 @@ const Footer = ({ lang = "en", dict, data }) => {
   const address = email?.replace(/^mailto:/, "");
 
   return (
-    <div className="relative mt-24 overflow-hidden rounded-3xl border border-white/10 bg-ink-raised p-6 tablet:p-10 laptop:mt-36 laptop:p-14">
+    <div className="relative mt-24 overflow-hidden rounded-3xl border border-line bg-ink-raised p-6 tablet:p-10 laptop:mt-36 laptop:p-14">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand-pink/25 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sky/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-brand-blue/25 blur-3xl"
+        className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-sky/10 blur-3xl"
       />
 
       <div className="relative">
@@ -49,7 +49,7 @@ const Footer = ({ lang = "en", dict, data }) => {
         {email && address ? (
           <a
             href={email}
-            className="mt-6 inline-block break-all font-display text-2xl text-content underline decoration-brand-pink/60 decoration-1 underline-offset-8 transition-colors hover:decoration-brand-pink tablet:text-4xl"
+            className="mt-6 inline-block break-all font-semibold text-2xl text-content underline decoration-sky/60 decoration-1 underline-offset-8 transition-colors hover:decoration-sky tablet:text-4xl"
           >
             {address}
           </a>

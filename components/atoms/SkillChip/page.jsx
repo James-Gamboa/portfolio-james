@@ -1,12 +1,12 @@
 import { cn } from "@/components/lib/utils";
 
 const variantClasses = {
-  // Core stack: soft brand tint.
+  // Core stack: soft sky tint.
   primary:
-    "rounded-full border border-white/20 bg-gradient-to-br from-brand-pink/15 to-brand-blue/15 px-3.5 py-1.5 text-sm font-medium text-content",
+    "rounded-full border border-sky/40 bg-sky/10 px-3.5 py-1.5 text-sm font-medium text-content",
   // Supporting skills and technologies: quiet outline chip.
   secondary:
-    "rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-normal text-content-muted",
+    "rounded-full border border-line bg-ink-raised px-3 py-1 text-xs font-normal text-content-muted",
 };
 
 const SkillChip = ({

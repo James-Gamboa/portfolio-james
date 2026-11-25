@@ -6,8 +6,8 @@ export default function manifest() {
       "Portfolio of James Guevara Gamboa, Frontend & Full Stack Developer based in Heredia, Costa Rica.",
     start_url: "/en",
     display: "standalone",
-    background_color: "#07070b",
-    theme_color: "#07070b",
+    background_color: "#0a0f1c",
+    theme_color: "#0a0f1c",
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { src: "/icon-512.png", sizes: "512x512", type: "image/png" },

@@ -5,7 +5,7 @@ import { splitCertification } from "@/utils/timeline";
 const meta = (...parts) => parts.filter(Boolean).join(" · ");
 
 const EducationEntry = ({ name, org, dates }) => (
-  <li className="relative border-l border-white/15 pb-6 pl-5 last:pb-0">
+  <li className="relative border-l border-line pb-6 pl-5 last:pb-0">
     <span
       aria-hidden
       className="absolute -left-[5px] top-2 h-2 w-2 rounded-full bg-content-subtle"
@@ -20,10 +20,10 @@ const EducationEntry = ({ name, org, dates }) => (
 
 /** Anthropic Academy: highlighted card with its courses as chips. */
 const HighlightedCertification = ({ cert }) => (
-  <li className="relative overflow-hidden rounded-2xl bg-brand-gradient p-px">
+  <li className="relative overflow-hidden rounded-2xl bg-sky/60 p-px">
     <div className="rounded-[calc(1rem-1px)] bg-ink-raised p-5 tablet:p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <p className="font-display text-2xl text-content tablet:text-3xl">
+        <p className="font-semibold text-2xl text-content tablet:text-3xl">
           {cert.title}
         </p>
         <p className="text-sm font-medium uppercase tracking-[0.12em] text-content-muted">
@@ -44,7 +44,7 @@ const HighlightedCertification = ({ cert }) => (
 );
 
 const CertificationRow = ({ cert }) => (
-  <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 border-b border-white/10 py-3 last:border-b-0">
+  <li className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 border-b border-line py-3 last:border-b-0">
     <div className="min-w-0">
       <p className="text-base font-medium text-content">{cert.title}</p>
       {cert.org ? (
@@ -82,7 +82,7 @@ const CredentialsSection = ({ dict }) => {
           </ul>
 
           <h3 className="eyebrow mt-12">{credentials.achievementTitle}</h3>
-          <p className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-base leading-relaxed text-content-muted">
+          <p className="mt-5 rounded-2xl border border-line bg-ink-raised p-5 text-base leading-relaxed text-content-muted">
             {credentials.achievement}
           </p>
         </div>

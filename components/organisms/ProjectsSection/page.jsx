@@ -79,7 +79,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
       </div>
 
       {other.length > 0 && (
-        <div className="mt-16 border-t border-white/10 pt-10">
+        <div className="mt-16 border-t border-line pt-10">
           <h3 className="text-lg font-semibold text-content-muted laptop:text-xl">
             {groupDict.otherTitle}
           </h3>

@@ -32,9 +32,9 @@ const Hero = ({ lang, dict, data }) => {
       <div
         data-hero-line=""
         style={{ "--hero-i": 0 }}
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-3 pr-4 text-sm text-content-muted"
+        className="inline-flex items-center gap-2 rounded-full border border-line bg-ink-raised py-1.5 pl-3 pr-4 text-sm text-content-muted"
       >
-        <MapPin className="h-4 w-4 text-brand-pink" aria-hidden />
+        <MapPin className="h-4 w-4 text-sky" aria-hidden />
         {hero.location}
       </div>
 
@@ -51,7 +51,7 @@ const Hero = ({ lang, dict, data }) => {
         <span
           data-hero-line=""
           style={{ "--hero-i": 2 }}
-          className="mt-1 block font-display text-display text-content"
+          className="mt-1 block font-extrabold text-display text-content"
         >
           {name}
         </span>
@@ -59,9 +59,9 @@ const Hero = ({ lang, dict, data }) => {
           <span
             data-hero-line=""
             style={{ "--hero-i": 3 }}
-            className="mt-3 block font-display text-3xl italic tablet:text-5xl"
+            className="mt-3 block font-semibold text-3xl text-sky tablet:text-5xl"
           >
-            <span className="text-gradient">{role}</span>
+            <span className="text-sky">{role}</span>
           </span>
         ) : null}
       </h1>
@@ -120,7 +120,7 @@ const Hero = ({ lang, dict, data }) => {
       <dl
         data-hero-line=""
         style={{ "--hero-i": 5 }}
-        className="mt-12 grid grid-cols-2 overflow-hidden rounded-2xl border border-white/10 bg-ink-raised/60 backdrop-blur-sm laptop:mt-16 laptop:grid-cols-12"
+        className="mt-12 grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-ink-raised/60 backdrop-blur-sm laptop:mt-16 laptop:grid-cols-12"
       >
         {facts.map((fact) => {
           const isNumeric = fact.key === "clients" || fact.key === "since";
@@ -135,7 +135,7 @@ const Hero = ({ lang, dict, data }) => {
               <dd
                 className={
                   isNumeric
-                    ? `font-display text-4xl leading-none tablet:text-5xl ${fact.key === "clients" ? "text-gradient" : "text-content"}`
+                    ? `font-extrabold text-4xl leading-none tablet:text-5xl ${fact.key === "clients" ? "text-sky" : "text-content"}`
                     : "text-base font-medium text-content tablet:text-lg"
                 }
               >
