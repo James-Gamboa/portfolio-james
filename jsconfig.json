@@ -6,8 +6,6 @@
       "@/styles/*": ["styles/*"],
       "@/data/*": ["lib/utils/data/*"],
       "@/utils/*": ["lib/utils/*"],
-      "@/animations/*": ["animations/*"],
-      "@/api/*": ["lib/api/*"],
       "@/lib/*": ["lib/*"],
       "@/hooks/*": ["hooks/*"]
     }
