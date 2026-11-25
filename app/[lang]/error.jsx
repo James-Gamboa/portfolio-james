@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import "./globals.css";
 import { useEffect, useState } from "react";
 
 const SimpleHeader = ({ lang }) => (
   <div className="flex items-center justify-between p-2 laptop:p-0 mt-5">
-    <Link href={`/${lang}`}>
-      <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
-        James Guevara.
-      </h1>
+    <Link
+      href={`/${lang}`}
+      className="font-medium p-2 laptop:p-0 link cursor-pointer"
+    >
+      James Guevara.
     </Link>
   </div>
 );
@@ -38,6 +38,10 @@ export default function Error({ error, reset }) {
 
     loadDictionary();
   }, []);
+
+  if (!dict) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-gray-900">

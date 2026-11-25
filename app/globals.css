@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import "../styles/markdown.css";
 
 * {
-  font-family: "Hind";
+  font-family: var(--font-hind), "Hind", system-ui, sans-serif;
 }
 
 body {

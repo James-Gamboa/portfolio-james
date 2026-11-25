@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import "./globals.css";
 import { useEffect, useState } from "react";
 
 const SimpleHeader = ({ lang, dict }) => (
   <div className="flex items-center justify-between p-2 laptop:p-0 mt-5">
-    <Link href={`/${lang}`}>
-      <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
-        {dict?.hero?.title || "James Guevara"}
-      </h1>
+    <Link
+      href={`/${lang}`}
+      className="font-medium p-2 laptop:p-0 link cursor-pointer"
+    >
+      {dict?.hero?.title || "James Guevara"}
     </Link>
   </div>
 );
