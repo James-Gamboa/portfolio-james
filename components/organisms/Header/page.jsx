@@ -1,14 +1,26 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/atoms/Button/page.jsx";
+import { Download } from "lucide-react";
+import CtaLink from "@/components/atoms/CtaLink/page.jsx";
 import HamburgerMenu from "@/components/atoms/HamburgerMenu/HamburgerMenu";
 import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
+import { EVENTS, trackEvent } from "@/lib/analytics";
+import { cvPath } from "@/lib/cv";
+import { buildDesktopNavLinks } from "@/lib/nav";
 
+const navLinkClass =
+  "rounded-full px-3 py-2 text-sm font-medium text-content-muted transition-colors hover:bg-white/[0.06] hover:text-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60";
+
+/**
+ * Sticky floating header: JG monogram + name, section links (desktop), a
+ * persistent CV button and the mobile menu. One landmark for every viewport.
+ */
 const Header = ({ dict, data }) => {
   const pathname = usePathname();
 
-  const currentLang = pathname.split("/")[1] || "en";
+  const currentLang = pathname.split("/")[1] === "es" ? "es" : "en";
 
   if (!dict || !data) {
     return null;
@@ -18,55 +30,83 @@ const Header = ({ dict, data }) => {
   const email =
     data.socials?.find((social) => social.title === "Email")?.link ??
     "mailto:jjguevarag@gmail.com";
+  const links = buildDesktopNavLinks({
+    lang: currentLang,
+    dict,
+    email,
+    showResume,
+  });
+  const name = data.name || "James Guevara Gamboa";
 
   return (
-    <>
-      <header className="flex items-center justify-between p-2 laptop:p-0 laptop:hidden mt-5 gap-2">
-        <Link
-          href={`/${currentLang}`}
-          className="font-medium p-2 laptop:p-0 link cursor-pointer"
-        >
-          {dict.portfolio.title}
-        </Link>
-        <div className="flex items-center gap-2">
-          <LanguageSelector />
-          <HamburgerMenu dict={dict} lang={currentLang} email={email} />
-        </div>
-      </header>
+    <header className="sticky top-3 z-40 mt-3 flex items-center justify-between gap-2 rounded-full border border-white/10 bg-ink/75 py-1.5 pl-2 pr-1.5 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl tablet:pl-3 laptop:mt-5 laptop:pr-2">
+      <Link
+        href={`/${currentLang}`}
+        className="group flex min-w-0 items-center gap-2.5 rounded-full pr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/60"
+      >
+        <span className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center">
+          <span
+            aria-hidden
+            className="absolute inset-0 rounded-full bg-brand-gradient opacity-40 blur-md transition-opacity duration-300 group-hover:opacity-70"
+          />
+          <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-ink">
+            <Image
+              src="/jg-logo.png"
+              alt=""
+              width={26}
+              height={26}
+              className="h-[26px] w-[26px]"
+            />
+          </span>
+        </span>
+        <span className="truncate text-sm font-medium tracking-tight text-content tablet:text-base">
+          {name}
+        </span>
+      </Link>
 
-      <header className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 laptop:flex">
-        <Link
-          href={`/${currentLang}`}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-        >
-          {dict.portfolio.title}
-        </Link>
-        <div className="flex items-center gap-4">
-          <nav className="flex">
-            <Button href={`/${currentLang}#${dict?.sections?.work || "work"}`}>
-              {dict?.nav?.projects || "Projects"}
-            </Button>
-            <Button
-              href={`/${currentLang}#${dict?.sections?.about || "about"}`}
+      <nav
+        aria-label={dict.portfolio?.title || "Primary"}
+        className="hidden items-center gap-1 laptop:flex"
+      >
+        {links.map((link) =>
+          link.isMail ? (
+            <a
+              key={link.href}
+              href={link.href}
+              className={navLinkClass}
+              onClick={() => trackEvent(EVENTS.contact)}
             >
-              {dict?.nav?.about || "About"}
-            </Button>
-            {showResume && (
-              <Button
-                href={`/${currentLang}/${currentLang === "es" ? "curriculum-vitae" : "resume"}`}
-                classes="!ml-1"
-              >
-                {dict?.nav?.resume || "Resume"}
-              </Button>
-            )}
-            <Button href={email} trackEvent="contact_click">
-              {dict?.nav?.contact || "Contact"}
-            </Button>
-          </nav>
+              {link.label}
+            </a>
+          ) : (
+            <Link key={link.href} href={link.href} className={navLinkClass}>
+              {link.label}
+            </Link>
+          ),
+        )}
+      </nav>
+
+      <div className="flex shrink-0 items-center gap-1.5 tablet:gap-2">
+        <div className="hidden tablet:block">
           <LanguageSelector />
         </div>
-      </header>
-    </>
+        <CtaLink
+          href={cvPath(currentLang)}
+          variant="brand"
+          download
+          event={EVENTS.cvDownload}
+          eventProps={{ locale: currentLang, placement: "header" }}
+          className="min-h-10 px-4 py-2 text-sm tablet:text-sm"
+        >
+          <Download className="hidden h-4 w-4 tablet:block" aria-hidden />
+          <span className="tablet:hidden">{dict.nav?.cv || "CV"}</span>
+          <span className="hidden tablet:inline">
+            {dict.home?.hero?.downloadCv || "Download CV"}
+          </span>
+        </CtaLink>
+        <HamburgerMenu dict={dict} lang={currentLang} email={email} />
+      </div>
+    </header>
   );
 };
 

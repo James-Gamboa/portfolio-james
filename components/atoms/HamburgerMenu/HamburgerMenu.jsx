@@ -114,10 +114,10 @@ const HamburgerMenu = ({ dict, lang, email }) => {
       <button
         aria-label="Open navigation menu"
         tabIndex={0}
-        className="laptop:hidden focus:outline-none rounded-full p-2 bg-black/80 text-white"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white laptop:hidden"
         onClick={() => setIsOpen(true)}
       >
-        <Menu className="w-7 h-7" aria-hidden="true" />
+        <Menu className="h-6 w-6" aria-hidden="true" />
       </button>
 
       {isOpen &&
@@ -132,7 +132,10 @@ const HamburgerMenu = ({ dict, lang, email }) => {
               if (event.key === "Escape") setIsOpen(false);
             }}
           >
-            <div aria-hidden className="absolute inset-0 bg-black" />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-ink bg-[radial-gradient(ellipse_at_top,rgb(var(--brand-pink)/0.16),transparent_55%),radial-gradient(ellipse_at_bottom,rgb(var(--brand-blue)/0.16),transparent_55%)]"
+            />
             <div
               data-menu-panel=""
               className="relative z-10 flex h-full w-full flex-col items-center justify-center"
@@ -150,7 +153,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
               <nav
                 role="menu"
                 aria-label="Mobile navigation"
-                className="flex flex-col gap-8 items-center"
+                className="flex flex-col items-center gap-6"
               >
                 {navLinks.map((link, idx) => {
                   const active = isActive(link.href);
@@ -159,7 +162,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="text-3xl font-extrabold transition-colors outline-none px-4 py-1 text-white"
+                        className="font-display text-5xl transition-colors outline-none px-4 py-1 text-white"
                         tabIndex={0}
                         role="menuitem"
                         ref={idx === 0 ? firstLinkRef : undefined}
@@ -173,7 +176,7 @@ const HamburgerMenu = ({ dict, lang, email }) => {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`text-3xl font-extrabold transition-colors outline-none px-4 py-1 ${active ? "bg-white text-black dark:bg-white dark:text-black rounded shadow-lg" : "text-white"}`}
+                      className={`font-display text-5xl transition-colors outline-none px-4 py-1 ${active ? "text-gradient" : "text-white"}`}
                       tabIndex={0}
                       role="menuitem"
                       aria-current={active ? "page" : undefined}
