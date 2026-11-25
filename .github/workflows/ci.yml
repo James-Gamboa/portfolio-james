@@ -50,7 +50,16 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('app/**', 'components/**', 'hooks/**', 'lib/**', 'public/**', 'middleware.js', 'next.config.js', 'tailwind.config.js', 'postcss.config.js') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
-      - run: pnpm build
+      - name: Build
+        # next/font/google downloads fonts at build time; a transient Google Fonts
+        # response fails with "next/font ... Cannot read properties of null".
+        # Retry once after a pause; a real build error fails both attempts.
+        run: |
+          pnpm build || {
+            echo "::warning::Build failed; retrying once in 20s (transient next/font fetch?)"
+            sleep 20
+            pnpm build
+          }
       - name: Forbidden files gate (public/ and client build output)
         run: bash scripts/check-forbidden-files.sh public .next/static
 
