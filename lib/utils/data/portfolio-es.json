@@ -54,7 +54,7 @@
       "title": "Novus ERP",
       "description": "Desarrollé el sitio web bilingüe de Novus ERP de Codisa, que presenta soluciones ERP para optimizar procesos y apoyar el crecimiento empresarial. Incluye carrusel hero, secciones de soluciones y nosotros, blog, formularios de contacto y video de marca integrado. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/novus-erp.webp",
-      "url": "https://novus-2025-011de5fce714.herokuapp.com/es"
+      "url": "https://www.novussoftware.la/es"
     },
     {
       "id": "6",
