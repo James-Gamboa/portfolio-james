@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Button from "@/components/atoms/Button/page.jsx";
@@ -15,7 +15,6 @@ const Header = ({
   dict,
   data,
 }) => {
-  const router = useRouter();
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -24,20 +23,6 @@ const Header = ({
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (isMounted && pathname) {
-      const segments = pathname.split("/");
-      const currentLangFromPath = segments[1];
-      const pageRoute = segments[2];
-
-      if (currentLangFromPath === "en" && pageRoute === "curriculum-vitae") {
-        router.replace("/en/resume");
-      } else if (currentLangFromPath === "es" && pageRoute === "resume") {
-        router.replace("/es/curriculum-vitae");
-      }
-    }
-  }, [pathname, isMounted, router]);
 
   if (!dict || !data) {
     return null;

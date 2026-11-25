@@ -19,14 +19,10 @@ function getLocale(request) {
 export function middleware(request) {
   const { pathname } = request.nextUrl;
 
-  if (
-    pathname === "/favicon.ico" ||
-    pathname === "/robots.txt" ||
-    pathname === "/sitemap.xml" ||
-    pathname.match(
-      /\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|json)$/i,
-    )
-  ) {
+  // Root files and assets (robots.txt, sitemap.xml, llms.txt, manifest, icons,
+  // images, fonts...) are served as-is: anything whose last segment has an
+  // extension is never locale-redirected.
+  if (/\.[a-z0-9]+$/i.test(pathname)) {
     return NextResponse.next();
   }
 
@@ -44,13 +40,11 @@ export function middleware(request) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
+     * Match all request paths except:
      * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public files with extensions
+     * - _next/static and _next/image (framework assets)
+     * - any path whose last segment has a file extension
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|json)).*)",
+    "/((?!api|_next/static|_next/image|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };
