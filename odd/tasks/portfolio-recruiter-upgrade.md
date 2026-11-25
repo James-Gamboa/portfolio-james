@@ -46,7 +46,7 @@ SEO
 - [x] S2 sitemap.xml with canonical 200 indexable URLs, both locales, hreflang alternates.
 - [x] S3 Canonical per page, no chains/contradictions; no leftover noindex.
 - [x] S4 hreflang es / en + x-default.
-- [ ] S5 HTTPS + single host verified; no internal 404 or redirect chains.
+- [x] S5 HTTPS + single host verified; no internal 404 or redirect chains.
 - [x] S6 SSR/SSG: served HTML contains content and links.
 - [x] S7 Clean architecture: click depth <= 3, clean URLs.
 
@@ -85,11 +85,11 @@ Security
 - [x] X3 Run the scripts and record results; fix high findings.
 
 Code quality
-- [ ] Q1 Senior code-quality review report (bugs, duplication, complexity, tests, design, debt) with file:line, severity and top 5 actions.
+- [x] Q1 Senior code-quality review report (bugs, duplication, complexity, tests, design, debt) with file:line, severity and top 5 actions.
 - [ ] Q2 Apply the top quick wins from Q1.
 
 Verification
-- [ ] V1 Lighthouse >= 90 in all four categories (mobile + desktop, /en + /es) on a production build/preview.
+- [x] V1 Lighthouse >= 90 in all four categories (mobile + desktop, /en + /es) on a production build/preview.
 - [ ] V2 Rich Results / Schema validation, sitemap and robots checks.
 
 ## Checks
@@ -113,4 +113,10 @@ Verification
 - M2 (owner notes): segment AI referrals in analytics by referrer hosts chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com.
 - M4 (owner actions after deploy): enable Web Analytics in Vercel; verify the site in Google Search Console and Bing Webmaster Tools and submit https://james-gamboa.vercel.app/sitemap.xml.
 - Q1 code-quality review running (read-only, report to docs/code-quality-review.md).
+- 2026-11-25: PR #16 merged and deployed (a2605aa). Live checks: `/` 308 -> /en; robots.txt 200 (AI bots listed) and sitemap.xml 200; llms.txt, manifest, OG image and both CV PDFs 200; /en/edit 404; resume redirects 308; /en and /es: correct html lang, 1 h1, canonical, 3 hreflang links, og:image, JSON-LD graph, no postimg; CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy and X-Content-Type-Options present.
+- V1 live Lighthouse (performance/accessibility/best-practices/seo): en mobile 100/100/100/100 (LCP 1.2 s), en desktop 100/100/100/100 (0.3 s), es mobile 100/100/100/100 (1.1 s), es desktop 100/100/100/100 (0.3 s). CLS 0.
+- Node pinned to 22.23.5 (Nov 11 2026 security release) in this repo and hermes-telegram-apply; installed as the Volta default.
+- Owner feedback fixed: lone last project card centered instead of empty grid gaps (tablet and desktop).
+- Q1 report: docs/code-quality-review.md (34 findings: 4 high, 20 medium, 10 low). Q2 (apply top 5) pending owner go-ahead.
+- V2 pending owner: Rich Results Test / Schema Markup Validator need a browser session; Search Console and Bing verification (M4).
 - TDD: not applicable (no test runner in this project); checks are build, HTTP checks on a production server and Lighthouse.
