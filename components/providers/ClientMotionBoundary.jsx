@@ -2,22 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { MotionContext } from "@/components/providers/motionContext";
+import { scrollNative, smoothBehavior } from "@/lib/motion/scrollNative";
 
 const initialMotion = { reducedMotion: false, isReady: false };
 
 /** Native smooth scroll used until the animation engine has loaded. */
 const nativeScrollTo = (target, options = {}) => {
-  const element = target?.current ?? target;
-  if (typeof element === "number") {
-    window.scrollTo({ top: element, behavior: "smooth" });
-    return;
-  }
-  if (!(element instanceof Element)) return;
-  const top =
-    element.getBoundingClientRect().top +
-    window.scrollY +
-    (options.offset ?? 0);
-  window.scrollTo({ top, behavior: "smooth" });
+  scrollNative(target, {
+    offset: options.offset ?? 0,
+    behavior: smoothBehavior(),
+  });
 };
 
 /**
