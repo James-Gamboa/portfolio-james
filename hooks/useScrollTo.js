@@ -1,6 +1,6 @@
 "use client";
 
-import { useMotion } from "@/components/providers/MotionProvider";
+import { useMotion } from "@/components/providers/motionContext";
 
 export const useScrollTo = () => {
   const { scrollTo, reducedMotion, isReady } = useMotion();

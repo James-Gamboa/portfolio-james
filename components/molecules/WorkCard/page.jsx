@@ -1,11 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { gsap, useGSAP } from "@/lib/motion/register-gsap";
-import { useMotion } from "@/components/providers/MotionProvider";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/components/lib/utils";
 import { getProjectMeta } from "@/lib/utils/getProjectMeta";
@@ -22,11 +19,6 @@ const WorkCard = ({
   tags: tagsProp,
   excerpt: excerptProp,
 }) => {
-  const cardRef = useRef(null);
-  const imageWrapRef = useRef(null);
-  const glowRef = useRef(null);
-  const { reducedMotion, isReady } = useMotion();
-
   const meta = getProjectMeta(
     {
       title: name,
@@ -46,55 +38,11 @@ const WorkCard = ({
     labels.imageAlt ?? "{name} website homepage screenshot"
   ).replace("{name}", name);
 
-  useGSAP(
-    () => {
-      if (
-        !isReady ||
-        reducedMotion ||
-        !cardRef.current ||
-        !imageWrapRef.current
-      ) {
-        return undefined;
-      }
-
-      const card = cardRef.current;
-      const imageWrap = imageWrapRef.current;
-      const glow = glowRef.current;
-
-      const handleEnter = () => {
-        gsap.to(card, { y: -6, duration: 0.4, ease: "power2.out" });
-        gsap.to(imageWrap, { scale: 1.05, duration: 0.55, ease: "power2.out" });
-        if (glow) {
-          gsap.to(glow, { opacity: 1, duration: 0.45, ease: "power2.out" });
-        }
-      };
-
-      const handleLeave = () => {
-        gsap.to(card, { y: 0, duration: 0.4, ease: "power2.out" });
-        gsap.to(imageWrap, { scale: 1, duration: 0.55, ease: "power2.out" });
-        if (glow) {
-          gsap.to(glow, { opacity: 0, duration: 0.35, ease: "power2.out" });
-        }
-      };
-
-      card.addEventListener("mouseenter", handleEnter);
-      card.addEventListener("mouseleave", handleLeave);
-
-      return () => {
-        card.removeEventListener("mouseenter", handleEnter);
-        card.removeEventListener("mouseleave", handleLeave);
-      };
-    },
-    { scope: cardRef, dependencies: [isReady, reducedMotion] },
-  );
-
   return (
     <article
-      ref={cardRef}
       data-reveal=""
       className={cn(
         "group relative h-full w-full min-w-0 max-w-full overflow-hidden",
-        !reducedMotion && "will-change-transform",
       )}
     >
       <Link
@@ -103,28 +51,25 @@ const WorkCard = ({
         rel="noopener noreferrer"
         tabIndex={0}
         className={cn(
-          "link flex h-full w-full min-w-0 max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-sm backdrop-blur-sm transition-colors duration-300",
+          "link flex h-full w-full min-w-0 max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-sm backdrop-blur-sm transition-[color,background-color,border-color,box-shadow,transform] duration-300 motion-safe:group-hover:-translate-y-1.5",
           "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40",
           "hover:border-white/20 hover:bg-white/[0.05]",
           meta.accent.ring,
         )}
       >
         <div
-          ref={glowRef}
           aria-hidden
           className={cn(
             "pointer-events-none absolute inset-0 z-0 bg-gradient-to-br opacity-0 transition-opacity duration-300",
             meta.accent.glow,
-            reducedMotion && "hidden",
+            "motion-reduce:hidden group-hover:opacity-100",
           )}
         />
 
         <div className="relative z-10 overflow-hidden">
           <div
-            ref={imageWrapRef}
             className={cn(
-              "relative aspect-[4/3] w-full overflow-hidden bg-zinc-900",
-              !reducedMotion && "will-change-transform",
+              "relative aspect-[4/3] w-full overflow-hidden bg-zinc-900 transition-transform duration-[550ms] ease-out motion-safe:group-hover:scale-105",
             )}
           >
             <Image
@@ -138,7 +83,6 @@ const WorkCard = ({
               className={cn(
                 "h-full w-full object-cover transition-transform duration-500 ease-out",
                 meta.imagePosition,
-                reducedMotion && "group-hover:scale-105",
               )}
             />
             <div
@@ -159,9 +103,9 @@ const WorkCard = ({
 
         <div className="relative z-10 flex min-w-0 flex-1 flex-col gap-4 p-4 mob:p-5">
           <div className="space-y-1.5">
-            <h3 className="text-lg font-semibold leading-snug tracking-tight text-white laptop:text-xl">
+            <h4 className="text-lg font-semibold leading-snug tracking-tight text-white laptop:text-xl">
               {name}
-            </h3>
+            </h4>
             <p className="text-sm leading-relaxed text-white/50 laptop:text-base">
               {description}
             </p>

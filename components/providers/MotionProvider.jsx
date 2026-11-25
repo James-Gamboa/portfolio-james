@@ -1,9 +1,7 @@
 "use client";
 
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
@@ -29,14 +27,6 @@ import {
   registerScrollPositionGetter,
 } from "@/lib/utils/localeScroll";
 
-const MotionContext = createContext({
-  scrollTo: () => {},
-  reducedMotion: false,
-  isReady: false,
-});
-
-export const useMotion = () => useContext(MotionContext);
-
 const resolveScrollTarget = (target) => {
   if (typeof target === "number") return target;
   if (target instanceof Element) return target;
@@ -45,7 +35,11 @@ const resolveScrollTarget = (target) => {
   return null;
 };
 
-const MotionProvider = ({ children }) => {
+/**
+ * Headless animation engine (GSAP + Lenis + ScrollTrigger). Renders nothing;
+ * ClientMotionBoundary mounts it lazily and receives its state via onChange.
+ */
+const MotionProvider = ({ onChange }) => {
   const pathname = usePathname();
   const reducedMotion = usePrefersReducedMotion();
   const lenisRef = useRef(null);
@@ -261,9 +255,11 @@ const MotionProvider = ({ children }) => {
     [scrollTo, reducedMotion, isReady],
   );
 
-  return (
-    <MotionContext.Provider value={value}>{children}</MotionContext.Provider>
-  );
+  useEffect(() => {
+    onChange?.(value);
+  }, [onChange, value]);
+
+  return null;
 };
 
 export default MotionProvider;
