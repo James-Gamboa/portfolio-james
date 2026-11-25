@@ -16,8 +16,8 @@ const ServiceCard = ({ name, description }) => {
         mounted && "hover:bg-slate-800"
       } hover:scale-105 link cursor-pointer`}
     >
-      <h1 className="text-3xl">{name ? name : "Heading"}</h1>
-      <p className="mt-5 opacity-40 text-xl">
+      <h3 className="text-3xl">{name ? name : "Heading"}</h3>
+      <p className="mt-5 opacity-60 text-xl">
         {description
           ? description
           : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}

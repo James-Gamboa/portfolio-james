@@ -36,6 +36,7 @@
     "explore": "Explorar",
     "viewCode": "Ver Código",
     "stackLabel": "Stack tecnológico",
+    "imageAlt": "Captura de la página de inicio de {name}",
     "statStack": "Stack principal",
     "statStackItems": "Next.js · TypeScript · Tailwind · CMS"
   },
@@ -67,10 +68,12 @@
     "spokenLanguages": "Idiomas",
     "certifications": "Certificaciones",
     "achievements": "Logros",
-    "featuredProjects": "Proyectos Destacados"
+    "featuredProjects": "Proyectos Destacados",
+    "downloadCv": "Descargar CV"
   },
   "footer": {
-    "contact": "Conversemos sobre proyectos"
+    "contact": "Conversemos sobre proyectos",
+    "lastUpdated": "Última actualización"
   },
   "common": {
     "loading": "Cargando...",
@@ -93,12 +96,12 @@
   },
   "metadata": {
     "home": {
-      "title": "Portafolio de James",
-      "description": "¡Bienvenido a mi portafolio! Explora los proyectos y trabajos que he realizado como desarrollador web. Descubre mi experiencia, habilidades y pasión por la programación."
+      "title": "James Guevara Gamboa | Desarrollador Frontend y Full Stack",
+      "description": "Desarrollador Frontend y Full Stack en Heredia, Costa Rica, disponible para trabajo remoto. Sitios con Next.js, React, TypeScript, Strapi, Shopify y WordPress."
     },
     "resume": {
-      "title": "Currículum - Portafolio de James",
-      "description": "Ver mi currículum profesional y experiencia como desarrollador web."
+      "title": "Currículum | James Guevara Gamboa, Desarrollador Full Stack",
+      "description": "CV de James Guevara Gamboa, desarrollador Frontend y Full Stack: experiencia en Next.js, React, TypeScript, Strapi y Shopify, estudios y certificaciones."
     },
     "edit": {
       "title": "Editar Portafolio - Portafolio de James",
@@ -107,5 +110,140 @@
   },
   "portfolio": {
     "title": "James Portafolio"
+  },
+  "home": {
+    "hero": {
+      "role": "Desarrollador Frontend y Full Stack",
+      "stack": "Next.js · React · TypeScript · Node.js · Strapi · Shopify",
+      "location": "Heredia, Costa Rica · Abierto a trabajo remoto",
+      "valueProp": "Construyo sitios y aplicaciones web rápidos y optimizados para SEO para clientes inmobiliarios, corporativos y de e-commerce, con más de 10 proyectos para clientes entregados desde 2024.",
+      "downloadCv": "Descargar CV",
+      "contact": "Contáctame",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "actionsLabel": "Acciones principales"
+    },
+    "about": {
+      "title": "Sobre mí",
+      "summary": "James Guevara Gamboa es un Desarrollador Frontend y Full Stack radicado en Heredia, Costa Rica, abierto a trabajo remoto (también híbrido o presencial). Desde agosto de 2024 trabaja como Desarrollador Full Stack freelance y ha entregado más de 10 proyectos para clientes inmobiliarios, corporativos y de e-commerce con Next.js, React, TypeScript, Node.js y Strapi. Habla español (nativo) e inglés (B2)."
+    },
+    "projects": {
+      "clientTitle": "Trabajo para clientes",
+      "clientIntro": "Sitios web y plataformas en producción entregados a clientes reales.",
+      "otherTitle": "Proyectos de práctica y personales",
+      "otherIntro": "Experimentos, retos y proyectos propios creados para practicar y aprender."
+    },
+    "experience": {
+      "title": "Experiencia",
+      "fullResume": "Currículum completo",
+      "items": [
+        {
+          "role": "Desarrollador Full Stack freelance",
+          "company": "Freelance",
+          "dates": "Ago 2024 – Presente",
+          "summary": "Sitios y aplicaciones web para más de 10 clientes inmobiliarios, corporativos y de e-commerce con Next.js, React, TypeScript, Node.js y Strapi. Tailwind, REST/GraphQL, personalización de Shopify, SEO y Core Web Vitals."
+        },
+        {
+          "role": "Desarrollador Frontend y WordPress",
+          "company": "TechPro Solutions",
+          "dates": "Ene – Jul 2024",
+          "summary": "Sitios en WordPress, temas y plugins personalizados, UI/UX, SEO, trabajando en un equipo ágil."
+        },
+        {
+          "role": "Desarrollador Frontend",
+          "company": "ContraLuz (remoto)",
+          "dates": "Mar – Dic 2023",
+          "summary": "Landing page en Next.js con 100% de rendimiento en Lighthouse, lideró la migración y el lanzamiento en Shopify, carrito personalizado con seguimiento de analítica y un panel de administración con SSR."
+        }
+      ]
+    },
+    "credentials": {
+      "title": "Educación y certificaciones",
+      "educationTitle": "Educación",
+      "certificationsTitle": "Certificaciones",
+      "achievementTitle": "Logro",
+      "education": [
+        {
+          "name": "Desarrollador Web Full Stack",
+          "org": "FWD Costa Rica",
+          "dates": "Ene – Jul 2025"
+        },
+        {
+          "name": "Diseño y Desarrollo Web, programa técnico de 2.880 horas",
+          "org": "CETAV La Libertad",
+          "dates": "Mar 2022 – Ene 2024"
+        },
+        {
+          "name": "Diseño y Desarrollo Web, nivel técnico, 928 horas",
+          "org": "INA",
+          "dates": "Ene 2024"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Anthropic Academy: Claude Code in Action, Claude Code 101, Building with the Claude API, Introduction to Model Context Protocol, AI Fluency: Framework & Foundations, Claude 101, Introduction to Claude Cowork",
+          "dates": "Mayo 2026"
+        },
+        {
+          "name": "n8n y automatización con IA",
+          "org": "Raiola Networks",
+          "dates": "Feb 2026"
+        },
+        {
+          "name": "JavaScript Algorithms and Data Structures",
+          "dates": "2023"
+        },
+        {
+          "name": "Responsive Web Design",
+          "dates": "2022"
+        },
+        {
+          "name": "Universidad HTML",
+          "org": "Udemy",
+          "dates": "Dic 2021"
+        },
+        {
+          "name": "Introducción al Desarrollo Web I y II",
+          "org": "Google Actívate",
+          "dates": "Ago 2021"
+        },
+        {
+          "name": "Cybersecurity Essentials y Get Connected",
+          "org": "Cisco Networking Academy",
+          "dates": "2020"
+        }
+      ],
+      "achievement": "Proyecto Human Brush (Bélgica): una proyección interactiva que anima el movimiento del cuerpo humano."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes para reclutadores",
+      "intro": "Respuestas rápidas sobre rol, stack, disponibilidad y contacto.",
+      "items": [
+        {
+          "q": "¿Cuál es el rol de James Guevara Gamboa?",
+          "a": "Es Desarrollador Frontend y Full Stack. Desde agosto de 2024 trabaja como Desarrollador Full Stack freelance, creando sitios y aplicaciones web para clientes inmobiliarios, corporativos y de e-commerce."
+        },
+        {
+          "q": "¿Con qué tecnologías trabaja?",
+          "a": "Next.js, React, TypeScript y Node.js como stack principal, con Strapi como CMS headless, Tailwind CSS, APIs REST y GraphQL, además de personalización de Shopify y WordPress."
+        },
+        {
+          "q": "¿Está disponible para trabajo remoto?",
+          "a": "Sí. Está abierto a trabajo remoto y también a puestos híbridos o presenciales."
+        },
+        {
+          "q": "¿Dónde vive y en qué zona horaria trabaja?",
+          "a": "Vive en Heredia, Costa Rica, en la zona horaria de América Central (UTC-6, sin horario de verano)."
+        },
+        {
+          "q": "¿Qué idiomas habla?",
+          "a": "Español (nativo) e inglés (B2, intermedio alto)."
+        },
+        {
+          "q": "¿Cómo puedo contactarlo u obtener su CV?",
+          "a": "Escribiendo a jjguevarag@gmail.com, por LinkedIn o GitHub, o descargando su CV en PDF desde la parte superior de esta página."
+        }
+      ]
+    }
   }
 }

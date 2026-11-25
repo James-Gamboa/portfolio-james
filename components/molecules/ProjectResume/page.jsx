@@ -32,9 +32,9 @@ const ProjectResume = ({
         </div>
 
         <div className="min-w-0 w-full flex-1 space-y-3">
-          <h2 className="text-base font-bold leading-snug text-white laptop:text-lg">
+          <h3 className="text-base font-bold leading-snug text-white laptop:text-lg">
             {position}
-          </h2>
+          </h3>
 
           {summary ? (
             <p className="text-sm leading-relaxed text-white/70">{summary}</p>
@@ -69,9 +69,9 @@ const ProjectResume = ({
 
           {featuredProjects && featuredProjects.length > 0 ? (
             <div className="space-y-3 pt-1">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-white/80">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-white/80">
                 {featuredProjectsLabel}
-              </h3>
+              </h4>
               <div className="grid grid-cols-1 gap-2 tablet:grid-cols-2">
                 {featuredProjects.map((project, index) => {
                   if (typeof project === "string") {

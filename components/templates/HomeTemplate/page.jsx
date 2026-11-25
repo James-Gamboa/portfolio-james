@@ -2,16 +2,17 @@
 
 import { useRef } from "react";
 import Header from "@/components/organisms/Header/page.jsx";
+import Hero from "@/components/organisms/Hero/page.jsx";
 import ServiceCard from "@/components/molecules/ServiceCard/page.jsx";
-import Socials from "@/components/atoms/Socials/page.jsx";
 import ProjectsSection from "@/components/organisms/ProjectsSection/page.jsx";
+import ExperienceSection from "@/components/organisms/ExperienceSection/page.jsx";
+import CredentialsSection from "@/components/organisms/CredentialsSection/page.jsx";
+import FaqSection from "@/components/organisms/FaqSection/page.jsx";
 import Footer from "@/components/organisms/Footer/page.jsx";
 import Reveal from "@/components/motion/Reveal";
-import { useHeroEntrance } from "@/hooks/useHeroEntrance";
 import { useScrollTo } from "@/hooks/useScrollTo";
 
 const HomeTemplate = ({ lang, dict, data }) => {
-  const heroRef = useHeroEntrance();
   const { scrollTo } = useScrollTo();
   const workRef = useRef(null);
   const aboutRef = useRef(null);
@@ -27,63 +28,48 @@ const HomeTemplate = ({ lang, dict, data }) => {
           dict={dict}
           data={data}
         />
-        <div ref={heroRef} className="laptop:mt-20 mt-10">
-          <div className="mt-5">
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+        <main>
+          <Hero lang={lang} dict={dict} data={data} />
+          <div id={dict?.sections?.about || "about"} />
+          <section
+            ref={aboutRef}
+            aria-labelledby="about-heading"
+            className="mt-12 p-2 laptop:mt-20 laptop:p-0"
+          >
+            <h2
+              id="about-heading"
+              className="text-2xl font-bold tracking-tight text-white laptop:text-4xl"
             >
-              {data.headerTaglineOne}
-            </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </h1>
-          </div>
-          <Socials className="mt-2 laptop:mt-5" lang={lang} data={data} />
-        </div>
-        <div id={dict?.sections?.work || "work"} ref={workRef} />
-        <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
-        <section className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 data-reveal="" className="tablet:m-10 text-2xl text-bold">
-            {dict.services.title}.
-          </h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
-            {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-        </section>
-        <div id={dict?.sections?.about || "about"} />
-        <Reveal
-          as="section"
-          ref={aboutRef}
-          className="mt-10 laptop:mt-40 p-2 laptop:p-0"
-        >
-          <h1 className="text-2xl text-bold">{dict.about.title}.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
-        </Reveal>
-        <Reveal as="section">
+              {dict.home.about.title}.
+            </h2>
+            <p className="mt-4 max-w-4xl text-lg leading-relaxed text-white/85 laptop:text-2xl">
+              {dict.home.about.summary}
+            </p>
+            <p className="mt-4 max-w-4xl text-base leading-relaxed text-white/70 laptop:text-lg">
+              {data.aboutpara}
+            </p>
+          </section>
+          <div id={dict?.sections?.work || "work"} ref={workRef} />
+          <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
+          <ExperienceSection lang={lang} dict={dict} />
+          <CredentialsSection dict={dict} />
+          <section className="mt-16 laptop:mt-24 p-2 laptop:p-0">
+            <h2 data-reveal="" className="tablet:m-10 text-2xl text-bold">
+              {dict.services.title}.
+            </h2>
+            <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+              {data.services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  name={service.title}
+                  description={service.description}
+                />
+              ))}
+            </div>
+          </section>
+          <FaqSection dict={dict} />
+        </main>
+        <Reveal as="footer">
           <Footer lang={lang} dict={dict} data={data} />
         </Reveal>
       </div>

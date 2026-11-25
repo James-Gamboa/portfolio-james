@@ -1,5 +1,7 @@
-import Link from "next/link";
+"use client";
+
 import Button from "@/components/atoms/Button/page.jsx";
+import { eventForSocial } from "@/lib/analytics";
 
 const Socials = ({ className, lang = "en", data }) => {
   if (!data || !data.socials) {
@@ -11,14 +13,14 @@ const Socials = ({ className, lang = "en", data }) => {
       className={`${className} flex flex-wrap mob:flex-nowrap link cursor-pointer`}
     >
       {data.socials.map((social, index) => (
-        <Link
+        <Button
           key={index}
           href={social.link}
-          target="_blank"
-          rel="noopener noreferrer"
+          external
+          trackEvent={eventForSocial(social.title) ?? undefined}
         >
-          <Button>{social.title}</Button>
-        </Link>
+          {social.title}
+        </Button>
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ const FeaturedProjectCard = ({ title, description, technologies }) => {
 
   return (
     <article className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
-      <h4 className="text-sm font-semibold text-white">{title}</h4>
+      <h5 className="text-sm font-semibold text-white">{title}</h5>
       {description ? (
         <p className="mt-1 text-xs leading-relaxed text-white/60">
           {description}
