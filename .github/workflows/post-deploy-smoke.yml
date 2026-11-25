@@ -34,16 +34,34 @@ jobs:
           echo "Environment: ${DEPLOY_ENV} -> ${BASE}"
           fail=0
 
+          origin_of() { printf '%s' "$1" | sed -E 's#^(https?://[^/]+).*#\1#'; }
+          ORIGIN=$(origin_of "$BASE")
+
+          # Follow same-origin redirects only (the locale middleware sends / -> /en).
+          # A redirect to another origin (e.g. Vercel SSO login for protected previews)
+          # must never be judged as the deployment's own response.
           status_of() {
-            # -L: the locale middleware redirects (e.g. / -> /en); judge the final status.
-            curl -s -L --max-redirs 3 -o /dev/null -w '%{http_code}' --max-time 20 \
-              --retry 5 --retry-delay 5 --retry-all-errors "$1"
+            local url="$1" out code loc
+            for _ in 1 2 3 4; do
+              out=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 20 \
+                --retry 5 --retry-delay 5 --retry-all-errors "$url") || { echo "000"; return; }
+              code="${out%% *}"
+              loc="${out#* }"
+              case "$code" in
+                301|302|303|307|308) ;;
+                *) echo "$code"; return ;;
+              esac
+              if [ "$(origin_of "$loc")" != "$ORIGIN" ]; then echo "offsite"; return; fi
+              url="$loc"
+            done
+            echo "too-many-redirects"
           }
 
-          # Preview deployments may sit behind Vercel Deployment Protection (401).
+          # Preview deployments may sit behind Vercel Deployment Protection
+          # (401, or a redirect to the Vercel SSO login on another origin).
           home=$(status_of "$BASE/")
-          if [ "$home" = "401" ] && [ "${DEPLOY_ENV}" != "Production" ]; then
-            echo "::notice::Preview is behind Deployment Protection (401); smoke test skipped."
+          if { [ "$home" = "401" ] || [ "$home" = "offsite" ]; } && [ "${DEPLOY_ENV}" != "Production" ]; then
+            echo "::notice::Preview is behind Deployment Protection ($home); smoke test skipped."
             exit 0
           fi
           if [ "$home" != "200" ]; then
