@@ -1,5 +1,5 @@
 import "../globals.css";
-import { Hind } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import AppProviders from "@/components/providers/AppProviders";
 import BaseTemplate from "@/components/templates/BaseTemplate/page.jsx";
@@ -11,11 +11,13 @@ export const metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
 };
 
-const hind = Hind({
+// Single family for headings and body, self-hosted by next/font (no
+// third-party request at runtime).
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "600", "800"],
   display: "swap",
-  variable: "--font-hind",
+  variable: "--font-jakarta",
 });
 
 // Only the supported locales exist; anything else is a 404.
@@ -38,7 +40,7 @@ export default async function LangLayout({ children, params }) {
   return (
     <html
       lang={lang}
-      className={`dark ${hind.variable}`}
+      className={`dark ${jakarta.variable}`}
       style={{ colorScheme: "dark" }}
       suppressHydrationWarning
     >

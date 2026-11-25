@@ -1,29 +1,15 @@
-// @ts-nocheck
-"use client";
-import React, { useEffect, useState } from "react";
-
-const ServiceCard = ({ name, description }) => {
-  const [mounted, setMounted] = useState();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  return (
-    <div
-      data-reveal=""
-      className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 ${
-        mounted && "hover:bg-slate-800"
-      } hover:scale-105 link cursor-pointer`}
-    >
-      <h3 className="text-3xl">{name ? name : "Heading"}</h3>
-      <p className="mt-5 opacity-60 text-xl">
-        {description
-          ? description
-          : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}
-      </p>
-    </div>
-  );
-};
+const ServiceCard = ({ name, description }) => (
+  <div
+    data-reveal=""
+    className="panel h-full p-6 transition-colors duration-300 hover:border-sky/50 tablet:p-7"
+  >
+    <h3 className="font-semibold text-2xl text-content tablet:text-3xl">
+      {name ? name : "Heading"}
+    </h3>
+    <p className="mt-3 text-base leading-relaxed text-content-muted">
+      {description}
+    </p>
+  </div>
+);
 
 export default ServiceCard;

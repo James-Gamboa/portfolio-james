@@ -5,10 +5,10 @@ const FeaturedProjectCard = ({ title, description, technologies }) => {
   const techItems = parseTechnologies(technologies);
 
   return (
-    <article className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+    <article className="rounded-lg border border-line bg-ink-raised p-3">
       <h5 className="text-sm font-semibold text-white">{title}</h5>
       {description ? (
-        <p className="mt-1 text-xs leading-relaxed text-white/60">
+        <p className="mt-1 text-xs leading-relaxed text-content-muted">
           {description}
         </p>
       ) : null}

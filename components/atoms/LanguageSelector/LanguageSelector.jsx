@@ -85,8 +85,11 @@ const LanguageSelector = () => {
     setIsOpen(false);
   };
 
+  // modal={false}: modal mode locks scroll with body overflow:hidden, which
+  // turns <body> into the scroll container and carries the sticky header out
+  // of the viewport whenever the page is scrolled.
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
@@ -104,7 +107,7 @@ const LanguageSelector = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none hover:bg-slate-700 hover:text-white">
+      <DropdownMenuContent className="z-[120] w-20 bg-slate-800 text-white shadow-none border-none focus:outline-none focus:ring-0 focus:border-none hover:bg-slate-700 hover:text-white">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}

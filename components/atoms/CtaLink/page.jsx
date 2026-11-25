@@ -4,12 +4,16 @@ import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/components/lib/utils";
 
 const base =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200 tablet:text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-[color,background-color,border-color,filter,transform] duration-200 tablet:text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky";
 
 const variants = {
   primary: "bg-white text-black hover:bg-white/85",
+  // Filled white (original site style): reserved for the main conversion action (Download CV).
+  brand:
+    "bg-white font-semibold text-black hover:bg-white/85 motion-safe:hover:-translate-y-0.5",
   secondary:
-    "border border-white/25 text-white hover:border-white/50 hover:bg-white/10",
+    "border border-white/25 bg-transparent text-content hover:border-white/50 hover:bg-white/10",
+  ghost: "text-content-muted hover:text-content",
 };
 
 /**

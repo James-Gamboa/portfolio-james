@@ -25,7 +25,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
         <Header dict={dict} data={data} />
         <main className="mt-10 w-full flex flex-col items-center">
           <div className="w-full min-w-0 max-w-4xl rounded-lg bg-slate-800 p-5 shadow-sm mob:px-6 tablet:p-10 laptop:p-16 desktop:p-20">
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-semibold">
               {data.resume.name || data.name}
             </h1>
             <p className="text-xl mt-5">{data.resume.tagline}</p>
@@ -56,7 +56,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
             {data.resume.aboutParagraphs &&
               data.resume.aboutParagraphs.length > 0 && (
                 <div className="mt-5">
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="text-2xl font-semibold">
                     {dict?.resume?.about || "About Me"}
                   </h2>
                   <div className="mt-2 space-y-3">
@@ -70,7 +70,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
               )}
 
             <div className="mt-5">
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-2xl font-semibold">
                 {dict?.resume?.experience || "Experience"}
               </h2>
               {data.resume.experiences &&
@@ -102,7 +102,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
                 )}
             </div>
             <div className="mt-5">
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-2xl font-semibold">
                 {dict?.resume?.education || "Education"}
               </h2>
               {Array.isArray(data.resume.education) ? (
@@ -130,7 +130,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
               )}
             </div>
             <div className="mt-5">
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-2xl font-semibold">
                 {dict?.resume?.skills || "Skills"}
               </h2>
               <SkillsSection resume={data.resume} dict={dict} />
@@ -138,7 +138,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
             {data.resume.spokenLanguages &&
               data.resume.spokenLanguages.length > 0 && (
                 <div className="mt-5">
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="text-2xl font-semibold">
                     {dict?.resume?.spokenLanguages || "Languages"}
                   </h2>
                   <ul className="list-disc mt-2">
@@ -153,7 +153,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
             {data.resume.certifications &&
               data.resume.certifications.length > 0 && (
                 <div className="mt-5">
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="text-2xl font-semibold">
                     {dict?.resume?.certifications || "Certifications"}
                   </h2>
                   <ul className="list-disc mt-2">
@@ -168,7 +168,7 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
             {data.resume.achievements &&
               data.resume.achievements.length > 0 && (
                 <div className="mt-5">
-                  <h2 className="text-2xl font-bold">
+                  <h2 className="text-2xl font-semibold">
                     {dict?.resume?.achievements || "Achievements"}
                   </h2>
                   {data.resume.achievements.map((achievement, index) => (

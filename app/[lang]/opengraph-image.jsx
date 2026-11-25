@@ -32,7 +32,7 @@ export default async function Image({ params }) {
           padding: "72px 80px",
           background: "#000000",
           backgroundImage:
-            "radial-gradient(circle at 85% 0%, rgba(248,107,223,0.35) 0%, rgba(107,107,248,0.18) 40%, rgba(0,0,0,0) 70%)",
+            "radial-gradient(circle at 20% 0%, rgba(248,107,223,0.35) 0%, rgba(0,0,0,0) 45%), radial-gradient(circle at 85% 0%, rgba(107,107,248,0.35) 0%, rgba(0,0,0,0) 45%)",
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -42,7 +42,7 @@ export default async function Image({ params }) {
             display: "flex",
             alignItems: "center",
             fontSize: 30,
-            color: "rgba(255,255,255,0.7)",
+            color: "#a3a3a3",
           }}
         >
           james-gamboa.vercel.app
@@ -53,7 +53,8 @@ export default async function Image({ params }) {
             style={{
               display: "flex",
               fontSize: 92,
-              fontWeight: 700,
+              fontWeight: 800,
+              letterSpacing: "-0.02em",
               lineHeight: 1.05,
             }}
           >
@@ -65,7 +66,7 @@ export default async function Image({ params }) {
               marginTop: 24,
               fontSize: 48,
               fontWeight: 700,
-              color: "#c9c9ff",
+              color: "#ffffff",
             }}
           >
             {ROLE_HEADLINE[locale]}
@@ -75,7 +76,7 @@ export default async function Image({ params }) {
               display: "flex",
               marginTop: 28,
               fontSize: 32,
-              color: "rgba(255,255,255,0.8)",
+              color: "#9ca3af",
             }}
           >
             {STACK}
@@ -87,7 +88,7 @@ export default async function Image({ params }) {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 30,
-            color: "rgba(255,255,255,0.7)",
+            color: "#a3a3a3",
           }}
         >
           <div style={{ display: "flex" }}>{LOCATION[locale]}</div>

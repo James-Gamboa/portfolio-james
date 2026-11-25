@@ -10,10 +10,10 @@ const SkillsSection = ({ resume, dict }) => {
   }
 
   return (
-    <div className="mt-6 space-y-6">
+    <div className="mt-10 space-y-8">
       {primaryStack.length > 0 ? (
         <div className="space-y-3">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-white/80">
+          <h3 className="eyebrow">
             {dict?.resume?.primaryStack || "Core Stack"}
           </h3>
           <div
@@ -31,7 +31,7 @@ const SkillsSection = ({ resume, dict }) => {
       ) : null}
 
       {groups.length > 0 ? (
-        <div className="grid grid-cols-1 gap-6 desktop:grid-cols-2 desktop:gap-x-8 desktop:gap-y-6">
+        <div className="grid grid-cols-1 gap-8 tablet:grid-cols-2 laptop:grid-cols-3 laptop:gap-x-10">
           {groups.map((group) => (
             <SkillCategoryGroup
               key={group.key}

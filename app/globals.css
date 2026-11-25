@@ -3,15 +3,110 @@
 @tailwind utilities;
 
 * {
-  font-family: var(--font-hind), "Hind", system-ui, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+/* Brand tokens: the original site palette. Pure black surfaces, white text
+   and white primary actions, with the pink-to-blue glow only as ambient light
+   (--glow-pink / --glow-blue). The "sky" tokens keep their names but are the
+   white accent. Contrast on #000: content 21:1, content-muted 8.6:1,
+   content-subtle 6.4:1 (all WCAG AA). */
+:root {
+  --ink: 0 0 0;
+  --ink-raised: 12 12 12;
+  --ink-overlay: 20 20 20;
+  --line: 40 40 40;
+  --content: 255 255 255;
+  --content-muted: 163 163 163;
+  --content-subtle: 140 140 140;
+  --sky: 255 255 255;
+  --sky-strong: 255 255 255;
+  --glow-pink: 248 107 223;
+  --glow-blue: 107 107 248;
 }
 
 body {
-  @apply dark:bg-black dark:text-white overflow-x-clip;
+  @apply dark:bg-ink dark:text-content overflow-x-clip;
+}
+
+@layer components {
+  /* Section marker: short sky rule + uppercase label. */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-eyebrow font-semibold uppercase text-sky;
+  }
+  .eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 1.75rem;
+    border-radius: 9999px;
+    background-color: rgb(var(--sky));
+  }
+
+  .section-title {
+    @apply text-title font-extrabold text-content;
+  }
+
+  /* Page backdrop: the original pink-to-blue glow along the top edge and a
+     faint dot grid fading out. */
+  .page-aurora {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: -10;
+    height: 56rem;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        44rem 11rem at 30% -2rem,
+        rgb(var(--glow-pink) / 0.45),
+        transparent 70%
+      ),
+      radial-gradient(
+        44rem 11rem at 72% -2rem,
+        rgb(var(--glow-blue) / 0.42),
+        transparent 70%
+      );
+  }
+  .page-aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      rgb(255 255 255 / 0.07) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent 75%);
+    mask-image: linear-gradient(to bottom, #000, transparent 75%);
+  }
+
+  /* Facts strip dividers: 2x2-ish on mobile, one row on laptop. */
+  .fact {
+    border-color: rgb(var(--line));
+  }
+  .fact + .fact {
+    border-top-width: 1px;
+  }
+  .fact:nth-child(2) {
+    border-top-width: 0;
+    border-left-width: 1px;
+  }
+  @media (min-width: 1024px) {
+    .fact + .fact {
+      border-top-width: 0;
+      border-left-width: 1px;
+    }
+  }
+
+  /* Hairline panel used by cards across the page. */
+  .panel {
+    @apply rounded-2xl border border-line bg-ink-raised;
+  }
 }
 
 html {
   overflow-x: clip;
+  /* Anchors clear the sticky header. */
+  scroll-padding-top: 6rem;
 }
 
 html[data-menu-open="true"],
@@ -49,6 +144,41 @@ html[data-menu-open="true"] body {
   }
 }
 
+/* Mobile menu: overlay fades, items rise in sequence; exit is quicker.
+   Keep the exit duration in sync with CLOSE_ANIMATION_MS in HamburgerMenu. */
+@keyframes menu-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes menu-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes menu-item-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menu-item-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-overlay[data-state="open"] {
+    animation: menu-fade-in 0.24s ease-out both;
+  }
+  .menu-overlay[data-state="open"] .menu-item {
+    animation: menu-item-in 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+  }
+  .menu-overlay[data-state="closed"] {
+    animation: menu-fade-out 0.22s ease-in both;
+  }
+  .menu-overlay[data-state="closed"] .menu-item {
+    animation: menu-item-out 0.18s ease-in both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html[data-motion="reduced"] [data-reveal] {
     opacity: 1 !important;
@@ -65,73 +195,7 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-.gradient-circle {
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-  top: -30px;
-  height: 40px;
-  width: 100%;
-  opacity: 0.5;
-  filter: blur(40px);
-  background: radial-gradient(
-    circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
-  );
-}
-.gradient-circle-bottom {
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-  bottom: -20px;
-  height: 30px;
-  width: 100%;
-  opacity: 0.5;
-  filter: blur(40px);
-  background: radial-gradient(
-    circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
-  );
-}
 
-.gradient-shadow:hover::before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, #45caff 0%, #ff1b6b 100%);
-  transform: translate3d(0px, 20px, 0) scale(0.95);
-  filter: blur(20px);
-  opacity: var(0.7);
-  transition: opacity 0.3s;
-  border-radius: inherit;
-}
-
-/* 
-* Prevents issues when the parent creates a 
-* stacking context. (For example, using the transform
-* property )
-*/
-.gradient-shadow:hover::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: inherit;
-  border-radius: inherit;
-  -webkit-border-radius: inherit;
-  -moz-border-radius: inherit;
-  -ms-border-radius: inherit;
-  -o-border-radius: inherit;
-}
 /* 
 ---break---
 */
@@ -164,11 +228,11 @@ html.lenis body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --background: 222 47% 7.5%;
+    --foreground: 220 14% 91%;
+    --card: 222 47% 7.5%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 222 47% 11%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;

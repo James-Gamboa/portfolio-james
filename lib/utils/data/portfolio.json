@@ -45,7 +45,7 @@
       "title": "Plaza Tempo",
       "description": "Developed the bilingual website for Plaza Tempo, a mixed-use destination connecting work, dining, retail and community life. Features a hero carousel, business directory, events, location with Google Maps and contact lead forms. Built with Next.js, TypeScript, Strapi and Tailwind CSS.",
       "imageSrc": "/img/projects/plaza-tempo.webp",
-      "url": "https://tempo-2025-2c8da873e965.herokuapp.com/en"
+      "url": "https://www.plazatempo.com/en"
     },
     {
       "id": "4",

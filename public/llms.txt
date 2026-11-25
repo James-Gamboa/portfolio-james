@@ -58,7 +58,7 @@ James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) wit
 ## Selected client projects
 - [Avenida Escazu](https://www.avenidaescazu.com/en)
 - [Escazu Village](https://www.escazuvillage.com/en)
-- [Plaza Tempo](https://tempo-2025-2c8da873e965.herokuapp.com/en)
+- [Plaza Tempo](https://www.plazatempo.com/en)
 - [C3 Cariari Corporate Center](https://www.c3.cr/en)
 - [Savia](https://www.savia.cr/en)
 - [Aleste](https://www.aleste.cr/en)
