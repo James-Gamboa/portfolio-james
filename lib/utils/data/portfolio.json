@@ -142,7 +142,8 @@
       "title": "Contraluz",
       "description": "Developed an ecommerce for Contraluz business using Shopify with payment gateways, cart tracking plugins, inventory management and conversion optimization",
       "imageSrc": "/img/projects/contraluz.webp",
-      "url": "https://www.contraluzcr.com/"
+      "url": "https://contraluz.cr",
+      "tags": ["Shopify", "Liquid"]
     },
     {
       "id": "10",

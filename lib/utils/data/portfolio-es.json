@@ -135,7 +135,8 @@
       "title": "Contraluz",
       "description": "Desarrollé un ecommerce para el comercio Contraluz usando Shopify con pasarelas de pago, plugins de seguimiento al carrito, gestión de inventario y optimización de conversión",
       "imageSrc": "/img/projects/contraluz.webp",
-      "url": "https://www.contraluzcr.com/"
+      "url": "https://contraluz.cr",
+      "tags": ["Shopify", "Liquid"]
     },
     {
       "id": "10",
