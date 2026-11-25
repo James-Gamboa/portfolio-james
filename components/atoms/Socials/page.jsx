@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Button from "@/components/atoms/Button/page.jsx";
 
 const Socials = ({ className, lang = "en", data }) => {
@@ -11,14 +10,9 @@ const Socials = ({ className, lang = "en", data }) => {
       className={`${className} flex flex-wrap mob:flex-nowrap link cursor-pointer`}
     >
       {data.socials.map((social, index) => (
-        <Link
-          key={index}
-          href={social.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button>{social.title}</Button>
-        </Link>
+        <Button key={index} href={social.link} external>
+          {social.title}
+        </Button>
       ))}
     </div>
   );

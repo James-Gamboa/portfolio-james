@@ -30,7 +30,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
         className="relative mb-8 flex flex-col gap-4 border-b border-white/10 pb-8 laptop:mb-10 laptop:flex-row laptop:items-end laptop:justify-between"
       >
         <div className="max-w-2xl space-y-3">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/40">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/55">
             {projectDict.eyebrow}
           </p>
           <h2
@@ -46,7 +46,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
 
         <div className="laptop:shrink-0">
           <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-sm">
-            <p className="text-[10px] font-medium uppercase tracking-widest text-white/40">
+            <p className="text-[10px] font-medium uppercase tracking-widest text-white/55">
               {projectDict.statStack}
             </p>
             <p className="mt-1 text-sm font-medium text-white/80">

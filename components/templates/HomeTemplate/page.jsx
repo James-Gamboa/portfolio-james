@@ -27,63 +27,57 @@ const HomeTemplate = ({ lang, dict, data }) => {
           dict={dict}
           data={data}
         />
-        <div ref={heroRef} className="laptop:mt-20 mt-10">
-          <div className="mt-5">
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
-              {data.headerTaglineOne}
+        <main>
+          <div ref={heroRef} className="laptop:mt-20 mt-10">
+            <h1 className="mt-5">
+              {[
+                [data.headerTaglineOne, "w-4/5 mob:w-full laptop:w-4/5"],
+                [data.headerTaglineTwo, "w-full laptop:w-4/5"],
+                [data.headerTaglineThree, "w-full laptop:w-4/5"],
+                [data.headerTaglineFour, "w-full laptop:w-4/5"],
+              ]
+                .filter(([text]) => Boolean(text))
+                .map(([text, width]) => (
+                  <span
+                    key={text}
+                    data-hero-line=""
+                    className={`block text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold ${width}`}
+                  >
+                    {text}
+                  </span>
+                ))}
             </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              data-hero-line=""
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </h1>
+            <Socials className="mt-2 laptop:mt-5" lang={lang} data={data} />
           </div>
-          <Socials className="mt-2 laptop:mt-5" lang={lang} data={data} />
-        </div>
-        <div id={dict?.sections?.work || "work"} ref={workRef} />
-        <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
-        <section className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 data-reveal="" className="tablet:m-10 text-2xl text-bold">
-            {dict.services.title}.
-          </h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
-            {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-        </section>
-        <div id={dict?.sections?.about || "about"} />
-        <Reveal
-          as="section"
-          ref={aboutRef}
-          className="mt-10 laptop:mt-40 p-2 laptop:p-0"
-        >
-          <h1 className="text-2xl text-bold">{dict.about.title}.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
-        </Reveal>
-        <Reveal as="section">
+          <div id={dict?.sections?.work || "work"} ref={workRef} />
+          <ProjectsSection projects={data.projects} dict={dict} lang={lang} />
+          <section className="mt-10 laptop:mt-30 p-2 laptop:p-0">
+            <h2 data-reveal="" className="tablet:m-10 text-2xl text-bold">
+              {dict.services.title}.
+            </h2>
+            <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+              {data.services.map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  name={service.title}
+                  description={service.description}
+                />
+              ))}
+            </div>
+          </section>
+          <div id={dict?.sections?.about || "about"} />
+          <Reveal
+            as="section"
+            ref={aboutRef}
+            className="mt-10 laptop:mt-40 p-2 laptop:p-0"
+          >
+            <h2 className="text-2xl text-bold">{dict.about.title}.</h2>
+            <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+              {data.aboutpara}
+            </p>
+          </Reveal>
+        </main>
+        <Reveal as="footer">
           <Footer lang={lang} dict={dict} data={data} />
         </Reveal>
       </div>

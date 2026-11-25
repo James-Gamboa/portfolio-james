@@ -1,83 +1,68 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Popover } from "@headlessui/react";
-import Image from "next/image";
 import Button from "@/components/atoms/Button/page.jsx";
 import HamburgerMenu from "@/components/atoms/HamburgerMenu/HamburgerMenu";
 import LanguageSelector from "@/components/atoms/LanguageSelector/LanguageSelector";
 
-const Header = ({
-  handleWorkScroll,
-  handleAboutScroll,
-  isBlog = false,
-  dict,
-  data,
-}) => {
+const Header = ({ dict, data }) => {
   const pathname = usePathname();
-  const [isMounted, setIsMounted] = useState(false);
 
   const currentLang = pathname.split("/")[1] || "en";
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   if (!dict || !data) {
     return null;
   }
 
-  const { name, showResume } = data;
+  const { showResume } = data;
 
   return (
     <>
-      <div className="flex items-center justify-between p-2 laptop:p-0 laptop:hidden mt-5 gap-2">
-        {isMounted && (
-          <Link href={`/${currentLang}`}>
-            <h1 className="font-medium p-2 laptop:p-0 link cursor-pointer">
-              {dict.portfolio.title}
-            </h1>
-          </Link>
-        )}
+      <header className="flex items-center justify-between p-2 laptop:p-0 laptop:hidden mt-5 gap-2">
+        <Link
+          href={`/${currentLang}`}
+          className="font-medium p-2 laptop:p-0 link cursor-pointer"
+        >
+          {dict.portfolio.title}
+        </Link>
         <div className="flex items-center gap-2">
           <LanguageSelector />
           <HamburgerMenu />
         </div>
-      </div>
+      </header>
 
-      <div className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 laptop:flex">
-        {isMounted && (
-          <Link href={`/${currentLang}`}>
-            <h1 className="font-medium cursor-pointer mob:p-2 laptop:p-0">
-              {dict.portfolio.title}
-            </h1>
-          </Link>
-        )}
+      <header className="mt-10 hidden flex-row items-center justify-between sticky dark:text-white top-0 z-10 laptop:flex">
+        <Link
+          href={`/${currentLang}`}
+          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
+        >
+          {dict.portfolio.title}
+        </Link>
         <div className="flex items-center gap-4">
-          <div className="flex">
-            <Link href={`/${currentLang}#${dict?.sections?.work || "work"}`}>
-              <Button>{dict?.nav?.projects || "Projects"}</Button>
-            </Link>
-            <Link href={`/${currentLang}#${dict?.sections?.about || "about"}`}>
-              <Button>{dict?.nav?.about || "About"}</Button>
-            </Link>
-            {showResume && isMounted && (
-              <Link
+          <nav className="flex">
+            <Button href={`/${currentLang}#${dict?.sections?.work || "work"}`}>
+              {dict?.nav?.projects || "Projects"}
+            </Button>
+            <Button
+              href={`/${currentLang}#${dict?.sections?.about || "about"}`}
+            >
+              {dict?.nav?.about || "About"}
+            </Button>
+            {showResume && (
+              <Button
                 href={`/${currentLang}/${currentLang === "es" ? "curriculum-vitae" : "resume"}`}
+                classes="!ml-1"
               >
-                <Button classes="first:ml-1">
-                  {dict?.nav?.resume || "Resume"}
-                </Button>
-              </Link>
+                {dict?.nav?.resume || "Resume"}
+              </Button>
             )}
-            <Link href="mailto:jjguevarag@gmail.com">
-              <Button>{dict?.nav?.contact || "Contact"}</Button>
-            </Link>
-          </div>
+            <Button href="mailto:jjguevarag@gmail.com">
+              {dict?.nav?.contact || "Contact"}
+            </Button>
+          </nav>
           <LanguageSelector />
         </div>
-      </div>
+      </header>
     </>
   );
 };

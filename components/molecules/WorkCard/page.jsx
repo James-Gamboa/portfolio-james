@@ -100,7 +100,6 @@ const WorkCard = ({
         target="_blank"
         rel="noopener noreferrer"
         tabIndex={0}
-        aria-label={`${viewLabel}: ${name}`}
         className={cn(
           "link flex h-full w-full min-w-0 max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-sm backdrop-blur-sm transition-colors duration-300",
           "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40",
@@ -189,7 +188,7 @@ const WorkCard = ({
                 aria-hidden
               />
             </span>
-            <span className="text-xs font-medium uppercase tracking-widest text-white/35 transition-colors group-hover:text-white/55">
+            <span className="text-xs font-medium uppercase tracking-widest text-white/55 transition-colors group-hover:text-white/75">
               {exploreLabel}
             </span>
           </div>

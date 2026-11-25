@@ -46,7 +46,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-gray-900">
       <SimpleHeader lang={lang} dict={dict} />
-      <div className="flex items-center justify-center min-h-[calc(100vh-80px)]">
+      <main className="flex items-center justify-center min-h-[calc(100vh-80px)]">
         <div className="text-center">
           <h1 className="text-8xl md:text-9xl lg:text-[12rem] font-bold text-white mb-6">
             {dict.notFound.title}
@@ -72,7 +72,7 @@ export default function NotFound() {
             </button>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
