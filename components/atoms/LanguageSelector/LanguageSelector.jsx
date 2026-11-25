@@ -85,8 +85,11 @@ const LanguageSelector = () => {
     setIsOpen(false);
   };
 
+  // modal={false}: modal mode locks scroll with body overflow:hidden, which
+  // turns <body> into the scroll container and carries the sticky header out
+  // of the viewport whenever the page is scrolled.
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
