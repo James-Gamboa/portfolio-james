@@ -86,7 +86,7 @@ Security
 
 Code quality
 - [x] Q1 Senior code-quality review report (bugs, duplication, complexity, tests, design, debt) with file:line, severity and top 5 actions.
-- [ ] Q2 Apply the top quick wins from Q1.
+- [x] Q2 Apply the top quick wins from Q1.
 
 Verification
 - [x] V1 Lighthouse >= 90 in all four categories (mobile + desktop, /en + /es) on a production build/preview.
@@ -119,4 +119,5 @@ Verification
 - Owner feedback fixed: lone last project card centered instead of empty grid gaps (tablet and desktop).
 - Q1 report: docs/code-quality-review.md (34 findings: 4 high, 20 medium, 10 low). Q2 (apply top 5) pending owner go-ahead.
 - V2 pending owner: Rich Results Test / Schema Markup Validator need a browser session; Search Console and Bing verification (M4).
-- TDD: not applicable (no test runner in this project); checks are build, HTTP checks on a production server and Lighthouse.
+- TDD: enabled; runner is `pnpm test` (Vitest, config in vitest.config.mjs). Other checks: build, HTTP checks on a production server and Lighthouse.
+- Q2 done on branch fix/quality-top5 (not pushed). Commits: Vitest setup; mobile menu fix (Q01/Q03); dead code and unused deps removed (Q13-Q16, Q33; editor, 22 ui files, animations/, 12 deps); Vitest suites (Q04); explicit project category (Q02/Q20); Contraluz as client work with centered 6-track desktop grid; motion hardening (Q05/Q06/Q07/Q24). Evidence: `pnpm test` 10 files, 66 tests green; `pnpm build` ok; `pnpm audit --prod --audit-level high` no high/critical (1 low, 1 moderate postcss-selector-parser, transitive); lockfile consistent; local production server /en and /es 200 with one h1; mobile menu links scroll to existing section ids in both locales; Lighthouse local en/es mobile and desktop 100/100/100/100.

@@ -1,9 +1,7 @@
 "use client";
-import Link from "next/link";
 import Header from "@/components/organisms/Header/page.jsx";
 import ProjectResume from "@/components/molecules/ProjectResume/page.jsx";
 import Socials from "@/components/atoms/Socials/page.jsx";
-import Button from "@/components/atoms/Button/page.jsx";
 import CtaLink from "@/components/atoms/CtaLink/page.jsx";
 import { Download } from "lucide-react";
 import { EVENTS } from "@/lib/analytics";
@@ -23,13 +21,6 @@ const ResumeTemplate = ({ lang = "en", dict, data }) => {
 
   return (
     <>
-      {process.env.NODE_ENV === "development" && (
-        <div className="fixed bottom-6 right-6">
-          <Link href="/Edit">
-            <Button type="primary">Edit Resume</Button>
-          </Link>
-        </div>
-      )}
       <div className="container mx-auto mb-10">
         <Header dict={dict} data={data} />
         <main className="mt-10 w-full flex flex-col items-center">

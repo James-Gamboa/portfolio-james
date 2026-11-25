@@ -17,6 +17,7 @@ import {
   registerGsapPlugins,
 } from "@/lib/motion/register-gsap";
 import { setupScrollReveals } from "@/lib/motion/setup-scroll-reveals";
+import { scrollNative, smoothBehavior } from "@/lib/motion/scrollNative";
 import { MOBILE_MAX_WIDTH } from "@/lib/motion/constants";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import {
@@ -72,24 +73,13 @@ const MotionProvider = ({ onChange }) => {
       const element = resolveScrollTarget(target);
       const offset = options.offset ?? 0;
 
-      if (reducedMotion) {
-        if (typeof target === "number") {
-          window.scrollTo({ top: target, behavior: "auto" });
-          return;
-        }
-        if (element instanceof Element) {
-          const top =
-            element.getBoundingClientRect().top + window.scrollY + offset;
-          window.scrollTo({ top, behavior: "auto" });
-        }
-        return;
-      }
-
       const lenis = lenisRef.current;
-      if (!lenis) {
-        if (element instanceof Element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+      if (reducedMotion || !lenis) {
+        // Reduced motion, or no Lenis (mobile "lite" mode): native scroll that
+        // handles numeric targets and honors the offset.
+        const behavior =
+          reducedMotion || options.immediate ? "auto" : smoothBehavior();
+        scrollNative(element ?? target, { offset, behavior });
         return;
       }
 
@@ -125,7 +115,7 @@ const MotionProvider = ({ onChange }) => {
 
     let lenis = null;
     let tickerCallback = null;
-    let cleanupReveals = () => {};
+    let rafId = 0;
 
     if (!isMobile) {
       lenis = new Lenis({
@@ -164,8 +154,7 @@ const MotionProvider = ({ onChange }) => {
       });
     }
 
-    requestAnimationFrame(() => {
-      cleanupReveals = setupScrollReveals();
+    rafId = requestAnimationFrame(() => {
       ScrollTrigger.refresh();
       isReadyRef.current = true;
       setIsReady(true);
@@ -179,7 +168,7 @@ const MotionProvider = ({ onChange }) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      cleanupReveals();
+      cancelAnimationFrame(rafId);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       if (tickerCallback) gsap.ticker.remove(tickerCallback);
       lenis?.destroy();
@@ -189,6 +178,24 @@ const MotionProvider = ({ onChange }) => {
       setIsReady(false);
     };
   }, [reducedMotion]);
+
+  // Reveals are (re)registered whenever the route changes: the provider lives
+  // in the shared [lang] layout, so client navigation mounts new [data-reveal]
+  // nodes without remounting the engine.
+  useEffect(() => {
+    if (!isReady || reducedMotion) return undefined;
+
+    let cleanupReveals = () => {};
+    const rafId = requestAnimationFrame(() => {
+      cleanupReveals = setupScrollReveals();
+      ScrollTrigger.refresh();
+    });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      cleanupReveals();
+    };
+  }, [pathname, isReady, reducedMotion]);
 
   useLayoutEffect(() => {
     if (!isReady) return undefined;

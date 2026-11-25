@@ -18,6 +18,7 @@
   "projects": [
     {
       "id": "1",
+      "category": "realEstate",
       "title": "Escazu Village",
       "description": "Desarrollé el sitio web bilingüe de Escazú Village, destino de uso mixto en Escazú donde comercio, gastronomía y vida social se integran. Incluye hero principal, directorio de negocios, secciones residencial y talento, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/escazu-village.webp",
@@ -25,6 +26,7 @@
     },
     {
       "id": "2",
+      "category": "realEstate",
       "title": "C3 Cariari Corporate Center",
       "description": "Desarrollé el sitio web bilingüe de C3 Cariari Corporate Center, hub corporativo que conecta empresas con servicios premium. Incluye hero principal, directorio de negocios, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/c3-cariari-corporate-center.webp",
@@ -32,6 +34,7 @@
     },
     {
       "id": "3",
+      "category": "realEstate",
       "title": "Plaza Tempo",
       "description": "Desarrollé el sitio web bilingüe de Plaza Tempo, destino de uso mixto que conecta trabajo, gastronomía, comercio y vida social. Incluye carrusel hero, directorio de negocios, eventos, ubicación con Google Maps y formularios de contacto. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/plaza-tempo.webp",
@@ -39,6 +42,7 @@
     },
     {
       "id": "4",
+      "category": "realEstate",
       "title": "Aleste",
       "description": "Desarrollé el sitio web bilingüe de Aleste, desarrollo de uso mixto caminable enfocado en vivir, trabajar y disfrutar. Incluye hero principal, directorio de negocios, secciones de usos e impacto, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/aleste.webp",
@@ -46,6 +50,7 @@
     },
     {
       "id": "5",
+      "category": "realEstate",
       "title": "Novus ERP",
       "description": "Desarrollé el sitio web bilingüe de Novus ERP de Codisa, que presenta soluciones ERP para optimizar procesos y apoyar el crecimiento empresarial. Incluye carrusel hero, secciones de soluciones y nosotros, blog, formularios de contacto y video de marca integrado. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/novus-erp.webp",
@@ -53,6 +58,7 @@
     },
     {
       "id": "6",
+      "category": "realEstate",
       "title": "Portafolio Inmobiliario",
       "description": "Desarrollé el sitio web bilingüe de Portafolio Inmobiliario, líder en desarrollo inmobiliario en Costa Rica. Incluye carrusel hero con reportes estratégicos, secciones de proyectos y talento, KPIs destacados, redes sociales y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/portafolio-inmobiliario.webp",
@@ -60,6 +66,7 @@
     },
     {
       "id": "7",
+      "category": "realEstate",
       "title": "Avenida Escazu",
       "description": "Desarrollé el sitio web bilingüe de Avenida Escazú, la primera avenida urbana de uso mixto de Costa Rica enfocada en bienestar y movilidad sostenible. Incluye hero principal, directorio de negocios, secciones de impacto y talento, facturación de parqueo y formularios de contacto. Desarrollado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/avenida-escazu.webp",
@@ -67,6 +74,7 @@
     },
     {
       "id": "8",
+      "category": "realEstate",
       "title": "Savia",
       "description": "Desarrollé el sitio web bilingüe de Savia City of Life, desarrollo urbano sostenible donde la ciudad y la naturaleza se integran. Incluye carrusel hero, secciones de impacto y talento, blog y formularios de contacto. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/savia.webp",
@@ -74,6 +82,7 @@
     },
     {
       "id": "31",
+      "category": "realEstate",
       "title": "Lincoln Plaza",
       "description": "Desarrollé el sitio web bilingüe de Lincoln Plaza, centro de uso mixto en San Vicente de Moravia. Incluye carrusel hero, directorio de locales y mapa, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/lincoln-plaza.webp",
@@ -81,14 +90,15 @@
     },
     {
       "id": "32",
+      "category": "realEstate",
       "title": "Torre Universal",
       "description": "Desarrollé el sitio web bilingüe de Torre Universal, torre corporativa en San José con una visión de ciudad caminable, inclusiva y verde. Incluye hero principal, directorio de negocios, secciones de impacto y talento, blog, facturación de parqueo y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/torre-universal.webp",
-      "url": "https://www.torreuniversal.com/es",
-      "category": "realEstate"
+      "url": "https://www.torreuniversal.com/es"
     },
     {
       "id": "33",
+      "category": "realEstate",
       "title": "La Laguna",
       "description": "Desarrollé el sitio web de Urbanizadora La Laguna, desarrolladora inmobiliaria costarricense con proyectos residenciales desde 1967. Incluye hero con búsqueda de proyectos, listado de proyectos, secciones nosotros y desarrolla con nosotros, blog y formularios de contacto. Construido con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/la-laguna.webp",
@@ -96,6 +106,7 @@
     },
     {
       "id": "29",
+      "category": "gaming",
       "title": "JamesXP",
       "description": "Desarrollé JamesXP, plataforma independiente de noticias gaming con layout editorial tipo esports — titulares Steam, carriles RAWG y datos de catálogo en tiempo real. Construido con Next.js, TypeScript, Tailwind CSS, Lenis y animaciones GSAP.",
       "imageSrc": "/img/projects/jamesxp.webp",
@@ -103,6 +114,7 @@
     },
     {
       "id": "30",
+      "category": "ecommerce",
       "title": "PolkaCR",
       "description": "Desarrollé el ecommerce PolkaCR para una marca costarricense de arte y ropa con Shopify — catálogo, colecciones, carrito, checkout y tienda optimizada para conversión.",
       "imageSrc": "/img/projects/polkacr.webp",
@@ -110,27 +122,29 @@
     },
     {
       "id": "34",
+      "category": "webPlatform",
       "title": "Fresh Market",
       "description": "Desarrollé el sitio web de Fresh Market, mercado costarricense enfocado en productos frescos y orgánicos. Incluye slider principal, categorías de productos, comidas preparadas, delivery, recetas, promociones y formulario de contacto. Construido con WordPress y Elementor.",
       "imageSrc": "/img/projects/fresh-market.webp",
       "url": "https://freshmarket.co.cr/",
-      "category": "webPlatform",
       "tags": ["WordPress", "Elementor"]
     },
     {
       "id": "9",
+      "category": "ecommerce",
       "title": "Contraluz",
       "description": "Desarrollé un ecommerce para el comercio Contraluz usando Shopify con pasarelas de pago, plugins de seguimiento al carrito, gestión de inventario y optimización de conversión",
       "imageSrc": "/img/projects/contraluz.webp",
-      "url": "https://www.contraluzcr.com/"
+      "url": "https://contraluz.cr",
+      "tags": ["Shopify", "Liquid"]
     },
     {
       "id": "10",
+      "category": "communityPlatform",
       "title": "Steam Women",
       "description": "Desarrollé la plataforma Steam Women para apoyar e impulsar mujeres en Costa Rica. Construido con Next.js, TypeScript, Tailwind CSS, animaciones con Lenis y GSAP, backend Django y GraphQL",
       "imageSrc": "/img/projects/steam-women.webp",
       "url": "https://steam-women-front-end.vercel.app/",
-      "category": "communityPlatform",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -143,6 +157,7 @@
     },
     {
       "id": "11",
+      "category": "ecommerce",
       "title": "Audiophile Comercio Electrónico",
       "description": "Un comercio electrónico para amantes del audio usando tecnologías de Tailwind CSS y Next.js",
       "imageSrc": "/img/projects/audiophile-ecommerce.webp",
@@ -150,6 +165,7 @@
     },
     {
       "id": "12",
+      "category": "product",
       "title": "Designo Sitio Multi Página",
       "description": "Sitio web multi-página de Designo es un sitio responsivo construido con Next.js, JavaScript y CSS Modules, con layouts óptimos y elementos interactivos",
       "imageSrc": "/img/projects/designo-multi-page.webp",
@@ -157,6 +173,7 @@
     },
     {
       "id": "13",
+      "category": "experiment",
       "title": "Travel Haven",
       "description": "Plataforma de alquiler estilo Airbnb con exploración de propiedades, filtros de búsqueda y flujos de reserva. Construida con Next.js, TypeScript y Tailwind CSS para una experiencia pulida y totalmente responsiva.",
       "imageSrc": "/img/projects/travel-haven.webp",
@@ -165,6 +182,7 @@
     },
     {
       "id": "14",
+      "category": "experiment",
       "title": "Pokedex",
       "description": "Pokédex interactiva con búsqueda de Pokémon, vistas de detalle y navegación basada en API. Construida con Next.js, TypeScript y Tailwind CSS, con scroll suave Lenis y animaciones GSAP.",
       "imageSrc": "/img/projects/pokedex.webp",
@@ -173,6 +191,7 @@
     },
     {
       "id": "15",
+      "category": "experiment",
       "title": "Rapibox",
       "description": "Rapibox es un proyecto de práctica para perfeccionar mis habilidades en JavaScript. Construido con Next.js y Tailwind CSS, simula un casillero virtual moderno y responsivo para compras de paquetes en línea",
       "imageSrc": "/img/projects/rapibox.webp",
@@ -180,6 +199,7 @@
     },
     {
       "id": "16",
+      "category": "experiment",
       "title": "Página de Noticias",
       "description": "Página creada como práctica para conocimientos en HTML, CSS, JavaScript y Sass",
       "imageSrc": "/img/projects/news-homepage.webp",
@@ -187,6 +207,7 @@
     },
     {
       "id": "17",
+      "category": "experiment",
       "title": "Sitio de Eventos",
       "description": "Página creada como práctica para conocimientos en JavaScript vanilla, HTML5, CSS3 y manipulación del DOM para crear un sitio de eventos interactivo",
       "imageSrc": "/img/projects/events-site.webp",
@@ -194,6 +215,7 @@
     },
     {
       "id": "18",
+      "category": "experiment",
       "title": "Página de Aterrizaje Manage",
       "description": "Página creada como práctica en mis conocimientos de Next.js, Tailwind CSS, JavaScript y diseño responsivo para crear una landing page moderna",
       "imageSrc": "/img/projects/manage-landing-page.webp",
@@ -201,6 +223,7 @@
     },
     {
       "id": "19",
+      "category": "product",
       "title": "James Bank",
       "description": "Una página de aterrizaje diseñada para demostrar competencia en Next.js y Tailwind CSS, con animaciones dinámicas impulsadas por Frame Motion",
       "imageSrc": "/img/projects/james-bank.webp",
@@ -208,6 +231,7 @@
     },
     {
       "id": "20",
+      "category": "product",
       "title": "Página Fylo",
       "description": "Una página de aterrizaje responsiva diseñada para mostrar experiencia en Next.js y Tailwind CSS",
       "imageSrc": "/img/projects/fylo-page.webp",
@@ -215,6 +239,7 @@
     },
     {
       "id": "21",
+      "category": "product",
       "title": "Web Studio",
       "description": "Una página de aterrizaje moderna de estudio web construida para resaltar competencia en Next.js y Tailwind CSS",
       "imageSrc": "/img/projects/web-studio.webp",
@@ -222,6 +247,7 @@
     },
     {
       "id": "22",
+      "category": "product",
       "title": "Página de Aterrizaje Coca Cola",
       "description": "Landing page de marca con visuales impactantes, diseño responsivo y narrativa centrada en el producto. Reconstruida con Next.js, TypeScript y Tailwind CSS para una presentación moderna y optimizada.",
       "imageSrc": "/img/projects/coca-cola-landing-page.webp",
@@ -230,6 +256,7 @@
     },
     {
       "id": "23",
+      "category": "experiment",
       "title": "Juego de Trivia",
       "description": "Página web del juego de trivia creada usando Vite y React para un proyecto de práctica práctico",
       "imageSrc": "/img/projects/trivia-game.webp",
@@ -237,6 +264,7 @@
     },
     {
       "id": "24",
+      "category": "experiment",
       "title": "Conecta Cuatro",
       "description": "Juego de estrategia para dos jugadores con turnos alternados y tablero interactivo. Construido con Next.js, TypeScript y Tailwind CSS, con scroll suave Lenis y transiciones GSAP.",
       "imageSrc": "/img/projects/connect-four.webp",
@@ -245,6 +273,7 @@
     },
     {
       "id": "25",
+      "category": "experiment",
       "title": "Juego Tetris",
       "description": "Juego clásico de bloques con controles por teclado, puntuación en tiempo real y gameplay responsivo. Construido con Next.js, TypeScript y Tailwind CSS, con scroll Lenis y animaciones GSAP.",
       "imageSrc": "/img/projects/tetris-game.webp",
@@ -253,6 +282,7 @@
     },
     {
       "id": "26",
+      "category": "product",
       "title": "Biccas",
       "description": "Sitio de marketing estilo agencia digital con secciones responsivas y jerarquía visual clara. Reconstruido con Next.js, TypeScript y Tailwind CSS para una interfaz moderna y adaptable.",
       "imageSrc": "/img/projects/biccas.webp",
@@ -261,6 +291,7 @@
     },
     {
       "id": "27",
+      "category": "product",
       "title": "Dalio | Agencia Digital",
       "description": "Un sitio web de Dalio, una agencia digital para mostrar la experiencia usando Next.js y Tailwind CSS",
       "imageSrc": "/img/projects/dalio-digital-agency.webp",
@@ -268,6 +299,7 @@
     },
     {
       "id": "28",
+      "category": "experiment",
       "title": "Frontend-Mentor-Loopstudios",
       "description": "Página creada como práctica para conocimientos en Next.js, JavaScript, Tailwind CSS y diseño responsivo para completar un desafío de Frontend Mentor",
       "imageSrc": "/img/projects/frontend-mentor-loopstudios.webp",

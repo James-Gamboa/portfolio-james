@@ -1,21 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 const QUERY = "(prefers-reduced-motion: reduce)";
 
-export const usePrefersReducedMotion = () => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(QUERY);
-    const handleChange = () => setPrefersReducedMotion(mediaQuery.matches);
-
-    handleChange();
-    mediaQuery.addEventListener("change", handleChange);
-
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  return prefersReducedMotion;
+const subscribe = (onChange) => {
+  const mediaQuery = window.matchMedia(QUERY);
+  mediaQuery.addEventListener("change", onChange);
+  return () => mediaQuery.removeEventListener("change", onChange);
 };
+
+const getSnapshot = () => window.matchMedia(QUERY).matches;
+const getServerSnapshot = () => false;
+
+/** Reads the preference synchronously on the client (no false first render). */
+export const usePrefersReducedMotion = () =>
+  useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

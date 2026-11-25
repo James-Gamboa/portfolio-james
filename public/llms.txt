@@ -67,3 +67,4 @@ James Guevara Gamboa is a freelance Full Stack Developer (since August 2024) wit
 - [La Laguna](https://lalaguna.cr/)
 - [Portafolio Inmobiliario](https://www.portafolio.cr/en)
 - [Novus ERP](https://novus-2025-011de5fce714.herokuapp.com/en)
+- [Contraluz](https://contraluz.cr)
