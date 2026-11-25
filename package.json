@@ -20,6 +20,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "vitest run",
     "audit:prod": "pnpm audit --prod --audit-level high",
     "audit:node": "npx -y is-my-node-vulnerable",
     "audit:lockfile": "pnpm install --frozen-lockfile --lockfile-only --ignore-scripts",
