@@ -140,7 +140,6 @@ const HamburgerMenu = ({ dict, lang, email }) => {
               data-menu-panel=""
               className="relative z-10 flex h-full w-full flex-col items-center justify-center"
               onClick={(event) => event.stopPropagation()}
-              onKeyDown={(event) => event.stopPropagation()}
             >
               <button
                 aria-label="Close navigation menu"
