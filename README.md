@@ -107,6 +107,41 @@ pnpm dev          # http://localhost:3000
 | `pnpm audit:sast` | semgrep static analysis (Next.js, React, JavaScript, Node rules) |
 | `pnpm validate` | Lockfile, Node, dependency audit and build in one go |
 
+## CI/CD
+
+Vercel deploys through its Git integration (preview per PR, production on `main`). GitHub Actions only verifies; it never deploys.
+
+| Workflow / job | Trigger | What it checks |
+| --- | --- | --- |
+| `CI` / `test` | PR, push to `main` | `pnpm test` |
+| `CI` / `build` | PR, push to `main` | `pnpm build` (with `.next/cache` cache) and the forbidden-files gate on `public/` and `.next/static` |
+| `CI` / `audit` | PR, push to `main` | `pnpm audit:lockfile`, `pnpm audit:prod` |
+| `CI` / `secrets` | PR, push to `main` | gitleaks over the full git history |
+| `CI` / `sast` | PR, push to `main` | semgrep, same rulesets as `pnpm audit:sast` |
+| `Post-deploy smoke` / `smoke` | Vercel `deployment_status` = success | Home returns 200; `/.env`, `/.env.local`, `/.git/config`, `/CLAUDE.md`, `/package.json`, `/pnpm-lock.yaml` return 404/403. Previews behind Vercel Deployment Protection (401) are skipped with a notice. |
+
+Dependabot (`.github/dependabot.yml`) opens weekly grouped minor/patch PRs for npm and GitHub Actions, with a 3-day cooldown. `pnpm-workspace.yaml` sets `minimumReleaseAge` so pnpm refuses package versions published less than 3 days ago. All third-party actions are pinned to a full commit SHA.
+
+Run the same checks locally:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm test && pnpm build
+pnpm audit:lockfile && pnpm audit:prod
+pnpm audit:secrets   # needs gitleaks
+pnpm audit:sast      # needs semgrep
+bash scripts/check-forbidden-files.sh public .next/static
+```
+
+### GitHub settings to enable (owner, in the UI)
+
+- [ ] Ruleset on `main`: require a pull request, require status checks `test`, `build`, `audit`, `secrets`, `sast` (names must match the job names exactly), block force pushes and deletion
+- [ ] Settings > Code security: enable Secret scanning and Push protection
+- [ ] Settings > Code security: enable Dependabot alerts and Dependabot security updates
+- [ ] Settings > Actions > General: default `GITHUB_TOKEN` permissions set to read-only
+- [ ] Settings > Actions > General: require approval for workflow runs from fork pull requests
+- [ ] Vercel: keep the Git integration and preview deployments on (the smoke test depends on them)
+
 ## Contact
 
 - Email: [jjguevarag@gmail.com](mailto:jjguevarag@gmail.com)
