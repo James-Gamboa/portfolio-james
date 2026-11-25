@@ -24,14 +24,14 @@ const Hero = ({ lang, dict, data }) => {
   const github = socialLink(data, "github");
 
   return (
-    <div className="laptop:mt-20 mt-10">
+    <div className="laptop:mt-12 mt-10">
       <h1 className="mt-5">
         {lines.map(([text, width], index) => (
           <span
             key={text}
             data-hero-line=""
             style={{ "--hero-i": index }}
-            className={`block text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold ${width}`}
+            className={`block text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-6xl leading-tight p-1 text-bold ${width}`}
           >
             {text}
           </span>
