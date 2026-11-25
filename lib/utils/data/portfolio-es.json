@@ -38,7 +38,7 @@
       "title": "Plaza Tempo",
       "description": "Desarrollé el sitio web bilingüe de Plaza Tempo, destino de uso mixto que conecta trabajo, gastronomía, comercio y vida social. Incluye carrusel hero, directorio de negocios, eventos, ubicación con Google Maps y formularios de contacto. Implementado con Next.js, TypeScript, Strapi y Tailwind CSS.",
       "imageSrc": "/img/projects/plaza-tempo.webp",
-      "url": "https://tempo-2025-2c8da873e965.herokuapp.com/es"
+      "url": "https://www.plazatempo.com/es"
     },
     {
       "id": "4",
