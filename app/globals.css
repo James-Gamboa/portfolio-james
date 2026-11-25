@@ -6,8 +6,63 @@
   font-family: var(--font-hind), "Hind", system-ui, sans-serif;
 }
 
+/* Brand tokens. Palette is a refined near-black with the pink-to-blue
+   gradient from the OG image as the only accent. Contrast on --ink:
+   content 17:1, content-muted 9:1, content-subtle 6:1 (all WCAG AA). */
+:root {
+  --ink: 7 7 11;
+  --ink-raised: 14 14 21;
+  --ink-overlay: 22 22 32;
+  --content: 244 244 247;
+  --content-muted: 178 178 193;
+  --content-subtle: 140 140 158;
+  --brand-pink: 248 107 223;
+  --brand-blue: 107 107 248;
+  --brand-gradient: linear-gradient(
+    120deg,
+    rgb(var(--brand-pink)) 0%,
+    rgb(var(--brand-blue)) 100%
+  );
+}
+
 body {
-  @apply dark:bg-black dark:text-white overflow-x-clip;
+  @apply dark:bg-ink dark:text-content overflow-x-clip;
+}
+
+@layer components {
+  /* Gradient text: headline accent only. */
+  .text-gradient {
+    background-image: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-brand-gradient {
+    background-image: var(--brand-gradient);
+  }
+
+  /* Section marker: short gradient rule + uppercase label. */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-eyebrow font-medium uppercase text-content-muted;
+  }
+  .eyebrow::before {
+    content: "";
+    height: 2px;
+    width: 1.75rem;
+    border-radius: 9999px;
+    background-image: var(--brand-gradient);
+  }
+
+  .section-title {
+    @apply font-display text-title font-normal text-content;
+  }
+
+  /* Hairline panel used by cards across the page. */
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-ink-raised/70;
+  }
 }
 
 html {
@@ -164,9 +219,9 @@ html.lenis body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    --background: 240 22% 3.5%;
+    --foreground: 240 20% 97%;
+    --card: 240 22% 3.5%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
