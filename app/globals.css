@@ -216,3 +216,17 @@ button:focus-visible,
   outline: none !important;
   box-shadow: none !important;
 }
+
+/* Center a lone last card so an incomplete grid row does not leave empty gaps. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .project-grid > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.75rem);
+  }
+}
+@media (min-width: 1024px) {
+  .project-grid > li:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}

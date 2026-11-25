@@ -67,7 +67,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
         <p className="mt-1 mb-6 text-base text-white/70">
           {groupDict.clientIntro}
         </p>
-        <ul className="grid w-full min-w-0 grid-cols-1 gap-5 tablet:grid-cols-2 tablet:gap-6 laptop:grid-cols-3 laptop:gap-6">
+        <ul className="project-grid grid w-full min-w-0 grid-cols-1 gap-5 tablet:grid-cols-2 tablet:gap-6 laptop:grid-cols-3 laptop:gap-6">
           {client.map((project, index) => (
             <li key={project.id} className="h-full min-w-0">
               <WorkCard
@@ -95,7 +95,7 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
           <p className="mt-1 mb-6 text-base text-white/70">
             {groupDict.otherIntro}
           </p>
-          <ul className="grid w-full min-w-0 grid-cols-1 gap-5 tablet:grid-cols-2 tablet:gap-6 laptop:grid-cols-3 laptop:gap-6">
+          <ul className="project-grid grid w-full min-w-0 grid-cols-1 gap-5 tablet:grid-cols-2 tablet:gap-6 laptop:grid-cols-3 laptop:gap-6">
             {other.map((project, index) => (
               <li key={project.id} className="h-full min-w-0">
                 <WorkCard
