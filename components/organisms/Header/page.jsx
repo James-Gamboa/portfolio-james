@@ -86,7 +86,7 @@ const Header = ({ dict, data }) => {
         )}
       </nav>
 
-      <div className="flex shrink-0 items-center gap-1.5 tablet:gap-2">
+      <div className="flex shrink-0 items-center gap-3 tablet:gap-4">
         <div className="hidden tablet:block">
           <LanguageSelector />
         </div>
