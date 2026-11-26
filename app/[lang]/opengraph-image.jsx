@@ -8,8 +8,8 @@ export const contentType = "image/png";
 const STACK = "Next.js · React · TypeScript · Strapi · Shopify · WordPress";
 
 const COPY = {
-  en: { remote: "Open to remote" },
-  es: { remote: "Disponible para trabajo remoto" },
+  en: { remote: "Open to work" },
+  es: { remote: "Disponible para trabajar" },
 };
 
 export async function generateStaticParams() {

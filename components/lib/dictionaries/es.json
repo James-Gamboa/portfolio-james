@@ -115,7 +115,7 @@
     "hero": {
       "role": "Desarrollador Frontend y Full Stack",
       "stack": "Next.js · React · TypeScript · Node.js · Strapi · Shopify",
-      "location": "Heredia, Costa Rica · Abierto a trabajo remoto",
+      "location": "Heredia, Costa Rica · Disponible para trabajar",
       "valueProp": "Construyo sitios y aplicaciones web rápidos y optimizados para SEO para clientes inmobiliarios, corporativos y de e-commerce, con más de 10 proyectos para clientes entregados desde 2024.",
       "downloadCv": "Descargar CV",
       "contact": "Contáctame",
@@ -132,7 +132,7 @@
     },
     "about": {
       "title": "Sobre mí",
-      "summary": "James Guevara Gamboa es un Desarrollador Frontend y Full Stack radicado en Heredia, Costa Rica, abierto a trabajo remoto (también híbrido o presencial). Desde agosto de 2024 trabaja como Desarrollador Full Stack freelance y ha entregado más de 10 proyectos para clientes inmobiliarios, corporativos y de e-commerce con Next.js, React, TypeScript, Node.js y Strapi. Habla español (nativo) e inglés (B2)."
+      "summary": "Hola, soy James, Desarrollador Frontend y Full Stack de Heredia, Costa Rica. Desde agosto de 2024 trabajo como freelance y he entregado más de 10 proyectos para clientes inmobiliarios, corporativos y de e-commerce con Next.js, React, TypeScript, Node.js y Strapi. Me enfoco en sitios rápidos, con buen SEO y fáciles de mantener. Hablo español (nativo) e inglés (B2), y estoy abierto a trabajo remoto, híbrido o presencial."
     },
     "projects": {
       "featuredLabel": "Destacado",
@@ -228,20 +228,20 @@
       "intro": "Respuestas rápidas sobre rol, stack, disponibilidad y contacto.",
       "items": [
         {
-          "q": "¿Cuál es el rol de James Guevara Gamboa?",
-          "a": "Es Desarrollador Frontend y Full Stack. Desde agosto de 2024 trabaja como Desarrollador Full Stack freelance, creando sitios y aplicaciones web para clientes inmobiliarios, corporativos y de e-commerce."
+          "q": "¿Cuál es su rol?",
+          "a": "Soy Desarrollador Frontend y Full Stack. Desde agosto de 2024 trabajo como freelance, creando sitios y aplicaciones web para clientes inmobiliarios, corporativos y de e-commerce."
         },
         {
           "q": "¿Con qué tecnologías trabaja?",
-          "a": "Next.js, React, TypeScript y Node.js como stack principal, con Strapi como CMS headless, Tailwind CSS, APIs REST y GraphQL, además de personalización de Shopify y WordPress."
+          "a": "Mi stack principal es Next.js, React, TypeScript y Node.js, con Strapi como CMS headless, Tailwind CSS, APIs REST y GraphQL, además de personalización de Shopify y WordPress."
         },
         {
           "q": "¿Está disponible para trabajo remoto?",
-          "a": "Sí. Está abierto a trabajo remoto y también a puestos híbridos o presenciales."
+          "a": "Sí. Estoy abierto a trabajo remoto, híbrido o presencial."
         },
         {
           "q": "¿Dónde vive y en qué zona horaria trabaja?",
-          "a": "Vive en Heredia, Costa Rica, en la zona horaria de América Central (UTC-6, sin horario de verano)."
+          "a": "Vivo en Heredia, Costa Rica, en la zona horaria de América Central (UTC-6, sin horario de verano)."
         },
         {
           "q": "¿Qué idiomas habla?",
@@ -249,7 +249,7 @@
         },
         {
           "q": "¿Cómo puedo contactarlo u obtener su CV?",
-          "a": "Escribiendo a jjguevarag@gmail.com, por LinkedIn o GitHub, o descargando su CV en PDF desde la parte superior de esta página."
+          "a": "Escríbame a jjguevarag@gmail.com, por LinkedIn o GitHub, o descargue mi CV en PDF desde la parte superior de esta página."
         }
       ]
     }
