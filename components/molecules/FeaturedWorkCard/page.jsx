@@ -81,8 +81,8 @@ const FeaturedWorkCard = ({
           <h4 className="font-semibold text-3xl leading-tight text-content tablet:text-4xl">
             {project.title}
           </h4>
-          <p className="line-clamp-4 text-base leading-relaxed text-content-muted">
-            {project.description}
+          <p className="min-h-[4.875em] text-base leading-relaxed text-content-muted">
+            {meta.excerpt}
           </p>
 
           <ul
