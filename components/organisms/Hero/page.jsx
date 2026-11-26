@@ -28,7 +28,7 @@ const Hero = ({ lang, dict, data }) => {
   const github = socialLink(data, "github");
 
   return (
-    <div className="pt-12 laptop:pt-20">
+    <div data-hero="" className="pt-12 laptop:pt-20">
       <div
         data-hero-line=""
         style={{ "--hero-i": 0 }}
@@ -117,34 +117,37 @@ const Hero = ({ lang, dict, data }) => {
         </div>
       </div>
 
-      <dl
-        data-hero-line=""
-        style={{ "--hero-i": 5 }}
-        className="mt-12 grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-ink-raised/60 backdrop-blur-sm laptop:mt-16 laptop:grid-cols-12"
-      >
-        {facts.map((fact) => {
-          const isNumeric = fact.key === "clients" || fact.key === "since";
-          return (
-            <div
-              key={fact.key}
-              className={`fact flex flex-col-reverse justify-end gap-1.5 p-4 tablet:p-5 ${FACT_SPAN[fact.key] ?? ""}`}
-            >
-              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-content-subtle">
-                {fact.label}
-              </dt>
-              <dd
-                className={
-                  isNumeric
-                    ? `font-extrabold text-4xl leading-none tablet:text-5xl ${fact.key === "clients" ? "text-sky" : "text-content"}`
-                    : "text-base font-medium text-content tablet:text-lg"
-                }
+      {/* Wrapper carries the scroll scrub so it never fights the dl's CSS entrance. */}
+      <div data-hero-facts="" className="mt-12 laptop:mt-16">
+        <dl
+          data-hero-line=""
+          style={{ "--hero-i": 5 }}
+          className="grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-ink-raised/60 backdrop-blur-sm laptop:grid-cols-12"
+        >
+          {facts.map((fact) => {
+            const isNumeric = fact.key === "clients" || fact.key === "since";
+            return (
+              <div
+                key={fact.key}
+                className={`fact flex flex-col-reverse justify-end gap-1.5 p-4 tablet:p-5 ${FACT_SPAN[fact.key] ?? ""}`}
               >
-                {fact.value}
-              </dd>
-            </div>
-          );
-        })}
-      </dl>
+                <dt className="text-xs font-medium uppercase tracking-[0.14em] text-content-subtle">
+                  {fact.label}
+                </dt>
+                <dd
+                  className={
+                    isNumeric
+                      ? `font-extrabold text-4xl leading-none tablet:text-5xl ${fact.key === "clients" ? "text-sky" : "text-content"}`
+                      : "text-base font-medium text-content tablet:text-lg"
+                  }
+                >
+                  {fact.value}
+                </dd>
+              </div>
+            );
+          })}
+        </dl>
+      </div>
     </div>
   );
 };

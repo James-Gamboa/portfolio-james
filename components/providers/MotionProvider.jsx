@@ -17,6 +17,7 @@ import {
   registerGsapPlugins,
 } from "@/lib/motion/register-gsap";
 import { setupScrollReveals } from "@/lib/motion/setup-scroll-reveals";
+import { setupScrollMotion } from "@/lib/motion/setup-scroll-motion";
 import { scrollNative, smoothBehavior } from "@/lib/motion/scrollNative";
 import { MOBILE_MAX_WIDTH } from "@/lib/motion/constants";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
@@ -186,13 +187,16 @@ const MotionProvider = ({ onChange }) => {
     if (!isReady || reducedMotion) return undefined;
 
     let cleanupReveals = () => {};
+    let cleanupMotion = () => {};
     const rafId = requestAnimationFrame(() => {
       cleanupReveals = setupScrollReveals();
+      cleanupMotion = setupScrollMotion();
       ScrollTrigger.refresh();
     });
 
     return () => {
       cancelAnimationFrame(rafId);
+      cleanupMotion();
       cleanupReveals();
     };
   }, [pathname, isReady, reducedMotion]);

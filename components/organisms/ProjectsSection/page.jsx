@@ -21,12 +21,18 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
       aria-labelledby="projects-heading"
       className="relative mt-24 w-full min-w-0 laptop:mt-36"
     >
-      <header data-reveal="" className="max-w-3xl space-y-4">
-        <p className="eyebrow">{projectDict.eyebrow}</p>
-        <h2 id="projects-heading" className="section-title">
+      {/* Pinned on laptop and up (see lib/motion/setup-pinned-intro). */}
+      <header data-pin-intro="" className="max-w-3xl space-y-4">
+        <p data-pin-eyebrow="" className="eyebrow">
+          {projectDict.eyebrow}
+        </p>
+        <h2 id="projects-heading" data-pin-title="" className="section-title">
           {projectDict.title}.
         </h2>
-        <p className="text-base leading-relaxed text-content-muted laptop:text-lg">
+        <p
+          data-pin-body=""
+          className="text-base leading-relaxed text-content-muted laptop:text-lg"
+        >
           {projectDict.subtitle}
         </p>
       </header>
@@ -88,7 +94,10 @@ const ProjectsSection = ({ projects = [], dict, lang }) => {
           </p>
           <ul className="flex flex-wrap justify-center gap-2.5">
             {other.map((project, index) => (
-              <li key={project.id} className="w-full min-w-0 tablet:w-[calc(50%-0.3125rem)] laptop:w-[calc(33.333%-0.4167rem)]">
+              <li
+                key={project.id}
+                className="w-full min-w-0 tablet:w-[calc(50%-0.3125rem)] laptop:w-[calc(33.333%-0.4167rem)]"
+              >
                 <PracticeCard
                   project={project}
                   index={index + client.length}
