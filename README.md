@@ -4,7 +4,7 @@
 
 # James Guevara Gamboa — Portfolio
 
-**Frontend & Full Stack Developer** · Heredia, Costa Rica · Open to remote
+**Frontend & Full Stack Developer** · Heredia, Costa Rica · Open to work
 
 [![Live site](https://img.shields.io/badge/live-james--gamboa.vercel.app-000000?style=for-the-badge&logo=vercel)](https://james-gamboa.vercel.app/en)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-98--100-0cce6b?style=for-the-badge&logo=lighthouse&logoColor=white)](#performance-and-quality)
@@ -31,7 +31,7 @@
 My personal portfolio, built for one job: letting a recruiter understand **who I am, what I build and how to reach me in a few seconds**.
 
 - **Recruiter-first home.** Role, location, availability, a downloadable CV in English or Spanish, and a facts strip computed from real data (client project count, years freelancing, core stack, languages).
-- **Real client work first.** 14 production sites for real estate, corporate and e-commerce clients, three featured. Practice projects are listed separately.
+- **Real client work first.** 21 production sites for real estate, corporate and e-commerce clients, three featured. Practice projects are listed separately.
 - **Bilingual.** English and Spanish routes (`/en`, `/es`) with per-locale metadata, `hreflang`, and `<html lang>`.
 - **Experience timeline, certifications and skills.** Includes the Anthropic Academy courses.
 

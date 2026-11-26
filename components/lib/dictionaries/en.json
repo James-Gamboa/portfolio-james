@@ -115,7 +115,7 @@
     "hero": {
       "role": "Frontend & Full Stack Developer",
       "stack": "Next.js · React · TypeScript · Node.js · Strapi · Shopify",
-      "location": "Heredia, Costa Rica · Open to remote",
+      "location": "Heredia, Costa Rica · Open to work",
       "valueProp": "I build fast, SEO-friendly websites and web apps for real estate, corporate and e-commerce clients, with 10+ client projects delivered since 2024.",
       "downloadCv": "Download CV",
       "contact": "Contact me",
@@ -132,7 +132,7 @@
     },
     "about": {
       "title": "About",
-      "summary": "James Guevara Gamboa is a Frontend & Full Stack Developer based in Heredia, Costa Rica, open to remote work (also hybrid or on-site). Since August 2024 he has worked as a freelance Full Stack Developer, delivering 10+ client projects in real estate, corporate and e-commerce with Next.js, React, TypeScript, Node.js and Strapi. He speaks Spanish (native) and English (B2)."
+      "summary": "Hi, I'm James, a Frontend & Full Stack Developer from Heredia, Costa Rica. Since August 2024 I've worked freelance and delivered 10+ client projects in real estate, corporate and e-commerce with Next.js, React, TypeScript, Node.js and Strapi. I care about fast, SEO-friendly sites that are easy to maintain. I speak Spanish (native) and English (B2), and I'm open to remote, hybrid or on-site roles."
     },
     "projects": {
       "featuredLabel": "Featured",
@@ -228,28 +228,28 @@
       "intro": "Quick answers about role, stack, availability and contact.",
       "items": [
         {
-          "q": "What is James Guevara Gamboa's role?",
-          "a": "He is a Frontend & Full Stack Developer. Since August 2024 he works as a freelance Full Stack Developer building websites and web apps for real estate, corporate and e-commerce clients."
+          "q": "What's your role?",
+          "a": "I'm a Frontend & Full Stack Developer. Since August 2024 I've worked freelance, building websites and web apps for real estate, corporate and e-commerce clients."
         },
         {
-          "q": "Which technologies does he work with?",
-          "a": "Next.js, React, TypeScript and Node.js on the main stack, with Strapi as headless CMS, Tailwind CSS, REST and GraphQL APIs, plus Shopify and WordPress customization."
+          "q": "Which technologies do you work with?",
+          "a": "Next.js, React, TypeScript and Node.js are my main stack, with Strapi as headless CMS, Tailwind CSS, REST and GraphQL APIs, plus Shopify and WordPress customization."
         },
         {
-          "q": "Is he available for remote work?",
-          "a": "Yes. He is open to remote work and is also open to hybrid or on-site roles."
+          "q": "Are you open to remote work?",
+          "a": "Yes. I'm open to remote, hybrid or on-site roles."
         },
         {
-          "q": "Where is he based and which time zone does he work in?",
-          "a": "He lives in Heredia, Costa Rica, in the Central America time zone (UTC-6, no daylight saving time)."
+          "q": "Where are you based and which time zone do you work in?",
+          "a": "I live in Heredia, Costa Rica, in the Central America time zone (UTC-6, no daylight saving time)."
         },
         {
-          "q": "Which languages does he speak?",
+          "q": "Which languages do you speak?",
           "a": "Spanish (native) and English (B2, upper intermediate)."
         },
         {
-          "q": "How can I contact him or get his CV?",
-          "a": "Email jjguevarag@gmail.com, message him on LinkedIn or GitHub, or download his CV as a PDF from the top of this page."
+          "q": "How can I contact you or get your CV?",
+          "a": "Email me at jjguevarag@gmail.com, message me on LinkedIn or GitHub, or download my CV as a PDF from the top of this page."
         }
       ]
     }

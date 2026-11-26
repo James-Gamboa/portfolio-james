@@ -68,8 +68,8 @@ const WorkCard = ({
           <h4 className="text-lg font-semibold leading-snug tracking-tight text-content">
             {name}
           </h4>
-          <p className="line-clamp-3 text-sm leading-relaxed text-content-muted">
-            {description}
+          <p className="min-h-[4.875em] text-sm leading-relaxed text-content-muted">
+            {meta.excerpt}
           </p>
 
           <ul
