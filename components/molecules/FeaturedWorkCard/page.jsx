@@ -23,7 +23,7 @@ const FeaturedWorkCard = ({
   ).replace("{name}", project.title);
 
   return (
-    <article data-reveal="" className="group relative h-full">
+    <article data-card-reveal="" className="group relative h-full">
       {/* Gradient hairline that lights up on hover/focus. */}
       <div
         aria-hidden
@@ -46,22 +46,24 @@ const FeaturedWorkCard = ({
               : "aspect-[16/10]",
           )}
         >
-          <Image
-            alt={imageAlt}
-            src={project.imageSrc}
-            fill
-            sizes={
-              wide
-                ? "(min-width: 1024px) 60vw, 100vw"
-                : "(min-width: 1024px) 50vw, 100vw"
-            }
-            quality={75}
-            loading="lazy"
-            className={cn(
-              "object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]",
-              meta.imagePosition,
-            )}
-          />
+          <div data-parallax="" className="absolute inset-0">
+            <Image
+              alt={imageAlt}
+              src={project.imageSrc}
+              fill
+              sizes={
+                wide
+                  ? "(min-width: 1024px) 60vw, 100vw"
+                  : "(min-width: 1024px) 50vw, 100vw"
+              }
+              quality={75}
+              loading="lazy"
+              className={cn(
+                "object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]",
+                meta.imagePosition,
+              )}
+            />
+          </div>
           <div
             aria-hidden
             className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"

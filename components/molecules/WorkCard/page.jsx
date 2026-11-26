@@ -36,7 +36,10 @@ const WorkCard = ({
   ).replace("{name}", name);
 
   return (
-    <article data-reveal="" className="group relative h-full w-full min-w-0">
+    <article
+      data-card-reveal=""
+      className="group relative h-full w-full min-w-0"
+    >
       <Link
         href={url}
         target="_blank"
@@ -47,18 +50,20 @@ const WorkCard = ({
         )}
       >
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink-overlay">
-          <Image
-            alt={imageAlt}
-            src={img}
-            fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-            quality={75}
-            loading="lazy"
-            className={cn(
-              "object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105",
-              meta.imagePosition,
-            )}
-          />
+          <div data-parallax="" className="absolute inset-0">
+            <Image
+              alt={imageAlt}
+              src={img}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              quality={75}
+              loading="lazy"
+              className={cn(
+                "object-cover transition-transform duration-500 ease-out motion-safe:group-hover:scale-105",
+                meta.imagePosition,
+              )}
+            />
+          </div>
           <span className="absolute left-3 top-3 rounded-full border border-line bg-ink/70 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-content backdrop-blur-md">
             {meta.category}
           </span>
